@@ -1,0 +1,409 @@
+{
+  "name": "Test",
+  "hp_current": 0,
+  "stats": {
+    "intelligence": 0,
+    "reflex": 0,
+    "dexterity": 0,
+    "technique": 0,
+    "cool": 0,
+    "willpower": 0,
+    "luck": 0,
+    "movement": 0,
+    "empathy": 0
+  },
+  "journals": [
+    {
+      "name": "",
+      "text": ""
+    }
+  ],
+  "skills": [
+    {
+      "name": "Acting",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    {
+      "name": "Bribery",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    {
+      "name": "Interrogation",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    {
+      "name": "Personal Grooming",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    {
+      "name": "Persuasion",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    {
+      "name": "Streetwise",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    {
+      "name": "Trading",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    {
+      "name": "Wardrobe & Style",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    {
+      "name": "Athletics",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    {
+      "name": "Brawling",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    {
+      "name": "Contortionist",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    {
+      "name": "Dance",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    {
+      "name": "Evasion",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    {
+      "name": "Martial Arts",
+      "nr": 0,
+      "difficult_train": true,
+      "stat": "dex"
+    },
+    {
+      "name": "Melee Weapon",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    {
+      "name": "Stealth",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    {
+      "name": "Conversation",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "emp"
+    },
+    {
+      "name": "Human Perception",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "emp"
+    },
+    {
+      "name": "Accounting",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Animal Handling",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Bureaucracy",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Business",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Composition",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Conceal & Reveal Object",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Criminology",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Cryptography",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Deduction",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Education",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Gamble",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Library Search",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Lip Reading",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Local Expert (Your Home)",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Perception",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Science",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Tactics",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Wilderness Survival",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    {
+      "name": "Archery",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "ref"
+    },
+    {
+      "name": "Autofire",
+      "nr": 0,
+      "difficult_train": true,
+      "stat": "ref"
+    },
+    {
+      "name": "Drive Land Vehicle",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "ref"
+    },
+    {
+      "name": "Handgun",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "ref"
+    },
+    {
+      "name": "Heavy Weapons",
+      "nr": 0,
+      "difficult_train": true,
+      "stat": "ref"
+    },
+    {
+      "name": "Pilot Air Vehicle",
+      "nr": 0,
+      "difficult_train": true,
+      "stat": "ref"
+    },
+    {
+      "name": "Pilot Sea Vehicle",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "ref"
+    },
+    {
+      "name": "Ride",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "ref"
+    },
+    {
+      "name": "Shoulder Arms",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "ref"
+    },
+    {
+      "name": "Air Vehicle Tech",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Basic Tech",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Cybertech",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Demoltions",
+      "nr": 0,
+      "difficult_train": true,
+      "stat": "tech"
+    },
+    {
+      "name": "Electronics & Security Tech",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "First Aid",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Forgery",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Land Vehicle Tech",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Paint, Draw, Sculpt",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Paramedic",
+      "nr": 0,
+      "difficult_train": true,
+      "stat": "tech"
+    },
+    {
+      "name": "Photography/Film",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Pick Lock",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Pick Pocket",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Play Instrument",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Sea Vehicle Tech",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Weapons Tech",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    {
+      "name": "Concentration",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "will"
+    },
+    {
+      "name": "Endurance",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "will"
+    },
+    {
+      "name": "Resist Torture & Drugs",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "will"
+    }
+  ],
+  "gear_list": [],
+  "flags": {}
+}

@@ -1,8 +1,6 @@
 use leptos::prelude::*;
 use leptos::logging::log;
-use chrono::{self, Datelike, Days};
-use std::collections::HashMap;
-use std::error::Error;
+use std::{clone, error::Error};
 use std::fs::read_to_string;
 use std::path::Path;
 use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title};
@@ -11,22 +9,23 @@ use leptos_router::{
     StaticSegment,
 };
 
-use crate::lesson_data::{Course, LessonData};
+use crate::char::Character;
 
-pub fn read_lesson_data_from_file<P: AsRef<Path>>(path: P) -> Result<LessonData, Box<dyn Error>> {
+pub fn read_character_data_from_file<P: AsRef<Path>>(path: P) -> Result<Character, Box<dyn Error>> {
 
     // Open the file in read-only mode with buffer.
     let check_file_path_result = std::fs::exists(&path);
     match check_file_path_result {
         Ok(exists) => {
             if exists {
+                log!("Filepath exists");
                 let file_str = read_to_string(&path)?;
-                let lesson_data: LessonData = serde_json::from_str(&file_str)?;
+                let lesson_data: Character = serde_json::from_str(&file_str)?;
                 return Ok(lesson_data);
             }
             else {
                 log!("Filepath does not exist");
-                return Err(Box::from("Filepath does not exist"));
+                return Ok(Character::zero());
             }
         },
         Err(error) => {
@@ -39,12 +38,41 @@ pub fn read_lesson_data_from_file<P: AsRef<Path>>(path: P) -> Result<LessonData,
 
 }
 
-#[server(GetLessonData, "/api", "GetJson", "get_lesson_data")]
-pub async fn get_lesson_data() -> Result<LessonData, ServerFnError> {
-    let read_data_result = read_lesson_data_from_file("./lesson_data.json");
+pub fn write_char_to_file<P: AsRef<Path>>(path: P, character: &Character) -> Result<(), Box<dyn Error>>{
+    match serde_json::to_string_pretty(&character) {
+        Ok(json) => {
+            match std::fs::write(path, json) {
+                Ok(_) => {
+                    return Ok(());
+                },
+                Err(error) => {
+                    println!("Error occurred during File writing: {error}");
+                    return Err(Box::new(error));
+                },
+            }
+        },
+        Err(error) => { 
+            println!("Error occurred during Serialization {error}");
+            return Err(Box::new(error));
+        }
+    };
+}
+
+#[server(GetCharData, "/api", "GetJson", "get_char_data")]
+pub async fn get_char_data() -> Result<Character, ServerFnError> {
+    let read_data_result = read_character_data_from_file("./character.json");
     read_data_result.or_else(|error|{
         Err(ServerFnError::new(error.to_string()))
     })
+}
+
+#[server(SetCharData, "/api", "Url", "set_char_data")]
+pub async fn set_char_data(char: Character) -> Result<i32, ServerFnError> {
+    let result = write_char_to_file("./character.json", &char);
+    match result {
+        Ok(_) => Ok(0),
+        Err(error) => Err(ServerFnError::new(error)),
+    }
 }
 
 pub fn shell(options: LeptosOptions) -> impl IntoView {
@@ -92,61 +120,19 @@ pub fn App() -> impl IntoView {
 /// Renders the home page of your application.
 #[component]
 fn HomePage() -> impl IntoView {
-    let COLORS: HashMap<&str, &str> = [
-        ("ANATOMY PRACTICALS","#77c46d"),
-        ("BONES AND MUSCLES ANATOMY","#58ad4c"),
-        ("BONES AND MUSCLES HYSTOLOGY AND EMBRYOLOGY","#3f8b35"),
-        ("BONES AND MUSCLES PHYSIOLOGY","#20551a"),
-        ("HEART ANATOMY","#b9be73"),
-        ("HEART HYSTOLOGY AND EMBRYOLOGY","#b8b15a"),
-        ("HEART PHYSIOLOGY","#bda749"),
-        ("HYSTOLOGY PRACTICALS","#bd9134"),
-        ("PHYSIOLOGY PRACTICALS","#a18b59"),
-        ("VASCULAR ANATOMY","#6f98be"),
-        ("VASCULAR HYSTOLOGY AND EMBRYOLOGY","#456a8d"),
-        ("VASCULAR PHYSIOLOGY","#32457a"),
-        ("BIOCHEMISTRY","#ac469b"),
-        ("BIOCHEMISTRY PRACTICALS","#c96e9b"),
-        ("CELLULAR BIOLOGY 2","#80747a"),
-        ("CELLULAR BIOLOGY PRACTICALS","#63565c"),
-        ("HUMAN GENETICS","#c99c69"),
-        ("MOLECULAR BIOLOGY","#554f49"),
-    ].iter().cloned().collect();
-    provide_context(COLORS);
-    // Creates a reactive value to update the button
-    let week_nr_signal = RwSignal::new(0);
-    provide_context(week_nr_signal);
     view! {
         <Await
-            future=get_lesson_data()
-            let:lesson_data_result
+            future=get_char_data()
+            let:char_data_result
         >{
-            let result_clone = lesson_data_result.clone();
+            let result_clone = char_data_result.clone();
             move || {
                 log!("{:#?}",result_clone.clone());
                 match result_clone.clone() {
-                    Ok(lesson_data) => {
-                        let cloned_data = lesson_data.clone();
-                        let timestamp = cloned_data.last_executed.clone();
-                        view! {
-                            <div>Last updated {move || timestamp.clone()}</div>
-                            <div class="main-div">
-                                <div class="button_div">
-                                    <button type="button" 
-                                        on:click=move |_| week_nr_signal.set(week_nr_signal.get() - 1)
-                                    >
-                                        previous
-                                    </button>
-                                    
-                                    <button type="button" 
-                                        on:click=move |_| week_nr_signal.set(week_nr_signal.get() + 1)
-                                    >
-                                        next
-                                    </button>
-                                </div>
-                                    
-                                <TimeTable lesson_data=cloned_data/>
-                            </div>
+                    Ok(char_data) => {
+                        let cloned_data: Character = char_data.clone();
+                        view!{
+                            <CharacterView character_data=cloned_data/>
                         }.into_any()
                     },
                     Err(error) => {
@@ -161,8 +147,39 @@ fn HomePage() -> impl IntoView {
     }
 }
 
-
 #[component]
+fn CharacterView(character_data: Character) -> impl IntoView {
+    let char_rw_signal = RwSignal::new(character_data);
+    let save_char_action = Action::new(move |_: &()| async move {
+        let char_copy = char_rw_signal.get_untracked();
+        let _ = set_char_data(char_copy.clone()).await;
+    });
+
+    Effect::new(move |prev| {
+        let _ = char_rw_signal.get();
+        match prev {
+            Some(_) => {
+                save_char_action.dispatch(());
+                return 0;
+            },
+            None => 0
+        }
+    });
+
+    view! {
+        <div class="base_div">
+            <button on:click=move|_| { save_char_action.dispatch(()); }>TEST</button>
+            <div class="columns">
+                <div class="skill_list"></div>
+                <div class="center_div"></div>
+                <div class="combat_div"></div>
+            </div>
+        </div>
+    }
+}
+
+
+/* #[component]
 fn TimeTable(lesson_data: LessonData) -> impl IntoView {
     let today = chrono::offset::Local::now();
     let current_weekday = today.date_naive().weekday();
@@ -334,4 +351,4 @@ fn get_hour_and_min_from_time(time: String) -> (i32, i32) {
     let hour: i32 = split_time.get(0).unwrap().parse().unwrap();
     let minute: i32 = split_time.get(1).unwrap().parse().unwrap();
     return (hour, minute)
-}
+} */

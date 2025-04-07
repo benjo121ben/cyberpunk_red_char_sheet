@@ -1,5 +1,6 @@
+pub mod journal;
 pub mod app;
-pub mod lesson_data;
+pub mod char;
 
 #[cfg(feature = "hydrate")]
 #[wasm_bindgen::prelude::wasm_bindgen]
