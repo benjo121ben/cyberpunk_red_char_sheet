@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "cargo leptos watch",
+			"group": {"isDefault": false, "kind": "build"},
+			"label": "rust: leptos watch website"
+		},
+		{
+			"type": "shell",
+			"command": "cargo leptos build --release",
+			"group": {"isDefault": false, "kind": "build"},
+			"label": "Rust: Build webiste for Windows"
+		}
+
+	]
+}
