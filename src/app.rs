@@ -167,13 +167,15 @@ fn CharacterView(character_data: Character) -> impl IntoView {
             None => 0
         }
     });
+    let filter_zeroes_enabled = RwSignal::new(true);
 
     view! {
         <div class="base_div">
             <button on:click=move|_| { save_char_action.dispatch(()); }>TEST</button>
+            <button on:click=move|_| { filter_zeroes_enabled.update(|en| *en = !*en); }>FILTER</button>
             <div class="columns">
                 <div class="skill_list">
-                    <SkillList/>
+                    <SkillList filter_zeroes_enabled/>
                 </div>
                 <div class="center_div"></div>
                 <div class="combat_div"></div>
@@ -183,12 +185,22 @@ fn CharacterView(character_data: Character) -> impl IntoView {
 }
 
 #[component]
-fn SkillList() -> impl IntoView {
+fn SkillList(filter_zeroes_enabled: RwSignal<bool>) -> impl IntoView {
     let rw_char_signal = get_char_signal_from_ctx();
     let skill_key_list_memo = Memo::new(move |_| {
-        let mut key_list = rw_char_signal.with(|c| c.skills.keys().cloned().collect::<Vec<String>>());
-        key_list.sort();
-        return key_list
+        if filter_zeroes_enabled.get() {
+            let mut key_list = rw_char_signal.with(|c| c.skills.iter()
+            .filter(|(_, skill)| skill.nr != 0)
+            .map(|(key, _)| key).cloned().collect::<Vec<String>>());
+            key_list.sort();
+            return key_list
+        }
+        else {
+            let mut key_list = rw_char_signal.with(|c| c.skills.keys().cloned().collect::<Vec<String>>());
+            key_list.sort();
+            return key_list
+        }
+        
     });
 
     view! {
