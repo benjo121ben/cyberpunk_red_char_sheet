@@ -16,7 +16,7 @@ pub struct Character {
     pub journals: Vec<Journal>,
     
     #[serde(default)]
-    pub skills: Vec<Skill>,
+    pub skills: HashMap<String, Skill>,
     
     #[serde(default)]
     pub gear_list: Vec<Gear>,
@@ -35,6 +35,7 @@ pub struct CharStats {
     pub willpower: i32,
     pub luck: i32,
     pub movement: i32,
+    pub body: i32,
     pub empathy: i32,
 }
 
@@ -57,9 +58,9 @@ impl Character {
         let mut char = Character {
             name: String::from("Test"),
             hp_current: 0,
-            stats: CharStats { intelligence: 0, reflex: 0, dexterity: 0, technique: 0, cool: 0, willpower: 0, luck: 0, movement: 0, empathy: 0 },
+            stats: CharStats { intelligence: 0, reflex: 0, dexterity: 0, technique: 0, cool: 0, willpower: 0, luck: 0, movement: 0, body: 0, empathy: 0 },
             journals: vec![Journal::default()],
-            skills: vec![],
+            skills: HashMap::new(),
             gear_list: vec![],
             flags: HashMap::new(),
         };
@@ -148,111 +149,56 @@ impl Character {
         ];
 
         for (diff, key) in cool_skills {
-            char.skills.push(Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "cool".to_string() });
+            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
+            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "cool".to_string() });
         }
 
         for (diff, key) in dex_skills {
-            char.skills.push(Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "dex".to_string() });
+            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
+            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "dex".to_string() });
         }
 
         for (diff, key) in emp_skills {
-            char.skills.push(Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "emp".to_string() });
+            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
+            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "emp".to_string() });
         }
 
         for (diff, key) in int_skills {
-            char.skills.push(Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "int".to_string() });
+            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
+            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "int".to_string() });
         }
 
         for (diff, key) in ref_skills {
-            char.skills.push(Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "ref".to_string() });
+            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
+            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "ref".to_string() });
         }
 
         for (diff, key) in tech_skills {
-            char.skills.push(Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "tech".to_string() });
+            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
+            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "tech".to_string() });
         }
 
         for (diff, key) in will_skills {
-            char.skills.push(Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "will".to_string() });
+            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
+            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "will".to_string() });
         }
 
         return char;
     }
-}
 
-/* impl Character {
-    fn get_attribute_and_lore_flag_from_skill_name(skill_name: &str, p_type: &ProficiencyType) -> String{
-        return String::from(match p_type {
-            ProficiencyType::Save => {
-                match skill_name {
-                    "Fortitude" => "con",
-                    "Reflex" => "dex",
-                    "Will" => "wis",
-                    _ => {panic!("This save does not exist {skill_name}");}
-                }
-            },
-            ProficiencyType::Skill => {
-                match skill_name {
-                    "Acrobatics" => "dex",
-                    "Arcana" => "int",
-                    "Athletics" => "str",
-                    "Crafting" => "int",
-                    "Deception" => "cha",
-                    "Diplomacy" => "cha",
-                    "Intimidation" => "cha",
-                    "Medicine" => "wis",
-                    "Nature" => "wis",
-                    "Occultism" => "int",
-                    "Performance" => "cha",
-                    "Religion" => "wis",
-                    "Society" => "int",
-                    "Stealth" => "dex",
-                    "Survival" => "wis",
-                    "Thievery" => "dex",
-                    _ => {panic!("This skill does not exist {skill_name}");}
-                }
-            },
-            ProficiencyType::Lore => "int",
-            ProficiencyType::Armor => "dex",
-            ProficiencyType::Weapon => "str",
-            ProficiencyType::Spell => "key",
-            ProficiencyType::ClassDC => "key",
-            ProficiencyType::Perception => "wis",
-        });
-        
-    }
-
-    pub fn get_prof_obj_from_name(self: &Self, skill_name: &str) -> Option<CalculatedStat>{
-        return self.proficiencies
-        .iter()
-        .find(|prof| prof.name==skill_name).cloned();
-    }
-
-    pub fn get_prof_indx_from_name(self: &Self, skill_name: &str) -> Option<usize>{
-        for (indx, skill) in self.proficiencies.iter().enumerate() {
-            if skill.name == skill_name {
-                return Some(indx);
-            }
+    pub fn get_stat(self: &Self, stat_name: &str) -> i32 {
+        match stat_name {
+            "int" => return self.stats.intelligence,
+            "ref" => return self.stats.reflex,
+            "dex" => return self.stats.dexterity,
+            "tech" => return self.stats.technique,
+            "cool" => return self.stats.cool,
+            "will" => return self.stats.willpower,
+            "luck" => return self.stats.luck,
+            "move" => return self.stats.movement,
+            "body" => return self.stats.body,
+            "emp" => return self.stats.empathy,
+            _ => {panic!("This stat does not exist {stat_name}");}
         }
-        return None;
     }
-
-    pub fn calculate_ac(self: & Self, bp_map: &HashMap<String, StatBonusPenalties>) -> (i32, i32) {
-        let calc_stat = self.get_prof_obj_from_name("Medium").expect("Character must have a medium proficiency");
-        let dex_cap = 1;
-        let item_bonus = 4;
-        let auto_bonus_prog_bonus = self.abp_data.def_pot;
-        let dex_bonus = std::cmp::min(self.attributes.get_stat_val("dex").expect("Defense expects a dex attribute to be set"), dex_cap);
-        let prof_bonus = calc_stat.proficiency.get_bonus(self.level);
-        let selectors = vec!["dex".to_string(), "ac".to_string()];
-        let armor_bonus_penalties = combine_selected_bonus_penalties(&bp_map, &selectors).calculate_total();
-        let armor_total = 10 + dex_bonus + prof_bonus + item_bonus + armor_bonus_penalties + auto_bonus_prog_bonus;
-
-        return (armor_total, armor_bonus_penalties)
-    }
-
-    pub fn level_up_down(self: &mut Self, increase: i32) {
-        self.level += increase;
-        self.hp_info.calculate_max_hp(self.level, self.attributes.get_stat_val("con").expect("There should be a con stat"));
-        self.animal.hp_info.calculate_max_hp(self.level, self.animal.attributes.get_stat_val("con").expect("There should be a con stat"));
-    } 
-} */
+}

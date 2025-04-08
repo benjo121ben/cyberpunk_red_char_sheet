@@ -6,4 +6,28 @@
 
 body {
 	font-family: sans-serif;
+	cursor: default;
 }
+
+.base_div {
+
+}
+
+.columns {
+	display: flex;
+}
+
+.skill_list {
+	display: grid;
+	grid-template-columns: 3fr 1fr 0.5fr;
+
+	div:nth-child(1n) {
+		margin-right: 20px;
+	}
+}
+
+.center_div {
+
+}
+
+.combat_div {}

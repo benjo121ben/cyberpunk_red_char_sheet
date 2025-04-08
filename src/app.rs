@@ -9,7 +9,7 @@ use leptos_router::{
     StaticSegment,
 };
 
-use crate::char::Character;
+use crate::char::{Character, Skill};
 
 pub fn read_character_data_from_file<P: AsRef<Path>>(path: P) -> Result<Character, Box<dyn Error>> {
 
@@ -86,7 +86,7 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                 <HydrationScripts options/>
                 <MetaTags/>
             </head>
-            <body>
+            <body oncontextmenu="return false;">
                 <App/>
             </body>
         </html>
@@ -155,6 +155,8 @@ fn CharacterView(character_data: Character) -> impl IntoView {
         let _ = set_char_data(char_copy.clone()).await;
     });
 
+    provide_context(char_rw_signal);
+
     Effect::new(move |prev| {
         let _ = char_rw_signal.get();
         match prev {
@@ -170,10 +172,75 @@ fn CharacterView(character_data: Character) -> impl IntoView {
         <div class="base_div">
             <button on:click=move|_| { save_char_action.dispatch(()); }>TEST</button>
             <div class="columns">
-                <div class="skill_list"></div>
+                <div class="skill_list">
+                    <SkillList/>
+                </div>
                 <div class="center_div"></div>
                 <div class="combat_div"></div>
             </div>
         </div>
+    }
+}
+
+#[component]
+fn SkillList() -> impl IntoView {
+    let rw_char_signal = get_char_signal_from_ctx();
+    let skill_key_list_memo = Memo::new(move |_| {
+        let mut key_list = rw_char_signal.with(|c| c.skills.keys().cloned().collect::<Vec<String>>());
+        key_list.sort();
+        return key_list
+    });
+
+    view! {
+        <For
+            each=move||{skill_key_list_memo.get()}
+            key=|key: &String| key.clone()
+            children=move |key| {
+                view! {
+                    <SkillEntry key=key.clone()/>
+                }
+            }
+        /> 
+    }
+
+}
+
+#[component]
+fn SkillEntry(key: String) -> impl IntoView {
+    let char_signal = get_char_signal_from_ctx();
+    let key_clone = key.clone(); 
+    let skill_memo = Memo::new(move |_| char_signal.with(|c| c.skills.get(&key).expect("expect skill to exist in its own list").clone()));
+    let get_skill_value = move || {
+        let skill = skill_memo.get();
+        char_signal.with(|char| char.get_stat(&skill.stat.clone())) + skill.nr
+    };
+
+    let update_skill = move|val: i32| {
+        char_signal.update(|c| {
+            c.skills.get_mut(&key_clone).and_then(|skill| {
+                skill.nr += val;
+                Some(skill)
+            });
+        })
+    };
+
+    let update_skill_clone = update_skill.clone();
+
+    view! {
+        <div>{move || skill_memo.read().name.clone()}</div>
+        <div>{move || skill_memo.read().stat.to_uppercase().clone()}</div>
+        <div 
+            on:click=move|_| update_skill(1) 
+            on:contextmenu=move|_| update_skill_clone(-1)>
+                {get_skill_value}
+        </div>
+    }
+}
+
+fn get_char_signal_from_ctx() -> RwSignal<Character>{
+    let char_signal_opt: Option<RwSignal<Character>> = use_context();
+    match char_signal_opt {
+        Some(char_signal) => char_signal,
+        None => panic!("The character should have been provided at this point"),
     }
 }
