@@ -1,0 +1,92 @@
+[
+    {
+        "data": {
+            "description": "<p>A Cyberdeck with Hardened Circuitry cannot be rendered temporarily disabled, rendered inoperable, or destroyed by EMP effects like pulses, or Non-Black ICE Program Effects.</p>",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberdeck-hardware",
+        "flags": {
+            "importid": "v3TMBWSeFd0iAABB"
+        },
+        "name": "Hardened Circuitry",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p>A Cyberdeck with a KRASH Barrier is immune to any Program Effect that force the Netrunner to Jack Out, safely or unsafely. <strong>Takes 2 Hardware Option Slots.</strong></p>",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberdeck-hardware",
+        "flags": {
+            "importid": "iXMV6SqQ5IIBjef9"
+        },
+        "name": "KRASH Barrier",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p>A Cyberdeck with a DNA Lock can be locked and unlocked using a thumbprint, iris scan, blood sample, or any other biometric method desired. The method varies depending on the model of the DNA Lock. A locked Cyberdeck cannot be accessed without either its biometric key or a DV 17 Electronics/Security Tech Check. <strong>Takes 2 Hardware Option Slots.</strong></p>",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberdeck-hardware",
+        "flags": {
+            "importid": "wCwex6fJw1n9C8ES"
+        },
+        "name": "DNA Lock",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p>While installed on a Cyberdeck, a Backup Drive \"saves\" Non-Black ICE Attacker, Defender, or Booster Programs that are destroyed by pulling them into the Backup Drive the instant before they meet their end. As a Meat Action, a Netrunner can re-install all Programs \"saved\" by the Backup Drive onto their deck, if they have the Slots for them. If removed from a Cyberdeck, the Backup Drive erases its contents automatically. Restored Programs with once-per-Netrun restrictions and the like are restored in the exact state they were saved in, so you can't kill your own Armor to refresh it. Yeah, that means you. <strong>Takes 2 Hardware Option Slots.</strong></p>",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberdeck-hardware",
+        "flags": {
+            "importid": "cN6PwsgnMS9YBoe3"
+        },
+        "name": "Backup Drive",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p>A Cyberdeck with a Range Upgrade can connect to an access point from up to 8m away.</p>",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberdeck-hardware",
+        "flags": {
+            "importid": "hCLqXuYtGWMDD5Xg"
+        },
+        "name": "Range Upgrade",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p>A Cyberdeck with Insulated Wiring cannot catch fire or cause the user's clothing to catch fire as the result of a Program effect.</p>",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberdeck-hardware",
+        "flags": {
+            "importid": "bYydRPZ0FubjO6DX"
+        },
+        "name": "Insulated Wiring",
+        "type": "gear"
+    }
+]

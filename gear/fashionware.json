@@ -1,0 +1,128 @@
+[
+    {
+        "data": {
+            "description": "<p>Subdermal implant generates a constant LED readout of the current time and date visible through the skin.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 0,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "fashionware",
+        "flags": {
+            "importid": "ubbTHhpPz8tKeu2I"
+        },
+        "name": "Skinwatch",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Popularized by the media sensation UR, these thin silver lines run in circuit-like patterns across the body. Many people believe they act as a \"Faraday cage\" to protect you from radiation and EMP effects but so far there&rsquo;s no scientific backing to these claims. But they sure do look cool. Most people wear EMP Threading as a fashion statement.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 0,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "fashionware",
+        "flags": {
+            "importid": "ufyRHoStyjK7HUb8"
+        },
+        "name": "EMP Threading",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Dyes and pigments infused into the skin to permanently change its hue, the applications of which can range from hiding blemishes to the desire for neon-green skin. Pigments can optionally be temperature-sensitive or reactant to hormone changes in the body. <strong>A user with Chemskin and Techhair adds +2 to their Personal Grooming Skill for having both. (This bonus only applies once)</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 0,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "fashionware",
+        "flags": {
+            "importid": "kiSVXcQJdrdxxL9P"
+        },
+        "name": "Chemskin",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Color-light-emitting artificial hair. Hair can optionally be temperature sensitive, motorized to extend/retract, or reactant to hormone changes in the body. <strong>A user with Chemskin and Techhair adds +2 to their Personal Grooming Skill for having both. (This bonus only applies once.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 0,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "fashionware",
+        "flags": {
+            "importid": "ALruOvXzew0OnyX1"
+        },
+        "name": "Techhair",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>l Color-changing lenses implanted into the eye. Several patterns are also available. Lenses can optionally be temperature-sensitive or reactant to hormone changes in the body. Only one choice of color and pattern can be made, but the user can deactivate the color change at any time desired without an Action.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 0,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "fashionware",
+        "flags": {
+            "importid": "Q4osuPjfD4T8yjdP"
+        },
+        "name": "Shift Tacts",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Subdermal patches store light and project colored tattoos under the skin. The larger the piece, the more installations of this fashionware you need to complete it. <strong>A user with a three or more Light Tattoo installations adds +2 to their Wardrobe &amp; Style Skill. (This bonus only applies once.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 0,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "fashionware",
+        "flags": {
+            "importid": "vYv9tM7EoljA7gvD"
+        },
+        "name": "Light Tattoo",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Subdermal implant which generates a constant LED readout of pulse, temperature, respiration, blood sugar, etc. You can link your Biomonitor to your Agent to allow it to track your wellness.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 0,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "fashionware",
+        "flags": {
+            "importid": "HPzqiTxYfde7Z4Dh"
+        },
+        "name": "Biomonitor",
+        "type": "cyberware"
+    }
+]

@@ -1,0 +1,122 @@
+[
+    {
+        "data": {
+            "description": "<p><em>Anti-Program Attacker</em><br /><br />ATK(1) - DEF(0) - REZ(0)<br /><br />Does 3d6 REZ to a Non-Black ICE Program, or 2d6 REZ to a Black ICE Program.<br /><br /><em>Icon: A giant glowing white sledgehammer wielded by the Netrunner.</em></p>",
+            "legality": 0,
+            "price": 50,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "programs-attackers",
+        "flags": {
+            "importid": "BV7suXpii4CrFDsv"
+        },
+        "name": "Banhammer",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p><em>Anti-Personnel Attacker<br /><br /></em>ATK(0) - DEF(0) - REZ(0)<br /><br />Destroys a single Non-Black ICE Program installed on the Netrunner target's Cyberdeck at random.<br /><br /><em>Icon: Beam of neon green light shot from the Netrunner's finger.</em></p>",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "programs-attackers",
+        "flags": {
+            "importid": "g62CNLr3vOiDvbgj"
+        },
+        "name": "Poison Flatline",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p><em>Anti-Personnel Attacker</em><br />ATK(0) - DEF(0) - REZ(0)<br /><br />Enemy Netrunner's INT, REF, and DEX are each lowered by 1d6 for the next hour (minimum 1). The effects are largely psychosomatic and leave no permanent effects.<br /><br /><em>Icon: Chrome ball thrown by the Netrunner that sparks with electricity.</em></p>",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "programs-attackers",
+        "flags": {
+            "importid": "CWArFuEzbfffGvSV"
+        },
+        "name": "Nervescrub",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p><em>Anti-Personnel Attacker<br /></em><br />ATK(1) - DEF(0) - REZ(0)<br /><br />Does 1d6 Damage direct to a Netrunner's brain and lowers the amount of total NET Actions the Netrunner can accomplish on their next Turn by 1 (minimum 2).<br /><br /><em>Icon: A double helix comprised of flickering neon light appearing from the Netrunner's finger.<br /></em></p>",
+            "legality": 0,
+            "price": 50,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "programs-attackers",
+        "flags": {
+            "importid": "fGCTbiInPde6qojg"
+        },
+        "name": "Vrizzbolt",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p><em>Anti-Program Attacker</em><br /><br />ATK(1) - DEF(0) - REZ(0)<br /><br />Does 3d6 REZ to a Black ICE Program, or 2d6 REZ to a Non-Black ICE Program.<br /><br /><em>Icon: Glowing energy katana appearing from the Netrunner's hand.</em></p>",
+            "legality": 0,
+            "price": 50,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "programs-attackers",
+        "flags": {
+            "importid": "0GccCJsOaTjNr4Sj"
+        },
+        "name": "Sword",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p><em>Anti-Personnel Attacker<br /><br /></em>ATK(2) - DEF(0) - REZ(0)<br /><br />Enemy Netrunner cannot progress deeper into the Architecture or Jack Out safely for 1d6 Rounds (enemy Netrunner can still perform an unsafe Jack Out, though). Each copy of this Program can only be used once per Netrun.<br /><br /><em>Icon: A mass of sticky red goop fired from the Netrunner's hand.<br /></em></p>",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "programs-attackers",
+        "flags": {
+            "importid": "gtTk35uEkq1k63UN"
+        },
+        "name": "Superglue",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p><em>Anti-Personnel Attacker</em><br /><br />ATK(0) - DEF(0) - REZ(0)<br /><br />Enemy Netrunner is forcibly and unsafely Jacked Out of the Architecture, suffering the effect of all Rezzed enemy Black ICE they've encountered in the Architecture as they leave.<br /><br /><em>Icon: Cartoon stick of dynamite thrown by the Netrunner.</em></p>",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "programs-attackers",
+        "flags": {
+            "importid": "ukYlEolAbCFo6jfb"
+        },
+        "name": "DeckKRASH",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p><em>Anti-Personnel Attacker</em><br /><br />ATK(2) - DEF(0) - REZ(0)<br /><br />Does 2d6 Damage direct to the enemy Netrunner's brain. Unless insulated, their Cyberdeck catches fire along with their clothing. Until they spend a Meat Action to put themselves out, they take 2 damage to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.<br /><br /><em>Icon: Bolt of crimson fire launched from the Netrunner's hand.</em></p>",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "programs-attackers",
+        "flags": {
+            "importid": "HuiSoqDuhTbn91qW"
+        },
+        "name": "Hellbolt",
+        "type": "gear"
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "data": {
+            "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Stops the first successful Non-Black ICE Program Effect from dealing brain damage. After stopping this damage, the Shield Derezzes itself. Only 1 copy of this Program can be running at a time. Each copy of this Program can only be used once per Netrun.<br /><br /><em>Icon: Flickering silver energy barrier surrounding the Netrunner.</em></p>",
+            "legality": 0,
+            "price": 20,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "programs-defender",
+        "flags": {
+            "importid": "n8bZ2SPeaw8BIeCi"
+        },
+        "name": "Shield",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Lowers all brain damage you would receive by 4, as long as this Program remains Rezzed. Only 1 copy of this Program can be running at a time. Each copy of this Program can only be used once per Netrun.<br /><br /><em>Icon: Transparent golden armor worn by the Netrunner</em></p>",
+            "legality": 0,
+            "price": 50,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "programs-defender",
+        "flags": {
+            "importid": "CXIVzVTS0MqIags8"
+        },
+        "name": "Armor",
+        "type": "gear"
+    },
+    {
+        "data": {
+            "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Reduces the ATK of all Non-Black ICE Attacker Programs run against you to 0 as long as this Program remains Rezzed. Only 1 copy of this Program can be running at a time. Each copy of this Program can only be used once per Netrun.<br /><br /><em>Icon: A cloud of blinding, glowing, multi-colored lights swirling around the Netrunner</em></p>",
+            "legality": 0,
+            "price": 50,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "programs-defender",
+        "flags": {
+            "importid": "L5oM34M3aPXy5nep"
+        },
+        "name": "Flak",
+        "type": "gear"
+    }
+]

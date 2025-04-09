@@ -1,0 +1,344 @@
+[
+    {
+        "data": {
+            "description": "<p>Resembles a normal hand. If installed into a meat arm, a standard hand doesn't count towards the number of pieces of cyberware installed in a meat arm. Doesn't take up a Cyberarm Option Slot.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 2,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "dYszCVADb51aPg5k"
+        },
+        "name": "Standard Hand - base/req",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. Carbo-glass artificial fingernails that cut on a diagonal slice. A Light Melee Weapon (1d6 damage, 2 ROF) that can be successfully concealed without a Check. When wielded as a weapon, user can't hold anything in this arm's hand.<strong> Can be installed as the only piece of Cyberware in a meat arm.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 2,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "2oHvfLuJMFXaGX9E"
+        },
+        "name": "Scratchers",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. Cyberarm can be installed in an open socket or uninstalled with an Action. The first time you install a brand new Cyberarm, whether using a Quick Change Mount or otherwise, you always accrue Humanity Loss. Reattaching one you've already used before with a Quick Change Mount does not do this. Requires a Cyberarm.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 7,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "7CQ8fLnqfk7iSbQG"
+        },
+        "name": "Quick Change Mount",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. User, as an Action, can fire a rocket propelled grapple that will attach securely to any Thick cover up to 30m/yds away. Line can only support two times the user's body weight, and has 10 HP. The user negates the normal movement penalty for climbing when they climb this line, and can retract the line without an Action, including as they climb. When used as a grapple, user can't hold anything in this arm's hand. Ineffective as a weapon and cannot be used to make the Grab Action. Requires a Cyberarm.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "d97dBwDtiXoeeC6t"
+        },
+        "name": "Grapple Hand",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. A One-Handed Grenade Launcher with only a single grenade in its magazine that is incompatible with all Weapon Attachments except Smartgun Link is installed into the Cyberarm. Launcher can be successfully concealed without a Check and can be drawn and stowed without an Action. While the weapon is \"popped up,\" the user can't hold anything in this arm's hand. Requires a Cyberarm and takes 2 Option Slots.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 7,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "y5166eFOZFrCQp4f"
+        },
+        "name": "Popup Grenade Launcher",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. Camera in a popup in the user's shoulder that tracks independently of the user and records video and audio to an onboard Memory Chip or a linked Agent. Camera can be successfully concealed without a Check and can be drawn and stowed without an Action. <strong>Requires a Cyberarm and takes 2 Option Slots.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 7,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "MWjwrjGf0epTadJk"
+        },
+        "name": "Shoulder Cam",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. Neuralware Option. Subdermal plate under the palm allows user to make use of Smartguns. A cost-effective alternative to Interface Plugs. Can be installed as the only piece of Cyberware in a meat arm. <strong>Requires Neural Link and takes up a Neuralware Option Slot.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "oAnvq041fv5bL8yw"
+        },
+        "name": "Subdermal Grip",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. Cyberdeck permanently installed into the user's Cyberarm. A Cyberdeck must be provided by the user at the time of installation. In addition to never accidentally misplacing your Cyberdeck, integration into a Cyberarm gives any Cyberdeck 1 extra slot that can be used for either Programs or Hardware. This is a permanent upgrade. Attempting to uninstall the Cyberdeck from the Cyberarm breaks it beyond repair, but any Programs or Hardware on it could be easily recovered. <strong>Requires a Cyberarm and takes 3 Option Slots.</strong> Cyberdeck still requires Interface Plugs and Neural Link to be operated by the user.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "YUTZTE2OaslcDRSR"
+        },
+        "name": "Cyberdeck",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. A Bulletproof Shield which is concealed while it is folded inside the Cyberarm. It can be drawn or stowed without an Action, provided that the shield has more than 0 HP. When extended, you can't use the Cyberarm to do anything else other than serve as a shield, and you can&rsquo;t hold anything in that Cyberarm's hand other than the shield. The Bulletproof Shield installed inside your Cyberarm is easily removable and replaceable with another Bulletproof Shield, for ease of cleaning and repair. <strong>Requires a Cyberarm and takes 3 Option Slots.</strong> See Using Shields in the Combat Section on pg. 183.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 7,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "HS12eDHvIPBcG2w1"
+        },
+        "name": "Popup Shield",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. Armored knuckles. A Medium Melee Weapon (2d6 damage, 2 ROF) that can be successfully concealed without a Check. When wielded as a weapon, user can't hold anything in this arm's hand. Can be installed as the only piece of Cyberware in a meat arm.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "338Tg1kCILA6CXIQ"
+        },
+        "name": "Big Knucks",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. Extendable Carbo-glass claws in the knuckles. A Heavy Melee Weapon (3d6 damage, 2 ROF) that can be successfully concealed without a Check. When wielded as a weapon, user can't hold anything in this arm's hand. <strong>Can be installed as the only piece of Cyberware in a meat arm.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 7,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "BZvnf4wpxzmNSo5Z"
+        },
+        "name": "Wolvers",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. Fingers contain screwdriver, wrench, small drill, etc. Never be without your Techtool! <strong>Can be installed as the only piece of Cyberware in a meat arm.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "gJKZqGWqAKzOUaI3"
+        },
+        "name": "Tool Hand",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. Scanner diagnoses a wide variety of machinery and electronics, assisting the user in repairs or other technical work. User adds +2 to their Basic Tech, Cybertech, Land Vehicle Tech, Sea Vehicle Tech, Air Vehicle Tech, Electronics/ Security Tech, and Weaponstech Skills. Requires a Cyberarm and takes 2 Option Slots. <strong>Multiple installations of this option provide user no additional benefit.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 7,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "GGwf9Sz1eKkwxnJR"
+        },
+        "name": "Techscanner",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. Extendable Carbo-glass fingernails. A Medium Melee Weapon (2d6 damage, 2 ROF) that can be successfully concealed without a Check. When wielded as a weapon, user can't hold anything in this arm's hand. <strong>Can be installed as the only piece of Cyberware in a meat arm.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "pPzl4KVMnkNKKmG8"
+        },
+        "name": "Rippers",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. Scanner with external probes and contacts diagnoses injury and illness, assisting user in medical emergencies not requiring the Surgery Skill. User adds +2 to their First Aid and Paramedic Skills. Requires a Cyberarm and takes 2 Option Slots. Multiple installations of this option provide user no additional benefit.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 7,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "NYBKOLCyIEKoq8y3"
+        },
+        "name": "Medscanner",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option A One-Handed Light, Medium, or Heavy Melee Weapon (that need not be concealable before its installation) is installed in a Cyberarm so that it can be successfully concealed without a roll, and can be drawn and stowed without an Action. While the weapon is \"popped up,\" the user can't hold anything in this arm's hand. Requires a Cyberarm and takes 2 Option Slots.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 7,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "oteUkUqaqSFNvBpO"
+        },
+        "name": "Popup Melee Weapon",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. A One-Handed Ranged Weapon (that need not be concealable before its installation) provided by the user is permanently installed into the Cyberarm (along with any weapon attachments attached to it) so that it can be successfully concealed without a Check, and can be drawn and stowed without an Action. While the weapon is &ldquo;popped up,&rdquo; the user can't hold anything in this arm's hand. <strong>Requires a Cyberarm and takes 2 Option Slots.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 7,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "h7Y8TBjhbO4HIcp1"
+        },
+        "name": "Popup Ranged Weapon",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Replacement arm. Does not have to be paired. A Cyberarm has 4 Option Slots for Cyberarm or Cyberlimb Options, and each comes pre-installed with a Standard Hand that doesn't cost any Humanity Loss or take up a Cyberarm Option Slot.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 7,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "VoPkWzj2yinLHYHQ"
+        },
+        "name": "Cyberarm - base/req",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberarm Option. Monofilament whip implanted in the user's thumb. A Medium Melee Weapon (2d6 damage, 2 ROF) that can be successfully concealed without a Check. When wielded as a weapon, user can't hold anything in this arm's hand. <strong>Can be installed as the only piece of Cyberware in a meat arm.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberarm",
+        "flags": {
+            "importid": "9fOKkPsSBaArlDUt"
+        },
+        "name": "Slice \u00e2\u20ac\u02dcN Dice",
+        "type": "cyberware"
+    }
+]

@@ -1,0 +1,92 @@
+[
+    {
+        "data": {
+            "description": "<p>Twin flattened antennae protruding from the user's head improving their Cyberaudio Suite, sometimes referred to as \"Rabbit Ears.\" User can install up to 5 additional Cyberaudio Options into their Cyberaudio Suite. User can only have one Sensor Array installed. <strong>Requires Cyberaudio Suite but doesn't take up a Cyberaudio Option Slot.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 1000,
+            "psychosis": 14,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "borgware",
+        "flags": {
+            "importid": "bS495bCSZg4NyTsw"
+        },
+        "name": "Sensor Array",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>A heavily enhanced skeleton and support structure with even more hydraulic and myomar muscles.</p>\n<p>&bull; User increases their BODY to 14.</p>\n<p>&bull; This increase in BODY changes a Character's HP and Death Save.</p>\n<p>&bull; This cannot increase the user's BODY to 15 or higher.</p>\n<p>&bull; <strong>Installation requires BODY 8 and Two Grafted Muscle and Bone Lace.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 5000,
+            "psychosis": 14,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "borgware",
+        "flags": {
+            "importid": "Nu6J3F5wf4JY7uZq"
+        },
+        "name": "Implanted Linear Frame \u00c3\u0178 (Beta)",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>User can mount 2 Cyberarms under first set of arms. User can only have one Artificial Shoulder Mount installed.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 1000,
+            "psychosis": 14,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "borgware",
+        "flags": {
+            "importid": "s0cNCrH3ZlKdEM7a"
+        },
+        "name": "Artificial Shoulder Mount",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>User can mount up to 5 additional Cybereyes into the MultiOptic Mount. <strong>Cybereyes sold and installed separately.</strong> User can only have one MultiOptic Mount installed.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 1000,
+            "psychosis": 14,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "borgware",
+        "flags": {
+            "importid": "Vrm0r5ECWqw3kscw"
+        },
+        "name": "MultiOptic Mount",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>An enhanced skeleton and support structure with hydraulic and myomar muscles.</p>\n<p>&bull; User increases their BODY to 12.</p>\n<p>&bull; This increase in BODY changes a Character's HP and Death Save.</p>\n<p>&bull; This cannot increase the user's BODY to 13 or higher.</p>\n<p>&bull; <strong>Installation requires BODY 6 and Grafted Muscle and Bone Lace.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 1000,
+            "psychosis": 14,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "borgware",
+        "flags": {
+            "importid": "55PXTVkrs6MDXRTA"
+        },
+        "name": "Implanted Linear Frame \u00e2\u02c6\u2018 (Sigma)",
+        "type": "cyberware"
+    }
+]

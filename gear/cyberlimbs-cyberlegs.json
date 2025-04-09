@@ -1,0 +1,200 @@
+[
+    {
+        "data": {
+            "description": "<p>Cyberlimb Option. Plastic coating for Cyberlimb. Available in wide variety of colors and patterns. <strong>Requires a Cyberarm or Cyberleg but does not take an Option Slot.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 0,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberlegs",
+        "flags": {
+            "importid": "ddZaIYgMOcyc4VsK"
+        },
+        "name": "Plastic Covering - limb option",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Thin webbing between toes. Negates movement penalty when swimming. <strong>Requires Two Cyberlegs and must be paired.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberlegs",
+        "flags": {
+            "importid": "kpl6xuJsXtAWYGbV"
+        },
+        "name": "Web Foot",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Inline skates built into feet. Can be concealed. Increases movement by 6m/yds when using Run Action. <strong>Requires two Cyberlegs and must be paired.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberlegs",
+        "flags": {
+            "importid": "30MwVnv7LCaRnBD5"
+        },
+        "name": "Skate Foot",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberlimb Option. Artificial skin coating for Cyberlimb. <strong>Requires a Cyberarm or Cyberleg but does not take an Option Slot.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 0,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberlegs",
+        "flags": {
+            "importid": "aqKMid41h47VZ7eI"
+        },
+        "name": "Realskinn\u00e2\u201e\u00a2 Covering - limb option",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberleg Option. Feet are coated with state-of-the-art traction material. The user negates the normal movement penalty for climbing. <strong>Requires two Cyberlegs and must be paired.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberlegs",
+        "flags": {
+            "importid": "MUV7Tkmf3EfBt5AZ"
+        },
+        "name": "Grip Foot",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberlimb Option. Shiny metallic coating for Cyberlimb. +2 to Wardrobe and Style. This bonus only applies once.<strong> Requires a Cyberarm or Cyberleg but does not take an Option Slot.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 100,
+            "psychosis": 0,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberlegs",
+        "flags": {
+            "importid": "1tf3li53GeFYDJSg"
+        },
+        "name": "Superchrome\u00c2\u00ae Covering - limb option",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Replacement leg. Does not have to be paired.<strong> A Cyberleg has 3 Option Slots for Cyberleg or Cyberlimb Options and each comes pre-installed with a Standard Foot that doesn't cost any Humanity Loss or take up a Cyberleg Option Slot. </strong>Most Cyberleg options must be paired to work properly (purchased twice and installed in two different Cyberlegs on a user. Humanity Loss is calculated separately for each purchase).</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 0,
+            "psychosis": 0,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberlegs",
+        "flags": {
+            "importid": "sv8W06YYYxiMWaiP"
+        },
+        "name": "Cyberleg - base/req",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Blade mounted in foot. Light Melee Weapon. Can be concealed without a Check. <strong>Can be installed as the only piece of Cyberware in a meat leg.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberlegs",
+        "flags": {
+            "importid": "sWDjsyOfkyp2JLYz"
+        },
+        "name": "Talon Foot",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Resembles a normal foot. If installed into a meat leg, a Standard Foot doesn't count towards the number of pieces of cyberware installed in a meat leg. Doesn't take up a Cyberleg Option Slot.</p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 0,
+            "psychosis": 0,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberlegs",
+        "flags": {
+            "importid": "J80bofxiKAQ46z7w"
+        },
+        "name": "Standard Foot - base/req",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Cyberlimb Option. Cyberlimb and installed options cannot be rendered inoperable by EMP effects, like Microwaver pulses, or Non-Black ICE Program effects. <strong>Requires Cyberarm or Cyberleg.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 1000,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberlegs",
+        "flags": {
+            "importid": "wbnfTuwyIdEPn5f2"
+        },
+        "name": "Hardened Shielding - limb option",
+        "type": "cyberware"
+    },
+    {
+        "data": {
+            "description": "<p>Hydraulics in legs. Negates movement penalty when jumping. <strong>Requires two Cyberlegs, takes up 2 Option Slots, and must be paired.</strong></p>",
+            "hackable": false,
+            "internal": false,
+            "legality": 0,
+            "price": 500,
+            "psychosis": 3,
+            "rarity": 0
+        },
+        "effects": [],
+        "file": "cyberlimbs-cyberlegs",
+        "flags": {
+            "importid": "t4SiU3SATfRnWNfx"
+        },
+        "name": "Jump Booster",
+        "type": "cyberware"
+    }
+]
