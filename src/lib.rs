@@ -1,5 +1,6 @@
 pub mod journal;
 pub mod app;
+pub mod gear;
 pub mod char;
 
 #[cfg(feature = "hydrate")]

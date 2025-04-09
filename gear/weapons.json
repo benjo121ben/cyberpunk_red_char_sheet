@@ -19,7 +19,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Sniper Rifle",
         "type": "weapons"
     },
@@ -43,7 +42,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Light Melee Weapon",
         "type": "weapons"
     },
@@ -67,7 +65,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Heavy Melee Weapon",
         "type": "weapons"
     },
@@ -91,7 +88,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Medium Pistol",
         "type": "weapons"
     },
@@ -115,7 +111,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Bows & Crossbows",
         "type": "weapons"
     },
@@ -139,7 +134,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Heavy SMG",
         "type": "weapons"
     },
@@ -163,7 +157,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Very Heavy Melee Weapon",
         "type": "weapons"
     },
@@ -187,7 +180,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Assault Rifle",
         "type": "weapons"
     },
@@ -211,7 +203,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Shotgun",
         "type": "weapons"
     },
@@ -235,7 +226,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Rocket Launcher",
         "type": "weapons"
     },
@@ -259,7 +249,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Heavy Pistol",
         "type": "weapons"
     },
@@ -283,7 +272,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Medium Melee Weapon",
         "type": "weapons"
     },
@@ -307,7 +295,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Grenade Launcher",
         "type": "weapons"
     },
@@ -331,7 +318,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "SMG",
         "type": "weapons"
     },
@@ -355,7 +341,6 @@
         },
         "effects": [],
         "file": "weapons",
-        "flags": {},
         "name": "Very Heavy Pistol",
         "type": "weapons"
     }

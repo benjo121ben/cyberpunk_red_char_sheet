@@ -8,9 +8,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "CAgDogMKPCpcPMjK"
-        },
         "name": "Glow Stick",
         "type": "gear"
     },
@@ -23,9 +20,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "Vj9ViSo1GjwPkcCG"
-        },
         "name": "Linear Frame \u00e2\u02c6\u2018 (Sigma)",
         "type": "gear"
     },
@@ -38,9 +32,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "lVVyR8HBnP7cZ61g"
-        },
         "name": "Tech Bag",
         "type": "gear"
     },
@@ -53,9 +44,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "jWlRi1oCZQZvV8dm"
-        },
         "name": "Chemical Analyzer",
         "type": "gear"
     },
@@ -68,9 +56,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "tWE8AScVqxQ0tl27"
-        },
         "name": "Linear Frame \u00c3\u0178 (Beta)",
         "type": "gear"
     },
@@ -83,9 +68,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "PVXb9f4Obs2SRkA0"
-        },
         "name": "MRE",
         "type": "gear"
     },
@@ -98,9 +80,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "x7qnsQyLYdmzmBdp"
-        },
         "name": "Food Stick",
         "type": "gear"
     },
@@ -113,9 +92,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "AcGIlpo2EE6wjhMV"
-        },
         "name": "Inflatable Bed & Sleep-bag",
         "type": "gear"
     },
@@ -128,9 +104,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "vWjaQGpDcTzB2acW"
-        },
         "name": "Binoculars",
         "type": "gear"
     },
@@ -143,9 +116,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "WHFSviGFJKW419Uu"
-        },
         "name": "Audio Recorder",
         "type": "gear"
     },
@@ -158,9 +128,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "eCIZBSpAJC6CBHJ5"
-        },
         "name": "Radio Scanner/Music Player",
         "type": "gear"
     },
@@ -173,9 +140,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "RegdzHnC8s1uPRK1"
-        },
         "name": "Techscanner",
         "type": "gear"
     },
@@ -188,9 +152,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "RjdGoWhZ4tkXTtoh"
-        },
         "name": "Glow Paint",
         "type": "gear"
     },
@@ -203,9 +164,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "WadEIjt0l5lL7kPz"
-        },
         "name": "Video Camera",
         "type": "gear"
     },
@@ -218,9 +176,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "HK9SepYIWVfI20fn"
-        },
         "name": "Personal CarePak",
         "type": "gear"
     },
@@ -233,9 +188,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "rE7P93o65d7FJaPT"
-        },
         "name": "Rope (60m/yds)",
         "type": "gear"
     },
@@ -248,9 +200,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "E1mvQ1UXF0hVBTrY"
-        },
         "name": "Carryall",
         "type": "gear"
     },
@@ -263,9 +212,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "JYmpEh5cEq1jg45U"
-        },
         "name": "Tent and Camping Equipment",
         "type": "gear"
     },
@@ -278,9 +224,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "3kE5Xrt35gspzC0b"
-        },
         "name": "Pocket Amplifier",
         "type": "gear"
     },
@@ -293,9 +236,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "d0OnlTDI1Xy6CtjN"
-        },
         "name": "Drum Synthesizer",
         "type": "gear"
     },
@@ -308,9 +248,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "BPNKmPCZgBevhu7n"
-        },
         "name": "Scrambler/Descrambler",
         "type": "gear"
     },
@@ -323,9 +260,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "P4YogC3YuZ1wvkNe"
-        },
         "name": "Disposable Cell Phone:",
         "type": "gear"
     },
@@ -338,9 +272,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "3T79aIYWnuNI8rHk"
-        },
         "name": "Radar Detector",
         "type": "gear"
     },
@@ -353,9 +284,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "JJxRwWCvc7ioGuYA"
-        },
         "name": "Duct Tape",
         "type": "gear"
     },
@@ -368,9 +296,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "kLnPWton1DG2A2L0"
-        },
         "name": "Grapple Gun",
         "type": "gear"
     },
@@ -383,9 +308,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "WfSLuHurNFBtebTL"
-        },
         "name": "Agent",
         "type": "gear"
     },
@@ -398,9 +320,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "x6aHlv0o7pOGG9IZ"
-        },
         "name": "Cryotank",
         "type": "gear"
     },
@@ -413,9 +332,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "MvkaTu7KS5ryEvYz"
-        },
         "name": "Flashlight",
         "type": "gear"
     },
@@ -428,9 +344,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "3UNLs8SyURaZ1Pxg"
-        },
         "name": "Computer",
         "type": "gear"
     },
@@ -443,9 +356,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "lXOOGalpDflxM6tl"
-        },
         "name": "Airhypo",
         "type": "gear"
     },
@@ -458,9 +368,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "HP6qFkJ7KDmSkGoT"
-        },
         "name": "Homing Tracer",
         "type": "gear"
     },
@@ -473,9 +380,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "s3g68gySgy3uf4r5"
-        },
         "name": "Virtuality Goggles",
         "type": "gear"
     },
@@ -488,9 +392,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "u5p59imSTZSyYPAE"
-        },
         "name": "Medscanner",
         "type": "gear"
     },
@@ -503,9 +404,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "E1pEoNles0GwXjq1"
-        },
         "name": "Bug Detector",
         "type": "gear"
     },
@@ -518,9 +416,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "5NKBzPTJwa3UgTtU"
-        },
         "name": "Smart Glasses",
         "type": "gear"
     },
@@ -533,9 +428,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "qmmBmWeQ5GQPPNJ8"
-        },
         "name": "Auto Level Dampening Ear Protectors",
         "type": "gear"
     },
@@ -548,9 +440,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "FVorbm3WhKp1bnTM"
-        },
         "name": "Lock Picking Set",
         "type": "gear"
     },
@@ -563,9 +452,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "emKHPJILdHrI3c1U"
-        },
         "name": "Anti-Smog Breathing Mask",
         "type": "gear"
     },
@@ -578,9 +464,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "T8M5huOz17svvP3z"
-        },
         "name": "Techtool",
         "type": "gear"
     },
@@ -593,9 +476,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "uGJ0F43O7Igt0Nz1"
-        },
         "name": "Vial of Poison",
         "type": "gear"
     },
@@ -608,9 +488,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "elUPhWc7Bt3EXWcW"
-        },
         "name": "Road Flare",
         "type": "gear"
     },
@@ -623,9 +500,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "Mww35qQMXyGGODUw"
-        },
         "name": "Radio Communicator",
         "type": "gear"
     },
@@ -638,9 +512,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "KNCXmrfbVJtfAaT4"
-        },
         "name": "Cyberdeck (Excellent Quality)",
         "type": "gear"
     },
@@ -653,9 +524,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "ZW0x93MCI8nOjCoL"
-        },
         "name": "Cyberdeck (Standard Quality):",
         "type": "gear"
     },
@@ -668,9 +536,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "F2ViWaPp2ZT2CM3s"
-        },
         "name": "Handcuffs",
         "type": "gear"
     },
@@ -683,9 +548,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "cbfquq9S4PRUEhd9"
-        },
         "name": "Cryopump",
         "type": "gear"
     },
@@ -698,9 +560,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "irQnRY7x9wcvVjCz"
-        },
         "name": "Memory Chips",
         "type": "gear"
     },
@@ -713,9 +572,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "VGOUW0janUe49kBY"
-        },
         "name": "Vial of Biotoxin",
         "type": "gear"
     },
@@ -728,9 +584,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "yXEuHNaKV29z0vyV"
-        },
         "name": "Electric Guitar or another Instrument",
         "type": "gear"
     },
@@ -743,9 +596,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "l5i7MwTNuBvnSzAb"
-        },
         "name": "Medtech Bag",
         "type": "gear"
     },
@@ -758,9 +608,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "vxG5pHavDObJfcGx"
-        },
         "name": "Kibble Pack",
         "type": "gear"
     },
@@ -773,9 +620,6 @@
         },
         "effects": [],
         "file": "items",
-        "flags": {
-            "importid": "zqXHmXlFulXbrW6A"
-        },
         "name": "Cyberdeck (Poor Quality)",
         "type": "gear"
     }

@@ -11,9 +11,6 @@
         },
         "effects": [],
         "file": "cyberaudio",
-        "flags": {
-            "importid": "JuAQ1ccqE0ointUB"
-        },
         "name": "Bug Detector",
         "type": "cyberware"
     },
@@ -29,9 +26,6 @@
         },
         "effects": [],
         "file": "cyberaudio",
-        "flags": {
-            "importid": "NyBAey0pThy3Ccz0"
-        },
         "name": "Internal Agent",
         "type": "cyberware"
     },
@@ -47,9 +41,6 @@
         },
         "effects": [],
         "file": "cyberaudio",
-        "flags": {
-            "importid": "BT0B2FMugZwBb2BB"
-        },
         "name": "Radar Detector",
         "type": "cyberware"
     },
@@ -65,9 +56,6 @@
         },
         "effects": [],
         "file": "cyberaudio",
-        "flags": {
-            "importid": "Fx1yhwtvLKlFT4c9"
-        },
         "name": "Radio Scanner/ Music Player",
         "type": "cyberware"
     },
@@ -83,9 +71,6 @@
         },
         "effects": [],
         "file": "cyberaudio",
-        "flags": {
-            "importid": "Ha2kiIsTT32Qmu8l"
-        },
         "name": "Homing Tracer",
         "type": "cyberware"
     },
@@ -101,9 +86,6 @@
         },
         "effects": [],
         "file": "cyberaudio",
-        "flags": {
-            "importid": "g6GZ6vI2hQ0J6ETD"
-        },
         "name": "Level Damper",
         "type": "cyberware"
     },
@@ -119,9 +101,6 @@
         },
         "effects": [],
         "file": "cyberaudio",
-        "flags": {
-            "importid": "LyQS9JMB2UVcckRj"
-        },
         "name": "Voice Stress Analyzer",
         "type": "cyberware"
     },
@@ -137,9 +116,6 @@
         },
         "effects": [],
         "file": "cyberaudio",
-        "flags": {
-            "importid": "IS7Jh1aiqENaxd2b"
-        },
         "name": "Scrambler Descrambler",
         "type": "cyberware"
     },
@@ -155,9 +131,6 @@
         },
         "effects": [],
         "file": "cyberaudio",
-        "flags": {
-            "importid": "Td5zRptWq0rwDqzS"
-        },
         "name": "Amplified Hearing",
         "type": "cyberware"
     },
@@ -173,9 +146,6 @@
         },
         "effects": [],
         "file": "cyberaudio",
-        "flags": {
-            "importid": "8llvxAUQtSUdLX2M"
-        },
         "name": "Cyberaudio Suite",
         "type": "cyberware"
     },
@@ -191,9 +161,6 @@
         },
         "effects": [],
         "file": "cyberaudio",
-        "flags": {
-            "importid": "NzlKBdDm7ldxvWGH"
-        },
         "name": "Radio Communicator",
         "type": "cyberware"
     },
@@ -209,9 +176,6 @@
         },
         "effects": [],
         "file": "cyberaudio",
-        "flags": {
-            "importid": "Nbqe0uKJwXHfdYiF"
-        },
         "name": "Audio Recorder",
         "type": "cyberware"
     }

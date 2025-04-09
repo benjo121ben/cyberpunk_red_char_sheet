@@ -11,9 +11,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "xplzgaeMjwX90SE8"
-        },
         "name": "Mr. Studd\u00e2\u201e\u00a2 Sexual Implant",
         "type": "cyberware"
     },
@@ -29,9 +26,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "TKKCINI6tvu4ZqnB"
-        },
         "name": "Contraceptive Implant",
         "type": "cyberware"
     },
@@ -47,9 +41,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "f1A6FWNOMA0m9rDj"
-        },
         "name": "Enhanced Antibodies",
         "type": "cyberware"
     },
@@ -65,9 +56,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "EsY66IPqGkyMJzWk"
-        },
         "name": "Vampyres",
         "type": "cyberware"
     },
@@ -83,9 +71,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "I0KP4zUL8zi7TkFq"
-        },
         "name": "Gills",
         "type": "cyberware"
     },
@@ -101,9 +86,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "Wz7BWj1Zchmlo703"
-        },
         "name": "Grafted Muscle and Bone Lace",
         "type": "cyberware"
     },
@@ -119,9 +101,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "mJk0GWVuLATZ5H0E"
-        },
         "name": "Midnight Lady\u00e2\u201e\u00a2 Sexual Implant",
         "type": "cyberware"
     },
@@ -137,9 +116,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "IQzsiB6N1VO4t7C1"
-        },
         "name": "Independent Air Supply",
         "type": "cyberware"
     },
@@ -155,9 +131,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "b45lz6Z9AVLo8UXa"
-        },
         "name": "AudioVox",
         "type": "cyberware"
     },
@@ -173,9 +146,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "ZfZfqHQdFdTNg5iv"
-        },
         "name": "Cybersnake",
         "type": "cyberware"
     },
@@ -191,9 +161,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "28f0uRAZkExmKJeR"
-        },
         "name": "Nasal Filters",
         "type": "cyberware"
     },
@@ -209,9 +176,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "MMQnhWqvuI9zBUHA"
-        },
         "name": "Radar/Sonar Implant",
         "type": "cyberware"
     },
@@ -227,9 +191,6 @@
         },
         "effects": [],
         "file": "internal-body-cyberware",
-        "flags": {
-            "importid": "FjU3s2wlFXayvUfn"
-        },
         "name": "Toxin Binders",
         "type": "cyberware"
     }

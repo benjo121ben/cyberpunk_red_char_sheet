@@ -11,9 +11,6 @@
         },
         "effects": [],
         "file": "borgware",
-        "flags": {
-            "importid": "bS495bCSZg4NyTsw"
-        },
         "name": "Sensor Array",
         "type": "cyberware"
     },
@@ -29,9 +26,6 @@
         },
         "effects": [],
         "file": "borgware",
-        "flags": {
-            "importid": "Nu6J3F5wf4JY7uZq"
-        },
         "name": "Implanted Linear Frame \u00c3\u0178 (Beta)",
         "type": "cyberware"
     },
@@ -47,9 +41,6 @@
         },
         "effects": [],
         "file": "borgware",
-        "flags": {
-            "importid": "s0cNCrH3ZlKdEM7a"
-        },
         "name": "Artificial Shoulder Mount",
         "type": "cyberware"
     },
@@ -65,9 +56,6 @@
         },
         "effects": [],
         "file": "borgware",
-        "flags": {
-            "importid": "Vrm0r5ECWqw3kscw"
-        },
         "name": "MultiOptic Mount",
         "type": "cyberware"
     },
@@ -83,9 +71,6 @@
         },
         "effects": [],
         "file": "borgware",
-        "flags": {
-            "importid": "55PXTVkrs6MDXRTA"
-        },
         "name": "Implanted Linear Frame \u00e2\u02c6\u2018 (Sigma)",
         "type": "cyberware"
     }

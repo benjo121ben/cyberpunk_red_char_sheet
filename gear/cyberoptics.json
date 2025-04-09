@@ -11,9 +11,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "hCeClMAp7qdzbPNi"
-        },
         "name": "Anti-Dazzle",
         "type": "cyberware"
     },
@@ -29,9 +26,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "yGDOTziZc5zx2gaP"
-        },
         "name": "TeleOptics",
         "type": "cyberware"
     },
@@ -47,9 +41,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "6U6QgBf8RPp2KX4J"
-        },
         "name": "Color Shift",
         "type": "cyberware"
     },
@@ -65,9 +56,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "7u0SteXJpS4P4dcC"
-        },
         "name": "Image Enhance",
         "type": "cyberware"
     },
@@ -83,9 +71,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "lDjfky0ifrLo5tVB"
-        },
         "name": "Cybereye - Base/Req.",
         "type": "cyberware"
     },
@@ -101,9 +86,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "EDx6m23YDh4vDiSm"
-        },
         "name": "Dartgun",
         "type": "cyberware"
     },
@@ -119,9 +101,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "SaWL2AdTW1SlEjtX"
-        },
         "name": "MicroVideo",
         "type": "cyberware"
     },
@@ -137,9 +116,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "8UhaKoy2LMTgL5ku"
-        },
         "name": "Virtuality",
         "type": "cyberware"
     },
@@ -155,9 +131,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "nSiETKj7Dnqc3s82"
-        },
         "name": "Chyron",
         "type": "cyberware"
     },
@@ -173,9 +146,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "HT8CNQGlcXFLhogR"
-        },
         "name": "Low Light/ Infrared/ UV",
         "type": "cyberware"
     },
@@ -191,9 +161,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "D7ZQKEe3e1tsQZ7V"
-        },
         "name": "Targeting Scope",
         "type": "cyberware"
     },
@@ -209,9 +176,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "ZWlHLRr566EHcHmU"
-        },
         "name": "Radiation Detector",
         "type": "cyberware"
     },
@@ -227,9 +191,6 @@
         },
         "effects": [],
         "file": "cyberoptics",
-        "flags": {
-            "importid": "hhSFZZ1MwP7aqVUy"
-        },
         "name": "MicroOptics",
         "type": "cyberware"
     }

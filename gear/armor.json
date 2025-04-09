@@ -8,7 +8,6 @@
         },
         "effects": [],
         "file": "armor",
-        "flags": {},
         "name": "Leathers",
         "type": "gear"
     },
@@ -21,7 +20,6 @@
         },
         "effects": [],
         "file": "armor",
-        "flags": {},
         "name": "Kevlar\u00c2\u00ae",
         "type": "gear"
     },
@@ -34,7 +32,6 @@
         },
         "effects": [],
         "file": "armor",
-        "flags": {},
         "name": "Light Armorjack",
         "type": "gear"
     },
@@ -47,7 +44,6 @@
         },
         "effects": [],
         "file": "armor",
-        "flags": {},
         "name": "Bodyweight Suit",
         "type": "gear"
     },
@@ -60,7 +56,6 @@
         },
         "effects": [],
         "file": "armor",
-        "flags": {},
         "name": "Medium Armorjack",
         "type": "gear"
     },
@@ -73,7 +68,6 @@
         },
         "effects": [],
         "file": "armor",
-        "flags": {},
         "name": "Heavy Armorjack",
         "type": "gear"
     },
@@ -86,7 +80,6 @@
         },
         "effects": [],
         "file": "armor",
-        "flags": {},
         "name": "Flak",
         "type": "gear"
     },
@@ -99,7 +92,6 @@
         },
         "effects": [],
         "file": "armor",
-        "flags": {},
         "name": "Metalgear",
         "type": "gear"
     },
@@ -112,7 +104,6 @@
         },
         "effects": [],
         "file": "armor",
-        "flags": {},
         "name": "Bulletproof Shield",
         "type": "gear"
     }

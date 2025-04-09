@@ -8,9 +8,6 @@
         },
         "effects": [],
         "file": "cyberdeck-hardware",
-        "flags": {
-            "importid": "v3TMBWSeFd0iAABB"
-        },
         "name": "Hardened Circuitry",
         "type": "gear"
     },
@@ -23,9 +20,6 @@
         },
         "effects": [],
         "file": "cyberdeck-hardware",
-        "flags": {
-            "importid": "iXMV6SqQ5IIBjef9"
-        },
         "name": "KRASH Barrier",
         "type": "gear"
     },
@@ -38,9 +32,6 @@
         },
         "effects": [],
         "file": "cyberdeck-hardware",
-        "flags": {
-            "importid": "wCwex6fJw1n9C8ES"
-        },
         "name": "DNA Lock",
         "type": "gear"
     },
@@ -53,9 +44,6 @@
         },
         "effects": [],
         "file": "cyberdeck-hardware",
-        "flags": {
-            "importid": "cN6PwsgnMS9YBoe3"
-        },
         "name": "Backup Drive",
         "type": "gear"
     },
@@ -68,9 +56,6 @@
         },
         "effects": [],
         "file": "cyberdeck-hardware",
-        "flags": {
-            "importid": "hCLqXuYtGWMDD5Xg"
-        },
         "name": "Range Upgrade",
         "type": "gear"
     },
@@ -83,9 +68,6 @@
         },
         "effects": [],
         "file": "cyberdeck-hardware",
-        "flags": {
-            "importid": "bYydRPZ0FubjO6DX"
-        },
         "name": "Insulated Wiring",
         "type": "gear"
     }

@@ -11,9 +11,6 @@
         },
         "effects": [],
         "file": "neuralware",
-        "flags": {
-            "importid": "ygquHu1h2k8WfTkp"
-        },
         "name": "Olfactory Boost",
         "type": "cyberware"
     },
@@ -29,9 +26,6 @@
         },
         "effects": [],
         "file": "neuralware",
-        "flags": {
-            "importid": "ZhgDElOqwIrW6K6z"
-        },
         "name": "Tactile Boost",
         "type": "cyberware"
     },
@@ -47,9 +41,6 @@
         },
         "effects": [],
         "file": "neuralware",
-        "flags": {
-            "importid": "cCnAJhtcpXZDOXFb"
-        },
         "name": "Interface Plugs",
         "type": "cyberware"
     },
@@ -65,9 +56,6 @@
         },
         "effects": [],
         "file": "neuralware",
-        "flags": {
-            "importid": "h4rgRsweSUdA0Zmn"
-        },
         "name": "Memory Chip",
         "type": "cyberware"
     },
@@ -83,9 +71,6 @@
         },
         "effects": [],
         "file": "neuralware",
-        "flags": {
-            "importid": "IjoAqxBVmCvR50TJ"
-        },
         "name": "Chipware Socket",
         "type": "cyberware"
     },
@@ -101,9 +86,6 @@
         },
         "effects": [],
         "file": "neuralware",
-        "flags": {
-            "importid": "mErRRGlZQ4GnRbtu"
-        },
         "name": "Skill Chip",
         "type": "cyberware"
     },
@@ -119,9 +101,6 @@
         },
         "effects": [],
         "file": "neuralware",
-        "flags": {
-            "importid": "9B6kvOqXd5aWX2Mj"
-        },
         "name": "Kerenzikov",
         "type": "cyberware"
     },
@@ -137,9 +116,6 @@
         },
         "effects": [],
         "file": "neuralware",
-        "flags": {
-            "importid": "92tg1T3mB8KTQs1w"
-        },
         "name": "Neural Link",
         "type": "cyberware"
     },
@@ -155,9 +131,6 @@
         },
         "effects": [],
         "file": "neuralware",
-        "flags": {
-            "importid": "WCMSCmwjnxqxAIhV"
-        },
         "name": "Pain Editor",
         "type": "cyberware"
     },
@@ -173,9 +146,6 @@
         },
         "effects": [],
         "file": "neuralware",
-        "flags": {
-            "importid": "yYsZqYZyCifaev8O"
-        },
         "name": "Sandevistan",
         "type": "cyberware"
     },
@@ -191,9 +161,6 @@
         },
         "effects": [],
         "file": "neuralware",
-        "flags": {
-            "importid": "Z3s0qoWJyE5yVjNI"
-        },
         "name": "Chemical Analyzer",
         "type": "cyberware"
     }

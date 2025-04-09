@@ -11,9 +11,6 @@
         },
         "effects": [],
         "file": "external-body-cyberware",
-        "flags": {
-            "importid": "3a5qJDcsXqqWktWK"
-        },
         "name": "Subdermal Pocket",
         "type": "cyberware"
     },
@@ -29,9 +26,6 @@
         },
         "effects": [],
         "file": "external-body-cyberware",
-        "flags": {
-            "importid": "iQONJItQ8V5zfWjc"
-        },
         "name": "Hidden Holster",
         "type": "cyberware"
     },
@@ -47,9 +41,6 @@
         },
         "effects": [],
         "file": "external-body-cyberware",
-        "flags": {
-            "importid": "Kpqma8gymLLrqOl4"
-        },
         "name": "Skin Weave",
         "type": "cyberware"
     },
@@ -65,9 +56,6 @@
         },
         "effects": [],
         "file": "external-body-cyberware",
-        "flags": {
-            "importid": "j6vMvyPKCtucthT0"
-        },
         "name": "Subdermal Armor",
         "type": "cyberware"
     }

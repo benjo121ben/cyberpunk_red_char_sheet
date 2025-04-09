@@ -8,9 +8,6 @@
         },
         "effects": [],
         "file": "programs-boosters",
-        "flags": {
-            "importid": "MYXADbY72MgBaNWW"
-        },
         "name": "Worm",
         "type": "gear"
     },
@@ -23,9 +20,6 @@
         },
         "effects": [],
         "file": "programs-boosters",
-        "flags": {
-            "importid": "hsNu5yvZVXlJpzDe"
-        },
         "name": "Eraser",
         "type": "gear"
     },
@@ -38,9 +32,6 @@
         },
         "effects": [],
         "file": "programs-boosters",
-        "flags": {
-            "importid": "cyCBFWxvWmGpm7SN"
-        },
         "name": "See Ya",
         "type": "gear"
     },
@@ -53,9 +44,6 @@
         },
         "effects": [],
         "file": "programs-boosters",
-        "flags": {
-            "importid": "fFSpsaHQ14617oQi"
-        },
         "name": "Speedy Gonzalvez",
         "type": "gear"
     }

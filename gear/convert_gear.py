@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
         spliced = file_name.split(".")
 
-        if spliced[1] != "db":
+        if spliced[1] != "db" or file_name == "final_dict.json":
             continue
 
         new_name = spliced[0] + ".json"
@@ -48,7 +48,7 @@ if __name__ == "__main__":
         fname = spliced[0] 
         ftype = spliced[1] 
 
-        if ftype != "json" or fname.find("_clean") != -1:
+        if ftype != "json" or file_name == "final_dict.json":
             continue
 
         print(file_name)
@@ -64,6 +64,7 @@ if __name__ == "__main__":
             test_del(item,"_id")
             test_del(item,"img")
             test_del(item,"permission")
+            test_del(item,"flags")
             if "data" in item:
                 itemdata = item["data"]
                 simplify_keys = ["price", "legality", "rarity", "hackable", "internal", "psychosis", "burst", "damage", "fullauto", "rof", "skill", "weapontype"]
@@ -74,8 +75,42 @@ if __name__ == "__main__":
                 test_del(itemdata,"temp")
             item["file"] = fname
 
-        print(data)
         if pathlib.Path.exists(new_path):
             os.remove(new_path)
         with open(new_path, "x") as new_file:
             new_file.write(json.dumps(data, indent=4, sort_keys=True))
+
+
+    final_dict = {}
+    new_path = pathlib.Path("final_dict.json")
+
+
+    print("--------------------------")
+    for file_name in os.listdir():
+        spliced = file_name.split(".")
+        fname = spliced[0] 
+        ftype = spliced[1] 
+
+        if ftype != "json" or file_name == "final_dict.json":
+            continue
+
+        print(file_name)
+
+        data: list[dict] = None
+
+        with open(file_name, "r") as file:
+            data: list[dict] = json.loads(file.read())
+
+        first_entry_data = data[0]
+        if not ("type" in first_entry_data) or first_entry_data["type"] != "cyberware":
+            final_dict[fname] = data
+        elif "cyberware" in final_dict:
+            for entry in data:
+                final_dict["cyberware"].append(data)
+        else:
+            final_dict["cyberware"] = data
+
+    if pathlib.Path.exists(new_path):
+        os.remove(new_path)
+    with open(new_path, "x") as new_file:
+        new_file.write(json.dumps(final_dict, indent=4, sort_keys=True))

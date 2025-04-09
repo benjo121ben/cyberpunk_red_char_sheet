@@ -10,6 +10,35 @@ use leptos_router::{
 };
 
 use crate::char::{Character, Skill};
+use crate::gear::{self, GearData};
+
+pub fn read_gear_data_from_file<P: AsRef<Path>>(path: P) -> Result<GearData, Box<dyn Error>> {
+
+    // Open the file in read-only mode with buffer.
+    let check_file_path_result = std::fs::exists(&path);
+    match check_file_path_result {
+        Ok(exists) => {
+            if exists {
+                log!("Filepath exists");
+                let file_str = read_to_string(&path)?;
+                let lesson_data: GearData = serde_json::from_str(&file_str)?;
+                return Ok(lesson_data);
+            }
+            else {
+                log!("Filepath does not exist");
+                return Err(Box::from("Filepath does not exist".to_string()));
+            }
+        },
+        Err(error) => {
+            let errorstring = format!("There was an issue locating the path, this might be due to accessing rights. Cannot confirm or deny existence:\n{error}");
+            log!("{errorstring}");
+            return Err(Box::from(error));
+        },
+    }
+    
+
+}
+
 
 pub fn read_character_data_from_file<P: AsRef<Path>>(path: P) -> Result<Character, Box<dyn Error>> {
 
@@ -59,11 +88,18 @@ pub fn write_char_to_file<P: AsRef<Path>>(path: P, character: &Character) -> Res
 }
 
 #[server(GetCharData, "/api", "GetJson", "get_char_data")]
-pub async fn get_char_data() -> Result<Character, ServerFnError> {
+pub async fn get_all_data() -> Result<(Character, GearData), ServerFnError> {
     let read_data_result = read_character_data_from_file("./character.json");
-    read_data_result.or_else(|error|{
-        Err(ServerFnError::new(error.to_string()))
-    })
+    let gear_data_result = read_gear_data_from_file("./gear/final_dict.json");
+    if read_data_result.is_ok() && gear_data_result.is_ok() {
+        return Ok((read_data_result.unwrap(), gear_data_result.unwrap()))
+    }
+    else if read_data_result.is_err() {
+        Err(ServerFnError::new(read_data_result.unwrap_err().to_string()))
+    }
+    else {
+        Err(ServerFnError::new(gear_data_result.unwrap_err().to_string()))
+    }
 }
 
 #[server(SetCharData, "/api", "Url", "set_char_data")]

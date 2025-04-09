@@ -8,9 +8,6 @@
         },
         "effects": [],
         "file": "programs-attackers",
-        "flags": {
-            "importid": "BV7suXpii4CrFDsv"
-        },
         "name": "Banhammer",
         "type": "gear"
     },
@@ -23,9 +20,6 @@
         },
         "effects": [],
         "file": "programs-attackers",
-        "flags": {
-            "importid": "g62CNLr3vOiDvbgj"
-        },
         "name": "Poison Flatline",
         "type": "gear"
     },
@@ -38,9 +32,6 @@
         },
         "effects": [],
         "file": "programs-attackers",
-        "flags": {
-            "importid": "CWArFuEzbfffGvSV"
-        },
         "name": "Nervescrub",
         "type": "gear"
     },
@@ -53,9 +44,6 @@
         },
         "effects": [],
         "file": "programs-attackers",
-        "flags": {
-            "importid": "fGCTbiInPde6qojg"
-        },
         "name": "Vrizzbolt",
         "type": "gear"
     },
@@ -68,9 +56,6 @@
         },
         "effects": [],
         "file": "programs-attackers",
-        "flags": {
-            "importid": "0GccCJsOaTjNr4Sj"
-        },
         "name": "Sword",
         "type": "gear"
     },
@@ -83,9 +68,6 @@
         },
         "effects": [],
         "file": "programs-attackers",
-        "flags": {
-            "importid": "gtTk35uEkq1k63UN"
-        },
         "name": "Superglue",
         "type": "gear"
     },
@@ -98,9 +80,6 @@
         },
         "effects": [],
         "file": "programs-attackers",
-        "flags": {
-            "importid": "ukYlEolAbCFo6jfb"
-        },
         "name": "DeckKRASH",
         "type": "gear"
     },
@@ -113,9 +92,6 @@
         },
         "effects": [],
         "file": "programs-attackers",
-        "flags": {
-            "importid": "HuiSoqDuhTbn91qW"
-        },
         "name": "Hellbolt",
         "type": "gear"
     }

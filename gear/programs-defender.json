@@ -8,9 +8,6 @@
         },
         "effects": [],
         "file": "programs-defender",
-        "flags": {
-            "importid": "n8bZ2SPeaw8BIeCi"
-        },
         "name": "Shield",
         "type": "gear"
     },
@@ -23,9 +20,6 @@
         },
         "effects": [],
         "file": "programs-defender",
-        "flags": {
-            "importid": "CXIVzVTS0MqIags8"
-        },
         "name": "Armor",
         "type": "gear"
     },
@@ -38,9 +32,6 @@
         },
         "effects": [],
         "file": "programs-defender",
-        "flags": {
-            "importid": "L5oM34M3aPXy5nep"
-        },
         "name": "Flak",
         "type": "gear"
     }

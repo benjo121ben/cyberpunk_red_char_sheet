@@ -8,9 +8,6 @@
         },
         "effects": [],
         "file": "drugs",
-        "flags": {
-            "importid": "vnCRVWdB46UGRBtm"
-        },
         "name": "Blue Glass",
         "type": "gear"
     },
@@ -23,9 +20,6 @@
         },
         "effects": [],
         "file": "drugs",
-        "flags": {
-            "importid": "eQDMyVqDdTXOyfYk"
-        },
         "name": "Synthcoke",
         "type": "gear"
     },
@@ -38,9 +32,6 @@
         },
         "effects": [],
         "file": "drugs",
-        "flags": {
-            "importid": "T6HDuAwi6Ai06zrl"
-        },
         "name": "Smash",
         "type": "gear"
     },
@@ -53,9 +44,6 @@
         },
         "effects": [],
         "file": "drugs",
-        "flags": {
-            "importid": "HDr1hNhqLtis5q8K"
-        },
         "name": "Black Lace",
         "type": "gear"
     },
@@ -68,9 +56,6 @@
         },
         "effects": [],
         "file": "drugs",
-        "flags": {
-            "importid": "cbA86t82s9rfyC6X"
-        },
         "name": "Boost",
         "type": "gear"
     }

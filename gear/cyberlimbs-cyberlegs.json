@@ -11,9 +11,6 @@
         },
         "effects": [],
         "file": "cyberlimbs-cyberlegs",
-        "flags": {
-            "importid": "ddZaIYgMOcyc4VsK"
-        },
         "name": "Plastic Covering - limb option",
         "type": "cyberware"
     },
@@ -29,9 +26,6 @@
         },
         "effects": [],
         "file": "cyberlimbs-cyberlegs",
-        "flags": {
-            "importid": "kpl6xuJsXtAWYGbV"
-        },
         "name": "Web Foot",
         "type": "cyberware"
     },
@@ -47,9 +41,6 @@
         },
         "effects": [],
         "file": "cyberlimbs-cyberlegs",
-        "flags": {
-            "importid": "30MwVnv7LCaRnBD5"
-        },
         "name": "Skate Foot",
         "type": "cyberware"
     },
@@ -65,9 +56,6 @@
         },
         "effects": [],
         "file": "cyberlimbs-cyberlegs",
-        "flags": {
-            "importid": "aqKMid41h47VZ7eI"
-        },
         "name": "Realskinn\u00e2\u201e\u00a2 Covering - limb option",
         "type": "cyberware"
     },
@@ -83,9 +71,6 @@
         },
         "effects": [],
         "file": "cyberlimbs-cyberlegs",
-        "flags": {
-            "importid": "MUV7Tkmf3EfBt5AZ"
-        },
         "name": "Grip Foot",
         "type": "cyberware"
     },
@@ -101,9 +86,6 @@
         },
         "effects": [],
         "file": "cyberlimbs-cyberlegs",
-        "flags": {
-            "importid": "1tf3li53GeFYDJSg"
-        },
         "name": "Superchrome\u00c2\u00ae Covering - limb option",
         "type": "cyberware"
     },
@@ -119,9 +101,6 @@
         },
         "effects": [],
         "file": "cyberlimbs-cyberlegs",
-        "flags": {
-            "importid": "sv8W06YYYxiMWaiP"
-        },
         "name": "Cyberleg - base/req",
         "type": "cyberware"
     },
@@ -137,9 +116,6 @@
         },
         "effects": [],
         "file": "cyberlimbs-cyberlegs",
-        "flags": {
-            "importid": "sWDjsyOfkyp2JLYz"
-        },
         "name": "Talon Foot",
         "type": "cyberware"
     },
@@ -155,9 +131,6 @@
         },
         "effects": [],
         "file": "cyberlimbs-cyberlegs",
-        "flags": {
-            "importid": "J80bofxiKAQ46z7w"
-        },
         "name": "Standard Foot - base/req",
         "type": "cyberware"
     },
@@ -173,9 +146,6 @@
         },
         "effects": [],
         "file": "cyberlimbs-cyberlegs",
-        "flags": {
-            "importid": "wbnfTuwyIdEPn5f2"
-        },
         "name": "Hardened Shielding - limb option",
         "type": "cyberware"
     },
@@ -191,9 +161,6 @@
         },
         "effects": [],
         "file": "cyberlimbs-cyberlegs",
-        "flags": {
-            "importid": "t4SiU3SATfRnWNfx"
-        },
         "name": "Jump Booster",
         "type": "cyberware"
     }
