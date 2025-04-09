@@ -31,7 +31,7 @@ if __name__ == "__main__":
             continue
 
         new_name = spliced[0] + ".json"
-        new_path = pathlib.Path(new_name);
+        new_path = pathlib.Path(new_name)
 
         with open(file_name, "r") as file:
             text: str = file.read()
@@ -73,7 +73,7 @@ if __name__ == "__main__":
                 test_del(itemdata,"modlist")
                 test_del(itemdata,"temp")
             item["file"] = fname
-            
+
         print(data)
         if pathlib.Path.exists(new_path):
             os.remove(new_path)
