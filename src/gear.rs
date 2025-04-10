@@ -1,19 +1,19 @@
 use serde::Deserialize;
 use serde::Serialize;
-use serde_json::Value;
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct GearData {
+    pub ammunition: Vec<Ammo>,
     pub armor: Vec<Armor>,
     #[serde(rename = "cyberdeck-hardware")]
     pub cyberdeck_hardware: Vec<CyberdeckHardware>,
-    pub cyberware: Vec<Value>,
+    pub cyberware: Vec<Cyberware>,
     pub drugs: Vec<Drug>,
     pub items: Vec<Item>,
     #[serde(rename = "programs-attackers")]
-    pub programs_attackers: Vec<Attacker>,
+    pub programs_attackers: Vec<ProgramsAttacker>,
     #[serde(rename = "programs-boosters")]
-    pub programs_boosters: Vec<Booster>,
+    pub programs_boosters: Vec<ProgramsBooster>,
     #[serde(rename = "programs-defender")]
     pub programs_defender: Vec<ProgramsDefender>,
     pub weapons: Vec<Weapon>,
@@ -21,10 +21,11 @@ pub struct GearData {
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Armor {
-    pub data: Data,
     pub armor_data: ArmorData,
+    pub description: String,
     pub file: String,
     pub name: String,
+    pub price: i32,
     #[serde(rename = "type")]
     pub type_field: String,
 }
@@ -38,74 +39,88 @@ pub struct ArmorData {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct Data {
+pub struct CyberdeckHardware {
     pub description: String,
+    pub file: String,
+    pub name: String,
     pub price: i32,
+    #[serde(rename = "type")]
+    pub type_field: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct CyberdeckHardware {
-    pub data: Data,
+pub struct Cyberware {
+    pub description: String,
     pub file: String,
+    pub internal: bool,
     pub name: String,
+    pub price: i32,
+    pub psychosis: i32,
     #[serde(rename = "type")]
     pub type_field: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Drug {
-    pub data: Data,
+    pub description: String,
     pub file: String,
     pub name: String,
+    pub price: i32,
     #[serde(rename = "type")]
     pub type_field: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Item {
-    pub data: Data,
+    pub description: String,
     pub file: String,
     pub name: String,
+    pub price: i32,
     #[serde(rename = "type")]
     pub type_field: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct Attacker {
-    pub data: Data,
+pub struct ProgramsAttacker {
+    pub description: String,
     pub file: String,
     pub name: String,
+    pub price: i32,
     #[serde(rename = "type")]
     pub type_field: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct Booster {
-    pub data: Data,
+pub struct ProgramsBooster {
+    pub description: String,
     pub file: String,
     pub name: String,
+    pub price: i32,
     #[serde(rename = "type")]
     pub type_field: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct ProgramsDefender {
-    pub data: Data,
+    pub description: String,
     pub file: String,
     pub name: String,
+    pub price: i32,
     #[serde(rename = "type")]
     pub type_field: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Weapon {
-    pub data: WeaponData,
-    pub file: String,
-    pub name: String,
     #[serde(default)]
     pub personalized_name: String,
+    pub description: String,
+    pub file: String,
+    pub name: String,
+    pub price: i32,
     #[serde(rename = "type")]
     pub type_field: String,
+    pub weapon_data: WeaponData,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -113,23 +128,10 @@ pub struct WeaponData {
     pub ammo: Ammo,
     pub burst: bool,
     pub damage: String,
-    pub description: String,
     pub fullauto: bool,
-    pub legality: i32,
-    pub price: i32,
-    pub rarity: i32,
     pub rof: i32,
     pub skill: String,
     pub weapontype: String,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct Cyberware {
-    pub data: Data,
-    pub file: String,
-    pub name: String,
-    #[serde(rename = "type")]
-    pub type_field: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
