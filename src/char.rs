@@ -8,10 +8,13 @@ use super::{journal::Journal, gear::*};
 pub struct Character {
     pub name: String,
 
+    #[serde(default)]
     pub armors: Vec<Armor>,
 
+    #[serde(default)]
     pub weapons: Vec<Weapon>,
 
+    #[serde(default)]
     pub cyberware: Vec<Cyberware>,
 
     pub humanity:i32,
@@ -62,6 +65,8 @@ impl Character {
             name: String::from("Test"),
             armors: vec![],
             weapons: vec![],
+            cyberware: vec![],
+            humanity: 0,
             hp_current: 0,
             stats: CharStats { intelligence: 0, reflex: 0, dexterity: 0, technique: 0, cool: 0, willpower: 0, luck: 0, movement: 0, body: 0, empathy: 0 },
             journals: vec![Journal::default()],
@@ -202,8 +207,16 @@ impl Character {
             "luck" => return self.stats.luck,
             "move" => return self.stats.movement,
             "body" => return self.stats.body,
-            "emp" => return self.stats.empathy,
+            "emp" => return self.humanity / 10,
             _ => {panic!("This stat does not exist {stat_name}");}
         }
+    }
+
+    pub fn flip_flag(self: &mut Self, key: &str) {
+        let new_val = !self.flags.get(key).or(Some(&false)).unwrap();
+        self.flags.insert(
+            key.to_string(), 
+            new_val
+        );
     }
 }

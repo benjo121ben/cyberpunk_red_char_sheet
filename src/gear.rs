@@ -3,7 +3,7 @@ use serde::Serialize;
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct GearData {
-    pub ammunition: Vec<Ammo>,
+    pub ammunition: Vec<Ammunition>,
     pub armor: Vec<Armor>,
     #[serde(rename = "cyberdeck-hardware")]
     pub cyberdeck_hardware: Vec<CyberdeckHardware>,
@@ -125,7 +125,7 @@ pub struct Weapon {
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct WeaponData {
-    pub ammo: Ammo,
+    pub ammo: Option<WeaponAmmoData>,
     pub burst: bool,
     pub damage: String,
     pub fullauto: bool,
@@ -135,8 +135,18 @@ pub struct WeaponData {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-pub struct Ammo {
+pub struct WeaponAmmoData {
     pub max: Option<i32>,
-    pub min: i32,
     pub value: i32,
+    pub ammo_type: Option<String>
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct Ammunition {
+    pub description: String,
+    pub file: String,
+    pub name: String,
+    pub price: i64,
+    #[serde(rename = "type")]
+    pub type_field: String,
 }

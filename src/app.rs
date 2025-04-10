@@ -95,10 +95,10 @@ pub async fn get_all_data() -> Result<(Character, GearData), ServerFnError> {
         return Ok((read_data_result.unwrap(), gear_data_result.unwrap()))
     }
     else if read_data_result.is_err() {
-        Err(ServerFnError::new(read_data_result.unwrap_err().to_string()))
+        Err(ServerFnError::new(format!("char read data: {}", read_data_result.unwrap_err().to_string())))
     }
     else {
-        Err(ServerFnError::new(gear_data_result.unwrap_err().to_string()))
+        Err(ServerFnError::new(format!("gear read data: {}", gear_data_result.unwrap_err().to_string())))
     }
 }
 
@@ -163,7 +163,6 @@ fn HomePage() -> impl IntoView {
         >{
             let result_clone = all_data_result.clone();
             move || {
-                log!("{:#?}",result_clone.clone());
                 match result_clone.clone() {
                     Ok((char_data, gear_data)) => {
                         let cloned_char_data: Character = char_data.clone();
@@ -205,15 +204,14 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
             None => 0
         }
     });
-    let filter_zeroes_enabled = RwSignal::new(true);
 
     view! {
         <div class="base_div">
             <button on:click=move|_| { save_char_action.dispatch(()); }>TEST</button>
-            <button on:click=move|_| { filter_zeroes_enabled.update(|en| *en = !*en); }>FILTER</button>
+            <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("filter_zeros"))>FILTER</button>
             <div class="columns">
                 <div class="skill_list">
-                    <SkillList filter_zeroes_enabled/>
+                    <SkillList/>
                 </div>
                 <div class="center_div"></div>
                 <div class="combat_div"></div>
@@ -223,21 +221,22 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
 }
 
 #[component]
-fn SkillList(filter_zeroes_enabled: RwSignal<bool>) -> impl IntoView {
+fn SkillList() -> impl IntoView {
     let rw_char_signal = get_char_signal_from_ctx();
+    let filter_flag_memo = Memo::new(move |_| *rw_char_signal.read().flags.get("filter_zeros").or(Some(&false)).unwrap());
     let skill_key_list_memo = Memo::new(move |_| {
-        if filter_zeroes_enabled.get() {
-            let mut key_list = rw_char_signal.with(|c| c.skills.iter()
+        let mut key_list: Vec<String>;
+        if filter_flag_memo.get() {
+            key_list = rw_char_signal.with(|c| c.skills.iter()
             .filter(|(_, skill)| skill.nr != 0)
             .map(|(key, _)| key).cloned().collect::<Vec<String>>());
-            key_list.sort();
-            return key_list
         }
         else {
-            let mut key_list = rw_char_signal.with(|c| c.skills.keys().cloned().collect::<Vec<String>>());
-            key_list.sort();
-            return key_list
+            key_list = rw_char_signal.with(|c| c.skills.keys().cloned().collect::<Vec<String>>());
         }
+
+        key_list.sort();
+        return key_list;
         
     });
 
