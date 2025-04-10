@@ -1,156 +1,101 @@
 [
     {
-        "data": {
-            "description": "<p>Chipware. While installed into a Chipware Socket, the user's sense of smell is boosted, allowing them to use the Tracking Skill to track scent in addition to visual clues. <strong>Requires Chipware Socket.</strong></p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 7,
-            "rarity": 0
-        },
+        "description": "<p>Chipware. While installed into a Chipware Socket, the user's sense of smell is boosted, allowing them to use the Tracking Skill to track scent in addition to visual clues. <strong>Requires Chipware Socket.</strong></p>",
         "file": "neuralware",
+        "internal": true,
         "name": "Olfactory Boost",
+        "price": 100,
+        "psychosis": 7,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Chipware. While installed into a Chipware Socket, it boosts the user's sense of touch, allowing them to detect motion within 20m/yds of them, as long as their hand is touching a surface. While in use as a motion detector, that hand can't be used to do anything else. <strong>Requires Chipware Socket.</strong></p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 7,
-            "rarity": 0
-        },
+        "description": "<p>Chipware. While installed into a Chipware Socket, it boosts the user's sense of touch, allowing them to detect motion within 20m/yds of them, as long as their hand is touching a surface. While in use as a motion detector, that hand can't be used to do anything else. <strong>Requires Chipware Socket.</strong></p>",
         "file": "neuralware",
+        "internal": true,
         "name": "Tactile Boost",
+        "price": 100,
+        "psychosis": 7,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Neuralware Option. Plugs in the wrist or head that allow user to jack into and make use of Smartguns, Cyberdecks, heavy machinery, and drive vehicles with no hands! Multiple installations allow user to be plugged into multiple things at the same time. <strong>Requires Neural Link.</strong></p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 7,
-            "rarity": 0
-        },
+        "description": "<p>Neuralware Option. Plugs in the wrist or head that allow user to jack into and make use of Smartguns, Cyberdecks, heavy machinery, and drive vehicles with no hands! Multiple installations allow user to be plugged into multiple things at the same time. <strong>Requires Neural Link.</strong></p>",
         "file": "neuralware",
+        "internal": true,
         "name": "Interface Plugs",
+        "price": 500,
+        "psychosis": 7,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Chipware. The standard for data storage. While installed into a Chipware socket, the user's cyberware can store data on it or access data stored on it. <strong>Requires Chipware Socket.</strong></p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 10,
-            "psychosis": 0,
-            "rarity": 0
-        },
+        "description": "<p>Chipware. The standard for data storage. While installed into a Chipware socket, the user's cyberware can store data on it or access data stored on it. <strong>Requires Chipware Socket.</strong></p>",
         "file": "neuralware",
+        "internal": true,
         "name": "Memory Chip",
+        "price": 10,
+        "psychosis": 0,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Neuralware Option. A single socket installed in the back of the neck that allows quick installation of a single piece of Chipware, of which there are many varieties.</p>\n<p>Installing or uninstalling a single piece of Chipware from a Chipware Socket is an Action.</p>\n<p>The first time you install a piece of Chipware you've never used before, you always accrue Humanity Loss. Re-installing Chipware you've already used doesn't do this. <strong>Chipware does not take up a Neural Link Option Slot. </strong></p>\n<p>Multiple sockets may be installed, but each must be paid for individually. <strong>Requires Neural Link.</strong></p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 7,
-            "rarity": 0
-        },
+        "description": "<p>Neuralware Option. A single socket installed in the back of the neck that allows quick installation of a single piece of Chipware, of which there are many varieties.</p>\n<p>Installing or uninstalling a single piece of Chipware from a Chipware Socket is an Action.</p>\n<p>The first time you install a piece of Chipware you've never used before, you always accrue Humanity Loss. Re-installing Chipware you've already used doesn't do this. <strong>Chipware does not take up a Neural Link Option Slot. </strong></p>\n<p>Multiple sockets may be installed, but each must be paid for individually. <strong>Requires Neural Link.</strong></p>",
         "file": "neuralware",
+        "internal": true,
         "name": "Chipware Socket",
+        "price": 500,
+        "psychosis": 7,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Chipware. While installed into a Chipware Socket, a Skill Chip makes the Skill it was made for trained for the user at +3, unless the user's Skill was already trained higher than +3, in which case it does nothing. Skill Chips for (x2) cost Skills are 1,000eb, chips for all other skills are 500eb. <strong>Requires Chipware Socket.</strong></p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 7,
-            "rarity": 0
-        },
+        "description": "<p>Chipware. While installed into a Chipware Socket, a Skill Chip makes the Skill it was made for trained for the user at +3, unless the user's Skill was already trained higher than +3, in which case it does nothing. Skill Chips for (x2) cost Skills are 1,000eb, chips for all other skills are 500eb. <strong>Requires Chipware Socket.</strong></p>",
         "file": "neuralware",
+        "internal": true,
         "name": "Skill Chip",
+        "price": 500,
+        "psychosis": 7,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Neuralware Option. Always-on Speedware that provides consistently improved reaction time. User adds +2 to their Initiative Rolls. Only a single piece of Speedware can be installed into a user at a time. <strong>Requires Neural Link.</strong></p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 14,
-            "rarity": 0
-        },
+        "description": "<p>Neuralware Option. Always-on Speedware that provides consistently improved reaction time. User adds +2 to their Initiative Rolls. Only a single piece of Speedware can be installed into a user at a time. <strong>Requires Neural Link.</strong></p>",
         "file": "neuralware",
+        "internal": true,
         "name": "Kerenzikov",
+        "price": 500,
+        "psychosis": 14,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Wired artificial nervous system, required to use Neuralware, and Subdermal Grips. System has 5 Option Slots for Neuralware options.</p>",
-            "hackable": true,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 7,
-            "rarity": 0
-        },
+        "description": "<p>Wired artificial nervous system, required to use Neuralware, and Subdermal Grips. System has 5 Option Slots for Neuralware options.</p>",
         "file": "neuralware",
+        "internal": true,
         "name": "Neural Link",
+        "price": 500,
+        "psychosis": 7,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Chipware. While installed into a Chipware Socket, a Pain Editor shuts off the user's pain receptors dynamically, allowing them to ignore the effects of the Seriously Wounded Wound State. <strong>Requires Chipware Socket.</strong></p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 1000,
-            "psychosis": 14,
-            "rarity": 0
-        },
+        "description": "<p>Chipware. While installed into a Chipware Socket, a Pain Editor shuts off the user's pain receptors dynamically, allowing them to ignore the effects of the Seriously Wounded Wound State. <strong>Requires Chipware Socket.</strong></p>",
         "file": "neuralware",
+        "internal": true,
         "name": "Pain Editor",
+        "price": 1000,
+        "psychosis": 14,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Neuralware Option. Speedware that provides short boosts of highly improved reaction time. When activated as an Action, the user adds +3 to any Initiative Roll they make in the next minute, after which Sandevistan cannot be activated again for an hour. Only a single piece of Speedware can be installed into a user at a time. <strong>Requires Neural Link.</strong></p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 7,
-            "rarity": 0
-        },
+        "description": "<p>Neuralware Option. Speedware that provides short boosts of highly improved reaction time. When activated as an Action, the user adds +3 to any Initiative Roll they make in the next minute, after which Sandevistan cannot be activated again for an hour. Only a single piece of Speedware can be installed into a user at a time. <strong>Requires Neural Link.</strong></p>",
         "file": "neuralware",
+        "internal": true,
         "name": "Sandevistan",
+        "price": 500,
+        "psychosis": 7,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Chipware. While installed into a Chipware Socket, allows user to test substances to find their precise chemical composition as an Action, identifying most substances instantly from a wide database of samples. <strong>Requires Chipware Socket.</strong></p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 3,
-            "rarity": 0
-        },
+        "description": "<p>Chipware. While installed into a Chipware Socket, allows user to test substances to find their precise chemical composition as an Action, identifying most substances instantly from a wide database of samples. <strong>Requires Chipware Socket.</strong></p>",
         "file": "neuralware",
+        "internal": true,
         "name": "Chemical Analyzer",
+        "price": 500,
+        "psychosis": 3,
         "type": "cyberware"
     }
 ]

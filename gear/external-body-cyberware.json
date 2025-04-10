@@ -1,58 +1,38 @@
 [
     {
-        "data": {
-            "description": "<p>2\"x4\" (5cm x 10cm) space with a Realskinn&trade; zipper. Contents can be successfully concealed without a Check.</p>",
-            "hackable": false,
-            "internal": false,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 3,
-            "rarity": 0
-        },
+        "description": "<p>2\"x4\" (5cm x 10cm) space with a Realskinn&trade; zipper. Contents can be successfully concealed without a Check.</p>",
         "file": "external-body-cyberware",
+        "internal": false,
         "name": "Subdermal Pocket",
+        "price": 100,
+        "psychosis": 3,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Holster inside the user's body can store a weapon already capable of concealment so that it can be successfully concealed without a roll. Weapon can be drawn from the hidden holster without an Action, as long as it is implanted in an easily accessible place on the user's body. You don't want one in your thigh unless you don't wear pants.</p>",
-            "hackable": false,
-            "internal": false,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 7,
-            "rarity": 0
-        },
+        "description": "<p>Holster inside the user's body can store a weapon already capable of concealment so that it can be successfully concealed without a roll. Weapon can be drawn from the hidden holster without an Action, as long as it is implanted in an easily accessible place on the user's body. You don't want one in your thigh unless you don't wear pants.</p>",
         "file": "external-body-cyberware",
+        "internal": false,
         "name": "Hidden Holster",
+        "price": 500,
+        "psychosis": 7,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>User's body and head are armored at SP7. Your SP in any location is determined by your highest source of SP in that location. Additionally, whenever your armor is ablated in a location, all your sources of SP in that location are ablated at the same time. Whenever the user successfully completes a day of natural healing, nanomachines present in the Skin Weave repair both the body and head location of the Skin Weave for one point of its lost SP.&nbsp;</p>",
-            "hackable": false,
-            "internal": false,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 7,
-            "rarity": 0
-        },
+        "description": "<p>User's body and head are armored at SP7. Your SP in any location is determined by your highest source of SP in that location. Additionally, whenever your armor is ablated in a location, all your sources of SP in that location are ablated at the same time. Whenever the user successfully completes a day of natural healing, nanomachines present in the Skin Weave repair both the body and head location of the Skin Weave for one point of its lost SP.&nbsp;</p>",
         "file": "external-body-cyberware",
+        "internal": false,
         "name": "Skin Weave",
+        "price": 500,
+        "psychosis": 7,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>User's body and head are armored at SP11. Your SP in any location is determined by your highest source of SP in that location. Additionally, whenever your armor is ablated in a location, all your sources of SP in that location are ablated at the same time. Whenever the user successfully completes a day of natural healing, nanomachines present in the Subdermal Armor repair both the body and head location of the Subdermal Armor for one point of its lost SP.</p>",
-            "hackable": false,
-            "internal": false,
-            "legality": 0,
-            "price": 1000,
-            "psychosis": 14,
-            "rarity": 0
-        },
+        "description": "<p>User's body and head are armored at SP11. Your SP in any location is determined by your highest source of SP in that location. Additionally, whenever your armor is ablated in a location, all your sources of SP in that location are ablated at the same time. Whenever the user successfully completes a day of natural healing, nanomachines present in the Subdermal Armor repair both the body and head location of the Subdermal Armor for one point of its lost SP.</p>",
         "file": "external-body-cyberware",
+        "internal": false,
         "name": "Subdermal Armor",
+        "price": 1000,
+        "psychosis": 14,
         "type": "cyberware"
     }
 ]

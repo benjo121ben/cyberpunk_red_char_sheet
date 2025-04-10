@@ -1,13 +1,9 @@
 [
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 500,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Sniper Rifle",
+        "price": 500,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -24,14 +20,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 50,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Light Melee Weapon",
+        "price": 50,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -48,14 +40,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Heavy Melee Weapon",
+        "price": 100,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -72,14 +60,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 50,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Medium Pistol",
+        "price": 50,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -96,14 +80,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Bows & Crossbows",
+        "price": 100,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -120,14 +100,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Heavy SMG",
+        "price": 100,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -144,14 +120,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Very Heavy Melee Weapon",
+        "price": 100,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -168,14 +140,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 500,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Assault Rifle",
+        "price": 500,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -192,14 +160,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 500,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Shotgun",
+        "price": 500,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -216,14 +180,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 500,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Rocket Launcher",
+        "price": 500,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -240,14 +200,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Heavy Pistol",
+        "price": 100,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -264,14 +220,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 50,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Medium Melee Weapon",
+        "price": 50,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -288,14 +240,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 500,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Grenade Launcher",
+        "price": 500,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -312,14 +260,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "SMG",
+        "price": 100,
         "type": "weapons",
         "weapon_data": {
             "ammo": {
@@ -336,14 +280,10 @@
         }
     },
     {
-        "data": {
-            "description": "A brief item description goes here...",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "A brief item description goes here...",
         "file": "weapons",
         "name": "Very Heavy Pistol",
+        "price": 100,
         "type": "weapons",
         "weapon_data": {
             "ammo": {

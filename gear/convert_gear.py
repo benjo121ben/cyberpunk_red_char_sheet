@@ -90,17 +90,18 @@ def clean_data():
         with open(file_name, "r") as file:
             data: list[dict] = json.loads(file.read())
 
-        simplify_keys = ["price", "legality", "rarity", "hackable", "internal", "psychosis", "burst", "damage", "fullauto", "rof", "skill", "weapontype"]
+        simplify_keys = ["price", "internal", "psychosis", "burst", "damage", "fullauto", "rof", "skill", "weapontype"]
         weap_data = ["burst", "damage", "fullauto", "rof", "skill", "weapontype", "ammo"]
+        
+        base_delete = ["_id", "img", "permission", "flags", "effects"]
+        data_delete = ["rarity", "legality", "backend", "modlist", "temp","hackable"]
 
         for item in data:
-            test_del(item,"_id")
-            test_del(item,"img")
-            test_del(item,"permission")
-            test_del(item,"flags")
-            test_del(item,"effects")
+            for key in base_delete:
+                test_del(item, key)
+
             if "data" in item:
-                itemdata = item["data"]
+                itemdata: dict = item["data"]
                 for key in simplify_keys:
                     simplify_value(itemdata, key)
 
@@ -109,9 +110,12 @@ def clean_data():
                         move_weapon_data(item, itemdata, key)
                     replace_skill(item)
 
-                test_del(itemdata,"backend")
-                test_del(itemdata,"modlist")
-                test_del(itemdata,"temp")
+                for key in data_delete:
+                    test_del(itemdata, key)
+
+                for key in itemdata.keys():
+                    item[key] = itemdata[key]
+                del item["data"]
 
             if fname == "armor":
                 name = item["name"]
@@ -155,7 +159,7 @@ def combine_final_data():
             final_dict[fname] = data
         elif "cyberware" in final_dict:
             for entry in data:
-                final_dict["cyberware"].append(data)
+                final_dict["cyberware"].append(entry)
         else:
             final_dict["cyberware"] = data
 

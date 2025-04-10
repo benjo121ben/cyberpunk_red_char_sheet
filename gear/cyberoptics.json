@@ -1,184 +1,119 @@
 [
     {
-        "data": {
-            "description": "<p>Cybereye Option. User is immune to blindness or other effects caused by dangerous flashes of light, like those of a flashbang. <strong>Requires two Cybereyes and must be paired.</strong></p>",
-            "hackable": true,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cybereye Option. User is immune to blindness or other effects caused by dangerous flashes of light, like those of a flashbang. <strong>Requires two Cybereyes and must be paired.</strong></p>",
         "file": "cyberoptics",
+        "internal": true,
         "name": "Anti-Dazzle",
+        "price": 100,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cybereye Option. User can see detail up to 800m/yds away. When attacking a target 51m/yds or further away with either a weapon's single shot firing mode or an Aimed Shot, you can add a +1 to your Check. Multiple installations of this option provide user no additional benefit. Does not stack with Sniping Scope Weapon Attachment. <strong>Requires a Cybereye</strong></p>",
-            "hackable": false,
-            "internal": false,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 3,
-            "rarity": 0
-        },
+        "description": "<p>Cybereye Option. User can see detail up to 800m/yds away. When attacking a target 51m/yds or further away with either a weapon's single shot firing mode or an Aimed Shot, you can add a +1 to your Check. Multiple installations of this option provide user no additional benefit. Does not stack with Sniping Scope Weapon Attachment. <strong>Requires a Cybereye</strong></p>",
         "file": "cyberoptics",
+        "internal": false,
         "name": "TeleOptics",
+        "price": 500,
+        "psychosis": 3,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cybereye Option. Cosmetic upgrade allows unlimited color and pattern changes to be made as an Action. Eye can optionally be temperature sensitive or reactant to hormone changes in the body. Requires a Cybereye.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cybereye Option. Cosmetic upgrade allows unlimited color and pattern changes to be made as an Action. Eye can optionally be temperature sensitive or reactant to hormone changes in the body. Requires a Cybereye.</p>",
         "file": "cyberoptics",
+        "internal": true,
         "name": "Color Shift",
+        "price": 100,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cybereye Option. User adds +2 to their Perception, Lip Reading, and Conceal/Reveal Object Skills for Checks which include sight. Requires two Cybereyes and must be paired. Multiple installations of this option provide user no additional benefit.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 3,
-            "rarity": 0
-        },
+        "description": "<p>Cybereye Option. User adds +2 to their Perception, Lip Reading, and Conceal/Reveal Object Skills for Checks which include sight. Requires two Cybereyes and must be paired. Multiple installations of this option provide user no additional benefit.</p>",
         "file": "cyberoptics",
+        "internal": true,
         "name": "Image Enhance",
+        "price": 500,
+        "psychosis": 3,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>All following options are installed in an artificial eye that replaces a meat one. Each Cybereye has 3 Option Slots for Cybereye Options. Some options must be paired to work properly (purchased twice and installed in two different Cybereyes on a user. Humanity Loss is calculated separately for each purchase).</p>",
-            "hackable": true,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 7,
-            "rarity": 0
-        },
+        "description": "<p>All following options are installed in an artificial eye that replaces a meat one. Each Cybereye has 3 Option Slots for Cybereye Options. Some options must be paired to work properly (purchased twice and installed in two different Cybereyes on a user. Humanity Loss is calculated separately for each purchase).</p>",
         "file": "cyberoptics",
+        "internal": true,
         "name": "Cybereye - Base/Req.",
+        "price": 100,
+        "psychosis": 7,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cybereye Option. Dartgun Exotic Weapon, with only a single shot in the clip, concealed inside the Cybereye. Requires a Cybereye and takes 3 Option Slots.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cybereye Option. Dartgun Exotic Weapon, with only a single shot in the clip, concealed inside the Cybereye. Requires a Cybereye and takes 3 Option Slots.</p>",
         "file": "cyberoptics",
+        "internal": true,
         "name": "Dartgun",
+        "price": 500,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cybereye Option. Camera in eye records video and audio to a standard Memory Chip or a linked Agent. Requires a Cybereye and takes 2 Option Slots.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cybereye Option. Camera in eye records video and audio to a standard Memory Chip or a linked Agent. Requires a Cybereye and takes 2 Option Slots.</p>",
         "file": "cyberoptics",
+        "internal": true,
         "name": "MicroVideo",
+        "price": 500,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cybereye Option. Projects cyberspace imagery over user's view of the world. Never forget your Virtuality Goggles again. Requires two Cybereyes and must be paired.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cybereye Option. Projects cyberspace imagery over user's view of the world. Never forget your Virtuality Goggles again. Requires two Cybereyes and must be paired.</p>",
         "file": "cyberoptics",
+        "internal": true,
         "name": "Virtuality",
+        "price": 100,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cybereye Option. Projects a tiny subscreen into user's normal field of vision for messages, video, etc. from a user's other cyberware or electronics. Picture in a picture for real life. <strong>Requires a Cybereye. </strong></p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cybereye Option. Projects a tiny subscreen into user's normal field of vision for messages, video, etc. from a user's other cyberware or electronics. Picture in a picture for real life. <strong>Requires a Cybereye. </strong></p>",
         "file": "cyberoptics",
+        "internal": true,
         "name": "Chyron",
+        "price": 100,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cybereye Option. Reduces penalties imposed by darkness and other intangible obscurement, like smoke, fog, etc. to 0. User can distinguish hot meat from cold metal but cannot see through anything that could provide cover.<strong> Requires two Cybereyes, must be paired, and takes 2 Option Slots per Cybereye.</strong></p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 3,
-            "rarity": 0
-        },
+        "description": "<p>Cybereye Option. Reduces penalties imposed by darkness and other intangible obscurement, like smoke, fog, etc. to 0. User can distinguish hot meat from cold metal but cannot see through anything that could provide cover.<strong> Requires two Cybereyes, must be paired, and takes 2 Option Slots per Cybereye.</strong></p>",
         "file": "cyberoptics",
+        "internal": true,
         "name": "Low Light/ Infrared/ UV",
+        "price": 500,
+        "psychosis": 3,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>c Cybereye Option. User gets a +1 to their Check when making an Aimed Shot. Multiple installations of this option provide user no additional benefit. Requires a Cybereye.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 3,
-            "rarity": 0
-        },
+        "description": "<p>c Cybereye Option. User gets a +1 to their Check when making an Aimed Shot. Multiple installations of this option provide user no additional benefit. Requires a Cybereye.</p>",
         "file": "cyberoptics",
+        "internal": true,
         "name": "Targeting Scope",
+        "price": 500,
+        "psychosis": 3,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cybereye Option. Radiation readings within 100m/yds of the user are displayed in user's vision hovering over their source in the form of a blue glow. Requires a Cybereye.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 1000,
-            "psychosis": 3,
-            "rarity": 0
-        },
+        "description": "<p>Cybereye Option. Radiation readings within 100m/yds of the user are displayed in user's vision hovering over their source in the form of a blue glow. Requires a Cybereye.</p>",
         "file": "cyberoptics",
+        "internal": true,
         "name": "Radiation Detector",
+        "price": 1000,
+        "psychosis": 3,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cybereye Option. Microscope providing user up to 400x magnification. Requires a Cybereye.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cybereye Option. Microscope providing user up to 400x magnification. Requires a Cybereye.</p>",
         "file": "cyberoptics",
+        "internal": true,
         "name": "MicroOptics",
+        "price": 100,
+        "psychosis": 2,
         "type": "cyberware"
     }
 ]

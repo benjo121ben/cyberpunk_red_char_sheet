@@ -1,170 +1,110 @@
 [
     {
-        "data": {
-            "description": "<p>Cyberaudio Option. Beeps when user is within 2m/yds of a tap, bug, or other listening device. Requires a Cyberaudio Suite.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cyberaudio Option. Beeps when user is within 2m/yds of a tap, bug, or other listening device. Requires a Cyberaudio Suite.</p>",
         "file": "cyberaudio",
+        "internal": true,
         "name": "Bug Detector",
+        "price": 100,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cyberaudio Option. Fully functional Agent (See Gear Section pg. 352), controlled entirely via voice commands. Images are described, but output can be linked to a Cybereye with Chyron or a nearby screen if visual output is desired. The implanted Agent's Memory Chip cannot be removed without surgery. Requires a Cyberaudio Suite.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 3,
-            "rarity": 0
-        },
+        "description": "<p>Cyberaudio Option. Fully functional Agent (See Gear Section pg. 352), controlled entirely via voice commands. Images are described, but output can be linked to a Cybereye with Chyron or a nearby screen if visual output is desired. The implanted Agent's Memory Chip cannot be removed without surgery. Requires a Cyberaudio Suite.</p>",
         "file": "cyberaudio",
+        "internal": true,
         "name": "Internal Agent",
+        "price": 100,
+        "psychosis": 3,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cyberaudio Option. Beeps if active radar beam is present within 100m/yds. Requires a Cyberaudio Suite.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 500,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cyberaudio Option. Beeps if active radar beam is present within 100m/yds. Requires a Cyberaudio Suite.</p>",
         "file": "cyberaudio",
+        "internal": true,
         "name": "Radar Detector",
+        "price": 500,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cyberaudio Option. User can use an Action to scan all radio bands within a mile that are currently being used and tune into them. Music player can link to the Data Pool to listen to the hottest music or play directly from a Memory Chip. Understanding scrambled channels requires a Scrambler/Descrambler. Requires a Cyberaudio Suite.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 50,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cyberaudio Option. User can use an Action to scan all radio bands within a mile that are currently being used and tune into them. Music player can link to the Data Pool to listen to the hottest music or play directly from a Memory Chip. Understanding scrambled channels requires a Scrambler/Descrambler. Requires a Cyberaudio Suite.</p>",
         "file": "cyberaudio",
+        "internal": true,
         "name": "Radio Scanner/ Music Player",
+        "price": 50,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cyberaudio Option. Can follow a linked tracer up to 1 mile away. Comes with a free button-sized linked tracer. Replacements are 50eb. Requires a Cyberaudio Suite.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cyberaudio Option. Can follow a linked tracer up to 1 mile away. Comes with a free button-sized linked tracer. Replacements are 50eb. Requires a Cyberaudio Suite.</p>",
         "file": "cyberaudio",
+        "internal": true,
         "name": "Homing Tracer",
+        "price": 100,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cyberaudio Option. Automatic noise compensation. User is immune to deafness or other effects caused by dangerously loud noises, like those produced by a flashbang. Requires a Cyberaudio Suite.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cyberaudio Option. Automatic noise compensation. User is immune to deafness or other effects caused by dangerously loud noises, like those produced by a flashbang. Requires a Cyberaudio Suite.</p>",
         "file": "cyberaudio",
+        "internal": true,
         "name": "Level Damper",
+        "price": 100,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cyberaudio Option. User adds +2 to their Human Perception and Interrogation Skills User can activate a special lie-detecting function for a minute with an Action, during which time the GM rolls all your Character's Human Perception and Interrogation Checks privately, beeping once whenever it detects a lie, or whenever they desire after a failed roll. Beware of false positives and negatives. Requires a Cyberaudio Suite. Multiple installations of this option provide user no additional benefit.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 3,
-            "rarity": 0
-        },
+        "description": "<p>Cyberaudio Option. User adds +2 to their Human Perception and Interrogation Skills User can activate a special lie-detecting function for a minute with an Action, during which time the GM rolls all your Character's Human Perception and Interrogation Checks privately, beeping once whenever it detects a lie, or whenever they desire after a failed roll. Beware of false positives and negatives. Requires a Cyberaudio Suite. Multiple installations of this option provide user no additional benefit.</p>",
         "file": "cyberaudio",
+        "internal": true,
         "name": "Voice Stress Analyzer",
+        "price": 100,
+        "psychosis": 3,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cyberaudio Option. Allows user to scramble outgoing communications so they cannot be understood without a descrambler, which is also included at no extra charge. Requires a Cyberaudio Suite.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cyberaudio Option. Allows user to scramble outgoing communications so they cannot be understood without a descrambler, which is also included at no extra charge. Requires a Cyberaudio Suite.</p>",
         "file": "cyberaudio",
+        "internal": true,
         "name": "Scrambler Descrambler",
+        "price": 100,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cyberaudio Option. User adds +2 to their Perception Skill for Checks which include hearing. Requires a Cyberaudio Suite. Multiple installations of this option provide user no additional benefit.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 3,
-            "rarity": 0
-        },
+        "description": "<p>Cyberaudio Option. User adds +2 to their Perception Skill for Checks which include hearing. Requires a Cyberaudio Suite. Multiple installations of this option provide user no additional benefit.</p>",
         "file": "cyberaudio",
+        "internal": true,
         "name": "Amplified Hearing",
+        "price": 100,
+        "psychosis": 3,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cyberaudio Suite is installed invisibly in the inner skull. System has 3 Option Slots for Cyberaudio Options. User can only have one Cyberaudio Suite installed.</p>",
-            "hackable": false,
-            "internal": false,
-            "legality": 0,
-            "price": 0,
-            "psychosis": 0,
-            "rarity": 0
-        },
+        "description": "<p>Cyberaudio Suite is installed invisibly in the inner skull. System has 3 Option Slots for Cyberaudio Options. User can only have one Cyberaudio Suite installed.</p>",
         "file": "cyberaudio",
+        "internal": false,
         "name": "Cyberaudio Suite",
+        "price": 0,
+        "psychosis": 0,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cyberaudio Option. User can communicate via radio, 1-mile range. Requires a Cyberaudio Suite.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cyberaudio Option. User can communicate via radio, 1-mile range. Requires a Cyberaudio Suite.</p>",
         "file": "cyberaudio",
+        "internal": true,
         "name": "Radio Communicator",
+        "price": 100,
+        "psychosis": 2,
         "type": "cyberware"
     },
     {
-        "data": {
-            "description": "<p>Cyberaudio Option. Records audio to a standard Memory Chip or a linked Agent. Requires a Cyberaudio Suite.</p>",
-            "hackable": false,
-            "internal": true,
-            "legality": 0,
-            "price": 100,
-            "psychosis": 2,
-            "rarity": 0
-        },
+        "description": "<p>Cyberaudio Option. Records audio to a standard Memory Chip or a linked Agent. Requires a Cyberaudio Suite.</p>",
         "file": "cyberaudio",
+        "internal": true,
         "name": "Audio Recorder",
+        "price": 100,
+        "psychosis": 2,
         "type": "cyberware"
     }
 ]

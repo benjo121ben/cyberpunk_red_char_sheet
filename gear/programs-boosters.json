@@ -1,46 +1,30 @@
 [
     {
-        "data": {
-            "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases all Backdoor Checks you make by +2 as long as this Program remains Rezzed.<br /><br /><em>A golden mechanical worm with neon green eyes.</em></p>",
-            "legality": 0,
-            "price": 50,
-            "rarity": 0
-        },
+        "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases all Backdoor Checks you make by +2 as long as this Program remains Rezzed.<br /><br /><em>A golden mechanical worm with neon green eyes.</em></p>",
         "file": "programs-boosters",
         "name": "Worm",
+        "price": 50,
         "type": "gear"
     },
     {
-        "data": {
-            "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases all Cloak Checks you make by +2 as long as this Program remains Rezzed.<br /><br /><em>Icon: A pink glob exuding tiny soap bubbles.</em></p>",
-            "legality": 0,
-            "price": 20,
-            "rarity": 0
-        },
+        "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases all Cloak Checks you make by +2 as long as this Program remains Rezzed.<br /><br /><em>Icon: A pink glob exuding tiny soap bubbles.</em></p>",
         "file": "programs-boosters",
         "name": "Eraser",
+        "price": 20,
         "type": "gear"
     },
     {
-        "data": {
-            "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases all Pathfinder Checks you make by +2 as long as this Program remains Rezzed.<br /><br /><em>Icon: Shimmering silver magnifying glass spinning slowly in place.</em></p>",
-            "legality": 0,
-            "price": 20,
-            "rarity": 0
-        },
+        "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases all Pathfinder Checks you make by +2 as long as this Program remains Rezzed.<br /><br /><em>Icon: Shimmering silver magnifying glass spinning slowly in place.</em></p>",
         "file": "programs-boosters",
         "name": "See Ya",
+        "price": 20,
         "type": "gear"
     },
     {
-        "data": {
-            "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases your Speed by +2 as long as this Program remains Rezzed.<br /><br /><em>Icon: A trail of dust appearing behind the Netrunner as they move.</em></p>",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases your Speed by +2 as long as this Program remains Rezzed.<br /><br /><em>Icon: A trail of dust appearing behind the Netrunner as they move.</em></p>",
         "file": "programs-boosters",
         "name": "Speedy Gonzalvez",
+        "price": 100,
         "type": "gear"
     }
 ]

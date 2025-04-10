@@ -1,68 +1,44 @@
 [
     {
-        "data": {
-            "description": "<p>A Cyberdeck with Hardened Circuitry cannot be rendered temporarily disabled, rendered inoperable, or destroyed by EMP effects like pulses, or Non-Black ICE Program Effects.</p>",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "<p>A Cyberdeck with Hardened Circuitry cannot be rendered temporarily disabled, rendered inoperable, or destroyed by EMP effects like pulses, or Non-Black ICE Program Effects.</p>",
         "file": "cyberdeck-hardware",
         "name": "Hardened Circuitry",
+        "price": 100,
         "type": "gear"
     },
     {
-        "data": {
-            "description": "<p>A Cyberdeck with a KRASH Barrier is immune to any Program Effect that force the Netrunner to Jack Out, safely or unsafely. <strong>Takes 2 Hardware Option Slots.</strong></p>",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "<p>A Cyberdeck with a KRASH Barrier is immune to any Program Effect that force the Netrunner to Jack Out, safely or unsafely. <strong>Takes 2 Hardware Option Slots.</strong></p>",
         "file": "cyberdeck-hardware",
         "name": "KRASH Barrier",
+        "price": 100,
         "type": "gear"
     },
     {
-        "data": {
-            "description": "<p>A Cyberdeck with a DNA Lock can be locked and unlocked using a thumbprint, iris scan, blood sample, or any other biometric method desired. The method varies depending on the model of the DNA Lock. A locked Cyberdeck cannot be accessed without either its biometric key or a DV 17 Electronics/Security Tech Check. <strong>Takes 2 Hardware Option Slots.</strong></p>",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "<p>A Cyberdeck with a DNA Lock can be locked and unlocked using a thumbprint, iris scan, blood sample, or any other biometric method desired. The method varies depending on the model of the DNA Lock. A locked Cyberdeck cannot be accessed without either its biometric key or a DV 17 Electronics/Security Tech Check. <strong>Takes 2 Hardware Option Slots.</strong></p>",
         "file": "cyberdeck-hardware",
         "name": "DNA Lock",
+        "price": 100,
         "type": "gear"
     },
     {
-        "data": {
-            "description": "<p>While installed on a Cyberdeck, a Backup Drive \"saves\" Non-Black ICE Attacker, Defender, or Booster Programs that are destroyed by pulling them into the Backup Drive the instant before they meet their end. As a Meat Action, a Netrunner can re-install all Programs \"saved\" by the Backup Drive onto their deck, if they have the Slots for them. If removed from a Cyberdeck, the Backup Drive erases its contents automatically. Restored Programs with once-per-Netrun restrictions and the like are restored in the exact state they were saved in, so you can't kill your own Armor to refresh it. Yeah, that means you. <strong>Takes 2 Hardware Option Slots.</strong></p>",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "<p>While installed on a Cyberdeck, a Backup Drive \"saves\" Non-Black ICE Attacker, Defender, or Booster Programs that are destroyed by pulling them into the Backup Drive the instant before they meet their end. As a Meat Action, a Netrunner can re-install all Programs \"saved\" by the Backup Drive onto their deck, if they have the Slots for them. If removed from a Cyberdeck, the Backup Drive erases its contents automatically. Restored Programs with once-per-Netrun restrictions and the like are restored in the exact state they were saved in, so you can't kill your own Armor to refresh it. Yeah, that means you. <strong>Takes 2 Hardware Option Slots.</strong></p>",
         "file": "cyberdeck-hardware",
         "name": "Backup Drive",
+        "price": 100,
         "type": "gear"
     },
     {
-        "data": {
-            "description": "<p>A Cyberdeck with a Range Upgrade can connect to an access point from up to 8m away.</p>",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "<p>A Cyberdeck with a Range Upgrade can connect to an access point from up to 8m away.</p>",
         "file": "cyberdeck-hardware",
         "name": "Range Upgrade",
+        "price": 100,
         "type": "gear"
     },
     {
-        "data": {
-            "description": "<p>A Cyberdeck with Insulated Wiring cannot catch fire or cause the user's clothing to catch fire as the result of a Program effect.</p>",
-            "legality": 0,
-            "price": 100,
-            "rarity": 0
-        },
+        "description": "<p>A Cyberdeck with Insulated Wiring cannot catch fire or cause the user's clothing to catch fire as the result of a Program effect.</p>",
         "file": "cyberdeck-hardware",
         "name": "Insulated Wiring",
+        "price": 100,
         "type": "gear"
     }
 ]

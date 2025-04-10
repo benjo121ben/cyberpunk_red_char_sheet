@@ -40,9 +40,7 @@ pub struct ArmorData {
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Data {
     pub description: String,
-    pub legality: i32,
     pub price: i32,
-    pub rarity: i32,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -104,6 +102,8 @@ pub struct Weapon {
     pub data: WeaponData,
     pub file: String,
     pub name: String,
+    #[serde(default)]
+    pub personalized_name: String,
     #[serde(rename = "type")]
     pub type_field: String,
 }
@@ -121,6 +121,15 @@ pub struct WeaponData {
     pub rof: i32,
     pub skill: String,
     pub weapontype: String,
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct Cyberware {
+    pub data: Data,
+    pub file: String,
+    pub name: String,
+    #[serde(rename = "type")]
+    pub type_field: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]

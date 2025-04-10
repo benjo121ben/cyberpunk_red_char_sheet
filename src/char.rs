@@ -2,11 +2,17 @@
 use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
-use super::journal::Journal;
+use super::{journal::Journal, gear::{Armor, }};
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Character {
     pub name: String,
+
+    pub armors: Vec<Armor>,
+
+    pub weapons: Vec<Weapon>,
+
+    pub cyberware: 
 
     pub hp_current: i32, 
     
@@ -19,7 +25,7 @@ pub struct Character {
     pub skills: HashMap<String, Skill>,
     
     #[serde(default)]
-    pub gear_list: Vec<Gear>,
+    pub gear_list: HashMap<String, i32>,
     
     #[serde(default)]
     pub flags: HashMap<String, bool>
@@ -48,20 +54,17 @@ pub struct Skill {
     pub stat: String
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
-pub struct Gear {
-    pub name: String,
-}
-
 impl Character {
     pub fn zero() -> Character {
         let mut char = Character {
             name: String::from("Test"),
+            armors: vec![],
+            weapons: vec![],
             hp_current: 0,
             stats: CharStats { intelligence: 0, reflex: 0, dexterity: 0, technique: 0, cool: 0, willpower: 0, luck: 0, movement: 0, body: 0, empathy: 0 },
             journals: vec![Journal::default()],
             skills: HashMap::new(),
-            gear_list: vec![],
+            gear_list: HashMap::new(),
             flags: HashMap::new(),
         };
 
