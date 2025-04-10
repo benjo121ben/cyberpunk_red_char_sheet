@@ -158,17 +158,18 @@ pub fn App() -> impl IntoView {
 fn HomePage() -> impl IntoView {
     view! {
         <Await
-            future=get_char_data()
-            let:char_data_result
+            future=get_all_data()
+            let:all_data_result
         >{
-            let result_clone = char_data_result.clone();
+            let result_clone = all_data_result.clone();
             move || {
                 log!("{:#?}",result_clone.clone());
                 match result_clone.clone() {
-                    Ok(char_data) => {
-                        let cloned_data: Character = char_data.clone();
+                    Ok((char_data, gear_data)) => {
+                        let cloned_char_data: Character = char_data.clone();
+                        let cloned_gear_data: GearData = gear_data.clone();
                         view!{
-                            <CharacterView character_data=cloned_data/>
+                            <CharacterView character_data=cloned_char_data gear_data=cloned_gear_data/>
                         }.into_any()
                     },
                     Err(error) => {
@@ -184,7 +185,7 @@ fn HomePage() -> impl IntoView {
 }
 
 #[component]
-fn CharacterView(character_data: Character) -> impl IntoView {
+fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoView {
     let char_rw_signal = RwSignal::new(character_data);
     let save_char_action = Action::new(move |_: &()| async move {
         let char_copy = char_rw_signal.get_untracked();
@@ -192,6 +193,7 @@ fn CharacterView(character_data: Character) -> impl IntoView {
     });
 
     provide_context(char_rw_signal);
+    provide_context(gear_data);
 
     Effect::new(move |prev| {
         let _ = char_rw_signal.get();

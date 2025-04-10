@@ -9,7 +9,6 @@
             "psychosis": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "fashionware",
         "name": "Skinwatch",
         "type": "cyberware"
@@ -24,7 +23,6 @@
             "psychosis": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "fashionware",
         "name": "EMP Threading",
         "type": "cyberware"
@@ -39,7 +37,6 @@
             "psychosis": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "fashionware",
         "name": "Chemskin",
         "type": "cyberware"
@@ -54,7 +51,6 @@
             "psychosis": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "fashionware",
         "name": "Techhair",
         "type": "cyberware"
@@ -69,7 +65,6 @@
             "psychosis": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "fashionware",
         "name": "Shift Tacts",
         "type": "cyberware"
@@ -84,7 +79,6 @@
             "psychosis": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "fashionware",
         "name": "Light Tattoo",
         "type": "cyberware"
@@ -99,7 +93,6 @@
             "psychosis": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "fashionware",
         "name": "Biomonitor",
         "type": "cyberware"

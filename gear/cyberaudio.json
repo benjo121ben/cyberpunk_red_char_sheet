@@ -9,7 +9,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberaudio",
         "name": "Bug Detector",
         "type": "cyberware"
@@ -24,7 +23,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberaudio",
         "name": "Internal Agent",
         "type": "cyberware"
@@ -39,7 +37,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberaudio",
         "name": "Radar Detector",
         "type": "cyberware"
@@ -54,7 +51,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberaudio",
         "name": "Radio Scanner/ Music Player",
         "type": "cyberware"
@@ -69,7 +65,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberaudio",
         "name": "Homing Tracer",
         "type": "cyberware"
@@ -84,7 +79,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberaudio",
         "name": "Level Damper",
         "type": "cyberware"
@@ -99,7 +93,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberaudio",
         "name": "Voice Stress Analyzer",
         "type": "cyberware"
@@ -114,7 +107,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberaudio",
         "name": "Scrambler Descrambler",
         "type": "cyberware"
@@ -129,7 +121,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberaudio",
         "name": "Amplified Hearing",
         "type": "cyberware"
@@ -144,7 +135,6 @@
             "psychosis": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberaudio",
         "name": "Cyberaudio Suite",
         "type": "cyberware"
@@ -159,7 +149,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberaudio",
         "name": "Radio Communicator",
         "type": "cyberware"
@@ -174,7 +163,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberaudio",
         "name": "Audio Recorder",
         "type": "cyberware"

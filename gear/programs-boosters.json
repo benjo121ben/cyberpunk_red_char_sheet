@@ -6,7 +6,6 @@
             "price": 50,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-boosters",
         "name": "Worm",
         "type": "gear"
@@ -18,7 +17,6 @@
             "price": 20,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-boosters",
         "name": "Eraser",
         "type": "gear"
@@ -30,7 +28,6 @@
             "price": 20,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-boosters",
         "name": "See Ya",
         "type": "gear"
@@ -42,7 +39,6 @@
             "price": 100,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-boosters",
         "name": "Speedy Gonzalvez",
         "type": "gear"

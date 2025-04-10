@@ -20,10 +20,9 @@ pub struct GearData {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct Armor {
     pub data: Data,
-    pub effects: Vec<Value>,
+    pub armor_data: ArmorData,
     pub file: String,
     pub name: String,
     #[serde(rename = "type")]
@@ -31,19 +30,24 @@ pub struct Armor {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
+pub struct ArmorData {
+    pub sp: i32,
+    #[serde(default)]
+    pub sp_current: i32,
+    pub penalty: i32
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Data {
     pub description: String,
-    pub legality: i64,
-    pub price: i64,
-    pub rarity: i64,
+    pub legality: i32,
+    pub price: i32,
+    pub rarity: i32,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct CyberdeckHardware {
     pub data: Data,
-    pub effects: Vec<Value>,
     pub file: String,
     pub name: String,
     #[serde(rename = "type")]
@@ -51,10 +55,8 @@ pub struct CyberdeckHardware {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct Drug {
     pub data: Data,
-    pub effects: Vec<Value>,
     pub file: String,
     pub name: String,
     #[serde(rename = "type")]
@@ -62,10 +64,8 @@ pub struct Drug {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct Item {
     pub data: Data,
-    pub effects: Vec<Value>,
     pub file: String,
     pub name: String,
     #[serde(rename = "type")]
@@ -73,10 +73,8 @@ pub struct Item {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct Attacker {
     pub data: Data,
-    pub effects: Vec<Value>,
     pub file: String,
     pub name: String,
     #[serde(rename = "type")]
@@ -84,10 +82,8 @@ pub struct Attacker {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct Booster {
     pub data: Data,
-    pub effects: Vec<Value>,
     pub file: String,
     pub name: String,
     #[serde(rename = "type")]
@@ -95,10 +91,8 @@ pub struct Booster {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct ProgramsDefender {
     pub data: Data,
-    pub effects: Vec<Value>,
     pub file: String,
     pub name: String,
     #[serde(rename = "type")]
@@ -106,10 +100,8 @@ pub struct ProgramsDefender {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct Weapon {
     pub data: WeaponData,
-    pub effects: Vec<Value>,
     pub file: String,
     pub name: String,
     #[serde(rename = "type")]
@@ -117,25 +109,23 @@ pub struct Weapon {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct WeaponData {
     pub ammo: Ammo,
     pub burst: bool,
     pub damage: String,
     pub description: String,
     pub fullauto: bool,
-    pub legality: i64,
-    pub price: i64,
-    pub rarity: i64,
-    pub rof: i64,
+    pub legality: i32,
+    pub price: i32,
+    pub rarity: i32,
+    pub rof: i32,
     pub skill: String,
     pub weapontype: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct Ammo {
-    pub max: Option<i64>,
-    pub min: i64,
-    pub value: i64,
+    pub max: Option<i32>,
+    pub min: i32,
+    pub value: i32,
 }

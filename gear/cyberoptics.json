@@ -9,7 +9,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "Anti-Dazzle",
         "type": "cyberware"
@@ -24,7 +23,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "TeleOptics",
         "type": "cyberware"
@@ -39,7 +37,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "Color Shift",
         "type": "cyberware"
@@ -54,7 +51,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "Image Enhance",
         "type": "cyberware"
@@ -69,7 +65,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "Cybereye - Base/Req.",
         "type": "cyberware"
@@ -84,7 +79,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "Dartgun",
         "type": "cyberware"
@@ -99,7 +93,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "MicroVideo",
         "type": "cyberware"
@@ -114,7 +107,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "Virtuality",
         "type": "cyberware"
@@ -129,7 +121,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "Chyron",
         "type": "cyberware"
@@ -144,7 +135,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "Low Light/ Infrared/ UV",
         "type": "cyberware"
@@ -159,7 +149,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "Targeting Scope",
         "type": "cyberware"
@@ -174,7 +163,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "Radiation Detector",
         "type": "cyberware"
@@ -189,7 +177,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberoptics",
         "name": "MicroOptics",
         "type": "cyberware"

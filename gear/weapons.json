@@ -1,6 +1,15 @@
 [
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 500,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Sniper Rifle",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": 4,
                 "min": 0,
@@ -8,22 +17,23 @@
             },
             "burst": false,
             "damage": "5d6",
-            "description": "A brief item description goes here...",
             "fullauto": false,
-            "legality": 0,
-            "price": 500,
-            "rarity": 0,
             "rof": 1,
-            "skill": "shoulderarms",
+            "skill": "shoulder_arms",
             "weapontype": "carbine"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Sniper Rifle",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 50,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Light Melee Weapon",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": null,
                 "min": 0,
@@ -31,22 +41,23 @@
             },
             "burst": false,
             "damage": "1d6",
-            "description": "A brief item description goes here...",
             "fullauto": false,
-            "legality": 0,
-            "price": 50,
-            "rarity": 0,
             "rof": 2,
-            "skill": "meleeweapon",
+            "skill": "melee_weapon",
             "weapontype": "meleeweapon"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Light Melee Weapon",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Heavy Melee Weapon",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": null,
                 "min": 0,
@@ -54,22 +65,23 @@
             },
             "burst": false,
             "damage": "3d6",
-            "description": "A brief item description goes here...",
             "fullauto": false,
-            "legality": 0,
-            "price": 100,
-            "rarity": 0,
             "rof": 2,
-            "skill": "meleeweapon",
+            "skill": "melee_weapon",
             "weapontype": "meleeweapon"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Heavy Melee Weapon",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 50,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Medium Pistol",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": 12,
                 "min": 0,
@@ -77,22 +89,23 @@
             },
             "burst": false,
             "damage": "2d6",
-            "description": "A brief item description goes here...",
             "fullauto": false,
-            "legality": 0,
-            "price": 50,
-            "rarity": 0,
             "rof": 2,
             "skill": "handgun",
             "weapontype": "pistol"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Medium Pistol",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Bows & Crossbows",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": 1,
                 "min": 0,
@@ -100,22 +113,23 @@
             },
             "burst": false,
             "damage": "4d6",
-            "description": "A brief item description goes here...",
             "fullauto": false,
-            "legality": 0,
-            "price": 100,
-            "rarity": 0,
             "rof": 1,
             "skill": "archery",
             "weapontype": "pistol"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Bows & Crossbows",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Heavy SMG",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": 40,
                 "min": 0,
@@ -123,22 +137,23 @@
             },
             "burst": true,
             "damage": "3d6",
-            "description": "A brief item description goes here...",
             "fullauto": true,
-            "legality": 0,
-            "price": 100,
-            "rarity": 0,
             "rof": 1,
             "skill": "handgun",
             "weapontype": "submachinegun"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Heavy SMG",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Very Heavy Melee Weapon",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": null,
                 "min": 0,
@@ -146,22 +161,23 @@
             },
             "burst": false,
             "damage": "4d6",
-            "description": "A brief item description goes here...",
             "fullauto": false,
-            "legality": 0,
-            "price": 100,
-            "rarity": 0,
             "rof": 1,
-            "skill": "meleeweapon",
+            "skill": "melee_weapon",
             "weapontype": "meleeweapon"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Very Heavy Melee Weapon",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 500,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Assault Rifle",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": 25,
                 "min": 0,
@@ -169,22 +185,23 @@
             },
             "burst": true,
             "damage": "5d6",
-            "description": "A brief item description goes here...",
             "fullauto": true,
-            "legality": 0,
-            "price": 500,
-            "rarity": 0,
             "rof": 1,
-            "skill": "shoulderarms",
+            "skill": "shoulder_arms",
             "weapontype": "assaultrifle"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Assault Rifle",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 500,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Shotgun",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": 4,
                 "min": 0,
@@ -192,22 +209,23 @@
             },
             "burst": false,
             "damage": "5d6",
-            "description": "A brief item description goes here...",
             "fullauto": false,
-            "legality": 0,
-            "price": 500,
-            "rarity": 0,
             "rof": 1,
-            "skill": "shoulderarms",
+            "skill": "shoulder_arms",
             "weapontype": "shotgun"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Shotgun",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 500,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Rocket Launcher",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": 1,
                 "min": 0,
@@ -215,22 +233,23 @@
             },
             "burst": false,
             "damage": "8d6",
-            "description": "A brief item description goes here...",
             "fullauto": false,
-            "legality": 0,
-            "price": 500,
-            "rarity": 0,
             "rof": 1,
-            "skill": "heavyweapons",
+            "skill": "heavy_weapons",
             "weapontype": "pistol"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Rocket Launcher",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Heavy Pistol",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": 8,
                 "min": 0,
@@ -238,22 +257,23 @@
             },
             "burst": false,
             "damage": "3d6",
-            "description": "A brief item description goes here...",
             "fullauto": false,
-            "legality": 0,
-            "price": 100,
-            "rarity": 0,
             "rof": 2,
             "skill": "handgun",
             "weapontype": "pistol"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Heavy Pistol",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 50,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Medium Melee Weapon",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": null,
                 "min": 0,
@@ -261,22 +281,23 @@
             },
             "burst": false,
             "damage": "2d6",
-            "description": "A brief item description goes here...",
             "fullauto": false,
-            "legality": 0,
-            "price": 50,
-            "rarity": 0,
             "rof": 2,
-            "skill": "meleeweapon",
+            "skill": "melee_weapon",
             "weapontype": "meleeweapon"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Medium Melee Weapon",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 500,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Grenade Launcher",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": 2,
                 "min": 0,
@@ -284,22 +305,23 @@
             },
             "burst": false,
             "damage": "6d6",
-            "description": "A brief item description goes here...",
             "fullauto": false,
-            "legality": 0,
-            "price": 500,
-            "rarity": 0,
             "rof": 1,
-            "skill": "heavyweapons",
+            "skill": "heavy_weapons",
             "weapontype": "pistol"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Grenade Launcher",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "SMG",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": 30,
                 "min": 0,
@@ -307,22 +329,23 @@
             },
             "burst": true,
             "damage": "2d6",
-            "description": "A brief item description goes here...",
             "fullauto": true,
-            "legality": 0,
-            "price": 100,
-            "rarity": 0,
             "rof": 1,
             "skill": "handgun",
             "weapontype": "submachinegun"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "SMG",
-        "type": "weapons"
+        }
     },
     {
         "data": {
+            "description": "A brief item description goes here...",
+            "legality": 0,
+            "price": 100,
+            "rarity": 0
+        },
+        "file": "weapons",
+        "name": "Very Heavy Pistol",
+        "type": "weapons",
+        "weapon_data": {
             "ammo": {
                 "max": 8,
                 "min": 0,
@@ -330,18 +353,10 @@
             },
             "burst": false,
             "damage": "4d6",
-            "description": "A brief item description goes here...",
             "fullauto": false,
-            "legality": 0,
-            "price": 100,
-            "rarity": 0,
             "rof": 1,
             "skill": "handgun",
             "weapontype": "pistol"
-        },
-        "effects": [],
-        "file": "weapons",
-        "name": "Very Heavy Pistol",
-        "type": "weapons"
+        }
     }
 ]

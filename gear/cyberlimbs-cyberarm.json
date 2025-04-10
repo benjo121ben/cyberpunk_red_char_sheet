@@ -9,7 +9,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Standard Hand - base/req",
         "type": "cyberware"
@@ -24,7 +23,6 @@
             "psychosis": 2,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Scratchers",
         "type": "cyberware"
@@ -39,7 +37,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Quick Change Mount",
         "type": "cyberware"
@@ -54,7 +51,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Grapple Hand",
         "type": "cyberware"
@@ -69,7 +65,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Popup Grenade Launcher",
         "type": "cyberware"
@@ -84,7 +79,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Shoulder Cam",
         "type": "cyberware"
@@ -99,7 +93,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Subdermal Grip",
         "type": "cyberware"
@@ -114,7 +107,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Cyberdeck",
         "type": "cyberware"
@@ -129,7 +121,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Popup Shield",
         "type": "cyberware"
@@ -144,7 +135,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Big Knucks",
         "type": "cyberware"
@@ -159,7 +149,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Wolvers",
         "type": "cyberware"
@@ -174,7 +163,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Tool Hand",
         "type": "cyberware"
@@ -189,7 +177,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Techscanner",
         "type": "cyberware"
@@ -204,7 +191,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Rippers",
         "type": "cyberware"
@@ -219,7 +205,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Medscanner",
         "type": "cyberware"
@@ -234,7 +219,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Popup Melee Weapon",
         "type": "cyberware"
@@ -249,7 +233,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Popup Ranged Weapon",
         "type": "cyberware"
@@ -264,7 +247,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Cyberarm - base/req",
         "type": "cyberware"
@@ -279,7 +261,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberlimbs-cyberarm",
         "name": "Slice \u00e2\u20ac\u02dcN Dice",
         "type": "cyberware"

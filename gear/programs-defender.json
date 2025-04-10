@@ -6,7 +6,6 @@
             "price": 20,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-defender",
         "name": "Shield",
         "type": "gear"
@@ -18,7 +17,6 @@
             "price": 50,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-defender",
         "name": "Armor",
         "type": "gear"
@@ -30,7 +28,6 @@
             "price": 50,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-defender",
         "name": "Flak",
         "type": "gear"

@@ -9,7 +9,6 @@
             "psychosis": 3,
             "rarity": 0
         },
-        "effects": [],
         "file": "external-body-cyberware",
         "name": "Subdermal Pocket",
         "type": "cyberware"
@@ -24,7 +23,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "external-body-cyberware",
         "name": "Hidden Holster",
         "type": "cyberware"
@@ -39,7 +37,6 @@
             "psychosis": 7,
             "rarity": 0
         },
-        "effects": [],
         "file": "external-body-cyberware",
         "name": "Skin Weave",
         "type": "cyberware"
@@ -54,7 +51,6 @@
             "psychosis": 14,
             "rarity": 0
         },
-        "effects": [],
         "file": "external-body-cyberware",
         "name": "Subdermal Armor",
         "type": "cyberware"

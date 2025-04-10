@@ -6,7 +6,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Glow Stick",
         "type": "gear"
@@ -18,7 +17,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Linear Frame \u00e2\u02c6\u2018 (Sigma)",
         "type": "gear"
@@ -30,7 +28,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Tech Bag",
         "type": "gear"
@@ -42,7 +39,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Chemical Analyzer",
         "type": "gear"
@@ -54,7 +50,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Linear Frame \u00c3\u0178 (Beta)",
         "type": "gear"
@@ -66,7 +61,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "MRE",
         "type": "gear"
@@ -78,7 +72,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Food Stick",
         "type": "gear"
@@ -90,7 +83,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Inflatable Bed & Sleep-bag",
         "type": "gear"
@@ -102,7 +94,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Binoculars",
         "type": "gear"
@@ -114,7 +105,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Audio Recorder",
         "type": "gear"
@@ -126,7 +116,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Radio Scanner/Music Player",
         "type": "gear"
@@ -138,7 +127,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Techscanner",
         "type": "gear"
@@ -150,7 +138,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Glow Paint",
         "type": "gear"
@@ -162,7 +149,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Video Camera",
         "type": "gear"
@@ -174,7 +160,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Personal CarePak",
         "type": "gear"
@@ -186,7 +171,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Rope (60m/yds)",
         "type": "gear"
@@ -198,7 +182,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Carryall",
         "type": "gear"
@@ -210,7 +193,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Tent and Camping Equipment",
         "type": "gear"
@@ -222,7 +204,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Pocket Amplifier",
         "type": "gear"
@@ -234,7 +215,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Drum Synthesizer",
         "type": "gear"
@@ -246,7 +226,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Scrambler/Descrambler",
         "type": "gear"
@@ -258,7 +237,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Disposable Cell Phone:",
         "type": "gear"
@@ -270,7 +248,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Radar Detector",
         "type": "gear"
@@ -282,7 +259,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Duct Tape",
         "type": "gear"
@@ -294,7 +270,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Grapple Gun",
         "type": "gear"
@@ -306,7 +281,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Agent",
         "type": "gear"
@@ -318,7 +292,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Cryotank",
         "type": "gear"
@@ -330,7 +303,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Flashlight",
         "type": "gear"
@@ -342,7 +314,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Computer",
         "type": "gear"
@@ -354,7 +325,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Airhypo",
         "type": "gear"
@@ -366,7 +336,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Homing Tracer",
         "type": "gear"
@@ -378,7 +347,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Virtuality Goggles",
         "type": "gear"
@@ -390,7 +358,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Medscanner",
         "type": "gear"
@@ -402,7 +369,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Bug Detector",
         "type": "gear"
@@ -414,7 +380,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Smart Glasses",
         "type": "gear"
@@ -426,7 +391,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Auto Level Dampening Ear Protectors",
         "type": "gear"
@@ -438,7 +402,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Lock Picking Set",
         "type": "gear"
@@ -450,7 +413,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Anti-Smog Breathing Mask",
         "type": "gear"
@@ -462,7 +424,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Techtool",
         "type": "gear"
@@ -474,7 +435,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Vial of Poison",
         "type": "gear"
@@ -486,7 +446,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Road Flare",
         "type": "gear"
@@ -498,7 +457,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Radio Communicator",
         "type": "gear"
@@ -510,7 +468,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Cyberdeck (Excellent Quality)",
         "type": "gear"
@@ -522,7 +479,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Cyberdeck (Standard Quality):",
         "type": "gear"
@@ -534,7 +490,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Handcuffs",
         "type": "gear"
@@ -546,7 +501,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Cryopump",
         "type": "gear"
@@ -558,7 +512,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Memory Chips",
         "type": "gear"
@@ -570,7 +523,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Vial of Biotoxin",
         "type": "gear"
@@ -582,7 +534,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Electric Guitar or another Instrument",
         "type": "gear"
@@ -594,7 +545,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Medtech Bag",
         "type": "gear"
@@ -606,7 +556,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Kibble Pack",
         "type": "gear"
@@ -618,7 +567,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "items",
         "name": "Cyberdeck (Poor Quality)",
         "type": "gear"

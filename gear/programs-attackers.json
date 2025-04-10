@@ -6,7 +6,6 @@
             "price": 50,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-attackers",
         "name": "Banhammer",
         "type": "gear"
@@ -18,7 +17,6 @@
             "price": 100,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-attackers",
         "name": "Poison Flatline",
         "type": "gear"
@@ -30,7 +28,6 @@
             "price": 100,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-attackers",
         "name": "Nervescrub",
         "type": "gear"
@@ -42,7 +39,6 @@
             "price": 50,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-attackers",
         "name": "Vrizzbolt",
         "type": "gear"
@@ -54,7 +50,6 @@
             "price": 50,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-attackers",
         "name": "Sword",
         "type": "gear"
@@ -66,7 +61,6 @@
             "price": 100,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-attackers",
         "name": "Superglue",
         "type": "gear"
@@ -78,7 +72,6 @@
             "price": 100,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-attackers",
         "name": "DeckKRASH",
         "type": "gear"
@@ -90,7 +83,6 @@
             "price": 100,
             "rarity": 0
         },
-        "effects": [],
         "file": "programs-attackers",
         "name": "Hellbolt",
         "type": "gear"

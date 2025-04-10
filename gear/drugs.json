@@ -6,7 +6,6 @@
             "price": 20,
             "rarity": 0
         },
-        "effects": [],
         "file": "drugs",
         "name": "Blue Glass",
         "type": "gear"
@@ -18,7 +17,6 @@
             "price": 20,
             "rarity": 0
         },
-        "effects": [],
         "file": "drugs",
         "name": "Synthcoke",
         "type": "gear"
@@ -30,7 +28,6 @@
             "price": 10,
             "rarity": 0
         },
-        "effects": [],
         "file": "drugs",
         "name": "Smash",
         "type": "gear"
@@ -42,7 +39,6 @@
             "price": 50,
             "rarity": 0
         },
-        "effects": [],
         "file": "drugs",
         "name": "Black Lace",
         "type": "gear"
@@ -54,7 +50,6 @@
             "price": 0,
             "rarity": 0
         },
-        "effects": [],
         "file": "drugs",
         "name": "Boost",
         "type": "gear"

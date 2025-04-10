@@ -6,7 +6,6 @@
             "price": 100,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberdeck-hardware",
         "name": "Hardened Circuitry",
         "type": "gear"
@@ -18,7 +17,6 @@
             "price": 100,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberdeck-hardware",
         "name": "KRASH Barrier",
         "type": "gear"
@@ -30,7 +28,6 @@
             "price": 100,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberdeck-hardware",
         "name": "DNA Lock",
         "type": "gear"
@@ -42,7 +39,6 @@
             "price": 100,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberdeck-hardware",
         "name": "Backup Drive",
         "type": "gear"
@@ -54,7 +50,6 @@
             "price": 100,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberdeck-hardware",
         "name": "Range Upgrade",
         "type": "gear"
@@ -66,7 +61,6 @@
             "price": 100,
             "rarity": 0
         },
-        "effects": [],
         "file": "cyberdeck-hardware",
         "name": "Insulated Wiring",
         "type": "gear"
