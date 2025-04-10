@@ -2,7 +2,7 @@
 use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
-use super::{journal::Journal, gear::{Armor, }};
+use super::{journal::Journal, gear::*};
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Character {
@@ -12,7 +12,9 @@ pub struct Character {
 
     pub weapons: Vec<Weapon>,
 
-    pub cyberware: 
+    pub cyberware: Vec<Cyberware>,
+
+    pub humanity:i32,
 
     pub hp_current: i32, 
     

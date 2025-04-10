@@ -1,7 +1,7 @@
 use serde::Deserialize;
 use serde::Serialize;
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct GearData {
     pub ammunition: Vec<Ammo>,
     pub armor: Vec<Armor>,
@@ -19,7 +19,7 @@ pub struct GearData {
     pub weapons: Vec<Weapon>,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Armor {
     pub armor_data: ArmorData,
     pub description: String,
@@ -30,7 +30,7 @@ pub struct Armor {
     pub type_field: String,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ArmorData {
     pub sp: i32,
     #[serde(default)]
@@ -38,7 +38,7 @@ pub struct ArmorData {
     pub penalty: i32
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct CyberdeckHardware {
     pub description: String,
     pub file: String,
@@ -48,7 +48,7 @@ pub struct CyberdeckHardware {
     pub type_field: String,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Cyberware {
     pub description: String,
     pub file: String,
@@ -60,7 +60,7 @@ pub struct Cyberware {
     pub type_field: String,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Drug {
     pub description: String,
     pub file: String,
@@ -70,7 +70,7 @@ pub struct Drug {
     pub type_field: String,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Item {
     pub description: String,
     pub file: String,
@@ -80,7 +80,7 @@ pub struct Item {
     pub type_field: String,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ProgramsAttacker {
     pub description: String,
     pub file: String,
@@ -90,7 +90,7 @@ pub struct ProgramsAttacker {
     pub type_field: String,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ProgramsBooster {
     pub description: String,
     pub file: String,
@@ -100,7 +100,7 @@ pub struct ProgramsBooster {
     pub type_field: String,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ProgramsDefender {
     pub description: String,
     pub file: String,
@@ -110,7 +110,7 @@ pub struct ProgramsDefender {
     pub type_field: String,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Weapon {
     #[serde(default)]
     pub personalized_name: String,
@@ -123,7 +123,7 @@ pub struct Weapon {
     pub weapon_data: WeaponData,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct WeaponData {
     pub ammo: Ammo,
     pub burst: bool,
@@ -134,7 +134,7 @@ pub struct WeaponData {
     pub weapontype: String,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Ammo {
     pub max: Option<i32>,
     pub min: i32,
