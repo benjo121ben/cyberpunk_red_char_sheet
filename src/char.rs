@@ -1,5 +1,5 @@
 
-use std::collections::HashMap;
+use std::{cmp::Ordering, collections::HashMap};
 
 use serde::{Deserialize, Serialize};
 use super::{journal::Journal, gear::*};
@@ -57,6 +57,18 @@ pub struct Skill {
     pub nr: i32,
     pub difficult_train: bool,
     pub stat: String
+}
+
+impl Skill {
+    pub fn cmp_stat_and_name(&self, other: &Self) -> Ordering{
+        self.stat
+            .cmp(&other.stat)
+            .then(self.name.cmp(&other.name))
+    }
+
+    pub fn cmp_name(&self, other: &Self) -> Ordering{
+        self.name.cmp(&other.name)
+    }
 }
 
 impl Character {
@@ -197,7 +209,7 @@ impl Character {
     }
 
     pub fn get_stat(self: &Self, stat_name: &str) -> i32 {
-        match stat_name {
+        match stat_name.to_lowercase().as_str() {
             "int" => return self.stats.intelligence,
             "ref" => return self.stats.reflex,
             "dex" => return self.stats.dexterity,
@@ -212,11 +224,19 @@ impl Character {
         }
     }
 
+    pub fn has_active_flag(self: &Self, key: &str) -> bool{
+        *self.flags.get(key).or(Some(&false)).unwrap()
+    }
+
     pub fn flip_flag(self: &mut Self, key: &str) {
         let new_val = !self.flags.get(key).or(Some(&false)).unwrap();
         self.flags.insert(
             key.to_string(), 
             new_val
         );
+    }
+
+    pub fn calc_max_health(self: &Self) -> i32 {
+        return 10 + 5 * ((self.get_stat("body") as f32 + self.get_stat("will") as f32) / 2.0).ceil() as i32
     }
 }
