@@ -1,4 +1,6 @@
 pub mod journal;
+pub mod help;
+pub mod skill_view;
 pub mod app;
 pub mod gear;
 pub mod char;

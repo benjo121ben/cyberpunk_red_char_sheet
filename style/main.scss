@@ -26,6 +26,14 @@ body {
 	}
 }
 
+.skill_list_cat_header {
+	grid-column-start: span 3;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-style: bold;
+	justify-self: center;
+}
+
 .center_div {
 
 }

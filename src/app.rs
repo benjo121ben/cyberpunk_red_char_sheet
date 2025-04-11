@@ -1,6 +1,7 @@
 use leptos::prelude::*;
 use leptos::logging::log;
-use std::{clone, error::Error};
+use std::error::Error;
+use super::skill_view::SkillList;
 use std::fs::read_to_string;
 use std::path::Path;
 use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title};
@@ -10,7 +11,7 @@ use leptos_router::{
 };
 
 use crate::char::{Character, Skill};
-use crate::gear::{self, GearData};
+use crate::gear::GearData;
 
 pub fn read_gear_data_from_file<P: AsRef<Path>>(path: P) -> Result<GearData, Box<dyn Error>> {
 
@@ -223,77 +224,3 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
     }
 }
 
-#[component]
-fn SkillList() -> impl IntoView {
-    let rw_char_signal = get_char_signal_from_ctx();
-    let filter_flag_memo = Memo::new(move |_| rw_char_signal.read().has_active_flag("filter_zeros"));
-    let group_flag_memo = Memo::new(move |_| rw_char_signal.read().has_active_flag("group_by_stat"));
-    let skill_list_memo = Memo::new(move |_| {
-        let mut temp_list: Vec<(String, Skill)> = rw_char_signal.with(|c| c.skills.clone().into_iter().collect::<Vec<(String, Skill)>>());
-
-        if filter_flag_memo.get() {
-            temp_list = temp_list.into_iter().filter(|(_, skill)| skill.nr != 0).collect::<Vec<(String, Skill)>>();
-        }
-        
-        if group_flag_memo.get() {
-            temp_list.sort_by(|(_, first_skill), (_, second_skill)| first_skill.cmp_stat_and_name(second_skill));
-        }
-        else {
-            temp_list.sort_by(|(_, first_skill), (_, second_skill)| first_skill.cmp_name(second_skill));
-        }
-        return temp_list
-    });
-
-    view! {
-        <For
-            each=move||{skill_list_memo.get()}
-            key=|(key, _)| key.clone()
-            children=move |(key, _)| {
-                view! {
-                    <SkillEntry key=key.clone()/>
-                }
-            }
-        /> 
-    }
-
-}
-
-#[component]
-fn SkillEntry(key: String) -> impl IntoView {
-    let char_signal = get_char_signal_from_ctx();
-    let key_clone = key.clone(); 
-    let skill_memo = Memo::new(move |_| char_signal.with(|c| c.skills.get(&key).expect("expect skill to exist in its own list").clone()));
-    let get_skill_value = move || {
-        let skill = skill_memo.get();
-        char_signal.with(|char| char.get_stat(&skill.stat.clone())) + skill.nr
-    };
-
-    let update_skill = move|val: i32| {
-        char_signal.update(|c| {
-            c.skills.get_mut(&key_clone).and_then(|skill| {
-                skill.nr += val;
-                Some(skill)
-            });
-        })
-    };
-
-    let update_skill_clone = update_skill.clone();
-
-    view! {
-        <div>{move || skill_memo.read().name.clone()}</div>
-        <div>{move || skill_memo.read().stat.to_uppercase().clone()}</div>
-        <div 
-            on:click=move|_| update_skill(1) 
-            on:contextmenu=move|_| update_skill_clone(-1)>
-                {get_skill_value}
-        </div>
-    }
-}
-
-fn get_char_signal_from_ctx() -> RwSignal<Character>{
-    let char_signal_opt: Option<RwSignal<Character>> = use_context();
-    match char_signal_opt {
-        Some(char_signal) => char_signal,
-        None => panic!("The character should have been provided at this point"),
-    }
-}

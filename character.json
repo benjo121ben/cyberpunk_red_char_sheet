@@ -435,7 +435,7 @@
   },
   "gear_list": {},
   "flags": {
-    "filter_zeros": false,
+    "filter_zeros": true,
     "group_by_stat": true
   }
 }
