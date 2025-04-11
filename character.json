@@ -24,35 +24,35 @@
     }
   ],
   "skills": {
-    "pick_lock": {
-      "name": "Pick Lock",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "tech"
-    },
-    "science": {
-      "name": "Science",
+    "accounting": {
+      "name": "Accounting",
       "nr": 0,
       "difficult_train": false,
       "stat": "int"
     },
-    "basic_tech": {
-      "name": "Basic Tech",
+    "acting": {
+      "name": "Acting",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    "air_vehicle_tech": {
+      "name": "Air Vehicle Tech",
       "nr": 0,
       "difficult_train": false,
       "stat": "tech"
     },
-    "dance": {
-      "name": "Dance",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "dex"
-    },
-    "composition": {
-      "name": "Composition",
+    "animal_handling": {
+      "name": "Animal Handling",
       "nr": 0,
       "difficult_train": false,
       "stat": "int"
+    },
+    "archery": {
+      "name": "Archery",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "ref"
     },
     "athletics": {
       "name": "Athletics",
@@ -66,6 +66,216 @@
       "difficult_train": true,
       "stat": "ref"
     },
+    "basic_tech": {
+      "name": "Basic Tech",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    "brawling": {
+      "name": "Brawling",
+      "nr": 4,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    "bribery": {
+      "name": "Bribery",
+      "nr": 6,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    "bureaucracy": {
+      "name": "Bureaucracy",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "business": {
+      "name": "Business",
+      "nr": 5,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "composition": {
+      "name": "Composition",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "conceal_&_reveal_object": {
+      "name": "Conceal & Reveal Object",
+      "nr": 4,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "concentration": {
+      "name": "Concentration",
+      "nr": 2,
+      "difficult_train": false,
+      "stat": "will"
+    },
+    "contortionist": {
+      "name": "Contortionist",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    "conversation": {
+      "name": "Conversation",
+      "nr": 6,
+      "difficult_train": false,
+      "stat": "emp"
+    },
+    "criminology": {
+      "name": "Criminology",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "cryptography": {
+      "name": "Cryptography",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "cybertech": {
+      "name": "Cybertech",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    "dance": {
+      "name": "Dance",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    "deduction": {
+      "name": "Deduction",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "demoltions": {
+      "name": "Demoltions",
+      "nr": 0,
+      "difficult_train": true,
+      "stat": "tech"
+    },
+    "drive_land_vehicle": {
+      "name": "Drive Land Vehicle",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "ref"
+    },
+    "education": {
+      "name": "Education",
+      "nr": 3,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "electronics_&_security_tech": {
+      "name": "Electronics & Security Tech",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    "endurance": {
+      "name": "Endurance",
+      "nr": 1,
+      "difficult_train": false,
+      "stat": "will"
+    },
+    "evasion": {
+      "name": "Evasion",
+      "nr": 6,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    "first_aid": {
+      "name": "First Aid",
+      "nr": 2,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    "forgery": {
+      "name": "Forgery",
+      "nr": 4,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    "gamble": {
+      "name": "Gamble",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "handgun": {
+      "name": "Handgun",
+      "nr": 5,
+      "difficult_train": false,
+      "stat": "ref"
+    },
+    "heavy_weapons": {
+      "name": "Heavy Weapons",
+      "nr": 0,
+      "difficult_train": true,
+      "stat": "ref"
+    },
+    "human_perception": {
+      "name": "Human Perception",
+      "nr": 5,
+      "difficult_train": false,
+      "stat": "emp"
+    },
+    "interrogation": {
+      "name": "Interrogation",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    "land_vehicle_tech": {
+      "name": "Land Vehicle Tech",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    "language_(english)": {
+      "name": "Language (English)",
+      "nr": 3,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "language_(japanese)": {
+      "name": "Language (Japanese)",
+      "nr": 3,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "language_(mexican)": {
+      "name": "Language (Mexican)",
+      "nr": 3,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "language_(streetslang)": {
+      "name": "Language (Streetslang)",
+      "nr": 4,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "library_search": {
+      "name": "Library Search",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "lip_reading": {
+      "name": "Lip Reading",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
     "local_expert_(your_home)": {
       "name": "Local Expert (Your Home)",
       "nr": 6,
@@ -78,17 +288,53 @@
       "difficult_train": true,
       "stat": "dex"
     },
+    "melee_weapon": {
+      "name": "Melee Weapon",
+      "nr": 6,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    "paint,_draw,_sculpt": {
+      "name": "Paint, Draw, Sculpt",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    "paramedic": {
+      "name": "Paramedic",
+      "nr": 0,
+      "difficult_train": true,
+      "stat": "tech"
+    },
+    "perception": {
+      "name": "Perception",
+      "nr": 2,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "personal_grooming": {
+      "name": "Personal Grooming",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "cool"
+    },
     "persuasion": {
       "name": "Persuasion",
       "nr": 4,
       "difficult_train": false,
       "stat": "cool"
     },
-    "lip_reading": {
-      "name": "Lip Reading",
+    "photography/film": {
+      "name": "Photography/Film",
       "nr": 0,
       "difficult_train": false,
-      "stat": "int"
+      "stat": "tech"
+    },
+    "pick_lock": {
+      "name": "Pick Lock",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
     },
     "pick_pocket": {
       "name": "Pick Pocket",
@@ -96,77 +342,11 @@
       "difficult_train": false,
       "stat": "tech"
     },
-    "language_(japanese)": {
-      "name": "Language (Japanese)",
-      "nr": 3,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "contortionist": {
-      "name": "Contortionist",
+    "pilot_air_vehicle": {
+      "name": "Pilot Air Vehicle",
       "nr": 0,
-      "difficult_train": false,
-      "stat": "dex"
-    },
-    "sea_vehicle_tech": {
-      "name": "Sea Vehicle Tech",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "tech"
-    },
-    "gamble": {
-      "name": "Gamble",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "bureaucracy": {
-      "name": "Bureaucracy",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "education": {
-      "name": "Education",
-      "nr": 3,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "library_search": {
-      "name": "Library Search",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "air_vehicle_tech": {
-      "name": "Air Vehicle Tech",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "tech"
-    },
-    "criminology": {
-      "name": "Criminology",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "electronics_&_security_tech": {
-      "name": "Electronics & Security Tech",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "tech"
-    },
-    "forgery": {
-      "name": "Forgery",
-      "nr": 4,
-      "difficult_train": false,
-      "stat": "tech"
-    },
-    "human_perception": {
-      "name": "Human Perception",
-      "nr": 5,
-      "difficult_train": false,
-      "stat": "emp"
+      "difficult_train": true,
+      "stat": "ref"
     },
     "pilot_sea_vehicle": {
       "name": "Pilot Sea Vehicle",
@@ -174,11 +354,71 @@
       "difficult_train": false,
       "stat": "ref"
     },
-    "heavy_weapons": {
-      "name": "Heavy Weapons",
+    "play_instrument": {
+      "name": "Play Instrument",
       "nr": 0,
-      "difficult_train": true,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    "resist_torture_&_drugs": {
+      "name": "Resist Torture & Drugs",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "will"
+    },
+    "ride": {
+      "name": "Ride",
+      "nr": 0,
+      "difficult_train": false,
       "stat": "ref"
+    },
+    "science": {
+      "name": "Science",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "sea_vehicle_tech": {
+      "name": "Sea Vehicle Tech",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "tech"
+    },
+    "shoulder_arms": {
+      "name": "Shoulder Arms",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "ref"
+    },
+    "stealth": {
+      "name": "Stealth",
+      "nr": 2,
+      "difficult_train": false,
+      "stat": "dex"
+    },
+    "streetwise": {
+      "name": "Streetwise",
+      "nr": 4,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    "tactics": {
+      "name": "Tactics",
+      "nr": 0,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "trading": {
+      "name": "Trading",
+      "nr": 4,
+      "difficult_train": false,
+      "stat": "cool"
+    },
+    "wardrobe_&_style": {
+      "name": "Wardrobe & Style",
+      "nr": 1,
+      "difficult_train": false,
+      "stat": "cool"
     },
     "weapons_tech": {
       "name": "Weapons Tech",
@@ -191,251 +431,11 @@
       "nr": 0,
       "difficult_train": false,
       "stat": "int"
-    },
-    "brawling": {
-      "name": "Brawling",
-      "nr": 4,
-      "difficult_train": false,
-      "stat": "dex"
-    },
-    "play_instrument": {
-      "name": "Play Instrument",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "tech"
-    },
-    "demoltions": {
-      "name": "Demoltions",
-      "nr": 0,
-      "difficult_train": true,
-      "stat": "tech"
-    },
-    "language_(mexican)": {
-      "name": "Language (Mexican)",
-      "nr": 3,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "pilot_air_vehicle": {
-      "name": "Pilot Air Vehicle",
-      "nr": 0,
-      "difficult_train": true,
-      "stat": "ref"
-    },
-    "wardrobe_&_style": {
-      "name": "Wardrobe & Style",
-      "nr": 1,
-      "difficult_train": false,
-      "stat": "cool"
-    },
-    "conversation": {
-      "name": "Conversation",
-      "nr": 6,
-      "difficult_train": false,
-      "stat": "emp"
-    },
-    "paramedic": {
-      "name": "Paramedic",
-      "nr": 0,
-      "difficult_train": true,
-      "stat": "tech"
-    },
-    "personal_grooming": {
-      "name": "Personal Grooming",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "cool"
-    },
-    "deduction": {
-      "name": "Deduction",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "ride": {
-      "name": "Ride",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "ref"
-    },
-    "endurance": {
-      "name": "Endurance",
-      "nr": 1,
-      "difficult_train": false,
-      "stat": "will"
-    },
-    "bribery": {
-      "name": "Bribery",
-      "nr": 6,
-      "difficult_train": false,
-      "stat": "cool"
-    },
-    "handgun": {
-      "name": "Handgun",
-      "nr": 5,
-      "difficult_train": false,
-      "stat": "ref"
-    },
-    "cybertech": {
-      "name": "Cybertech",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "tech"
-    },
-    "land_vehicle_tech": {
-      "name": "Land Vehicle Tech",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "tech"
-    },
-    "acting": {
-      "name": "Acting",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "cool"
-    },
-    "first_aid": {
-      "name": "First Aid",
-      "nr": 2,
-      "difficult_train": false,
-      "stat": "tech"
-    },
-    "language_(streetslang)": {
-      "name": "Language (Streetslang)",
-      "nr": 4,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "photography/film": {
-      "name": "Photography/Film",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "tech"
-    },
-    "trading": {
-      "name": "Trading",
-      "nr": 4,
-      "difficult_train": false,
-      "stat": "cool"
-    },
-    "shoulder_arms": {
-      "name": "Shoulder Arms",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "ref"
-    },
-    "cryptography": {
-      "name": "Cryptography",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "concentration": {
-      "name": "Concentration",
-      "nr": 2,
-      "difficult_train": false,
-      "stat": "will"
-    },
-    "melee_weapon": {
-      "name": "Melee Weapon",
-      "nr": 6,
-      "difficult_train": false,
-      "stat": "dex"
-    },
-    "perception": {
-      "name": "Perception",
-      "nr": 2,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "accounting": {
-      "name": "Accounting",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "animal_handling": {
-      "name": "Animal Handling",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "interrogation": {
-      "name": "Interrogation",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "cool"
-    },
-    "paint,_draw,_sculpt": {
-      "name": "Paint, Draw, Sculpt",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "tech"
-    },
-    "resist_torture_&_drugs": {
-      "name": "Resist Torture & Drugs",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "will"
-    },
-    "drive_land_vehicle": {
-      "name": "Drive Land Vehicle",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "ref"
-    },
-    "streetwise": {
-      "name": "Streetwise",
-      "nr": 4,
-      "difficult_train": false,
-      "stat": "cool"
-    },
-    "archery": {
-      "name": "Archery",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "ref"
-    },
-    "stealth": {
-      "name": "Stealth",
-      "nr": 2,
-      "difficult_train": false,
-      "stat": "dex"
-    },
-    "language_(english)": {
-      "name": "Language (English)",
-      "nr": 3,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "conceal_&_reveal_object": {
-      "name": "Conceal & Reveal Object",
-      "nr": 4,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "evasion": {
-      "name": "Evasion",
-      "nr": 6,
-      "difficult_train": false,
-      "stat": "dex"
-    },
-    "tactics": {
-      "name": "Tactics",
-      "nr": 0,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "business": {
-      "name": "Business",
-      "nr": 5,
-      "difficult_train": false,
-      "stat": "int"
     }
   },
   "gear_list": {},
   "flags": {
-    "group_by_stat": true,
-    "filter_zeros": false
+    "filter_zeros": false,
+    "group_by_stat": true
   }
 }

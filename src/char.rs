@@ -1,6 +1,7 @@
 
-use std::{cmp::Ordering, collections::HashMap};
+use std::{cmp::Ordering};
 
+use indexmap::IndexMap;
 use serde::{Deserialize, Serialize};
 use super::{journal::Journal, gear::*};
 
@@ -27,13 +28,13 @@ pub struct Character {
     pub journals: Vec<Journal>,
     
     #[serde(default)]
-    pub skills: HashMap<String, Skill>,
+    pub skills: IndexMap<String, Skill>,
     
     #[serde(default)]
-    pub gear_list: HashMap<String, i32>,
+    pub gear_list: IndexMap<String, i32>,
     
     #[serde(default)]
-    pub flags: HashMap<String, bool>
+    pub flags: IndexMap<String, bool>
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
@@ -82,9 +83,9 @@ impl Character {
             hp_current: 0,
             stats: CharStats { intelligence: 0, reflex: 0, dexterity: 0, technique: 0, cool: 0, willpower: 0, luck: 0, movement: 0, body: 0, empathy: 0 },
             journals: vec![Journal::default()],
-            skills: HashMap::new(),
-            gear_list: HashMap::new(),
-            flags: HashMap::new(),
+            skills: IndexMap::new(),
+            gear_list: IndexMap::new(),
+            flags: IndexMap::new(),
         };
 
         let cool_skills: Vec<(bool, &str)> = vec![
