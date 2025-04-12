@@ -1,5 +1,7 @@
 use leptos::prelude::*;
 
+use crate::help::get_char_signal_from_ctx;
+
 
 #[component]
 pub fn AmmoView(count: RwSignal<i32>) -> impl IntoView {
@@ -31,9 +33,15 @@ pub fn AmmoView(count: RwSignal<i32>) -> impl IntoView {
 
 #[component]
 pub fn HealthView() -> impl IntoView {
+    let char_signal = get_char_signal_from_ctx();
+    let get_max_health = move || char_signal.read().calc_max_health();
+    
     view! {
-        <div class="health_border">
+        <div class="health_border" style:grid-template-columns=move || {format!("repeat({}, 1fr)", get_max_health())}>
             <div class="health_bar"></div>
+            <div class="armor_bar"></div>
+            <div class="armor_bar"></div>
+            <div class="armor_bar"></div>
         </div>    
     }
 }

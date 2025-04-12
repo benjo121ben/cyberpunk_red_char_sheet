@@ -9,6 +9,8 @@ use super::{journal::Journal, gear::*};
 pub struct Character {
     pub name: String,
 
+    pub current_armor: Option<usize>,
+
     #[serde(default)]
     pub armors: Vec<Armor>,
 
@@ -60,6 +62,13 @@ pub struct Skill {
     pub stat: String
 }
 
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct Penalty {
+    pub selectors: Vec<String>,
+    pub penalty: i32,
+    pub show_higlight_color: bool
+}
+
 impl Skill {
     pub fn cmp_stat_and_name(&self, other: &Self) -> Ordering{
         self.stat
@@ -76,6 +85,7 @@ impl Character {
     pub fn zero() -> Character {
         let mut char = Character {
             name: String::from("Test"),
+            current_armor: None,
             armors: vec![],
             weapons: vec![],
             cyberware: vec![],
@@ -239,5 +249,13 @@ impl Character {
 
     pub fn calc_max_health(self: &Self) -> i32 {
         return 10 + 5 * ((self.get_stat("body") as f32 + self.get_stat("will") as f32) / 2.0).ceil() as i32
+    }
+
+    pub fn get_current_armor(&self) -> Option<&Armor> {
+        if self.current_armor.is_none(){
+            return None;
+        }
+        
+        self.armors.get(self.current_armor.unwrap())
     }
 }

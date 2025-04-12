@@ -9,6 +9,7 @@
 	--light-background-color:#424242;
 	--dark-background-color:#212121;
 	--highlight-color: #1da8df;
+	--highlight-color-second: #dfd21d;
 	--text-color: rgb(225, 236, 230);
 }
 
@@ -51,9 +52,6 @@ button {
 	border: var(--highlight-color) 2px solid;
 	border-radius: 10px;
 	padding: 10px;
-	*:hover {
-		color: var(--highlight-color);
-	}
 }
 
 .skill_list_cat_header {
@@ -66,6 +64,22 @@ button {
 
 .skill_entry_name {
 	justify-self: flex-start
+}
+
+.skill_entry_name:hover {
+	color: var(--highlight-color);
+}
+
+.skill_entry_name:hover + .skill_entry_value {
+	color: var(--highlight-color);
+}
+
+.skill_entry_name:has(+ .skill_entry_value:hover) {
+	color: var(--highlight-color);
+}
+
+.skill_entry_value:hover {
+	color: var(--highlight-color);
 }
 
 /* .skill_entry_stat {
@@ -92,17 +106,29 @@ button {
 .combat_div {}
 
 .health_border {
+	position: fixed;
 	display: grid;
-	width: 300px;
-	height: 20px;
+	width: 100%;
+	height: 30px;
 	background-color: var(--light-background-color);
 	grid-template-columns: repeat(20, 1fr);
-	gap: 3px;
+	gap: 5px;
 	padding: 5px;
 	overflow: hidden;
 }
 
+.health_border::before {
+	content: "health";
+	z-index: 100;
+	justify-self: center;
+	align-self: center;
+	position: fixed;
+}
+
 .health_bar {
-	background-color: #1da8df;
-	grid-column: span 20;
+	background-color: var(--highlight-color);
+	grid-column: span 17;
+}
+.armor_bar {
+	background-color: var(--highlight-color-second);
 }

@@ -209,6 +209,7 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
     });
 
     view! {
+        <HealthView/>
         <div class="base_div">
             <button on:click=move|_| { save_char_action.dispatch(()); }>TEST</button>
             <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("filter_zeros"))>FILTER</button>
@@ -220,7 +221,6 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
                 <div class="center_div">
                     <img class="ammo_icon" src="ammo_8_8.svg"/>
                     <AmmoView count=ammo_rw_signal/>
-                    <HealthView/>
                 </div>
                 <div class="combat_div">
                     {move || char_rw_signal.read().calc_max_health()}
