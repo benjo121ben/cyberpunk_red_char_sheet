@@ -2,6 +2,7 @@ use leptos::prelude::*;
 use leptos::logging::log;
 use std::error::Error;
 use super::skill_view::SkillList;
+use super::ammo_view::{AmmoView, HealthView};
 use std::fs::read_to_string;
 use std::path::Path;
 use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title};
@@ -187,6 +188,7 @@ fn HomePage() -> impl IntoView {
 #[component]
 fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoView {
     let char_rw_signal = RwSignal::new(character_data);
+    let ammo_rw_signal = RwSignal::new(0);
     let save_char_action = Action::new(move |_: &()| async move {
         let char_copy = char_rw_signal.get_untracked();
         let _ = set_char_data(char_copy.clone()).await;
@@ -215,7 +217,11 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
                 <div class="skill_list">
                     <SkillList/>
                 </div>
-                <div class="center_div"></div>
+                <div class="center_div">
+                    <img class="ammo_icon" src="ammo_8_8.svg"/>
+                    <AmmoView count=ammo_rw_signal/>
+                    <HealthView/>
+                </div>
                 <div class="combat_div">
                     {move || char_rw_signal.read().calc_max_health()}
                 </div>

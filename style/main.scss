@@ -4,9 +4,36 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--background-color: #303030;
+	--light-background-color:#424242;
+	--dark-background-color:#212121;
+	--highlight-color: #1da8df;
+	--text-color: rgb(225, 236, 230);
+}
+
+@font-face {
+	font-family: "Moonrising";
+	src: 
+		local("Moonrising")
+}
+
 body {
-	font-family: sans-serif;
+	font-family: 'Moonrising';
 	cursor: default;
+	background-color: var(--background-color);
+	color: var(--text-color);
+}
+
+button {
+	border: unset;
+	border-radius: 3px;
+	margin: 2px;
+	font-family: inherit;
+	font-size: inherit;
+	padding: 2px 4px 2px 4px;
+	color: var(--text-color);
+	background-color: var(--highlight-color);
 }
 
 .base_div {
@@ -19,19 +46,43 @@ body {
 
 .skill_list {
 	display: grid;
-	grid-template-columns: 3fr 1fr 0.5fr;
-
-	div:nth-child(1n) {
-		margin-right: 20px;
+	grid-template-columns: 3fr 0.5fr;
+	gap: 2px;
+	border: var(--highlight-color) 2px solid;
+	border-radius: 10px;
+	padding: 10px;
+	*:hover {
+		color: var(--highlight-color);
 	}
 }
 
 .skill_list_cat_header {
-	grid-column-start: span 3;
+	grid-column-start: span 2;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	font-style: bold;
 	justify-self: center;
+}
+
+.skill_entry_name {
+	justify-self: flex-start
+}
+
+/* .skill_entry_stat {
+	justify-self: center;
+} */
+
+.skill_entry_value {
+	justify-self: flex-end;
+}
+
+.ammo_icon {
+	width: 100px;
+	height: 500px;
+}
+
+.ammo_bullet {
+	fill: var(--highlight-color);
 }
 
 .center_div {
@@ -39,3 +90,19 @@ body {
 }
 
 .combat_div {}
+
+.health_border {
+	display: grid;
+	width: 300px;
+	height: 20px;
+	background-color: var(--light-background-color);
+	grid-template-columns: repeat(20, 1fr);
+	gap: 3px;
+	padding: 5px;
+	overflow: hidden;
+}
+
+.health_bar {
+	background-color: #1da8df;
+	grid-column: span 20;
+}

@@ -133,9 +133,11 @@ fn SkillEntry(key: String) -> impl IntoView {
     let update_skill_clone = update_skill.clone();
 
     view! {
-        <div>{move || skill_memo.read().name.clone()}</div>
-        <div>{move || skill_memo.read().stat.to_uppercase().clone()}</div>
-        <div 
+        <div class="skill_entry_name" title={move || skill_memo.read().stat.to_uppercase().clone()}>
+            {move || skill_memo.read().name.clone()}
+        </div>
+        //<div class="skill_entry_stat">{move || skill_memo.read().stat.to_uppercase().clone()}</div>
+        <div class="skill_entry_value" 
             on:click=move|_| update_skill(1) 
             on:contextmenu=move|_| update_skill_clone(-1)>
                 {get_skill_value}
