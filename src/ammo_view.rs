@@ -44,5 +44,8 @@ pub fn HealthView() -> impl IntoView {
             <div class="armor_bar"></div>
             //<div class="health_number">HEALTH</div>
         </div>    
+        <div class="health_text">
+        health
+        </div>    
     }
 }

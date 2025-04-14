@@ -116,16 +116,19 @@ button {
 	overflow: hidden;
 }
 
-.health_border::before {
-	content: "health";
+.health_text {
 	z-index: 100;
-	justify-self: center;
+	text-align: center;
 	align-self: center;
+	padding: 5px;
+	width: 100%;
+	height: 30px;
+	margin-top: -30px;
 }
 
 .health_bar {
 	background-color: var(--highlight-color);
-	grid-column: span 17;
+	grid-column: span 26;
 }
 .armor_bar {
 	background-color: var(--highlight-color-second);
