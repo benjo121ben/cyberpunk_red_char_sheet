@@ -54,6 +54,7 @@ pub fn ShopModalView(data: RwSignal<ShopModalData>) -> AnyView {
 #[component]
 pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
     let current_tab: RwSignal<usize> = RwSignal::new(0);
+    let currently_selected_index: RwSignal<usize> = RwSignal::new(0);
     let tabs = vec!["Weapons", "Ammo", "Armor", "Cyberware", "Drugs", "Gear", "Hardware", "Programs"];
 
     view! {
@@ -63,7 +64,10 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                     {tabs.into_iter().enumerate().map(|(i, tab_name)| {
                         view! {
                             <div class="tab" 
-                                on:click=move|_| current_tab.set(i)
+                                on:click=move|_| {
+                                    currently_selected_index.set(0);
+                                    current_tab.set(i);
+                                }
                                 class:selected_tab=move|| current_tab.get() == i> 
                                     {tab_name}
                             </div>
@@ -71,7 +75,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                     }).collect::<Vec<_>>()}
                 </div>
                 <hr/>
-                <ShopList current_tab/>
+                <ShopList current_tab currently_selected_index/>
                 //<p inner_html={move|| data.get().description}/>
             </div>
         </div>
@@ -79,7 +83,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
 }
 
 #[component]
-pub fn ShopList(current_tab: RwSignal<usize>) -> AnyView {
+pub fn ShopList(current_tab: RwSignal<usize>, currently_selected_index: RwSignal<usize>) -> AnyView {
     let gear_data: GearData = use_context().expect("Expecting gear data existence");
     let current_items_memo = Memo::new(move |_| {
         let mut list = match current_tab.get() {
@@ -97,21 +101,23 @@ pub fn ShopList(current_tab: RwSignal<usize>) -> AnyView {
         list
     });
 
-    let currently_selected = RwSignal::new(0);
     let currenty_selected_item = Memo::new(move |_| {
-        current_items_memo.read().get(currently_selected.get()).expect("item to exist").clone()
+        current_items_memo.read().get(currently_selected_index.get()).expect("item to exist").clone()
     });
 
     view! {
         <div class="shop_content">
             <div class="name_list_wrapper">
                 <div class="name_list">
-                    <For each=move||current_items_memo.get()
-                        key=move|shop_item|shop_item.name.clone()
-                        children=move|shop_item| {
+                    <For each=move||{current_items_memo.get().into_iter().enumerate().collect::<Vec<_>>()}
+                        key=move|(_, shop_item)|shop_item.name.clone()
+                        children=move|(index, shop_item)| {
                             let name = shop_item.name.clone();
                             view!{
-                                <span>{move || name.clone()}</span>
+                                <span
+                                    class:span_selected=move||{currently_selected_index.get()==index}
+                                    on:click=move|_|{currently_selected_index.set(index)}
+                                >{move || name.clone()}</span>
                             }
                         }
                     />
@@ -123,9 +129,12 @@ pub fn ShopList(current_tab: RwSignal<usize>) -> AnyView {
                 let price = currenty_selected_item.read().price.clone();
                 view!{
                     <div class="shop_item">
-                        <span class="shop_item_name">{move || name.clone()}</span>
+                        <div class="shop_item_header_part">
+                            <span class="shop_item_name">{move || name.clone()}</span> 
+                            <span class="shop_item_price">{move || price.clone()}eb</span>
+                        </div>
                         <div class="shop_item_description" inner_html=move || description.clone()/>
-                        <span class="shop_item_price">{move || price.clone()}eb</span>
+                        
                     </div>
                 }
             }}</div>
