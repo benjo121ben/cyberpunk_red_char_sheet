@@ -210,8 +210,8 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
     });
 
     view! {
+        <HealthView/>
         <div class="base_div">
-            <HealthView/>
             <div class="first_row">
                 <h1 class="name">{move || char_rw_signal.read().name.clone()} / {move || char_rw_signal.read().alias.clone()}</h1>
                 <div class="head_body_armor">
