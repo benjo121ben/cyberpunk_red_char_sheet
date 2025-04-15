@@ -1,6 +1,13 @@
 use serde::Deserialize;
 use serde::Serialize;
 
+trait ShopItem {
+    fn get_name(&self) -> &String;
+    fn get_description(&self) -> &String;
+    fn get_price(&self) -> i32;
+    fn get_type(&self) -> &String;
+}
+
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct GearData {
     pub ammunition: Vec<Ammunition>,
@@ -11,11 +18,11 @@ pub struct GearData {
     pub drugs: Vec<Drug>,
     pub items: Vec<Item>,
     #[serde(rename = "programs-attackers")]
-    pub programs_attackers: Vec<ProgramsAttacker>,
+    pub programs_attackers: Vec<Program>,
     #[serde(rename = "programs-boosters")]
-    pub programs_boosters: Vec<ProgramsBooster>,
+    pub programs_boosters: Vec<Program>,
     #[serde(rename = "programs-defender")]
-    pub programs_defender: Vec<ProgramsDefender>,
+    pub programs_defender: Vec<Program>,
     pub weapons: Vec<Weapon>,
 }
 
@@ -83,27 +90,7 @@ pub struct Item {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-pub struct ProgramsAttacker {
-    pub description: String,
-    pub file: String,
-    pub name: String,
-    pub price: i32,
-    #[serde(rename = "type")]
-    pub type_field: String,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-pub struct ProgramsBooster {
-    pub description: String,
-    pub file: String,
-    pub name: String,
-    pub price: i32,
-    #[serde(rename = "type")]
-    pub type_field: String,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-pub struct ProgramsDefender {
+pub struct Program {
     pub description: String,
     pub file: String,
     pub name: String,
@@ -148,10 +135,155 @@ pub struct Ammunition {
     pub description: String,
     pub file: String,
     pub name: String,
-    pub price: i64,
+    pub price: i32,
     #[serde(rename = "type")]
     pub type_field: String,
 }
 
 //needed to set default bools
 pub fn is_false() -> bool { false }
+
+
+impl ShopItem for Armor {
+    fn get_name(&self) -> &String {
+        return &self.name;
+    }
+
+    fn get_description(&self) -> &String {
+        return &self.description;
+    }
+
+    fn get_price(&self) -> i32 {
+        return self.price;
+    }
+
+    fn get_type(&self) -> &String {
+        return &self.type_field;
+    }
+}
+
+impl ShopItem for Weapon {
+    fn get_name(&self) -> &String {
+        return &self.name;
+    }
+
+    fn get_description(&self) -> &String {
+        return &self.description;
+    }
+
+    fn get_price(&self) -> i32 {
+        return self.price;
+    }
+
+    fn get_type(&self) -> &String {
+        return &self.type_field;
+    }
+}
+
+impl ShopItem for Ammunition {
+    fn get_name(&self) -> &String {
+        return &self.name;
+    }
+
+    fn get_description(&self) -> &String {
+        return &self.description;
+    }
+
+    fn get_price(&self) -> i32 {
+        return self.price;
+    }
+
+    fn get_type(&self) -> &String {
+        return &self.type_field;
+    }
+}
+
+impl ShopItem for Cyberware {
+    fn get_name(&self) -> &String {
+        return &self.name;
+    }
+
+    fn get_description(&self) -> &String {
+        return &self.description;
+    }
+
+    fn get_price(&self) -> i32 {
+        return self.price;
+    }
+
+    fn get_type(&self) -> &String {
+        return &self.type_field;
+    }
+}
+
+impl ShopItem for CyberdeckHardware {
+    fn get_name(&self) -> &String {
+        return &self.name;
+    }
+
+    fn get_description(&self) -> &String {
+        return &self.description;
+    }
+
+    fn get_price(&self) -> i32 {
+        return self.price;
+    }
+
+    fn get_type(&self) -> &String {
+        return &self.type_field;
+    }
+}
+
+impl ShopItem for Drug {
+    fn get_name(&self) -> &String {
+        return &self.name;
+    }
+
+    fn get_description(&self) -> &String {
+        return &self.description;
+    }
+
+    fn get_price(&self) -> i32 {
+        return self.price;
+    }
+
+    fn get_type(&self) -> &String {
+        return &self.type_field;
+    }
+}
+
+impl ShopItem for Item {
+    fn get_name(&self) -> &String {
+        return &self.name;
+    }
+
+    fn get_description(&self) -> &String {
+        return &self.description;
+    }
+
+    fn get_price(&self) -> i32 {
+        return self.price;
+    }
+
+    fn get_type(&self) -> &String {
+        return &self.type_field;
+    }
+}
+
+impl ShopItem for Program {
+    fn get_name(&self) -> &String {
+        return &self.name;
+    }
+
+    fn get_description(&self) -> &String {
+        return &self.description;
+    }
+
+    fn get_price(&self) -> i32 {
+        return self.price;
+    }
+
+    fn get_type(&self) -> &String {
+        return &self.type_field;
+    }
+}

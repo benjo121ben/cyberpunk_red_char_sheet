@@ -14,6 +14,7 @@ use leptos_router::{
 use crate::char::{Character, Skill};
 use crate::gear::GearData;
 use crate::resource_views::ArmorView;
+use crate::shop_modal_view::{ShopModalData, ShopModalView};
 
 pub fn read_gear_data_from_file<P: AsRef<Path>>(path: P) -> Result<GearData, Box<dyn Error>> {
 
@@ -209,7 +210,10 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
         }
     });
 
+    let shop_modal_signal = RwSignal::new(ShopModalData::default());
+
     view! {
+        <ShopModalView data=shop_modal_signal/>
         <HealthView/>
         <div class="base_div">
             <div class="first_row">
@@ -234,6 +238,7 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
                     <AmmoView count=ammo_rw_signal/>
                 </div>
                 <div class="right_div">
+                    <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
                 </div>
             </div>
         </div>

@@ -1,50 +1,57 @@
 use std::vec;
-
 use leptos::prelude::*;
 
-use crate::views::stats_views::TraitView;
-
 #[derive(Clone, Default, Debug, Eq, PartialEq)] 
-pub struct SimpleModalData {
+pub struct ShopModalData {
     visible: bool, 
     pub title: String, 
-    pub description: String,
-    pub traits: Vec<String>
+    pub description: String
 }
 
-impl SimpleModalData {
+impl ShopModalData {
     pub fn show(self: &mut Self) {
         self.visible = true;
     }
 
-    pub fn reset(self: &mut Self) {
+    pub fn hide(self: &mut Self) {
         self.visible = false;
         self.title = String::new();
         self.description = String::new();
-        self.traits = vec![];
     }
-    
 }
 
 #[component]
-pub fn ShopModalView(data: RwSignal<SimpleModalData>) -> impl IntoView {
+pub fn ShopModalView(data: RwSignal<ShopModalData>) -> impl IntoView {
     view! {
         <Show when=move||data.get().visible>
-            <div class="modal" on:click=move |_| data.update(|data| data.reset())>
-                <div class="modal-content" on:click=move |_| {}>
-                    <h2>{move|| data.get().title}</h2>
-                    <hr/>
-                    <Show when=move||{data.get().traits.len() > 0}>
-                        {move || {
-                            let traits = data.get().traits;
-                            view!{
-                                <TraitView trait_names=traits/>
-                            }
-                        }}
-                    </Show>
-                    <p inner_html={move|| data.get().description}/>
-                </div>
-            </div>
+            <ShopContent data=data.clone()/>
         </Show>
+    }
+}
+
+
+#[component]
+pub fn ShopContent(data: RwSignal<ShopModalData>) -> impl IntoView {
+    let current_tab = RwSignal::new(0);
+    let tabs = vec!["Weapons", "Ammo", "Armor", "Cyberware", "Drugs", "Gear", "Hardware", "Programs"];
+    view! {
+        <div class="modal" on:click=move |_| data.update(|data| data.hide())>
+            <div class="modal-content" on:click=move |ev| { ev.stop_propagation();}>
+                <div class="tabs-list">
+                    {tabs.into_iter().enumerate().map(|(i, tab_name)| {
+                        view! {
+                            <div class="tab" 
+                                on:click=move|_| current_tab.set(i)
+                                class:selected_tab=move|| current_tab.get() == i> 
+                                    {tab_name}
+                            </div>
+                        }
+                    }).collect::<Vec<_>>()}
+                </div>
+                <h2>{move|| data.get().title}</h2>
+                <hr/>
+                <p inner_html={move|| data.get().description}/>
+            </div>
+        </div>
     }
 }
