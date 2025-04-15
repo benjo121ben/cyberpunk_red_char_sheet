@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 
-use crate::help::get_char_signal_from_ctx;
+use crate::{gear::Armor, help::get_char_signal_from_ctx};
 
 
 #[component]
@@ -35,17 +35,59 @@ pub fn AmmoView(count: RwSignal<i32>) -> impl IntoView {
 pub fn HealthView() -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
     let get_max_health = move || char_signal.read().calc_max_health();
+    let get_current_health = move || char_signal.read().hp_current;
     
     view! {
         <div class="health_border" style:grid-template-columns=move || {format!("repeat({}, 1fr)", get_max_health())}>
-            <div class="health_bar"></div>
-            <div class="armor_bar"></div>
-            <div class="armor_bar"></div>
-            <div class="armor_bar"></div>
-            //<div class="health_number">HEALTH</div>
+            <Show when=move || {get_current_health() > 0}>
+                <div 
+                    class="health_bar" 
+                    style:grid-column=move || {format!("span {}", get_current_health())}
+                />
+            </Show>
+            
         </div>    
         <div class="health_text">
-        health
+            {move || format!("{}/{}", get_current_health(), get_max_health()) }
         </div>    
+    }
+}
+
+
+#[component]
+pub fn ArmorBar(nr: i32, head: bool) -> impl IntoView {
+    let char_signal = get_char_signal_from_ctx();
+    let get_current_sp = Memo::new(move |_| {
+        char_signal.with(|cyberpunk| {
+            let armor = if head {cyberpunk.get_current_head_armor()} else {cyberpunk.get_current_body_armor()};
+            armor.map(|a| a.armor_data.sp_current).or(Some(0)).unwrap()
+        })
+    });
+    view! {
+        <div class="armor_bar" class:head_armor_bar=move||head class:armor_bar_empty=move|| {get_current_sp.get() <= nr}/>
+    }
+
+}
+
+#[component]
+pub fn ArmorView(head: bool) -> impl IntoView {
+    let char_signal = get_char_signal_from_ctx();
+    let get_max_sp = Memo::new(move |_| {
+        char_signal.with(|cyberpunk| {
+            let armor = if head {cyberpunk.get_current_head_armor()} else {cyberpunk.get_current_body_armor()};
+            armor.map(|a| a.armor_data.sp).or(Some(0)).unwrap()
+        })
+    });
+    view! {
+        <div class="armor_row"
+            style:grid-template-columns=move || {format!("repeat({}, 1fr)", get_max_sp())}
+        >
+            <For each={move || 0..get_max_sp()}
+                key=move|nr| nr.to_string()
+                children=move |nr| {
+                    view! {<ArmorBar nr head/>}
+                }
+            />
+        </div>
     }
 }

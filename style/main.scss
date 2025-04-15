@@ -11,6 +11,7 @@
 	--highlight-color: #1da8df;
 	--highlight-color-second: #dfd21d;
 	--text-color: rgb(225, 236, 230);
+	--warning-color: #b048e0;
 }
 
 @font-face {
@@ -26,6 +27,11 @@ body {
 	color: var(--text-color);
 }
 
+.name {
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
 button {
 	border: unset;
 	border-radius: 3px;
@@ -38,20 +44,56 @@ button {
 }
 
 .base_div {
-
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 }
 
 .columns {
 	display: flex;
+	gap: 5px;
 }
 
-.skill_list {
-	display: grid;
-	grid-template-columns: 3fr 0.5fr;
-	gap: 2px;
+.center_div {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.right_div {
+	display: flex;
+	flex-direction: column;
+}
+
+.bordered {
 	border: var(--highlight-color) 2px solid;
 	border-radius: 10px;
 	padding: 10px;
+}
+
+.stat_entry {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.has_penalty {
+	color: rgb(243, 59, 68);
+}
+
+.stat_view {
+	@extend .bordered;
+	display: flex;
+	gap: 10px;
+	padding: auto;
+	max-width: fit-content
+}
+
+.skill_list {
+	@extend .bordered;
+	display: grid;
+	grid-template-columns: 3fr 0.5fr;
+	gap: 2px;
 }
 
 .skill_list_cat_header {
@@ -99,37 +141,103 @@ button {
 	fill: var(--highlight-color);
 }
 
-.center_div {
 
+.health_commons {
+	width: 100%;
+	height: 40px;
+	padding: 5px;
 }
 
-.combat_div {}
-
 .health_border {
+	@extend .health_commons;
 	display: grid;
-	width: 100%;
-	height: 30px;
 	background-color: var(--light-background-color);
-	grid-template-columns: repeat(20, 1fr);
 	gap: 5px;
-	padding: 5px;
 	overflow: hidden;
 }
 
 .health_text {
+	@extend .health_commons;
 	z-index: 100;
 	text-align: center;
 	align-self: center;
-	padding: 5px;
-	width: 100%;
-	height: 30px;
-	margin-top: -30px;
+	margin-top: -40px;
+	font-size: large;
 }
 
 .health_bar {
 	background-color: var(--highlight-color);
-	grid-column: span 26;
 }
+
+.health_bar_half_health {
+	background-color: var(--warning-color);
+}
+
+.first_row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.head_body_armor {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+}
+
+.armor_row {
+	display: grid;
+	height: 30px;
+	gap: 5px;
+	transform: skew(-10deg);
+}
+
 .armor_bar {
+	width: 20px;
 	background-color: var(--highlight-color-second);
+	--armor-color: var(--highlight-color-second);
+}
+
+.head_armor_bar {
+	@extend .armor_bar;
+	background-color: var(--warning-color);
+	--armor-color: var(--warning-color);
+}
+
+.armor_bar_empty {
+	background-color: unset;
+	border: 2px solid var(--armor-color);
+}
+
+.modal {
+	display:flex;
+	top:0;
+	left:0;
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+	padding: 1%;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal-content {
+	width: fit-content;
+	height: fit-content;
+	background-color: var(--main-bg-color);
+	padding: 1.5rem;
+	border-radius: 0.7rem;
+
+	> p {
+		margin-top:5px;
+		max-width: 60vw;
+	}
+
+	> hr {
+		margin-bottom:5px;
+	}
 }

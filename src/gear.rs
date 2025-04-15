@@ -35,7 +35,9 @@ pub struct ArmorData {
     pub sp: i32,
     #[serde(default)]
     pub sp_current: i32,
-    pub penalty: i32
+    pub penalty: i32,
+    #[serde(default="is_false")]
+    pub head: bool
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
@@ -150,3 +152,6 @@ pub struct Ammunition {
     #[serde(rename = "type")]
     pub type_field: String,
 }
+
+//needed to set default bools
+pub fn is_false() -> bool { false }

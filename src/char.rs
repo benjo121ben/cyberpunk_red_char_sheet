@@ -8,8 +8,12 @@ use super::{journal::Journal, gear::*};
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Character {
     pub name: String,
+    
+    pub alias: String,
 
-    pub current_armor: Option<usize>,
+    pub current_armor_body: Option<usize>,
+
+    pub current_armor_head: Option<usize>,
 
     #[serde(default)]
     pub armors: Vec<Armor>,
@@ -85,7 +89,9 @@ impl Character {
     pub fn zero() -> Character {
         let mut char = Character {
             name: String::from("Test"),
-            current_armor: None,
+            alias: String::from("Alias"),
+            current_armor_head: None,
+            current_armor_body: None,
             armors: vec![],
             weapons: vec![],
             cyberware: vec![],
@@ -222,13 +228,13 @@ impl Character {
     pub fn get_stat(self: &Self, stat_name: &str) -> i32 {
         match stat_name.to_lowercase().as_str() {
             "int" => return self.stats.intelligence,
-            "ref" => return self.stats.reflex,
-            "dex" => return self.stats.dexterity,
+            "ref" => return self.stats.reflex - self.get_current_armor_penalty(),
+            "dex" => return self.stats.dexterity - self.get_current_armor_penalty(),
             "tech" => return self.stats.technique,
             "cool" => return self.stats.cool,
             "will" => return self.stats.willpower,
             "luck" => return self.stats.luck,
-            "move" => return self.stats.movement,
+            "move" => return self.stats.movement - self.get_current_armor_penalty(),
             "body" => return self.stats.body,
             "emp" => return self.humanity / 10,
             _ => {panic!("This stat does not exist {stat_name}");}
@@ -251,11 +257,32 @@ impl Character {
         return 10 + 5 * ((self.get_stat("body") as f32 + self.get_stat("will") as f32) / 2.0).ceil() as i32
     }
 
-    pub fn get_current_armor(&self) -> Option<&Armor> {
-        if self.current_armor.is_none(){
+    pub fn get_current_body_armor(&self) -> Option<&Armor> {
+        if self.current_armor_body.is_none(){
             return None;
         }
         
-        self.armors.get(self.current_armor.unwrap())
+        self.armors.get(self.current_armor_body.unwrap())
+    }
+
+    pub fn get_current_head_armor(&self) -> Option<&Armor> {
+        if self.current_armor_head.is_none(){
+            return None;
+        }
+        
+        self.armors.get(self.current_armor_head.unwrap())
+    }
+
+    pub fn get_current_armor_penalty(&self) -> i32{
+        let head_armor_penalty = self.get_current_head_armor()
+            .map(|armor|armor.armor_data.penalty)
+            .or(Some(0))
+            .unwrap();
+        let body_armor_penalty = self.get_current_body_armor()
+            .map(|armor|armor.armor_data.penalty)
+            .or(Some(0))
+            .unwrap();
+
+        std::cmp::max(head_armor_penalty, body_armor_penalty)
     }
 }

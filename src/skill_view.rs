@@ -1,6 +1,54 @@
 use leptos::prelude::*;
+use crate::char::Character;
+use crate::gear::GearData;
+
 use super::char::Skill;
 use super::help::get_char_signal_from_ctx;
+
+#[component]
+pub fn StatsView() -> impl IntoView {
+    let all_stats: Vec<String> = vec!["int", "ref", "dex", "tech", "cool", "will", "luck", "move", "body", "emp"].into_iter().map(|val|val.to_string()).collect();
+    view! {
+        <div class="stat_view">
+            <For each= move || all_stats.clone()
+                key=move|val| val.clone()
+                children=move |entry| {
+                    view!{<SingleStatEntryView entry/>}
+                }
+            />
+        </div>
+    }
+}
+
+
+#[component]
+fn SingleStatEntryView(entry: String) -> impl IntoView {
+    let rw_char_signal = get_char_signal_from_ctx();
+
+    let entry_clone = entry.clone();
+    let stat_memo = Memo::new(move |_| {
+        rw_char_signal.read().get_stat(&entry_clone)
+    });
+
+    let entry_clone = entry.clone();
+    let has_penalty = Memo::new(move |_| {
+        let penalty = rw_char_signal.read().get_current_armor_penalty();
+        penalty != 0 && (entry_clone == "ref" || entry_clone == "dex" || entry_clone == "move")
+    });
+    view! {
+        <div class="stat_entry">
+            <div class="stat_header">
+                {let name_clone = entry.clone(); move|| name_clone.clone()}
+            </div>
+            <div
+                class:has_penalty=move||has_penalty()>
+                {move|| stat_memo()}
+            </div>
+        </div>
+    }.into_any()
+}
+
+
 
 #[component]
 pub fn SkillList() -> impl IntoView {
@@ -129,15 +177,25 @@ fn SkillEntry(key: String) -> impl IntoView {
             });
         })
     };
+    
+
+    //todo benji add armor penalty visual, stat is already adjusted
+    let has_penalty = Memo::new(move |_| {
+        let stat = skill_memo.get().stat;
+        let penalty = char_signal.read().get_current_armor_penalty();
+        penalty != 0 && (stat == "ref" || stat == "dex" || stat == "move")
+    });
 
     let update_skill_clone = update_skill.clone();
 
     view! {
-        <div class="skill_entry_name" title={move || skill_memo.read().stat.to_uppercase().clone()}>
-            {move || skill_memo.read().name.clone()}
+        <div class="skill_entry_name" 
+            title={move || skill_memo.read().stat.to_uppercase().clone()}
+            class:has_penalty=move|| has_penalty()>
+                {move || skill_memo.read().name.clone()}
         </div>
-        //<div class="skill_entry_stat">{move || skill_memo.read().stat.to_uppercase().clone()}</div>
         <div class="skill_entry_value" 
+            class:has_penalty=move|| has_penalty()
             on:click=move|_| update_skill(1) 
             on:contextmenu=move|_| update_skill_clone(-1)>
                 {get_skill_value}

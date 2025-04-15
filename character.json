@@ -1,10 +1,27 @@
 {
-  "name": "Test",
-  "armors": [],
+  "alias": "Matchbox",
+  "name": "Samantha Banks",
+  "current_armor_body": 0,
+  "current_armor_head": 0,
+  "armors": [
+    {
+      "armor_data": {
+        "sp": 4,
+        "sp_current": 2,
+        "penalty": 1,
+        "head": false
+      },
+      "description": "<p>SP 4<br /><br />Thin leather with reinforced pads at shoulders, hips, and gut. Favored by Nomads and other 'punks who ride bikes. This also includes all those road-warrior wannabes wearing open-butt chaps and random sports equipment.</p>",
+      "file": "armor",
+      "name": "Leathers",
+      "price": 20,
+      "type": "armor"
+    }
+  ],
   "weapons": [],
   "cyberware": [],
   "humanity": 55,
-  "hp_current": 0,
+  "hp_current": 44,
   "stats": {
     "intelligence": 6,
     "reflex": 6,
@@ -436,6 +453,6 @@
   "gear_list": {},
   "flags": {
     "filter_zeros": true,
-    "group_by_stat": true
+    "group_by_stat": false
   }
 }

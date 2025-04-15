@@ -1,8 +1,8 @@
 use leptos::prelude::*;
 use leptos::logging::log;
 use std::error::Error;
-use super::skill_view::SkillList;
-use super::ammo_view::{AmmoView, HealthView};
+use super::skill_view::{SkillList, StatsView};
+use super::resource_views::{AmmoView, HealthView};
 use std::fs::read_to_string;
 use std::path::Path;
 use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title};
@@ -13,6 +13,7 @@ use leptos_router::{
 
 use crate::char::{Character, Skill};
 use crate::gear::GearData;
+use crate::resource_views::ArmorView;
 
 pub fn read_gear_data_from_file<P: AsRef<Path>>(path: P) -> Result<GearData, Box<dyn Error>> {
 
@@ -209,21 +210,30 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
     });
 
     view! {
-        <HealthView/>
         <div class="base_div">
-            <button on:click=move|_| { save_char_action.dispatch(()); }>TEST</button>
-            <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("filter_zeros"))>FILTER</button>
-            <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("group_by_stat"))>GROUP</button>
+            <HealthView/>
+            <div class="first_row">
+                <h1 class="name">{move || char_rw_signal.read().name.clone()} / {move || char_rw_signal.read().alias.clone()}</h1>
+                <div class="head_body_armor">
+                    <ArmorView head=true/> 
+                    <ArmorView head=false/> 
+                </div>
+            </div>
             <div class="columns">
-                <div class="skill_list">
-                    <SkillList/>
+                <div class="left_column">
+                    <div class="skill_list">
+                        <SkillList/>
+                    </div>
+                    <button on:click=move|_| { save_char_action.dispatch(()); }>SAVE</button>
+                    <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("filter_zeros"))>FILTER</button>
+                    <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("group_by_stat"))>GROUP</button>
                 </div>
                 <div class="center_div">
+                    <StatsView/>
                     <img class="ammo_icon" src="ammo_8_8.svg"/>
                     <AmmoView count=ammo_rw_signal/>
                 </div>
-                <div class="combat_div">
-                    {move || char_rw_signal.read().calc_max_health()}
+                <div class="right_div">
                 </div>
             </div>
         </div>
