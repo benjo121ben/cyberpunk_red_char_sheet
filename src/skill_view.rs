@@ -51,7 +51,7 @@ fn SingleStatEntryView(entry: String) -> impl IntoView {
 
 
 #[component]
-pub fn SkillList() -> impl IntoView {
+pub fn SkillList(unlocked_signal: RwSignal<bool>) -> impl IntoView {
     let rw_char_signal = get_char_signal_from_ctx();
     let filter_flag_memo = Memo::new(move |_| rw_char_signal.read().has_active_flag("filter_zeros"));
     let group_flag_memo = Memo::new(move |_| rw_char_signal.read().has_active_flag("group_by_stat"));
@@ -78,7 +78,7 @@ pub fn SkillList() -> impl IntoView {
                 key=|(key, _)| key.clone()
                 children=move |(key, _)| {
                     view! {
-                        <SkillEntry key=key.clone()/>
+                        <SkillEntry unlocked_signal key=key.clone()/>
                     }
                 }
             /> 
@@ -90,7 +90,7 @@ pub fn SkillList() -> impl IntoView {
                 key=|(key, _)| key.clone()
                 children=move |(key, _)| {
                     view! {
-                        <SkillEntry key=key.clone()/>
+                        <SkillEntry unlocked_signal key=key.clone()/>
                     }
                 }
             /> 
@@ -100,7 +100,7 @@ pub fn SkillList() -> impl IntoView {
                 key=|(key, _)| key.clone()
                 children=move |(key, _)| {
                     view! {
-                        <SkillEntry key=key.clone()/>
+                        <SkillEntry unlocked_signal key=key.clone()/>
                     }
                 }
             /> 
@@ -110,7 +110,7 @@ pub fn SkillList() -> impl IntoView {
                 key=|(key, _)| key.clone()
                 children=move |(key, _)| {
                     view! {
-                        <SkillEntry key=key.clone()/>
+                        <SkillEntry unlocked_signal key=key.clone()/>
                     }
                 }
             /> 
@@ -120,7 +120,7 @@ pub fn SkillList() -> impl IntoView {
                 key=|(key, _)| key.clone()
                 children=move |(key, _)| {
                     view! {
-                        <SkillEntry key=key.clone()/>
+                        <SkillEntry unlocked_signal key=key.clone()/>
                     }
                 }
             /> 
@@ -130,7 +130,7 @@ pub fn SkillList() -> impl IntoView {
                 key=|(key, _)| key.clone()
                 children=move |(key, _)| {
                     view! {
-                        <SkillEntry key=key.clone()/>
+                        <SkillEntry unlocked_signal key=key.clone()/>
                     }
                 }
             /> 
@@ -140,7 +140,7 @@ pub fn SkillList() -> impl IntoView {
                 key=|(key, _)| key.clone()
                 children=move |(key, _)| {
                     view! {
-                        <SkillEntry key=key.clone()/>
+                        <SkillEntry unlocked_signal key=key.clone()/>
                     }
                 }
             /> 
@@ -150,7 +150,7 @@ pub fn SkillList() -> impl IntoView {
                 key=|(key, _)| key.clone()
                 children=move |(key, _)| {
                     view! {
-                        <SkillEntry key=key.clone()/>
+                        <SkillEntry unlocked_signal key=key.clone()/>
                     }
                 }
             /> 
@@ -160,7 +160,7 @@ pub fn SkillList() -> impl IntoView {
 }
 
 #[component]
-fn SkillEntry(key: String) -> impl IntoView {
+fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
     let key_clone = key.clone(); 
     let skill_memo = Memo::new(move |_| char_signal.with(|c| c.skills.get(&key).expect("expect skill to exist in its own list").clone()));
@@ -170,6 +170,9 @@ fn SkillEntry(key: String) -> impl IntoView {
     };
 
     let update_skill = move|val: i32| {
+        if !unlocked_signal.get() {
+            return;
+        }
         char_signal.update(|c| {
             c.skills.get_mut(&key_clone).and_then(|skill| {
                 skill.nr += val;

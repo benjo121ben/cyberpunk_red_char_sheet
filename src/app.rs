@@ -191,6 +191,7 @@ fn HomePage() -> impl IntoView {
 fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoView {
     let char_rw_signal = RwSignal::new(character_data);
     let ammo_rw_signal = RwSignal::new(0);
+    let unlocked_signal = RwSignal::new(false);
     let save_char_action = Action::new(move |_: &()| async move {
         let char_copy = char_rw_signal.get_untracked();
         let _ = set_char_data(char_copy.clone()).await;
@@ -226,9 +227,14 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
             <div class="columns">
                 <div class="left_column">
                     <div class="skill_list">
-                        <SkillList/>
+                        <SkillList unlocked_signal=unlocked_signal/>
                     </div>
-                    <button on:click=move|_| { save_char_action.dispatch(()); }>SAVE</button>
+                    <button on:click=move|_| {unlocked_signal.update(|s| *s = !*s) }>
+                        {move|| {
+                            if unlocked_signal.get(){"UNLOCKED".to_string()} 
+                            else {"LOCKED".to_string()}
+                        }}
+                    </button>
                     <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("filter_zeros"))>FILTER</button>
                     <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("group_by_stat"))>GROUP</button>
                 </div>
