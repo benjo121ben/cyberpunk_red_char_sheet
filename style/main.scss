@@ -43,6 +43,11 @@ button {
 	background-color: var(--highlight-color);
 }
 
+button:hover {
+	background-color: var(--highlight-color-second);
+	color: var(--dark-background-color);
+}
+
 .flex-row {
 	display: flex;
 	flex-direction: row;
@@ -262,11 +267,24 @@ button {
 	color: var(--dark-background-color);
 }
 
+.money {
+	font-size: x-large;
+	background-color: var(--highlight-color-second);
+	color: var(--dark-background-color);
+}
+
+div:has(> .money) {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
 .name_list_wrapper {
 	overflow-y: scroll;
 	flex-shrink: 0;
 	min-height: 0;
-	height: 95%;
+	height: 100%;
 	border-right: 2px solid var(--highlight-color-second);
 	padding-right: 10px;
 }
@@ -300,8 +318,12 @@ button {
 	align-items: flex-start;
 	min-height: none;
 	min-width: none;
-	height: 95%;
+	height: 90%;
 	overflow: hidden;
+}
+
+.selected_store_item {
+	flex-grow: 1;
 }
 
 .shop_item_header_part {
@@ -314,10 +336,27 @@ button {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	flex-grow: 1;
 
 
 	p {
 		font-size: smaller;
 		margin:unset;
 	}
+}
+
+.shop_bottom_row {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;	
+	align-items: stretch;
+}
+
+.shop_buttons_row {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	flex-grow: 1;
+	margin-top: -32px;
 }

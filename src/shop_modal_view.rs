@@ -1,7 +1,7 @@
 use std::vec;
 use leptos::prelude::*;
 
-use crate::gear::{ShopItem, GearData};
+use crate::{gear::{GearData, ShopItem}, help::get_char_signal_from_ctx};
 
 #[derive(Clone, Default, Debug, Eq, PartialEq)] 
 pub struct ShopModalData {
@@ -53,6 +53,7 @@ pub fn ShopModalView(data: RwSignal<ShopModalData>) -> AnyView {
 
 #[component]
 pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
+    let char_signal = get_char_signal_from_ctx();
     let current_tab: RwSignal<usize> = RwSignal::new(0);
     let currently_selected_index: RwSignal<usize> = RwSignal::new(0);
     let tabs = vec!["Weapons", "Ammo", "Armor", "Cyberware", "Drugs", "Gear", "Hardware", "Programs"];
@@ -77,6 +78,12 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 <hr/>
                 <ShopList current_tab currently_selected_index/>
                 //<p inner_html={move|| data.get().description}/>
+                <div class="shop_bottom_row">
+                    <div class="money_wrapper"><span class="money">{move || char_signal.read().money}</span></div>
+                    <div class="shop_buttons_row">
+                        <button>BUY</button>
+                    </div>
+                </div>
             </div>
         </div>
     }.into_any()
