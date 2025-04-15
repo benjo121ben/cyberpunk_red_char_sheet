@@ -22,6 +22,9 @@ pub struct Character {
     pub weapons: Vec<Weapon>,
 
     #[serde(default)]
+    pub ammo: IndexMap<String, i32>,
+
+    #[serde(default)]
     pub cyberware: Vec<Cyberware>,
 
     pub humanity:i32,
@@ -97,6 +100,7 @@ impl Character {
             current_armor_head: None,
             current_armor_body: None,
             armors: vec![],
+            ammo: IndexMap::new(),
             weapons: vec![],
             cyberware: vec![],
             humanity: 0,
@@ -290,5 +294,12 @@ impl Character {
             .unwrap();
 
         std::cmp::max(head_armor_penalty, body_armor_penalty)
+    }
+
+    pub fn add_gear(&mut self, name: String) {
+        let changed_name = name.to_lowercase().replace(" ", "_");
+        if self.gear_list.get_mut(&changed_name).and_then(|val| Some(*val += 1)).is_none() {
+            self.gear_list.insert(changed_name, 1);
+        }
     }
 }
