@@ -27,6 +27,10 @@ pub struct Character {
     pub humanity:i32,
 
     pub hp_current: i32, 
+
+    pub ip: i32,
+
+    pub money: i32,
     
     pub stats: CharStats,
     
@@ -97,6 +101,8 @@ impl Character {
             cyberware: vec![],
             humanity: 0,
             hp_current: 0,
+            ip: 0,
+            money: 0,
             stats: CharStats { intelligence: 0, reflex: 0, dexterity: 0, technique: 0, cool: 0, willpower: 0, luck: 0, movement: 0, body: 0, empathy: 0 },
             journals: vec![Journal::default()],
             skills: IndexMap::new(),

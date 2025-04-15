@@ -91,6 +91,7 @@ button {
 
 .skill_list {
 	@extend .bordered;
+	font-size: small;
 	display: grid;
 	grid-template-columns: 3fr 0.5fr;
 	gap: 2px;
@@ -100,7 +101,6 @@ button {
 	grid-column-start: span 2;
 	margin-top: 5px;
 	margin-bottom: 5px;
-	font-style: bold;
 	justify-self: center;
 }
 
@@ -182,7 +182,7 @@ button {
 	margin-top: 5px;
 	display: flex;
 	flex-direction: row;
-	gap: 5px;
+	gap: 15px;
 }
 
 .armor_row {
