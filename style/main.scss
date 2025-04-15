@@ -158,9 +158,8 @@ button {
 
 .health_text {
 	@extend .health_commons;
-	z-index: 100;
+	z-index: 10;
 	text-align: center;
-	align-self: center;
 	margin-top: -40px;
 	font-size: large;
 }
@@ -180,6 +179,7 @@ button {
 }
 
 .head_body_armor {
+	margin-top: 5px;
 	display: flex;
 	flex-direction: row;
 	gap: 5px;
