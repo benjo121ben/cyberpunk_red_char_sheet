@@ -1,7 +1,7 @@
 use serde::Deserialize;
 use serde::Serialize;
 
-trait ShopItem {
+pub trait ShopItem {
     fn get_name(&self) -> &String;
     fn get_description(&self) -> &String;
     fn get_price(&self) -> i32;
@@ -17,13 +17,8 @@ pub struct GearData {
     pub cyberware: Vec<Cyberware>,
     pub drugs: Vec<Drug>,
     pub items: Vec<Item>,
-    #[serde(rename = "programs-attackers")]
-    pub programs_attackers: Vec<Program>,
-    #[serde(rename = "programs-boosters")]
-    pub programs_boosters: Vec<Program>,
-    #[serde(rename = "programs-defender")]
-    pub programs_defender: Vec<Program>,
-    pub weapons: Vec<Weapon>,
+    pub programs: Vec<Program>,
+    pub weapons: Vec<Weapon>
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]

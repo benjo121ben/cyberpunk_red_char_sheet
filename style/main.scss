@@ -43,6 +43,11 @@ button {
 	background-color: var(--highlight-color);
 }
 
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
 .base_div {
 	display: flex;
 	flex-direction: column;
@@ -195,18 +200,19 @@ button {
 .armor_bar {
 	width: 20px;
 	background-color: var(--highlight-color-second);
-	--armor-color: var(--highlight-color-second);
+	border-color: var(--highlight-color-second);
 }
 
 .head_armor_bar {
 	@extend .armor_bar;
 	background-color: var(--warning-color);
-	--armor-color: var(--warning-color);
+	border-color: var(--warning-color);
 }
 
 .armor_bar_empty {
 	background-color: unset;
-	border: 2px solid var(--armor-color);
+	border-width: 2px;
+	border-style: dashed;
 }
 
 .modal {
@@ -225,24 +231,20 @@ button {
 	justify-content: center;
 }
 
-.modal-content {
-	width: 80vw;
-	height: fit-content;
+.modal_content {
+	width: 90vw;
+	height: 90vh;
 	background-color: var(--light-background-color);
 	padding: 1.5rem;
 	border-radius: 0.7rem;
-
-	> p {
-		margin-top:5px;
-		max-width: 80vw;
-	}
+	overflow: hidden;
 
 	> hr {
 		margin-bottom:5px;
 	}
 }
 
-.tabs-list {
+.tabs_list {
 	display: flex;
 	flex-direction: row;
 	gap: 5px;
@@ -258,4 +260,43 @@ button {
 .selected_tab {
 	background-color: var(--highlight-color-second);
 	color: var(--dark-background-color);
+}
+
+.name_list_wrapper {
+	overflow-y: scroll;
+	flex-shrink: 0;
+	min-height: 0;
+	max-height: 20px;
+}
+
+.name_list {
+	display: grid;
+	grid-template-rows: 1fr;
+	gap: 10px;
+	font-size: small;
+	border-right: 2px solid var(--highlight-color-second);
+	padding: 10px;
+}
+
+.shop_content {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	align-items: flex-start;
+	min-height: none;
+	min-width: none;
+	height: 100%;
+	overflow: hidden;
+}
+
+.shop_item {
+	display: grid;
+	grid-template-columns: 1fr 3fr 0.5fr;
+	gap: 20px;
+
+
+	p {
+		font-size: smaller;
+		margin:unset;
+	}
 }

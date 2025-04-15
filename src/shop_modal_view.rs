@@ -1,11 +1,32 @@
 use std::vec;
 use leptos::prelude::*;
 
+use crate::gear::{ShopItem, GearData};
+
 #[derive(Clone, Default, Debug, Eq, PartialEq)] 
 pub struct ShopModalData {
     visible: bool, 
     pub title: String, 
     pub description: String
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Eq)]
+pub struct ShopItemVisualData {
+    name: String,
+    description: String,
+    price: i32,
+    type_data: String
+}
+
+impl ShopItemVisualData {
+    pub fn from(item: &impl ShopItem) -> Self {
+        Self { 
+            name: item.get_name().clone(),
+            description: item.get_description().clone(),
+            price: item.get_price(),
+            type_data: item.get_type().clone(),
+        }
+    }
 }
 
 impl ShopModalData {
@@ -21,23 +42,24 @@ impl ShopModalData {
 }
 
 #[component]
-pub fn ShopModalView(data: RwSignal<ShopModalData>) -> impl IntoView {
+pub fn ShopModalView(data: RwSignal<ShopModalData>) -> AnyView {
     view! {
         <Show when=move||data.get().visible>
             <ShopContent data=data.clone()/>
         </Show>
-    }
+    }.into_any()
 }
 
 
 #[component]
-pub fn ShopContent(data: RwSignal<ShopModalData>) -> impl IntoView {
-    let current_tab = RwSignal::new(0);
+pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
+    let current_tab: RwSignal<usize> = RwSignal::new(0);
     let tabs = vec!["Weapons", "Ammo", "Armor", "Cyberware", "Drugs", "Gear", "Hardware", "Programs"];
+
     view! {
         <div class="modal" on:click=move |_| data.update(|data| data.hide())>
-            <div class="modal-content" on:click=move |ev| { ev.stop_propagation();}>
-                <div class="tabs-list">
+            <div class="modal_content" on:click=move |ev| { ev.stop_propagation();}>
+                <div class="tabs_list">
                     {tabs.into_iter().enumerate().map(|(i, tab_name)| {
                         view! {
                             <div class="tab" 
@@ -48,10 +70,65 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> impl IntoView {
                         }
                     }).collect::<Vec<_>>()}
                 </div>
-                <h2>{move|| data.get().title}</h2>
                 <hr/>
-                <p inner_html={move|| data.get().description}/>
+                <ShopList current_tab/>
+                //<p inner_html={move|| data.get().description}/>
             </div>
         </div>
-    }
+    }.into_any()
+}
+
+#[component]
+pub fn ShopList(current_tab: RwSignal<usize>) -> AnyView {
+    let gear_data: GearData = use_context().expect("Expecting gear data existence");
+    let current_items_memo = Memo::new(move |_| {
+        let mut list = match current_tab.get() {
+            0 => gear_data.weapons.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
+            1 => gear_data.ammunition.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
+            2 => gear_data.armor.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
+            3 => gear_data.cyberware.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
+            4 => gear_data.drugs.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
+            5 => gear_data.items.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
+            6 => gear_data.cyberdeck_hardware.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
+            7 => gear_data.programs.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
+            _ => panic!("this shop tab does not have any data")
+        };
+        list.sort_by(|val,val2| val.name.cmp(&val2.name));
+        list
+    });
+
+    let currently_selected = RwSignal::new(0);
+    let currenty_selected_item = Memo::new(move |_| {
+        current_items_memo.read().get(currently_selected.get()).expect("item to exist").clone()
+    });
+
+    view! {
+        <div class="shop_content">
+            <div class="name_list_wrapper">
+                <div class="name_list">
+                    <For each=move||current_items_memo.get()
+                        key=move|shop_item|shop_item.name.clone()
+                        children=move|shop_item| {
+                            let name = shop_item.name.clone();
+                            view!{
+                                <span>{move || name.clone()}</span>
+                            }
+                        }
+                    />
+                </div>
+            </div>
+            <div class="selected_store_item">{move || {
+                let name = currenty_selected_item.read().name.clone();
+                let description = currenty_selected_item.read().description.clone();
+                let price = currenty_selected_item.read().price.clone();
+                view!{
+                    <div class="shop_item">
+                        <span class="shop_item_name">{move || name.clone()}</span>
+                        <div class="shop_item_description" inner_html=move || description.clone()/>
+                        <span class="shop_item_price">{move || price.clone()}eb</span>
+                    </div>
+                }
+            }}</div>
+        </div>
+    }.into_any()
 }

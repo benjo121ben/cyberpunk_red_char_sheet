@@ -1497,7 +1497,7 @@
             "type": "gear"
         }
     ],
-    "programs-attackers": [
+    "programs": [
         {
             "description": "<p><em>Anti-Program Attacker</em><br /><br />ATK(1) - DEF(0) - REZ(0)<br /><br />Does 3d6 REZ to a Non-Black ICE Program, or 2d6 REZ to a Black ICE Program.<br /><br /><em>Icon: A giant glowing white sledgehammer wielded by the Netrunner.</em></p>",
             "file": "programs-attackers",
@@ -1553,9 +1553,7 @@
             "name": "Hellbolt",
             "price": 100,
             "type": "gear"
-        }
-    ],
-    "programs-boosters": [
+        },
         {
             "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases all Backdoor Checks you make by +2 as long as this Program remains Rezzed.<br /><br /><em>A golden mechanical worm with neon green eyes.</em></p>",
             "file": "programs-boosters",
@@ -1583,9 +1581,7 @@
             "name": "Speedy Gonzalvez",
             "price": 100,
             "type": "gear"
-        }
-    ],
-    "programs-defender": [
+        },
         {
             "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Stops the first successful Non-Black ICE Program Effect from dealing brain damage. After stopping this damage, the Shield Derezzes itself. Only 1 copy of this Program can be running at a time. Each copy of this Program can only be used once per Netrun.<br /><br /><em>Icon: Flickering silver energy barrier surrounding the Netrunner.</em></p>",
             "file": "programs-defender",

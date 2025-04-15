@@ -31,7 +31,7 @@ pub fn SimpleModalView(data: RwSignal<SimpleModalData>) -> impl IntoView {
     view! {
         <Show when=move||data.get().visible>
             <div class="modal" on:click=move |_| data.update(|data| data.reset())>
-                <div class="modal-content" on:click=move |_| {}>
+                <div class="modal_content" on:click=move |_| {}>
                     <h2>{move|| data.get().title}</h2>
                     <hr/>
                     <Show when=move||{data.get().traits.len() > 0}>

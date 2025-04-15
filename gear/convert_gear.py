@@ -155,13 +155,22 @@ def combine_final_data():
             data: list[dict] = json.loads(file.read())
 
         first_entry_data = data[0]
-        if not ("type" in first_entry_data) or first_entry_data["type"] != "cyberware":
-            final_dict[fname] = data
-        elif "cyberware" in final_dict:
-            for entry in data:
-                final_dict["cyberware"].append(entry)
+        if not ("type" in first_entry_data):
+            raise Exception("object does not have type: " + fname)
+        elif first_entry_data["type"] == "cyberware":
+            if "cyberware" in final_dict:
+                for entry in data:
+                    final_dict["cyberware"].append(entry)
+            else:
+                final_dict["cyberware"] = data
+        elif fname.find("program") != -1:
+            if "programs" in final_dict:
+                for entry in data:
+                    final_dict["programs"].append(entry)
+            else:
+                final_dict["programs"] = data
         else:
-            final_dict["cyberware"] = data
+            final_dict[fname] = data
 
     if pathlib.Path.exists(new_path):
         os.remove(new_path)
