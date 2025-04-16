@@ -35,15 +35,14 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
     let skill_memo = Memo::new(move |_| char_signal.with(|c| c.skills.get(&item_memo.read().weapon_data.skill.clone()).expect("expect skill to exist in its own list").clone()));
     let get_skill_value = Memo::new(move |_| {
         let skill = skill_memo.get();
-        let stat_nr = char_signal.with(|char| char.get_stat(&skill.stat.clone()));
+        let stat_nr = char_signal.with(|char| char.get_stat(&skill.stat.clone()).0);
         log!("recalc {} {}", stat_nr + skill.nr, skill.stat);
         stat_nr + skill.nr
     });
 
     let has_penalty = Memo::new(move |_| {
         let stat = skill_memo.get().stat;
-        let penalty = char_signal.read().get_current_armor_penalty();
-        penalty != 0 && (stat == "ref" || stat == "dex" || stat == "move")
+        char_signal.read().get_stat(&stat).1
     });
 
     let weapon_bonus = move || item_memo.get().weapon_data.bonus.or(Some(0)).unwrap();

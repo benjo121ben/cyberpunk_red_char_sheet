@@ -72,22 +72,37 @@ pub fn ArmorBar(nr: i32, head: bool) -> impl IntoView {
 #[component]
 pub fn ArmorView(head: bool) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
-    let get_max_sp = Memo::new(move |_| {
+    let armor_memo = Memo::new(move |_| {
         char_signal.with(|cyberpunk| {
-            let armor = if head {cyberpunk.get_current_head_armor()} else {cyberpunk.get_current_body_armor()};
-            armor.map(|a| a.armor_data.sp).or(Some(0)).unwrap()
+            if head {cyberpunk.get_current_head_armor().cloned()} else {cyberpunk.get_current_body_armor().cloned()}
         })
     });
+    let get_current_sp = Memo::new(move |_| {
+        let armor = armor_memo.get();
+        armor.map(|a| a.armor_data.sp_current).or(Some(0)).unwrap()
+    });
+    let get_max_sp = Memo::new(move |_| {
+        let armor = armor_memo.get();
+        armor.map(|a| a.armor_data.sp).or(Some(0)).unwrap()
+    });
     view! {
-        <div class="armor_row"
-            style:grid-template-columns=move || {format!("repeat({}, 1fr)", get_max_sp())}
-        >
-            <For each={move || 0..get_max_sp()}
-                key=move|nr| nr.to_string()
-                children=move |nr| {
-                    view! {<ArmorBar nr head/>}
-                }
-            />
+        <div class="flex_col">
+            <div class="armor_row"
+                style:grid-template-columns=move || {format!("repeat({}, 1fr)", get_max_sp())}
+            >
+                <For each={move || 0..get_max_sp()}
+                    key=move|nr| nr.to_string()
+                    children=move |nr| {
+                        view! {<ArmorBar nr head/>}
+                    }
+                />
+            </div>
+            <div class="armor_text">
+                {move || {
+                    let armor_tag = if head {"Head "} else {"Body "};
+                    format!("{}{}/{}", armor_tag, get_current_sp(), get_max_sp())
+                }}
+            </div>
         </div>
     }
 }

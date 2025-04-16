@@ -235,20 +235,41 @@ impl Character {
         return char;
     }
 
-    pub fn get_stat(self: &Self, stat_name: &str) -> i32 {
-        match stat_name.to_lowercase().as_str() {
-            "int" => return self.stats.intelligence,
-            "ref" => return self.stats.reflex - self.get_current_armor_penalty(),
-            "dex" => return self.stats.dexterity - self.get_current_armor_penalty(),
-            "tech" => return self.stats.technique,
-            "cool" => return self.stats.cool,
-            "will" => return self.stats.willpower,
-            "luck" => return self.stats.luck,
-            "move" => return self.stats.movement - self.get_current_armor_penalty(),
-            "body" => return self.stats.body,
-            "emp" => return self.humanity / 10,
-            _ => {panic!("This stat does not exist {stat_name}");}
-        }
+    pub fn get_stat(self: &Self, stat_name: &str) -> (i32, bool){
+        let stat_name_lower = stat_name.to_lowercase();
+
+        let stat_nr = match stat_name_lower.as_str() {
+            "int" => self.stats.intelligence,
+            "ref" => self.stats.reflex,
+            "dex" => self.stats.dexterity,
+            "tech" => self.stats.technique,
+            "cool" => self.stats.cool,
+            "will" => self.stats.willpower,
+            "luck" => self.stats.luck,
+            "move" => self.stats.movement,
+            "body" => self.stats.body,
+            "emp" => self.humanity / 10,
+            _ => {panic!("This stat does not exist {stat_name_lower}");}
+        };
+
+        let armor_penalty = match stat_name_lower.as_str() {
+            "ref" | "dex" | "move" => self.get_current_armor_penalty(),
+            _ => 0
+        };
+
+        let wounded_penalty = match stat_name_lower.as_str() {
+            "luck"  => 0,
+            "move" => { 
+                if self.hp_current <= 0 { 
+                    if stat_nr <= 6 { stat_nr - 1 } else {6} 
+                }
+                else {0}
+            }
+            _ => self.get_wounded_action_penalty()
+        };
+
+        let final_penatly = wounded_penalty + armor_penalty;
+        return (stat_nr - final_penatly, final_penatly != 0);
     }
 
     pub fn has_active_flag(self: &Self, key: &str) -> bool{
@@ -264,7 +285,7 @@ impl Character {
     }
 
     pub fn calc_max_health(self: &Self) -> i32 {
-        return 10 + 5 * ((self.get_stat("body") as f32 + self.get_stat("will") as f32) / 2.0).ceil() as i32
+        return 10 + 5 * ((self.stats.body as f32 + self.stats.willpower as f32) / 2.0).ceil() as i32
     }
 
     pub fn get_current_body_armor(&self) -> Option<&Armor> {
@@ -304,4 +325,17 @@ impl Character {
             self.gear_list.insert(changed_name, 1);
         }
     }
+
+    pub fn get_wounded_action_penalty(&self) -> i32 {
+        let half_hp = (self.calc_max_health() as f32 / 2.0).ceil() as i32;
+        if self.hp_current < 1 {
+            return 4;
+        }
+        else if self.hp_current < half_hp {
+            return 2;
+        }
+        else {
+            return 0;
+        }
+    } 
 }

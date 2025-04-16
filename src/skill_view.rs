@@ -28,11 +28,9 @@ fn SingleStatEntryView(entry: String) -> impl IntoView {
         rw_char_signal.read().get_stat(&entry_clone)
     });
 
-    let entry_clone = entry.clone();
-    let has_penalty = Memo::new(move |_| {
-        let penalty = rw_char_signal.read().get_current_armor_penalty();
-        penalty != 0 && (entry_clone == "ref" || entry_clone == "dex" || entry_clone == "move")
-    });
+    let has_penalty = move || {
+        stat_memo.get().1
+    };
     view! {
         <div class="stat_entry">
             <div class="stat_header">
@@ -40,7 +38,7 @@ fn SingleStatEntryView(entry: String) -> impl IntoView {
             </div>
             <div
                 class:has_penalty=move||has_penalty()>
-                {move|| stat_memo()}
+                {move|| stat_memo().0}
             </div>
         </div>
     }.into_any()
@@ -164,7 +162,7 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
     let skill_memo = Memo::new(move |_| char_signal.with(|c| c.skills.get(&key).expect("expect skill to exist in its own list").clone()));
     let get_skill_value = move || {
         let skill = skill_memo.get();
-        char_signal.with(|char| char.get_stat(&skill.stat.clone())) + skill.nr
+        char_signal.with(|char| char.get_stat(&skill.stat.clone()).0) + skill.nr
     };
 
     let update_skill = move|val: i32| {
@@ -183,8 +181,7 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
     //todo benji add armor penalty visual, stat is already adjusted
     let has_penalty = Memo::new(move |_| {
         let stat = skill_memo.get().stat;
-        let penalty = char_signal.read().get_current_armor_penalty();
-        penalty != 0 && (stat == "ref" || stat == "dex" || stat == "move")
+        char_signal.read().get_stat(&stat).clone().1
     });
 
     let update_skill_clone = update_skill.clone();

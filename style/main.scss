@@ -211,6 +211,12 @@ button:hover {
 	transform: skew(-10deg);
 }
 
+.armor_text {
+	text-align: end;
+	transform: skew(-10deg);
+	margin-right: 5px;
+}
+
 .armor_bar {
 	width: 20px;
 	background-color: var(--highlight-color-second);
