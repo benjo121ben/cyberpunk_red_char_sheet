@@ -13,6 +13,7 @@ use leptos_router::{
 
 use crate::char::{Character, Skill};
 use crate::gear::GearData;
+use crate::gear_views::GearView;
 use crate::resource_views::ArmorView;
 use crate::shop_modal_view::{ShopModalData, ShopModalView};
 
@@ -240,11 +241,12 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
                 </div>
                 <div class="center_div">
                     <StatsView/>
-                    <img class="ammo_icon" src="ammo_8_8.svg"/>
-                    <AmmoView count=ammo_rw_signal/>
+                    <GearView/>
                 </div>
                 <div class="right_div">
                     <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
+                    <img class="char_image" src="Matchbox.jpg"/>
+                    <span class="money">{move||char_rw_signal.read().money}</span>
                 </div>
             </div>
         </div>

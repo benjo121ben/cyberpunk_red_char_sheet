@@ -356,3 +356,20 @@ div:has(> .money) {
 	flex-grow: 1;
 	margin-top: -32px;
 }
+
+.char_image {
+	border-radius: 5;
+	max-height: 50vh;
+}
+
+.weapon_view {
+	display: grid;
+	grid-template-columns: 0.8fr 0.5fr 0.5fr 1fr 0.5fr;
+	background-color: var(--light-background-color);
+	align-items: center;
+	padding: 5px;
+}
+
+.ammo_svg {
+	max-width: 50px;
+}

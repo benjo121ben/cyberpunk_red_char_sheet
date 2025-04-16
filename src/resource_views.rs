@@ -4,13 +4,13 @@ use crate::{gear::Armor, help::get_char_signal_from_ctx};
 
 
 #[component]
-pub fn AmmoView(count: RwSignal<i32>) -> impl IntoView {
+pub fn AmmoView(count: Memo<i32>) -> impl IntoView {
     let check_visibility = move |nr| {
         if count.get() >= nr { "hidden"  } else {"visible"}
     };
 
     view! {
-        <svg id="eHRlrbPxCUi1" on:click=move|_| count.update(|val| *val = *val + 1) xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" project-id="95c5d48746bb4f409673ec40a2ef35d9" export-id="cf33590d4c6f4f0cbbde14f1333dbd2b" cached="false">
+        <svg id="eHRlrbPxCUi1" class="ammo_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" project-id="95c5d48746bb4f409673ec40a2ef35d9" export-id="cf33590d4c6f4f0cbbde14f1333dbd2b" cached="false">
             <ellipse rx="50" ry="50" transform="matrix(-3 0 0-3.000001 150 149.765748)" fill="#d2dbed" stroke-width="0"/>
             <ellipse class="ammo_bullet" rx="50" ry="50" transform="matrix(-2.396996 0 0-2.396989 150 149.765748)" fill="#1da8df" stroke-width="0"/>
             <path d="M150,114.307486v90.338036" transform="matrix(3 0 0 3.000001-300-328.792324)" fill="none" stroke="#d2dbed" stroke-width="5" stroke-linecap="round"/>

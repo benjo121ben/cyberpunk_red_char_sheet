@@ -282,3 +282,16 @@ impl ShopItem for Program {
         return &self.type_field;
     }
 }
+
+impl WeaponAmmoData {
+    pub fn shoot(&mut self) {
+        self.value = std::cmp::max(0, self.value - 1);
+    }
+
+    pub fn reload(&mut self) {
+        self.max.and_then(|max_val| {
+            self.value = max_val;
+            Some(max_val)
+        });
+    }
+}

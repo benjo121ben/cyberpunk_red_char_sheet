@@ -31,7 +31,67 @@
       "type": "armor"
     }
   ],
-  "weapons": [],
+  "weapons": [
+    {
+      "personalized_name": "",
+      "description": "A brief item description goes here...",
+      "file": "weapons",
+      "name": "Assault Rifle",
+      "price": 500,
+      "type": "weapons",
+      "weapon_data": {
+        "ammo": {
+          "max": 25,
+          "value": 0,
+          "ammo_type": null
+        },
+        "burst": true,
+        "damage": "5d6",
+        "fullauto": true,
+        "rof": 1,
+        "skill": "shoulder_arms",
+        "weapontype": "assaultrifle"
+      }
+    },
+    {
+      "personalized_name": "",
+      "description": "A brief item description goes here...",
+      "file": "weapons",
+      "name": "Heavy Melee Weapon",
+      "price": 100,
+      "type": "weapons",
+      "weapon_data": {
+        "ammo": null,
+        "burst": false,
+        "damage": "3d6",
+        "fullauto": false,
+        "rof": 2,
+        "skill": "melee_weapon",
+        "weapontype": "meleeweapon"
+      }
+    },
+    {
+      "personalized_name": "",
+      "description": "A brief item description goes here...",
+      "file": "weapons",
+      "name": "Heavy Pistol",
+      "price": 100,
+      "type": "weapons",
+      "weapon_data": {
+        "ammo": {
+          "max": 8,
+          "value": 0,
+          "ammo_type": null
+        },
+        "burst": false,
+        "damage": "3d6",
+        "fullauto": false,
+        "rof": 2,
+        "skill": "handgun",
+        "weapontype": "pistol"
+      }
+    }
+  ],
   "ammo": {},
   "cyberware": [],
   "humanity": 55,
