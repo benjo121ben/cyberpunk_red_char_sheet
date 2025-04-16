@@ -7,7 +7,7 @@
     {
       "armor_data": {
         "sp": 11,
-        "sp_current": 10,
+        "sp_current": 11,
         "penalty": 0,
         "head": true
       },
@@ -41,6 +41,7 @@
       "type": "weapons",
       "weapon_data": {
         "ammo": null,
+        "bonus": null,
         "burst": false,
         "damage": "3d6",
         "fullauto": false,
@@ -62,6 +63,7 @@
           "value": 6,
           "ammo_type": null
         },
+        "bonus": null,
         "burst": false,
         "damage": "3d6",
         "fullauto": false,

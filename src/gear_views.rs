@@ -74,7 +74,7 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                     on:click=move|_| char_signal.update(|c|{
                         c.weapons.remove(index);
                     })>
-                    remove
+                    X
                 </button>
                 <Show when=move|| has_ammo.get()>
                     <button
@@ -89,7 +89,21 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                         RELOAD
                     </button>
                 </Show>
-                
+                <button
+                    on:click=move|_| {char_signal.update(|c| {
+                        c.weapons.get_mut(index).and_then(|weap: &mut Weapon| {
+                            if weap.weapon_data.bonus.is_some() {
+                                weap.weapon_data.bonus = None;
+                            }
+                            else {
+                                weap.weapon_data.bonus = Some(1);
+                            }
+                            Some(weap)
+                        });
+                    })}
+                >
+                    +1
+                </button>
             </div>
         </div>
     }

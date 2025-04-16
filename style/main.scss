@@ -48,9 +48,18 @@ button:hover {
 	color: var(--dark-background-color);
 }
 
-.flex-row {
+.flex_row {
 	display: flex;
 	flex-direction: row;
+}
+
+.flex_col {
+	display: flex;
+	flex-direction: column;
+}
+
+.justify_center {
+	justify-content: center;
 }
 
 .base_div {
@@ -273,7 +282,7 @@ button:hover {
 	color: var(--dark-background-color);
 }
 
-div:has(> .money) {
+.modal div:has(> .money) {
 	display: flex;
 	flex-direction: column;
 	align-items: center;

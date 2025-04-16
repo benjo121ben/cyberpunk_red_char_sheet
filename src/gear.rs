@@ -110,6 +110,7 @@ pub struct Weapon {
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct WeaponData {
     pub ammo: Option<WeaponAmmoData>,
+    pub bonus: Option<i32>,
     pub burst: bool,
     pub damage: String,
     pub fullauto: bool,

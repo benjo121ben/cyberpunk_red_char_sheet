@@ -247,9 +247,11 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
                     <GearView/>
                 </div>
                 <div class="right_div">
-                    <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
                     <img class="char_image" src="Matchbox.jpg"/>
-                    <span class="money">{move||char_rw_signal.read().money}</span>
+                    <div class="flex_row justify_center">
+                        <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
+                        <span class="money">{move||char_rw_signal.read().money}eb</span>
+                    </div>
                 </div>
             </div>
         </div>
