@@ -1,33 +1,33 @@
 {
   "name": "Samantha Banks",
   "alias": "Matchbox",
-  "current_armor_body": 0,
-  "current_armor_head": 1,
+  "current_armor_body": 1,
+  "current_armor_head": 0,
   "armors": [
     {
       "armor_data": {
-        "sp": 4,
-        "sp_current": 2,
+        "sp": 11,
+        "sp_current": 10,
         "penalty": 0,
-        "head": false
+        "head": true
       },
-      "description": "<p>SP 4<br /><br />Thin leather with reinforced pads at shoulders, hips, and gut. Favored by Nomads and other 'punks who ride bikes. This also includes all those road-warrior wannabes wearing open-butt chaps and random sports equipment.</p>",
+      "description": "<p>SP 11</p>\n<p>&nbsp;</p>\n<p>A combination of Kevlar&reg; and plastic meshes inserted into the weave of the fabric. Armorjack provides superior protection, especially against high-velocity bullets.</p>",
       "file": "armor",
-      "name": "Leathers",
-      "price": 20,
+      "name": "Light Armorjack",
+      "price": 100,
       "type": "armor"
     },
     {
       "armor_data": {
-        "sp": 4,
-        "sp_current": 3,
-        "penalty": 1,
+        "sp": 11,
+        "sp_current": 11,
+        "penalty": 0,
         "head": false
       },
-      "description": "<p>SP 4<br /><br />Thin leather with reinforced pads at shoulders, hips, and gut. Favored by Nomads and other 'punks who ride bikes. This also includes all those road-warrior wannabes wearing open-butt chaps and random sports equipment.</p>",
+      "description": "<p>SP 11</p>\n<p>&nbsp;</p>\n<p>A combination of Kevlar&reg; and plastic meshes inserted into the weave of the fabric. Armorjack provides superior protection, especially against high-velocity bullets.</p>",
       "file": "armor",
-      "name": "Leathers",
-      "price": 20,
+      "name": "Light Armorjack",
+      "price": 100,
       "type": "armor"
     }
   ],

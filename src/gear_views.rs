@@ -121,10 +121,10 @@ pub fn ArmorSelectionView() -> impl IntoView {
                 on:change:target=move |ev| {
                     let val = ev.target().value().parse().unwrap();
                     if val == 100 {
-                        char_signal.update(|c| c.current_armor_body =None);
+                        char_signal.update(|c| c.current_armor_head =None);
                     }
                     else {
-                        char_signal.update(|c| c.current_armor_body = Some(val));
+                        char_signal.update(|c| c.current_armor_head = Some(val));
 
                     }
                 }
