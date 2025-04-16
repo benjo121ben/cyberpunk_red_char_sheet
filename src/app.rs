@@ -2,7 +2,7 @@ use leptos::prelude::*;
 use leptos::logging::log;
 use std::error::Error;
 use super::skill_view::{SkillList, StatsView};
-use super::resource_views::{AmmoView, HealthView};
+use super::resource_views::HealthView;
 use std::fs::read_to_string;
 use std::path::Path;
 use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title};
@@ -11,9 +11,9 @@ use leptos_router::{
     StaticSegment,
 };
 
-use crate::char::{Character, Skill};
+use crate::char::Character;
 use crate::gear::GearData;
-use crate::gear_views::GearView;
+use crate::gear_views::{ArmorSelectionView, GearView};
 use crate::resource_views::ArmorView;
 use crate::shop_modal_view::{ShopModalData, ShopModalView};
 
@@ -240,7 +240,10 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
                     <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("group_by_stat"))>GROUP</button>
                 </div>
                 <div class="center_div">
-                    <StatsView/>
+                    <div class="center_div_first_row">
+                        <StatsView/>
+                        <ArmorSelectionView/>
+                    </div>
                     <GearView/>
                 </div>
                 <div class="right_div">

@@ -1,6 +1,4 @@
 use leptos::prelude::*;
-use crate::char::Character;
-use crate::gear::GearData;
 
 use super::char::Skill;
 use super::help::get_char_signal_from_ctx;

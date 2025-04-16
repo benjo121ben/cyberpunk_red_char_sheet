@@ -36,27 +36,6 @@
       "personalized_name": "",
       "description": "A brief item description goes here...",
       "file": "weapons",
-      "name": "Assault Rifle",
-      "price": 500,
-      "type": "weapons",
-      "weapon_data": {
-        "ammo": {
-          "max": 25,
-          "value": 0,
-          "ammo_type": null
-        },
-        "burst": true,
-        "damage": "5d6",
-        "fullauto": true,
-        "rof": 1,
-        "skill": "shoulder_arms",
-        "weapontype": "assaultrifle"
-      }
-    },
-    {
-      "personalized_name": "",
-      "description": "A brief item description goes here...",
-      "file": "weapons",
       "name": "Heavy Melee Weapon",
       "price": 100,
       "type": "weapons",
@@ -80,7 +59,7 @@
       "weapon_data": {
         "ammo": {
           "max": 8,
-          "value": 0,
+          "value": 6,
           "ammo_type": null
         },
         "burst": false,

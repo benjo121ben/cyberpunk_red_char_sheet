@@ -2,7 +2,7 @@ use std::vec;
 use leptos::prelude::*;
 use leptos::logging::log;
 
-use crate::{gear::{self, GearData, ShopItem}, help::get_char_signal_from_ctx};
+use crate::{gear::{GearData, ShopItem}, help::get_char_signal_from_ctx};
 
 #[derive(Clone, Default, Debug, Eq, PartialEq)] 
 pub struct ShopModalData {
@@ -140,7 +140,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 cyberpunk_signal.update(|c|c.armors.push(bought_item));
             },
             "Cyberware" =>{
-                let mut bought_item = gear_data.cyberware.iter()
+                let bought_item = gear_data.cyberware.iter()
                     .find(|item| item.name == current_item.name)
                     .cloned()
                     .expect("expect item to exist");
@@ -151,7 +151,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 cyberpunk_signal.update(|c|c.cyberware.push(bought_item));
             },
             "Drugs" => {
-                let mut bought_item = gear_data.drugs.iter()
+                let bought_item = gear_data.drugs.iter()
                     .find(|item| item.name == current_item.name)
                     .cloned()
                     .expect("expect item to exist");
@@ -162,7 +162,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 cyberpunk_signal.update(|c|c.add_gear(bought_item.name));
             },
             "Gear" => {
-                let mut bought_item = gear_data.items.iter()
+                let bought_item = gear_data.items.iter()
                     .find(|item| item.name == current_item.name)
                     .cloned()
                     .expect("expect item to exist");
@@ -173,7 +173,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 cyberpunk_signal.update(|c|c.add_gear(bought_item.name));
             },
             "Hardware" => {
-                let mut bought_item = gear_data.cyberdeck_hardware.iter()
+                let bought_item = gear_data.cyberdeck_hardware.iter()
                     .find(|item| item.name == current_item.name)
                     .cloned()
                     .expect("expect item to exist");
@@ -185,7 +185,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
 
             },
             "Programs" => {
-                let mut bought_item = gear_data.programs.iter()
+                let bought_item = gear_data.programs.iter()
                     .find(|item| item.name == current_item.name)
                     .cloned()
                     .expect("expect item to exist");

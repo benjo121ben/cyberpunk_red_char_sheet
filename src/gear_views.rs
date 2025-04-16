@@ -1,13 +1,10 @@
 use leptos::prelude::*;
-use leptos::logging::log;
-use leptos::tachys::view;
 use crate::gear::*;
 use crate::help::get_char_signal_from_ctx;
 use crate::resource_views::AmmoView;
 
 #[component]
 pub fn GearView() -> impl IntoView {
-    let char_signal = get_char_signal_from_ctx();
     view! {
         <AllWeaponsView/>
     }
@@ -60,12 +57,12 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
             <Show when=move|| has_ammo.get()>
                 <AmmoView count=ammo_memo 
                     on:click=move|_| char_signal.update(|c|{
-                        c.weapons.get_mut(index)
-                            .unwrap()
-                            .weapon_data.as_mut()
-                            .ammo
-                            .unwrap()
-                            .shoot();
+                        c.weapons.get_mut(index).and_then(|weap: &mut Weapon|
+                            weap
+                                .weapon_data
+                                .ammo.as_mut()
+                                .and_then(|ammo_data: &mut WeaponAmmoData| {ammo_data.shoot(); Some(ammo_data)})
+                        );
                     })
                 />
             </Show>
@@ -73,15 +70,96 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                 <div/>
             </Show>
             <div class="weapon_buttons">
+                <button
+                    on:click=move|_| char_signal.update(|c|{
+                        c.weapons.remove(index);
+                    })>
+                    remove
+                </button>
                 <Show when=move|| has_ammo.get()>
-                    <button on:click=move||></button>
+                    <button
+                        on:click=move|_| char_signal.update(|c|{
+                            c.weapons.get_mut(index).and_then(|weap: &mut Weapon|
+                                weap
+                                    .weapon_data
+                                    .ammo.as_mut()
+                                    .and_then(|ammo_data: &mut WeaponAmmoData| {ammo_data.reload(); Some(ammo_data)})
+                            );
+                        })>
+                        RELOAD
+                    </button>
                 </Show>
+                
             </div>
         </div>
     }
 }
 
 #[component]
-pub fn AllArmorView() -> impl IntoView {
+pub fn ArmorSelectionView() -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
+
+    let head_armors = Memo::new(move |_| char_signal.read()
+        .armors
+        .clone()
+        .into_iter()
+        .enumerate()
+        .filter(|(index, armor)|armor.armor_data.head)
+        .collect::<Vec<_>>())
+    ;
+    let body_armors = Memo::new(move |_| char_signal.read()
+        .armors
+        .clone()
+        .into_iter().enumerate()
+        .filter(|(index, armor)|!armor.armor_data.head)
+        .collect::<Vec<_>>())
+    ;
+    view! {
+        <div class="armor_selection">
+            <select 
+                prop:value=move || {char_signal.read().current_armor_head.or(Some(100)).unwrap()}
+                on:change:target=move |ev| {
+                    let val = ev.target().value().parse().unwrap();
+                    if val == 100 {
+                        char_signal.update(|c| c.current_armor_body =None);
+                    }
+                    else {
+                        char_signal.update(|c| c.current_armor_body = Some(val));
+
+                    }
+                }
+            >
+                <option value=move||format!("{}", 100)>No Armor equipped</option>
+                <For 
+                    each=move|| head_armors.get()
+                    key=move|(_, armor)| armor.name.clone()
+                    children=move|(index, armor)| {
+                        view! {<option value=index.to_string()>{armor.name.clone()}</option>}
+                    }
+                />
+            </select>
+            <select 
+                prop:value=move || {char_signal.read().current_armor_body.or(Some(100)).unwrap()}
+                on:change:target=move |ev| {
+                    let val = ev.target().value().parse().unwrap();
+                    if val == 100 {
+                        char_signal.update(|c| c.current_armor_body =None);
+                    }
+                    else {
+                        char_signal.update(|c| c.current_armor_body = Some(val));
+
+                    }
+                }
+            >
+                <option value=move||format!("{}", 100)>No Armor equipped</option>
+                <For 
+                    each=move|| body_armors.get()
+                    key=move|(_, armor)| armor.name.clone()
+                    children=move|(index, armor)| {
+                        view! {<option value=index.to_string()>{armor.name.clone()}</option>}
+                    }
+                />
+            </select>
+        </div>
+    }
 }

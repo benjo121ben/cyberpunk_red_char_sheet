@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 
-use crate::{gear::Armor, help::get_char_signal_from_ctx};
+use crate::help::get_char_signal_from_ctx;
 
 
 #[component]

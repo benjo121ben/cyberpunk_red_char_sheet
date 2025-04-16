@@ -68,6 +68,7 @@ button:hover {
 	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
+	gap: 5px;
 }
 
 .right_div {
@@ -368,8 +369,24 @@ div:has(> .money) {
 	background-color: var(--light-background-color);
 	align-items: center;
 	padding: 5px;
+	border-radius: 5;
 }
 
 .ammo_svg {
 	max-width: 50px;
+}
+
+.center_div_first_row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.armor_selection {
+	display: flex;
+	flex-direction: column;
+}
+
+.weapon_buttons {
+	display: flex;
+	flex-direction: row-reverse;
 }
