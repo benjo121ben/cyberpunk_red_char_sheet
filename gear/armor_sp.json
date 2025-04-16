@@ -17,19 +17,19 @@
     },
     "Medium Armorjack": {
         "sp": 12,
-        "penalty": -2
+        "penalty": 2
     },
     "Heavy Armorjack": {
         "sp": 13,
-        "penalty": -2
+        "penalty": 2
     },
     "Flak": {
         "sp": 15,
-        "penalty": -4
+        "penalty": 4
     },
     "Metalgear": {
         "sp": 18,
-        "penalty": -4
+        "penalty": 4
     },
     "Bulletproof Shield": {
         "sp": 10,

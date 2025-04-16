@@ -1,4 +1,5 @@
 use leptos::prelude::*;
+use leptos::logging::log;
 use crate::gear::*;
 use crate::help::get_char_signal_from_ctx;
 use crate::resource_views::AmmoView;
@@ -32,10 +33,20 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
         char_signal.read().weapons.get(index).unwrap().clone()
     });
     let skill_memo = Memo::new(move |_| char_signal.with(|c| c.skills.get(&item_memo.read().weapon_data.skill.clone()).expect("expect skill to exist in its own list").clone()));
-    let get_skill_value = move || {
+    let get_skill_value = Memo::new(move |_| {
         let skill = skill_memo.get();
-        char_signal.with(|char| char.get_stat(&skill.stat.clone())) + skill.nr
-    };
+        let stat_nr = char_signal.with(|char| char.get_stat(&skill.stat.clone()));
+        log!("recalc {} {}", stat_nr + skill.nr, skill.stat);
+        stat_nr + skill.nr
+    });
+
+    let has_penalty = Memo::new(move |_| {
+        let stat = skill_memo.get().stat;
+        let penalty = char_signal.read().get_current_armor_penalty();
+        penalty != 0 && (stat == "ref" || stat == "dex" || stat == "move")
+    });
+
+    let weapon_bonus = move || item_memo.get().weapon_data.bonus.or(Some(0)).unwrap();
 
     let has_ammo = Memo::new(move |_| item_memo.get().weapon_data.ammo.is_some());
 
@@ -52,7 +63,12 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
     view!{
         <div class="weapon_view">
             <div class="weapon_name">{move|| item_memo.get().name.clone()}</div>
-            <div class="weapon_bonus">{move|| get_skill_value()}</div>
+            <div class="weapon_bonus" 
+                class:has_penalty=move||has_penalty()
+            >
+                {move|| get_skill_value.get() + weapon_bonus()}
+            </div>
+            <div class="weapon_rof">rof {move|| item_memo.get().weapon_data.rof.clone()}</div>
             <div class="weapon_damage">{move|| item_memo.get().weapon_data.damage.clone()}</div>
             <Show when=move|| has_ammo.get()>
                 <AmmoView count=ammo_memo 
@@ -90,6 +106,7 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                     </button>
                 </Show>
                 <button
+                    class:selected_tab=move || weapon_bonus() != 0
                     on:click=move|_| {char_signal.update(|c| {
                         c.weapons.get_mut(index).and_then(|weap: &mut Weapon| {
                             if weap.weapon_data.bonus.is_some() {

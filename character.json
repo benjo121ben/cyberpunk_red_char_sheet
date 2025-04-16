@@ -29,6 +29,19 @@
       "name": "Light Armorjack",
       "price": 100,
       "type": "armor"
+    },
+    {
+      "armor_data": {
+        "sp": 12,
+        "sp_current": 12,
+        "penalty": 2,
+        "head": false
+      },
+      "description": "<p>SP 12</p>\n<p>Armor Penalty : -2 REF, DEX, and MOVE</p>\n<p>Heavier Armorjack, with solid plastic plating, reinforced with thicker Kevlar&reg; mesh. Typical Street wear, this combines decent protection with a decent ost.</p>",
+      "file": "armor",
+      "name": "Medium Armorjack",
+      "price": 100,
+      "type": "armor"
     }
   ],
   "weapons": [
@@ -60,7 +73,7 @@
       "weapon_data": {
         "ammo": {
           "max": 8,
-          "value": 6,
+          "value": 8,
           "ammo_type": null
         },
         "bonus": null,
@@ -510,6 +523,6 @@
   "gear_list": {},
   "flags": {
     "filter_zeros": true,
-    "group_by_stat": false
+    "group_by_stat": true
   }
 }

@@ -1,4 +1,4 @@
-
+use leptos::logging::log;
 use std::cmp::Ordering;
 
 use indexmap::IndexMap;
@@ -271,6 +271,7 @@ impl Character {
         if self.current_armor_body.is_none(){
             return None;
         }
+        log!("current body armor {}", self.armors.get(self.current_armor_body.unwrap()).clone().unwrap().name);
         
         self.armors.get(self.current_armor_body.unwrap())
     }
@@ -279,7 +280,7 @@ impl Character {
         if self.current_armor_head.is_none(){
             return None;
         }
-        
+        log!("current head armor {}", self.armors.get(self.current_armor_head.unwrap()).clone().unwrap().name);
         self.armors.get(self.current_armor_head.unwrap())
     }
 
@@ -292,6 +293,7 @@ impl Character {
             .map(|armor|armor.armor_data.penalty)
             .or(Some(0))
             .unwrap();
+        log!("current armor penalties {} {}", head_armor_penalty, body_armor_penalty);
 
         std::cmp::max(head_armor_penalty, body_armor_penalty)
     }

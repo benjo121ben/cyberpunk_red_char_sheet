@@ -139,7 +139,7 @@
         },
         {
             "armor_data": {
-                "penalty": -2,
+                "penalty": 2,
                 "sp": 12
             },
             "description": "<p>SP 12</p>\n<p>Armor Penalty : -2 REF, DEX, and MOVE</p>\n<p>Heavier Armorjack, with solid plastic plating, reinforced with thicker Kevlar&reg; mesh. Typical Street wear, this combines decent protection with a decent ost.</p>",
@@ -150,7 +150,7 @@
         },
         {
             "armor_data": {
-                "penalty": -2,
+                "penalty": 2,
                 "sp": 13
             },
             "description": "<p>SP 13</p>\n<p>Armor Penalty : -2 REF, DEX, and MOVE</p>\n<p>&nbsp;</p>\n<p>The thickest Armorjack, combining denser Kevlar&reg; and a layered mix of plastic and mesh weaves. It stops all but the heaviest attacks, but costs a pretty eb.</p>",
@@ -161,7 +161,7 @@
         },
         {
             "armor_data": {
-                "penalty": -4,
+                "penalty": 4,
                 "sp": 15
             },
             "description": "<p>SP 15</p>\n<p>Armor Penalty : -4 REF, DEX, and MOVE</p>\n<p>&nbsp;</p>\n<p>This is the 21st century version of the time-honored flak vest and pants with metal plates designed to provide protection from high explosive weaponry, artillery, grenades, shotguns, and anti-personnel mines. Modern flak will also stop many of the higher caliber rounds from automatic rifles.</p>",
@@ -172,7 +172,7 @@
         },
         {
             "armor_data": {
-                "penalty": -4,
+                "penalty": 4,
                 "sp": 18
             },
             "description": "<p>SP 18</p>\n<p>Armor Penalty : -4 REF, DEX, and MOVE</p>\n<p>&nbsp;</p>\n<p>You know how Evil Empire Storm Troopers just seem to stand there and take the hit? Metalgear&reg; is the Dark Future equivalent of that type of armor: solid metal and plastic plates on a mesh body cover. Metalgear&reg; will stop almost anything, but you're going to be easier to hit than a one-legged bantha in a potho race.</p>",
