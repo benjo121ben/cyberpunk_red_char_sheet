@@ -116,13 +116,14 @@ button:hover {
 	flex-direction: column;
 	gap: 5px;
 	flex-grow: 1;
-	flex-shrink: 2;
+	flex-basis: 5;
 }
 
 .right_div {
 	display: flex;
 	flex-direction: column;
 	flex-shrink: 1;
+	flex-basis: 0;
 }
 
 .has_penalty {
@@ -136,6 +137,10 @@ button:hover {
 	gap: 10px;
 	padding: auto;
 	max-width: fit-content;
+
+	::selection {
+		color: inherit;
+	}
 }
 
 .stat_entry {
@@ -434,7 +439,8 @@ button:hover {
 
 .weapon_view {
 	display: grid;
-	grid-template-columns: 250 0.5fr 0.5fr 0.5fr 1fr 1fr;
+	grid-template-columns: 225 0.5fr 0.5fr 0.5fr 1fr 1fr;
+	gap: 10px;
 	background-color: var(--light-background-color);
 	align-items: center;
 	padding: 5px;

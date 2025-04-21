@@ -1,4 +1,5 @@
 use leptos::prelude::*;
+use std::cmp::max;
 
 use super::char::Skill;
 use super::help::get_char_signal_from_ctx;
@@ -31,14 +32,36 @@ fn SingleStatEntryView(entry: String) -> impl IntoView {
     let has_penalty = move || {
         stat_memo.get().1
     };
+
+    let entry_clone = entry.clone();
+    let decrease_luck = move || {
+        if entry_clone != "luck" {
+            return
+        }
+        let current_luck = rw_char_signal.read().stats.luck_current;
+        rw_char_signal.write().stats.luck_current = max(current_luck - 1, 0);
+    };
+
+    let entry_clone = entry.clone();
+    let reset_luck = move || {
+        if entry_clone != "luck" {
+            return
+        }
+        let luck_max = rw_char_signal.read().stats.luck;
+        rw_char_signal.write().stats.luck_current = luck_max;
+    };
+
     view! {
-        <div class="stat_entry">
+        <div class="stat_entry"
+            on:click=move |_| decrease_luck()
+            on:contextmenu=move |_| reset_luck()
+        >
             <div class="stat_header">
                 {let name_clone = entry.clone(); move|| name_clone.clone()}
             </div>
             <div
                 class:has_penalty=move||has_penalty()>
-                {move|| stat_memo().0}
+                {move || if entry == "luck" {format!("{} / ", rw_char_signal.read().stats.luck_current)} else {"".to_string()}} {move|| stat_memo().0}
             </div>
         </div>
     }.into_any()
