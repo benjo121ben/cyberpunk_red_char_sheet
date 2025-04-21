@@ -2,7 +2,7 @@ use leptos::prelude::*;
 use leptos::logging::log;
 use std::error::Error;
 use super::skill_view::{SkillList, StatsView};
-use super::resource_views::HealthView;
+use super::resource_views::{HealthView, MoneyView};
 use std::fs::read_to_string;
 use std::path::Path;
 use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title};
@@ -255,7 +255,7 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                     <img class="char_image" src="Matchbox.jpg"/>
                     <div class="flex_row justify_center">
                         <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
-                        <span class="money">{move||char_rw_signal.read().money}</span>
+                        <MoneyView/>
                     </div>
                 </div>
             </div>

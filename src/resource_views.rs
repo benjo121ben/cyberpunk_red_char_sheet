@@ -1,4 +1,5 @@
 use leptos::prelude::*;
+use core::num;
 use std::any::Any;
 use std::cmp::{min, max};
 
@@ -164,5 +165,46 @@ pub fn HealthAdjustPopup(visible_signal: RwSignal<bool>) -> impl IntoView {
                 <input type="checkbox" on:change=move|_| head_damage_signal.update(|a| *a= !*a)/>
             </div>
         </dialog>
+    }
+}
+
+#[component]
+pub fn MoneyView() -> impl IntoView {
+    let char_signal = get_char_signal_from_ctx();
+    let input_mode = RwSignal::new(false);
+    let (money_getter, money_setter) = slice!(char_signal.money);
+    view! {
+        <Show
+            when=move || !input_mode.get()
+        >
+            <span class="money"
+                on:click=move|_| input_mode.set(true)2w3edv
+            >
+                {move|| money_getter()}
+            </span>
+        </Show>
+        <Show
+            when=move || input_mode.get()
+        >
+            <input placeholder="set" prop:value=move||money_getter() on:change=move |ev| {
+                match event_target_value(&ev).parse() {
+                    Ok(number) => {
+                        money_setter(number);
+                        input_mode.set(false);
+                    },
+                    Err(_) => {},
+                }
+            }/>
+            <input placeholder="add" on:change=move |ev| {
+                match event_target_value(&ev).parse::<i32>() {
+                    Ok(number) => {
+                        let current_money = money_getter();
+                        money_setter(current_money + number);
+                        input_mode.set(false);
+                    },
+                    Err(_) => {},
+                }
+            }/>
+        </Show>
     }
 }
