@@ -53,6 +53,19 @@ button {
 	background-color: var(--highlight-color);
 }
 
+select {
+	background-color: var(--highlight-color);
+	border: unset;
+	border-radius: 5px;
+	color: var(--dark-background-color);
+	font-size: medium;
+	font-family: inherit;
+}
+
+select:hover {
+	background-color: var(--highlight-color-second);
+}
+
 button:hover {
 	background-color: var(--highlight-color-second);
 	color: var(--dark-background-color);
@@ -117,6 +130,7 @@ button:hover {
 }
 
 .stat_view {
+	@extend .bordered;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
@@ -441,6 +455,24 @@ button:hover {
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
+}
+
+.body_armor_select {
+	background-color: var(--highlight-color-second);
+}
+
+.body_armor_select:hover {
+	color: var(--highlight-color-second);
+	background-color: var(--dark-background-color);
+}
+
+.head_armor_select{
+	background-color: var(--warning-color);
+}
+
+.head_armor_select:hover{
+	background-color: var(--dark-background-color);
+	color: var(--warning-color);
 }
 
 .single_armor_selection {

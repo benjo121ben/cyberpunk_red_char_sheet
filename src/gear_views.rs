@@ -178,6 +178,7 @@ pub fn ArmorSelectionView() -> impl IntoView {
                     />
                 </Show>
                 <select 
+                    class="head_armor_select"
                     prop:value=move || {char_signal.read().current_armor_head.or(Some(100)).unwrap()}
                     on:change:target=move |ev| {
                         let val = ev.target().value().parse().unwrap();
@@ -214,6 +215,7 @@ pub fn ArmorSelectionView() -> impl IntoView {
                     />
                 </Show>
                 <select 
+                    class="body_armor_select"
                     prop:value=move || {char_signal.read().current_armor_body.or(Some(100)).unwrap()}
                     on:change:target=move |ev| {
                         let val = ev.target().value().parse().unwrap();
