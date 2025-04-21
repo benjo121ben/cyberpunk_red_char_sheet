@@ -452,3 +452,31 @@ button:hover {
 	display: flex;
 	flex-direction: row-reverse;
 }
+
+.health_popup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 3px;
+	border: unset;
+	border-radius: 5px;
+	background-color: var(--light-background-color);
+	margin-top: 5px;
+	color: var(--text-color);
+
+	input {
+		border: unset;
+		outline: unset;
+		text-align: center;
+	}
+
+	input[type=number] {
+		-moz-appearance: textfield;
+	}
+
+	input:focus {
+		border: unset;
+		outline: unset;
+	}
+}

@@ -14,7 +14,7 @@ use leptos_router::{
 use crate::char::Character;
 use crate::gear::GearData;
 use crate::gear_views::{ArmorSelectionView, GearView};
-use crate::resource_views::ArmorView;
+use crate::resource_views::{ArmorView, HealthAdjustPopup};
 use crate::shop_modal_view::{ShopModalData, ShopModalView};
 
 pub fn read_gear_data_from_file<P: AsRef<Path>>(path: P) -> Result<GearData, Box<dyn Error>> {
@@ -189,7 +189,7 @@ fn HomePage() -> impl IntoView {
 }
 
 #[component]
-fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoView {
+fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
     let char_rw_signal = RwSignal::new(character_data);
     let unlocked_signal = RwSignal::new(false);
     let save_char_action = Action::new(move |_: &()| async move {
@@ -216,7 +216,10 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
 
     view! {
         <ShopModalView data=shop_modal_signal/>
-        <HealthView/>
+        <HealthView on:click=move|_| damage_popup_signal.update(|v| *v = !*v)/>
+        <Show when=move||damage_popup_signal.get()>
+            <HealthAdjustPopup visible_signal=damage_popup_signal/>
+        </Show>
         <div class="base_div">
             <div class="first_row">
                 <h1 class="name">{move || char_rw_signal.read().name.clone()} / {move || char_rw_signal.read().alias.clone()}</h1>
@@ -257,6 +260,6 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
                 </div>
             </div>
         </div>
-    }
+    }.into_any()
 }
 

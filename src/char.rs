@@ -1,5 +1,5 @@
 use leptos::logging::log;
-use std::cmp::Ordering;
+use std::cmp::{Ordering, min, max};
 
 use indexmap::IndexMap;
 use serde::{Deserialize, Serialize};
@@ -341,6 +341,47 @@ impl Character {
         if self.gear_list.get_mut(&changed_name).and_then(|val| Some(*val += 1)).is_none() {
             self.gear_list.insert(changed_name, 1);
         }
+    }
+
+    pub fn change_health_without_armor(&mut self, amount: i32) {
+        self.hp_current = min(max(self.hp_current + amount, 0), self.calc_max_health());
+    }
+
+    pub fn change_health_with_armor(&mut self, head_damage:bool, amount: i32) {
+        if amount >= 0 {
+            self.hp_current = min(self.hp_current + amount, self.calc_max_health());
+            return;
+        }
+
+        let armor = if head_damage {
+            self.get_current_head_armor()
+        } else {
+            self.get_current_body_armor()
+        };
+
+        let current_sp = armor
+            .and_then(|a| Some(a.armor_data.sp_current))
+            .or(Some(0))
+            .unwrap()
+        ;
+
+        let mut overshoot_damage = amount + current_sp;
+
+        if overshoot_damage >= 0 {
+            return;
+        }
+
+        if head_damage {
+            overshoot_damage *= 2;
+        }
+
+        self.hp_current = max(0, self.hp_current + overshoot_damage);
+
+        let mut_armor = if head_damage {self.get_current_head_armor_mut()} else {self.get_current_body_armor_mut()};
+        mut_armor.and_then(|a| {
+            a.armor_data.sp_current -= 1;
+            Some(a)
+        });
     }
 
     pub fn get_wounded_action_penalty(&self) -> i32 {

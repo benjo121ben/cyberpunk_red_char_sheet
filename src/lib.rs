@@ -2,6 +2,7 @@ pub mod journal;
 pub mod help;
 pub mod skill_view;
 pub mod resource_views;
+pub mod icon_views;
 pub mod gear_views;
 pub mod shop_modal_view;
 pub mod app;
