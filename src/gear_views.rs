@@ -38,7 +38,6 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
     let get_skill_value = Memo::new(move |_| {
         let skill = skill_memo.get();
         let stat_nr = char_signal.with(|char| char.get_stat(&skill.stat.clone()).0);
-        log!("recalc {} {}", stat_nr + skill.nr, skill.stat);
         stat_nr + skill.nr
     });
 
