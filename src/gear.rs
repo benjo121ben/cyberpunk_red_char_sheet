@@ -9,6 +9,26 @@ pub trait ShopItem {
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct ShopItemVisualData {
+    pub name: String,
+    pub description: String,
+    pub price: i32,
+    #[serde(rename = "type")]
+    pub type_data: String
+}
+
+impl ShopItemVisualData {
+    pub fn from(item: &impl ShopItem) -> Self {
+        Self { 
+            name: item.get_name().clone(),
+            description: item.get_description().clone(),
+            price: item.get_price(),
+            type_data: item.get_type().clone(),
+        }
+    }
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct GearData {
     pub ammunition: Vec<Ammunition>,
     pub armor: Vec<Armor>,
@@ -16,6 +36,7 @@ pub struct GearData {
     pub cyberdeck_hardware: Vec<CyberdeckHardware>,
     pub cyberware: Vec<Cyberware>,
     pub drugs: Vec<Drug>,
+    pub fashion: Vec<ShopItemVisualData>,
     pub items: Vec<Item>,
     pub programs: Vec<Program>,
     pub weapons: Vec<Weapon>

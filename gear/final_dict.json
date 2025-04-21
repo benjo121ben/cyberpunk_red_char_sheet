@@ -1131,6 +1131,548 @@
             "type": "gear"
         }
     ],
+    "fashion": [
+        {
+            "description": "Homeless Ragged Vagrant",
+            "name": "Bottoms Bag Lady Chic",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Homeless Ragged Vagrant",
+            "name": "Top Bag Lady Chic",
+            "price": 10,
+            "type": "fashion"
+        },
+        {
+            "description": "Homeless Ragged Vagrant",
+            "name": "Jacket Bag Lady Chic",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Homeless Ragged Vagrant",
+            "name": "Footwear Bag Lady Chic",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Homeless Ragged Vagrant",
+            "name": "Jewelry Bag Lady Chic",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Homeless Ragged Vagrant",
+            "name": "Mirrorshades Bag Lady Chic",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Homeless Ragged Vagrant",
+            "name": "Glasses Bag Lady Chic",
+            "price": 10,
+            "type": "fashion"
+        },
+        {
+            "description": "Homeless Ragged Vagrant",
+            "name": "Contact Lenses Bag Lady Chic",
+            "price": 10,
+            "type": "fashion"
+        },
+        {
+            "description": "Homeless Ragged Vagrant",
+            "name": "Hats Bag Lady Chic",
+            "price": 10,
+            "type": "fashion"
+        },
+        {
+            "description": "Dangerous Violent Rebellious",
+            "name": "Bottoms Gang Colors",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Dangerous Violent Rebellious",
+            "name": "Top Gang Colors",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Dangerous Violent Rebellious",
+            "name": "Jacket Gang Colors",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Dangerous Violent Rebellious",
+            "name": "Footwear Gang Colors",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Dangerous Violent Rebellious",
+            "name": "Jewelry Gang Colors",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Dangerous Violent Rebellious",
+            "name": "Mirrorshades Gang Colors",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Dangerous Violent Rebellious",
+            "name": "Glasses Gang Colors",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Dangerous Violent Rebellious",
+            "name": "Contact Lenses Gang Colors",
+            "price": 10,
+            "type": "fashion"
+        },
+        {
+            "description": "Dangerous Violent Rebellious",
+            "name": "Hats Gang Colors",
+            "price": 10,
+            "type": "fashion"
+        },
+        {
+            "description": "Standard Colorful Modular",
+            "name": "Bottoms Generic Chic",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Standard Colorful Modular",
+            "name": "Top Generic Chic",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Standard Colorful Modular",
+            "name": "Jacket Generic Chic",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Standard Colorful Modular",
+            "name": "Footwear Generic Chic",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Standard Colorful Modular",
+            "name": "Jewelry Generic Chic",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Standard Colorful Modular",
+            "name": "Mirrorshades Generic Chic",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Standard Colorful Modular",
+            "name": "Glasses Generic Chic",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Standard Colorful Modular",
+            "name": "Contact Lenses Generic Chic",
+            "price": 10,
+            "type": "fashion"
+        },
+        {
+            "description": "Standard Colorful Modular",
+            "name": "Hats Generic Chic",
+            "price": 10,
+            "type": "fashion"
+        },
+        {
+            "description": "Folksy Retro Free Spirited",
+            "name": "Bottoms Bohemian",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Folksy Retro Free Spirited",
+            "name": "Top Bohemian",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Folksy Retro Free Spirited",
+            "name": "Jacket Bohemian",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Folksy Retro Free Spirited",
+            "name": "Footwear Bohemian",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Folksy Retro Free Spirited",
+            "name": "Jewelry Bohemian",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Folksy Retro Free Spirited",
+            "name": "Mirrorshades Bohemian",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Folksy Retro Free Spirited",
+            "name": "Glasses Bohemian",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Folksy Retro Free Spirited",
+            "name": "Contact Lenses Bohemian",
+            "price": 10,
+            "type": "fashion"
+        },
+        {
+            "description": "Folksy Retro Free Spirited",
+            "name": "Hats Bohemian",
+            "price": 10,
+            "type": "fashion"
+        },
+        {
+            "description": "Comfort Agility Athleticism",
+            "name": "Bottoms Leisurewear",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Comfort Agility Athleticism",
+            "name": "Top Leisurewear",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Comfort Agility Athleticism",
+            "name": "Jacket Leisurewear",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Comfort Agility Athleticism",
+            "name": "Footwear Leisurewear",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Comfort Agility Athleticism",
+            "name": "Jewelry Leisurewear",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Comfort Agility Athleticism",
+            "name": "Mirrorshades Leisurewear",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Comfort Agility Athleticism",
+            "name": "Glasses Leisurewear",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Comfort Agility Athleticism",
+            "name": "Contact Lenses Leisurewear",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Comfort Agility Athleticism",
+            "name": "Hats Leisurewear",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Western Rugged Tribal",
+            "name": "Bottoms Nomad Leathers",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Western Rugged Tribal",
+            "name": "Top Nomad Leathers",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Western Rugged Tribal",
+            "name": "Jacket Nomad Leathers",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Western Rugged Tribal",
+            "name": "Footwear Nomad Leathers",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Western Rugged Tribal",
+            "name": "Jewelry Nomad Leathers",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Western Rugged Tribal",
+            "name": "Mirrorshades Nomad Leathers",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Western Rugged Tribal",
+            "name": "Glasses Nomad Leathers",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Western Rugged Tribal",
+            "name": "Contact Lenses Nomad Leathers",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Western Rugged Tribal",
+            "name": "Hats Nomad Leathers",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Bright Costume-like Youthful",
+            "name": "Bottoms Asia Pop",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Bright Costume-like Youthful",
+            "name": "Top Asia Pop",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Bright Costume-like Youthful",
+            "name": "Jacket Asia Pop",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Bright Costume-like Youthful",
+            "name": "Footwear Asia Pop",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Bright Costume-like Youthful",
+            "name": "Jewelry Asia Pop",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Bright Costume-like Youthful",
+            "name": "Mirrorshades Asia Pop",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Bright Costume-like Youthful",
+            "name": "Glasses Asia Pop",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Bright Costume-like Youthful",
+            "name": "Contact Lenses Asia Pop",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Bright Costume-like Youthful",
+            "name": "Hats Asia Pop",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Flashy Technological Streetwear",
+            "name": "Bottoms Urban Flash",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Flashy Technological Streetwear",
+            "name": "Top Urban Flash",
+            "price": 20,
+            "type": "fashion"
+        },
+        {
+            "description": "Flashy Technological Streetwear",
+            "name": "Jacket Urban Flash",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Flashy Technological Streetwear",
+            "name": "Footwear Urban Flash",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Flashy Technological Streetwear",
+            "name": "Jewelry Urban Flash",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Flashy Technological Streetwear",
+            "name": "Mirrorshades Urban Flash",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Flashy Technological Streetwear",
+            "name": "Glasses Urban Flash",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Flashy Technological Streetwear",
+            "name": "Contact Lenses Urban Flash",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Flashy Technological Streetwear",
+            "name": "Hats Urban Flash",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Leadership Presence Authority",
+            "name": "Bottoms Businesswear",
+            "price": 500,
+            "type": "fashion"
+        },
+        {
+            "description": "Leadership Presence Authority",
+            "name": "Top Businesswear",
+            "price": 50,
+            "type": "fashion"
+        },
+        {
+            "description": "Leadership Presence Authority",
+            "name": "Jacket Businesswear",
+            "price": 500,
+            "type": "fashion"
+        },
+        {
+            "description": "Leadership Presence Authority",
+            "name": "Footwear Businesswear",
+            "price": 500,
+            "type": "fashion"
+        },
+        {
+            "description": "Leadership Presence Authority",
+            "name": "Jewelry Businesswear",
+            "price": 5000,
+            "type": "fashion"
+        },
+        {
+            "description": "Leadership Presence Authority",
+            "name": "Mirrorshades Businesswear",
+            "price": 500,
+            "type": "fashion"
+        },
+        {
+            "description": "Leadership Presence Authority",
+            "name": "Glasses Businesswear",
+            "price": 500,
+            "type": "fashion"
+        },
+        {
+            "description": "Leadership Presence Authority",
+            "name": "Contact Lenses Businesswear",
+            "price": 100,
+            "type": "fashion"
+        },
+        {
+            "description": "Leadership Presence Authority",
+            "name": "Hats Businesswear",
+            "price": 500,
+            "type": "fashion"
+        },
+        {
+            "description": "Exclusive Designer Couture",
+            "name": "Bottoms High Fashion",
+            "price": 1000,
+            "type": "fashion"
+        },
+        {
+            "description": "Exclusive Designer Couture",
+            "name": "Top High Fashion",
+            "price": 500,
+            "type": "fashion"
+        },
+        {
+            "description": "Exclusive Designer Couture",
+            "name": "Jacket High Fashion",
+            "price": 1000,
+            "type": "fashion"
+        },
+        {
+            "description": "Exclusive Designer Couture",
+            "name": "Footwear High Fashion",
+            "price": 5000,
+            "type": "fashion"
+        },
+        {
+            "description": "Exclusive Designer Couture",
+            "name": "Jewelry High Fashion",
+            "price": 5000,
+            "type": "fashion"
+        },
+        {
+            "description": "Exclusive Designer Couture",
+            "name": "Mirrorshades High Fashion",
+            "price": 1000,
+            "type": "fashion"
+        },
+        {
+            "description": "Exclusive Designer Couture",
+            "name": "Glasses High Fashion",
+            "price": 1000,
+            "type": "fashion"
+        },
+        {
+            "description": "Exclusive Designer Couture",
+            "name": "Contact Lenses High Fashion",
+            "price": 1000,
+            "type": "fashion"
+        },
+        {
+            "description": "Exclusive Designer Couture",
+            "name": "Hats High Fashion",
+            "price": 5000,
+            "type": "fashion"
+        }
+    ],
     "items": [
         {
             "description": "<p>Light tube to illuminate a 4m/yd area for up to 10 hours. One use only</p>",

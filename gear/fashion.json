@@ -1,0 +1,172 @@
+[
+    {
+        "description": "Homeless Ragged Vagrant",
+        "file": "fashion",
+        "item_prices": [
+            20,
+            10,
+            20,
+            20,
+            20,
+            20,
+            10,
+            10,
+            10
+        ],
+        "name": "Bag Lady Chic",
+        "type": "gear"
+    },
+    {
+        "description": "Dangerous Violent Rebellious",
+        "file": "fashion",
+        "item_prices": [
+            50,
+            20,
+            50,
+            20,
+            50,
+            20,
+            20,
+            10,
+            10
+        ],
+        "name": "Gang Colors",
+        "type": "gear"
+    },
+    {
+        "description": "Standard Colorful Modular",
+        "file": "fashion",
+        "item_prices": [
+            50,
+            20,
+            50,
+            20,
+            50,
+            20,
+            20,
+            10,
+            10
+        ],
+        "name": "Generic Chic",
+        "type": "gear"
+    },
+    {
+        "description": "Folksy Retro Free Spirited",
+        "file": "fashion",
+        "item_prices": [
+            50,
+            20,
+            50,
+            50,
+            100,
+            50,
+            50,
+            10,
+            10
+        ],
+        "name": "Bohemian",
+        "type": "gear"
+    },
+    {
+        "description": "Comfort Agility Athleticism",
+        "file": "fashion",
+        "item_prices": [
+            100,
+            20,
+            100,
+            50,
+            100,
+            50,
+            50,
+            20,
+            50
+        ],
+        "name": "Leisurewear",
+        "type": "gear"
+    },
+    {
+        "description": "Western Rugged Tribal",
+        "file": "fashion",
+        "item_prices": [
+            100,
+            20,
+            100,
+            100,
+            100,
+            50,
+            50,
+            20,
+            100
+        ],
+        "name": "Nomad Leathers",
+        "type": "gear"
+    },
+    {
+        "description": "Bright Costume-like Youthful",
+        "file": "fashion",
+        "item_prices": [
+            100,
+            20,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+        ],
+        "name": "Asia Pop",
+        "type": "gear"
+    },
+    {
+        "description": "Flashy Technological Streetwear",
+        "file": "fashion",
+        "item_prices": [
+            100,
+            20,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+        ],
+        "name": "Urban Flash",
+        "type": "gear"
+    },
+    {
+        "description": "Leadership Presence Authority",
+        "file": "fashion",
+        "item_prices": [
+            500,
+            50,
+            500,
+            500,
+            5000,
+            500,
+            500,
+            100,
+            500
+        ],
+        "name": "Businesswear",
+        "type": "gear"
+    },
+    {
+        "description": "Exclusive Designer Couture",
+        "file": "fashion",
+        "item_prices": [
+            1000,
+            500,
+            1000,
+            5000,
+            5000,
+            1000,
+            1000,
+            1000,
+            5000
+        ],
+        "name": "High Fashion",
+        "type": "gear"
+    }
+]

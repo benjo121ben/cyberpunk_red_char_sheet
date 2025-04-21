@@ -327,7 +327,6 @@ impl Character {
             .map(|armor|armor.armor_data.penalty)
             .or(Some(0))
             .unwrap();
-
         std::cmp::max(head_armor_penalty, body_armor_penalty)
     }
 

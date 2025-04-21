@@ -27,6 +27,10 @@ body {
 	color: var(--text-color);
 }
 
+body * {
+	scrollbar-width: thin;
+}
+
 .name {
 	margin-top: 5px;
 	margin-bottom: 10px;
@@ -85,6 +89,7 @@ button:hover {
 	overflow-y: scroll;
 	scrollbar-width: thin;
 	border-right: unset;
+	min-width: fit-content;
 }
 
 .skill_buttons {
@@ -94,21 +99,17 @@ button:hover {
 }
 
 .center_div {
-	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
+	flex-grow: 1;
+	flex-shrink: 2;
 }
 
 .right_div {
 	display: flex;
 	flex-direction: column;
-}
-
-.stat_entry {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	flex-shrink: 1;
 }
 
 .has_penalty {
@@ -116,11 +117,20 @@ button:hover {
 }
 
 .stat_view {
-	@extend .bordered;
 	display: flex;
+	flex-wrap: wrap;
 	gap: 10px;
 	padding: auto;
-	max-width: fit-content
+	max-width: fit-content;
+}
+
+.stat_entry {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--light-background-color);
+	border-radius: 5px;
+	padding: 5px;
 }
 
 .skill_list {

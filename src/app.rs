@@ -135,7 +135,7 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
 }
 
 #[component]
-pub fn App() -> impl IntoView {
+pub fn App() -> AnyView {
     // Provides context that manages stylesheets, titles, meta tags, etc.
     provide_meta_context();
 
@@ -155,12 +155,12 @@ pub fn App() -> impl IntoView {
                 </Routes>
             </main>
         </Router>
-    }
+    }.into_any()
 }
 
 /// Renders the home page of your application.
 #[component]
-fn HomePage() -> impl IntoView {
+fn HomePage() -> AnyView {
     view! {
         <Await
             future=get_all_data()
@@ -185,7 +185,7 @@ fn HomePage() -> impl IntoView {
                 
             }
         }</Await>
-    }
+    }.into_any()
 }
 
 #[component]

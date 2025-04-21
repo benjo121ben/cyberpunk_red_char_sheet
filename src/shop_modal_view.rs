@@ -2,32 +2,13 @@ use std::vec;
 use leptos::prelude::*;
 use leptos::logging::log;
 
-use crate::{gear::{GearData, ShopItem}, help::get_char_signal_from_ctx};
+use crate::{gear::{GearData, ShopItem, ShopItemVisualData}, help::get_char_signal_from_ctx};
 
 #[derive(Clone, Default, Debug, Eq, PartialEq)] 
 pub struct ShopModalData {
     visible: bool, 
     pub title: String, 
     pub description: String
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Eq)]
-pub struct ShopItemVisualData {
-    name: String,
-    description: String,
-    price: i32,
-    type_data: String
-}
-
-impl ShopItemVisualData {
-    pub fn from(item: &impl ShopItem) -> Self {
-        Self { 
-            name: item.get_name().clone(),
-            description: item.get_description().clone(),
-            price: item.get_price(),
-            type_data: item.get_type().clone(),
-        }
-    }
 }
 
 impl ShopModalData {
@@ -60,7 +41,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
     let currently_selected_index: RwSignal<usize> = RwSignal::new(0);
     let head_armor = RwSignal::new(false);
     let grenades = RwSignal::new(false);
-    let tabs = vec!["Weapons", "Ammo", "Armor", "Cyberware", "Drugs", "Gear", "Hardware", "Programs"];
+    let tabs = vec!["Weapons", "Ammo", "Armor", "Cyberware", "Drugs", "Gear", "Fashion", "Hardware", "Programs"];
 
     let current_items_memo: Memo<Vec<ShopItemVisualData>> = Memo::new(move |_| {
         let gear_data: GearData = use_context().expect("Expecting gear data existence");
@@ -71,6 +52,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
             "Cyberware" => gear_data.cyberware.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
             "Drugs" => gear_data.drugs.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
             "Gear" => gear_data.items.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
+            "Fashion" => gear_data.fashion.clone(),
             "Hardware" => gear_data.cyberdeck_hardware.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
             "Programs" => gear_data.programs.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
             _ => panic!("this shop tab does not have any data")

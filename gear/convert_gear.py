@@ -3,6 +3,13 @@ import pathlib
 import json
 
 ignore_files = ["final_dict.json", "armor_sp.json"]
+simplify_keys = ["price", "internal", "psychosis", "burst", "damage", "fullauto", "rof", "skill", "weapontype"]
+weap_data = ["burst", "damage", "fullauto", "rof", "skill", "weapontype", "ammo"]
+
+base_delete = ["_id", "img", "permission", "flags", "effects"]
+data_delete = ["rarity", "legality", "backend", "modlist", "temp","hackable"]
+
+fashion_item_list = ["Bottoms", "Top", "Jacket", "Footwear", "Jewelry", "Mirrorshades", "Glasses", "Contact Lenses", "Hats"]
 
 def test_del(dictionary: dict, val:str):
     if val in dictionary:
@@ -90,13 +97,10 @@ def clean_data():
         with open(file_name, "r") as file:
             data: list[dict] = json.loads(file.read())
 
-        simplify_keys = ["price", "internal", "psychosis", "burst", "damage", "fullauto", "rof", "skill", "weapontype"]
-        weap_data = ["burst", "damage", "fullauto", "rof", "skill", "weapontype", "ammo"]
-        
-        base_delete = ["_id", "img", "permission", "flags", "effects"]
-        data_delete = ["rarity", "legality", "backend", "modlist", "temp","hackable"]
+        output_data = []
 
         for item in data:
+            add_to_output = True
             for key in base_delete:
                 test_del(item, key)
 
@@ -128,11 +132,12 @@ def clean_data():
                 item["armor_data"] = armor_sp_entry
 
             item["file"] = fname
+            output_data.append(item)
 
         if pathlib.Path.exists(new_path):
             os.remove(new_path)
         with open(new_path, "x") as new_file:
-            new_file.write(json.dumps(data, indent=4, sort_keys=True))
+            new_file.write(json.dumps(output_data, indent=4, sort_keys=True))
 
 def combine_final_data():
     final_dict = {}
@@ -155,20 +160,27 @@ def combine_final_data():
             data: list[dict] = json.loads(file.read())
 
         first_entry_data = data[0]
-        if not ("type" in first_entry_data):
+
+        if fname == "fashion":
+            handle_fashion_file(data, final_dict)
+
+        elif not ("type" in first_entry_data):
             raise Exception("object does not have type: " + fname)
+
         elif first_entry_data["type"] == "cyberware":
             if "cyberware" in final_dict:
                 for entry in data:
                     final_dict["cyberware"].append(entry)
             else:
                 final_dict["cyberware"] = data
+
         elif fname.find("program") != -1:
             if "programs" in final_dict:
                 for entry in data:
                     final_dict["programs"].append(entry)
             else:
                 final_dict["programs"] = data
+
         else:
             final_dict[fname] = data
 
@@ -176,6 +188,23 @@ def combine_final_data():
         os.remove(new_path)
     with open(new_path, "x") as new_file:
         new_file.write(json.dumps(final_dict, indent=4, sort_keys=True))
+
+def handle_fashion_file(fashion_file_list, output_dict):
+    output_data = []
+    for category in fashion_file_list:
+        description = category["description"]
+        cat_name = category["name"]
+        for index, single_item in enumerate(fashion_item_list):
+            price = category["item_prices"][index]
+            single_fashion_item = {
+                "name": single_item + " " + cat_name,
+                "description": description,
+                "price": price,
+                "type": "fashion"
+            }
+            output_data.append(single_fashion_item)
+
+    output_dict["fashion"] = output_data
 
 def main():
     convert_db()

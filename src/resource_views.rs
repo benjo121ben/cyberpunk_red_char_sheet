@@ -1,4 +1,5 @@
 use leptos::prelude::*;
+use std::any::Any;
 use std::cmp::{min, max};
 
 use crate::help::get_char_signal_from_ctx;
@@ -6,7 +7,7 @@ use crate::icon_views::{AddIcon, RemoveIcon};
 
 
 #[component]
-pub fn AmmoView(count: Memo<i32>) -> impl IntoView {
+pub fn AmmoView(count: Memo<i32>) -> AnyView {
     let check_visibility = move |nr| {
         if count.get() >= nr { "hidden"  } else {"visible"}
     };
@@ -30,11 +31,11 @@ pub fn AmmoView(count: Memo<i32>) -> impl IntoView {
             <path style:visibility=move|| {check_visibility(1)} d="M181.939319,127.537185L159.776806,150L150,144.441828v-24.786675l5.069412-5.34767l26.869905,13.229699" transform="matrix(3 0 0 3.000001-303.411211-329.382031)" fill="#d2dbed" stroke="#d2dbed" stroke-width="0.6"/>
         </svg> 
 
-    }
+    }.into_any()
 }
 
 #[component]
-pub fn HealthView() -> impl IntoView {
+pub fn HealthView() -> AnyView {
     let char_signal = get_char_signal_from_ctx();
     let get_max_health = move || char_signal.read().calc_max_health();
     let get_current_health = move || char_signal.read().hp_current;
@@ -52,7 +53,7 @@ pub fn HealthView() -> impl IntoView {
         <div class="health_text">
             {move || format!("{}/{}", get_current_health(), get_max_health()) }
         </div>    
-    }
+    }.into_any()
 }
 
 
@@ -72,7 +73,7 @@ pub fn ArmorBar(nr: i32, head: bool) -> impl IntoView {
 }
 
 #[component]
-pub fn ArmorView(head: bool) -> impl IntoView {
+pub fn ArmorView(head: bool) -> AnyView {
     let char_signal = get_char_signal_from_ctx();
     let armor_memo = Memo::new(move |_| {
         char_signal.with(|cyberpunk| {
@@ -125,7 +126,7 @@ pub fn ArmorView(head: bool) -> impl IntoView {
                 }}
             </div>
         </div>
-    }
+    }.into_any()
 }
 
 #[component]
