@@ -1,4 +1,5 @@
 use leptos::prelude::*;
+use std::cmp::{min, max};
 
 use crate::help::get_char_signal_from_ctx;
 
@@ -85,15 +86,34 @@ pub fn ArmorView(head: bool) -> impl IntoView {
         let armor = armor_memo.get();
         armor.map(|a| a.armor_data.sp).or(Some(0)).unwrap()
     });
+
+    let ablate_repair_armor = move |amount: i32| {
+        char_signal.update(|c| {
+            let mut_armor = if head {
+                c.get_current_head_armor_mut()
+            } 
+            else {
+                c.get_current_body_armor_mut()
+            };
+            mut_armor.and_then(|armor| {
+                let max_sp = armor.armor_data.sp;
+                armor.armor_data.sp_current = min(max(armor.armor_data.sp_current + amount, 0), max_sp);
+                Some(armor)
+            });
+        });
+    };
+
     view! {
         <div class="flex_col">
             <div class="armor_row"
+                on:click=move|_| {let change_armor = ablate_repair_armor; change_armor(1)}
+                on:contextmenu=move|_| {let change_armor = ablate_repair_armor; change_armor(-1)}
                 style:grid-template-columns=move || {format!("repeat({}, 1fr)", get_max_sp())}
             >
                 <For each={move || 0..get_max_sp()}
                     key=move|nr| nr.to_string()
                     children=move |nr| {
-                        view! {<ArmorBar nr head/>}
+                        view! {<ArmorBar nr head/>} 
                     }
                 />
             </div>

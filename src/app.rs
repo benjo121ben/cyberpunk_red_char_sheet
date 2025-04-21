@@ -191,7 +191,6 @@ fn HomePage() -> impl IntoView {
 #[component]
 fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoView {
     let char_rw_signal = RwSignal::new(character_data);
-    let ammo_rw_signal = RwSignal::new(0);
     let unlocked_signal = RwSignal::new(false);
     let save_char_action = Action::new(move |_: &()| async move {
         let char_copy = char_rw_signal.get_untracked();
@@ -213,6 +212,7 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
     });
 
     let shop_modal_signal = RwSignal::new(ShopModalData::default());
+    let damage_popup_signal = RwSignal::new(false);
 
     view! {
         <ShopModalView data=shop_modal_signal/>
@@ -227,17 +227,19 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
             </div>
             <div class="columns">
                 <div class="left_column">
+                    <div class="skill_buttons">
+                        <button on:click=move|_| {unlocked_signal.update(|s| *s = !*s) }>
+                            {move|| {
+                                if unlocked_signal.get(){"UNLOCKED".to_string()} 
+                                else {"LOCKED".to_string()}
+                            }}
+                        </button>
+                        <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("filter_zeros"))>FILTER</button>
+                        <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("group_by_stat"))>GROUP</button>
+                    </div>
                     <div class="skill_list">
                         <SkillList unlocked_signal=unlocked_signal/>
                     </div>
-                    <button on:click=move|_| {unlocked_signal.update(|s| *s = !*s) }>
-                        {move|| {
-                            if unlocked_signal.get(){"UNLOCKED".to_string()} 
-                            else {"LOCKED".to_string()}
-                        }}
-                    </button>
-                    <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("filter_zeros"))>FILTER</button>
-                    <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("group_by_stat"))>GROUP</button>
                 </div>
                 <div class="center_div">
                     <div class="center_div_first_row">
@@ -250,7 +252,7 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> impl IntoVie
                     <img class="char_image" src="Matchbox.jpg"/>
                     <div class="flex_row justify_center">
                         <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
-                        <span class="money">{move||char_rw_signal.read().money}eb</span>
+                        <span class="money">{move||char_rw_signal.read().money}</span>
                     </div>
                 </div>
             </div>

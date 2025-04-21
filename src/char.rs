@@ -297,12 +297,29 @@ impl Character {
         self.armors.get(self.current_armor_body.unwrap())
     }
 
+    pub fn get_current_body_armor_mut(&mut self) -> Option<&mut Armor> {
+        if self.current_armor_body.is_none(){
+            return None;
+        }
+        log!("current body armor {}", self.armors.get(self.current_armor_body.unwrap()).clone().unwrap().name);
+        
+        self.armors.get_mut(self.current_armor_body.unwrap())
+    }
+
     pub fn get_current_head_armor(&self) -> Option<&Armor> {
         if self.current_armor_head.is_none(){
             return None;
         }
         log!("current head armor {}", self.armors.get(self.current_armor_head.unwrap()).clone().unwrap().name);
         self.armors.get(self.current_armor_head.unwrap())
+    }
+
+    pub fn get_current_head_armor_mut(&mut self) -> Option<&mut Armor> {
+        if self.current_armor_head.is_none(){
+            return None;
+        }
+        log!("current head armor {}", self.armors.get(self.current_armor_head.unwrap()).clone().unwrap().name);
+        self.armors.get_mut(self.current_armor_head.unwrap())
     }
 
     pub fn get_current_armor_penalty(&self) -> i32{

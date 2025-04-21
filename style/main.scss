@@ -32,6 +32,12 @@ body {
 	margin-bottom: 10px;
 }
 
+.bordered {
+	border: var(--highlight-color) 3px solid;
+	border-radius: 10px;
+	padding: 10px;
+}
+
 button {
 	border: unset;
 	border-radius: 3px;
@@ -70,7 +76,21 @@ button:hover {
 
 .columns {
 	display: flex;
-	gap: 5px;
+	gap: 10px;
+}
+
+.left_column {
+	@extend .bordered;
+	max-height: 85vh;
+	overflow-y: scroll;
+	scrollbar-width: thin;
+	border-right: unset;
+}
+
+.skill_buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 .center_div {
@@ -83,12 +103,6 @@ button:hover {
 .right_div {
 	display: flex;
 	flex-direction: column;
-}
-
-.bordered {
-	border: var(--highlight-color) 2px solid;
-	border-radius: 10px;
-	padding: 10px;
 }
 
 .stat_entry {
@@ -110,7 +124,6 @@ button:hover {
 }
 
 .skill_list {
-	@extend .bordered;
 	display: grid;
 	grid-template-columns: 3fr 0.5fr;
 	gap: 2px;
@@ -274,6 +287,10 @@ button:hover {
 
 .tab {
 	padding: 5px;
+	background-color: var(--highlight-color);
+}
+
+.tab:hover {
 	background-color: var(--warning-color);
 }
 
@@ -282,10 +299,20 @@ button:hover {
 	color: var(--dark-background-color);
 }
 
+.selected_tab:hover {
+	background-color: var(--dark-background-color);
+	color: var(--warning-color);
+}
+
 .money {
 	font-size: x-large;
 	background-color: var(--highlight-color-second);
 	color: var(--dark-background-color);
+	padding: 2px;
+}
+
+.money::after {
+	content: " eb";
 }
 
 .modal div:has(> .money) {
@@ -374,6 +401,9 @@ button:hover {
 }
 
 .char_image {
+	@extend .bordered;
+	padding: unset;
+	border-color: var(--warning-color);
 	border-radius: 5;
 	max-height: 50vh;
 }
@@ -396,9 +426,26 @@ button:hover {
 	flex-direction: row;
 	justify-content: space-between;
 }
+
 .armor_selection {
 	display: flex;
 	flex-direction: column;
+	gap: 5px;
+}
+
+.single_armor_selection {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 3px;
+	> * {
+		height: 24px;
+	}
+}
+
+.icon * {
+	fill: var(--text-color);
 }
 
 .weapon_buttons {

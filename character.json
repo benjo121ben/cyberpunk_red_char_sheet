@@ -89,7 +89,7 @@
   "ammo": {},
   "cyberware": [],
   "humanity": 55,
-  "hp_current": 30,
+  "hp_current": 40,
   "ip": 80,
   "money": 1050,
   "stats": {
@@ -523,6 +523,6 @@
   "gear_list": {},
   "flags": {
     "filter_zeros": true,
-    "group_by_stat": true
+    "group_by_stat": false
   }
 }
