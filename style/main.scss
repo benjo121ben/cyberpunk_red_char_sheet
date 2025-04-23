@@ -12,6 +12,10 @@
 	--highlight-color-second: #dfd21d;
 	--text-color: rgb(225, 236, 230);
 	--warning-color: #bc60e7;
+	--penalty: rgb(238, 79, 87);
+
+
+	--skill-highlight: var(--highlight-color-second);
 }
 
 @font-face {
@@ -29,6 +33,10 @@ body {
 
 body * {
 	scrollbar-width: thin;
+}
+
+dialog {
+	z-index: 100;
 }
 
 .name {
@@ -53,6 +61,11 @@ button {
 	background-color: var(--highlight-color);
 }
 
+button:hover {
+	background-color: var(--highlight-color-second);
+	color: var(--dark-background-color);
+}
+
 select {
 	background-color: var(--highlight-color);
 	border: unset;
@@ -66,9 +79,8 @@ select:hover {
 	background-color: var(--highlight-color-second);
 }
 
-button:hover {
-	background-color: var(--highlight-color-second);
-	color: var(--dark-background-color);
+input {
+	font-family: inherit;
 }
 
 .flex_row {
@@ -105,6 +117,8 @@ button:hover {
 	min-width: fit-content;
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0;
+	background-color: var(--dark-background-color);
+
 }
 
 .skill_buttons {
@@ -124,12 +138,13 @@ button:hover {
 .right_div {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	flex-shrink: 1;
 	flex-basis: 0;
 }
 
 .has_penalty {
-	color: rgb(243, 59, 68);
+	color: var(--penalty);
 }
 
 .stat_view {
@@ -172,19 +187,19 @@ button:hover {
 }
 
 .skill_entry_name:hover {
-	color: var(--highlight-color);
+	color: var(--skill-highlight);
 }
 
 .skill_entry_name:hover + .skill_entry_value {
-	color: var(--highlight-color);
+	color: var(--skill-highlight);
 }
 
 .skill_entry_name:has(+ .skill_entry_value:hover) {
-	color: var(--highlight-color);
+	color: var(--skill-highlight);
 }
 
 .skill_entry_value:hover {
-	color: var(--highlight-color);
+	color: var(--skill-highlight);
 }
 
 /* .skill_entry_stat {
@@ -340,6 +355,7 @@ button:hover {
 	background-color: var(--highlight-color-second);
 	color: var(--dark-background-color);
 	padding: 2px;
+	white-space: nowrap;
 }
 
 .money::after {
@@ -350,6 +366,11 @@ button:hover {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.money_input {
+	max-width: 70px;
+	text-align: center;
 }
 
 
@@ -519,6 +540,8 @@ button:hover {
 		border: unset;
 		outline: unset;
 		text-align: center;
+		max-width: 100px;
+		
 	}
 
 	input[type=number] {

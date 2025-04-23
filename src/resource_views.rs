@@ -144,6 +144,7 @@ pub fn HealthAdjustPopup(visible_signal: RwSignal<bool>) -> impl IntoView {
         <dialog class="health_popup">
             <input autofocus 
                 class="health_change_input" 
+                placeholder="damage"
                 type="number" 
                 on:change=move|ev| {
                     let change_health_clone = change_health;
@@ -186,7 +187,7 @@ pub fn MoneyView() -> impl IntoView {
         <Show
             when=move || input_mode.get()
         >
-            <input placeholder="set" prop:value=move||money_getter() on:change=move |ev| {
+            <input class="money_input" placeholder="set" prop:value=move||money_getter() on:change=move |ev| {
                 match event_target_value(&ev).parse() {
                     Ok(number) => {
                         money_setter(number);
@@ -195,7 +196,7 @@ pub fn MoneyView() -> impl IntoView {
                     Err(_) => {},
                 }
             }/>
-            <input placeholder="add" on:change=move |ev| {
+            <input class="money_input" placeholder="add" on:change=move |ev| {
                 match event_target_value(&ev).parse::<i32>() {
                     Ok(number) => {
                         let current_money = money_getter();
