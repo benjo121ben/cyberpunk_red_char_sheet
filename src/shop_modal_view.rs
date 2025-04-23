@@ -1,8 +1,7 @@
 use std::vec;
 use leptos::prelude::*;
-use leptos::logging::log;
 
-use crate::{gear::{GearData, ShopItem, ShopItemVisualData}, help::get_char_signal_from_ctx};
+use crate::{gear::{GearData, ShopItemVisualData}, help::get_char_signal_from_ctx};
 
 #[derive(Clone, Default, Debug, Eq, PartialEq)] 
 pub struct ShopModalData {
@@ -200,7 +199,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                     }).collect::<Vec<_>>()}
                 </div>
                 <hr/>
-                <ShopList current_tab currently_selected_index current_items_memo/>
+                <ShopList currently_selected_index current_items_memo/>
                 //<p inner_html={move|| data.get().description}/>
                 <div class="shop_bottom_row">
                     <div class="money_wrapper"><span class="money">{move || cyberpunk_signal.read().money}</span></div>
@@ -223,7 +222,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
 }
 
 #[component]
-pub fn ShopList(current_tab: RwSignal<(usize, String)>, currently_selected_index: RwSignal<usize>, current_items_memo: Memo<Vec<ShopItemVisualData>>) -> AnyView {
+pub fn ShopList(currently_selected_index: RwSignal<usize>, current_items_memo: Memo<Vec<ShopItemVisualData>>) -> AnyView {
     let currenty_selected_item = Memo::new(move |_| {
         current_items_memo.read().get(currently_selected_index.get()).expect("item to exist").clone()
     });

@@ -1,0 +1,78 @@
+{
+    "rifle": {
+        "name": "Rifle",
+        "allowed_types": [
+            "basic",
+            "ap",
+            "expansive",
+            "incendiary",
+            "rubber",
+            "smart"
+        ],
+        "only_one": false
+    },
+    "pistol": {
+        "name": "Pistol",
+        "variants": [
+            "Medium",
+            "Heavy",
+            "V. Heavy"
+        ],
+        "allowed_types": [
+            "basic",
+            "ap",
+            "expansive",
+            "incendiary",
+            "rubber",
+            "smart"
+        ],
+        "only_one": false
+    },
+    "slug": {
+        "name": "Slug",
+        "allowed_types": [
+            "basic",
+            "ap",
+            "expansive",
+            "rubber"
+        ],
+        "only_one": false
+    },
+    "shell": {
+        "name": "Shotgun Shell",
+        "allowed_types": [
+            "basic",
+            "incendiary"
+        ],
+        "only_one": false
+    },
+    "grenade": {
+        "name": "Grenade",
+        "allowed_types" : [
+            "ap", "biotoxin", "emp", "flashbang", "incendiary", "poison", "sleep", "smoke", "teargas"
+        ],
+        "only_one": true
+    },
+    "rocket": {
+        "name": "Rocket",
+        "allowed_types" : [
+            "ap", "smart"
+        ],
+        "only_one": true
+    },
+    "arrow": {
+        "name": "Arrow",
+        "allowed_types": [
+            "basic", "ap", "biotoxin", "poison", "rubber", "sleep", "smart"
+        ],
+        "only_one": false
+    },
+    "paintball": {
+        "name": "Paintball",
+        "allowed_types": [
+            "basic", "acid"
+        ],
+        "only_one": false
+    }
+    
+}

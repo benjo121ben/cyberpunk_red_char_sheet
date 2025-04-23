@@ -1,6 +1,5 @@
 use leptos::prelude::*;
 use std::cmp::{max, min};
-use leptos::logging::log;
 use crate::gear::*;
 use crate::icon_views::{AddIcon, RemoveIcon};
 use crate::help::get_char_signal_from_ctx;
@@ -166,14 +165,14 @@ pub fn ArmorSelectionView() -> impl IntoView {
         <div class="armor_selection">
             <div class="single_armor_selection">
                 <Show when=move|| char_signal.read().current_armor_head.is_some()>
-                    <AddIcon
-                        on:click={
-                            move|ev| {let change_armor = ablate_repair_armor; ev.stop_propagation(); change_armor(true, 1)}
-                        }
-                    />
                     <RemoveIcon
                         on:click={
                             move|ev| {let change_armor = ablate_repair_armor; ev.stop_propagation(); change_armor(true, -1)}
+                        }
+                    />
+                    <AddIcon
+                        on:click={
+                            move|ev| {let change_armor = ablate_repair_armor; ev.stop_propagation(); change_armor(true, 1)}
                         }
                     />
                 </Show>
@@ -203,14 +202,14 @@ pub fn ArmorSelectionView() -> impl IntoView {
             </div>
             <div class="single_armor_selection">
                 <Show when=move|| char_signal.read().current_armor_body.is_some()>
-                    <AddIcon
-                        on:click={
-                            move|ev| {let change_armor = ablate_repair_armor; ev.stop_propagation(); change_armor(false, 1)}
-                        }
-                    />
                     <RemoveIcon
                         on:click={
                             move|ev| {let change_armor = ablate_repair_armor; ev.stop_propagation(); change_armor(false, -1)}
+                        }
+                    />
+                    <AddIcon
+                        on:click={
+                            move|ev| {let change_armor = ablate_repair_armor; ev.stop_propagation(); change_armor(false, 1)}
                         }
                     />
                 </Show>

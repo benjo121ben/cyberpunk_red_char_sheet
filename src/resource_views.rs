@@ -1,6 +1,4 @@
 use leptos::prelude::*;
-use core::num;
-use std::any::Any;
 use std::cmp::{min, max};
 
 use crate::help::get_char_signal_from_ctx;
@@ -158,8 +156,8 @@ pub fn HealthAdjustPopup(visible_signal: RwSignal<bool>) -> impl IntoView {
                 }
             /> 
             <div class="flex_row">
-                <AddIcon on:click=move|_| {char_signal.write().change_health_without_armor(1);}/>
                 <RemoveIcon on:click=move|_| {char_signal.write().change_health_without_armor(-1);}/>
+                <AddIcon on:click=move|_| {char_signal.write().change_health_without_armor(1);}/>
             </div>
             <div class="flex_row">
                 Head

@@ -1,4 +1,3 @@
-use leptos::logging::log;
 use std::cmp::{Ordering, min, max};
 
 use indexmap::IndexMap;
