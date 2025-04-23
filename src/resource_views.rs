@@ -178,7 +178,7 @@ pub fn MoneyView() -> impl IntoView {
             when=move || !input_mode.get()
         >
             <span class="money"
-                on:click=move|_| input_mode.set(true)2w3edv
+                on:click=move|_| input_mode.set(true)
             >
                 {move|| money_getter()}
             </span>

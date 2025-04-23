@@ -211,7 +211,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                         </Show>
                         <Show when=move|| {current_tab.get().1.as_str() == "Ammo"}> 
                             Grenade: 
-                            <input type="checkbox" prop:checked=move||grenades.get() on:change=move|_| {grenades.update(|a| *a= !*a); log!{"{}",grenades.get()}}/>
+                            <input type="checkbox" prop:checked=move||grenades.get() on:change=move|_| grenades.update(|a| *a= !*a)/>
                         </Show>
                         <button on:click={let give_clone = give_item.clone(); move|_| give_clone(false)}>GIVE</button>
                         <button on:click={let give_clone = give_item.clone(); move|_| give_clone(true)}>BUY</button>
