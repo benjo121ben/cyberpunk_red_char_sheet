@@ -165,7 +165,7 @@
         "description": "<p>Cyberarm Option. Monofilament whip implanted in the user's thumb. A Medium Melee Weapon (2d6 damage, 2 ROF) that can be successfully concealed without a Check. When wielded as a weapon, user can't hold anything in this arm's hand. <strong>Can be installed as the only piece of Cyberware in a meat arm.</strong></p>",
         "file": "cyberlimbs-cyberarm",
         "internal": false,
-        "name": "Slice \u00e2\u20ac\u02dcN Dice",
+        "name": "Slice 'N Dice",
         "price": 500,
         "psychosis": 3,
         "type": "cyberware"

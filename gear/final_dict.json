@@ -1,94 +1,471 @@
 {
     "ammunition": [
         {
-            "description": "<p>Ammo Types Available: Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone hit by your attack must instead attempt to beat a DV15 Resist Torture/Drugs Check. Anyone who fails suffers the Damaged Eye and Damaged Ear Critical Injuries (see pg. 188) for the next minute. You do not take the Bonus Damage from the Critical Injuries.</p>",
-            "file": "ammunition",
-            "name": "Flashbang Ammunition",
-            "price": 100,
-            "type": "gear"
-        },
-        {
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
-            "file": "ammunition",
-            "name": "Rubber Ammunition",
-            "price": 10,
-            "type": "gear"
-        },
-        {
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
-            "file": "ammunition",
-            "name": "Smart Ammunition",
-            "price": 500,
-            "type": "gear"
-        },
-        {
-            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
-            "file": "ammunition",
-            "name": "Armor-Piercing Ammunition",
-            "price": 100,
-            "type": "gear"
-        },
-        {
-            "description": "<p>Ammo Types Available: Arrows and Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is dealt 2d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
-            "file": "ammunition",
-            "name": "Poison Ammunition",
-            "price": 100,
-            "type": "gear"
-        },
-        {
+            "caliber": "_rifle",
             "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
-            "file": "ammunition",
-            "name": "Basic Ammunition",
+            "file": "ammunition_types",
+            "name": " Rifle Basic Ammunition",
+            "only_one": false,
             "price": 10,
             "type": "gear"
         },
         {
-            "description": "<p>Ammo Types Available: Arrows and Grenades</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is now Prone (see pg. 169) and Unconscious for 1 minute or until they are woken by taking damage, or by someone else using an Action that touches them.</p>",
-            "file": "ammunition",
-            "name": "Sleep Ammunition",
-            "price": 500,
+            "caliber": "_rifle",
+            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "file": "ammunition_types",
+            "name": " Rifle Armor-Piercing Ammunition",
+            "only_one": false,
+            "price": 100,
             "type": "gear"
         },
         {
-            "description": "<p>Ammo Types Available: Grenades only.</p>\n<p>Obscures a 10m/yd by 10m/yd area with smoke for a minute on impact. The typical penalty for trying to perform a task obscured by smoke is -4.</p>",
-            "file": "ammunition",
-            "name": "Smoke Ammunition",
-            "price": 50,
-            "type": "gear"
-        },
-        {
+            "caliber": "_rifle",
             "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.</p>\n<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
-            "file": "ammunition",
-            "name": "Expansive Ammunition",
+            "file": "ammunition_types",
+            "name": " Rifle Expansive Ammunition",
+            "only_one": false,
             "price": 100,
             "type": "gear"
         },
         {
-            "description": "<p>Ammo Types Available: Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone with meat eyes hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails suffers the Damaged Eye Critical injury (see pg. 188) for the next minute. You do not take the Bonus Damage from the Critical Injury.</p>",
-            "file": "ammunition",
-            "name": "Teargas Ammunition",
+            "caliber": "_rifle",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "file": "ammunition_types",
+            "name": " Rifle Incendiary Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "_rifle",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
+            "file": "ammunition_types",
+            "name": " Rifle Rubber Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "_rifle",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "file": "ammunition_types",
+            "name": " Rifle Smart Ammunition",
+            "only_one": false,
+            "price": 500,
+            "type": "gear"
+        },
+        {
+            "caliber": "medium_pistol",
+            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "file": "ammunition_types",
+            "name": "Medium Pistol Basic Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "medium_pistol",
+            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "file": "ammunition_types",
+            "name": "Medium Pistol Armor-Piercing Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "medium_pistol",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.</p>\n<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
+            "file": "ammunition_types",
+            "name": "Medium Pistol Expansive Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "medium_pistol",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "file": "ammunition_types",
+            "name": "Medium Pistol Incendiary Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "medium_pistol",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
+            "file": "ammunition_types",
+            "name": "Medium Pistol Rubber Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "medium_pistol",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "file": "ammunition_types",
+            "name": "Medium Pistol Smart Ammunition",
+            "only_one": false,
+            "price": 500,
+            "type": "gear"
+        },
+        {
+            "caliber": "heavy_pistol",
+            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "file": "ammunition_types",
+            "name": "Heavy Pistol Basic Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "heavy_pistol",
+            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "file": "ammunition_types",
+            "name": "Heavy Pistol Armor-Piercing Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "heavy_pistol",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.</p>\n<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
+            "file": "ammunition_types",
+            "name": "Heavy Pistol Expansive Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "heavy_pistol",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "file": "ammunition_types",
+            "name": "Heavy Pistol Incendiary Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "heavy_pistol",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
+            "file": "ammunition_types",
+            "name": "Heavy Pistol Rubber Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "heavy_pistol",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "file": "ammunition_types",
+            "name": "Heavy Pistol Smart Ammunition",
+            "only_one": false,
+            "price": 500,
+            "type": "gear"
+        },
+        {
+            "caliber": "v_heavy_pistol",
+            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "file": "ammunition_types",
+            "name": "V. Heavy Pistol Basic Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "v_heavy_pistol",
+            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "file": "ammunition_types",
+            "name": "V. Heavy Pistol Armor-Piercing Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "v_heavy_pistol",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.</p>\n<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
+            "file": "ammunition_types",
+            "name": "V. Heavy Pistol Expansive Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "v_heavy_pistol",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "file": "ammunition_types",
+            "name": "V. Heavy Pistol Incendiary Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "v_heavy_pistol",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
+            "file": "ammunition_types",
+            "name": "V. Heavy Pistol Rubber Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "v_heavy_pistol",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "file": "ammunition_types",
+            "name": "V. Heavy Pistol Smart Ammunition",
+            "only_one": false,
+            "price": 500,
+            "type": "gear"
+        },
+        {
+            "caliber": "_slug",
+            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "file": "ammunition_types",
+            "name": " Slug Basic Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "_slug",
+            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "file": "ammunition_types",
+            "name": " Slug Armor-Piercing Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "_slug",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.</p>\n<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
+            "file": "ammunition_types",
+            "name": " Slug Expansive Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "_slug",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "file": "ammunition_types",
+            "name": " Slug Incendiary Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "_slug",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "file": "ammunition_types",
+            "name": " Slug Smart Ammunition",
+            "only_one": false,
+            "price": 500,
+            "type": "gear"
+        },
+        {
+            "caliber": "_slug",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
+            "file": "ammunition_types",
+            "name": " Slug Rubber Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "_shell",
+            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "file": "ammunition_types",
+            "name": " Shotgun Shell Basic Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "_shell",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "file": "ammunition_types",
+            "name": " Shotgun Shell Incendiary Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "_grenade",
+            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "file": "ammunition_types",
+            "name": " Grenade Armor-Piercing Ammunition",
+            "only_one": true,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "_grenade",
+            "description": "<p>Ammo Types Available: Arrows and Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV15 Resist Torture/Drugs Check. Anyone who fails is dealt 3d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
+            "file": "ammunition_types",
+            "name": " Grenade Biotoxin Ammunition",
+            "only_one": true,
+            "price": 500,
+            "type": "gear"
+        },
+        {
+            "caliber": "_grenade",
+            "description": "<p>Ammo Types Available: Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone hit by your attack must instead attempt to beat a DV15 Cybertech Check. If they fail, the GM chooses 2 pieces of their Cyberware or carried electronics to become inoperable for 1 minute. Cyberlimbs that are rendered inoperable act as their meat counterparts do when they have been dismembered, but they still hang loosely. See Critical Injuries on pg. 187 .</p>",
+            "file": "ammunition_types",
+            "name": " Grenade EMP Ammunition",
+            "only_one": true,
+            "price": 500,
+            "type": "gear"
+        },
+        {
+            "caliber": "_grenade",
+            "description": "<p>Ammo Types Available: Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone hit by your attack must instead attempt to beat a DV15 Resist Torture/Drugs Check. Anyone who fails suffers the Damaged Eye and Damaged Ear Critical Injuries (see pg. 188) for the next minute. You do not take the Bonus Damage from the Critical Injuries.</p>",
+            "file": "ammunition_types",
+            "name": " Grenade Flashbang Ammunition",
+            "only_one": true,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "_grenade",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "file": "ammunition_types",
+            "name": " Grenade Incendiary Ammunition",
+            "only_one": true,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "_grenade",
+            "description": "<p>Ammo Types Available: Arrows and Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is dealt 2d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
+            "file": "ammunition_types",
+            "name": " Grenade Poison Ammunition",
+            "only_one": true,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "_grenade",
+            "description": "<p>Ammo Types Available: Arrows and Grenades</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is now Prone (see pg. 169) and Unconscious for 1 minute or until they are woken by taking damage, or by someone else using an Action that touches them.</p>",
+            "file": "ammunition_types",
+            "name": " Grenade Sleep Ammunition",
+            "only_one": true,
+            "price": 500,
+            "type": "gear"
+        },
+        {
+            "caliber": "_grenade",
+            "description": "<p>Ammo Types Available: Grenades only.</p>\n<p>Obscures a 10m/yd by 10m/yd area with smoke for a minute on impact. The typical penalty for trying to perform a task obscured by smoke is -4.</p>",
+            "file": "ammunition_types",
+            "name": " Grenade Smoke Ammunition",
+            "only_one": true,
             "price": 50,
             "type": "gear"
         },
         {
-            "description": "<p>Ammo Types Available: Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone hit by your attack must instead attempt to beat a DV15 Cybertech Check. If they fail, the GM chooses 2 pieces of their Cyberware or carried electronics to become inoperable for 1 minute. Cyberlimbs that are rendered inoperable act as their meat counterparts do when they have been dismembered, but they still hang loosely. See Critical Injuries on pg. 187 .</p>",
-            "file": "ammunition",
-            "name": "EMP Ammunition",
-            "price": 500,
+            "caliber": "_grenade",
+            "description": "<p>Ammo Types Available: Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone with meat eyes hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails suffers the Damaged Eye Critical injury (see pg. 188) for the next minute. You do not take the Bonus Damage from the Critical Injury.</p>",
+            "file": "ammunition_types",
+            "name": " Grenade Teargas Ammunition",
+            "only_one": true,
+            "price": 50,
             "type": "gear"
         },
         {
-            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
-            "file": "ammunition",
-            "name": "Incendiary Ammunition",
+            "caliber": "_rocket",
+            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "file": "ammunition_types",
+            "name": " Rocket Armor-Piercing Ammunition",
+            "only_one": true,
             "price": 100,
             "type": "gear"
         },
         {
-            "description": "<p>Ammo Types Available: Arrows and Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV15 Resist Torture/Drugs Check. Anyone who fails is dealt 3d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
-            "file": "ammunition",
-            "name": "Biotoxin Ammunition",
+            "caliber": "_rocket",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "file": "ammunition_types",
+            "name": " Rocket Smart Ammunition",
+            "only_one": true,
             "price": 500,
+            "type": "gear"
+        },
+        {
+            "caliber": "_arrow",
+            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "file": "ammunition_types",
+            "name": " Arrow Basic Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "_arrow",
+            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "file": "ammunition_types",
+            "name": " Arrow Armor-Piercing Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "_arrow",
+            "description": "<p>Ammo Types Available: Arrows and Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV15 Resist Torture/Drugs Check. Anyone who fails is dealt 3d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
+            "file": "ammunition_types",
+            "name": " Arrow Biotoxin Ammunition",
+            "only_one": false,
+            "price": 500,
+            "type": "gear"
+        },
+        {
+            "caliber": "_arrow",
+            "description": "<p>Ammo Types Available: Arrows and Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is dealt 2d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
+            "file": "ammunition_types",
+            "name": " Arrow Poison Ammunition",
+            "only_one": false,
+            "price": 100,
+            "type": "gear"
+        },
+        {
+            "caliber": "_arrow",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
+            "file": "ammunition_types",
+            "name": " Arrow Rubber Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "_arrow",
+            "description": "<p>Ammo Types Available: Arrows and Grenades</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is now Prone (see pg. 169) and Unconscious for 1 minute or until they are woken by taking damage, or by someone else using an Action that touches them.</p>",
+            "file": "ammunition_types",
+            "name": " Arrow Sleep Ammunition",
+            "only_one": false,
+            "price": 500,
+            "type": "gear"
+        },
+        {
+            "caliber": "_arrow",
+            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "file": "ammunition_types",
+            "name": " Arrow Smart Ammunition",
+            "only_one": false,
+            "price": 500,
+            "type": "gear"
+        },
+        {
+            "caliber": "_paintball",
+            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "file": "ammunition_types",
+            "name": " Paintball Basic Ammunition",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "_paintball",
+            "description": "<p>Acid Paintballs deal no damage, however they always ablate armor by 1</p>",
+            "file": "ammunition_types",
+            "name": " Paintball Acid Ammunition",
+            "only_one": false,
+            "price": 10,
             "type": "gear"
         }
     ],
@@ -111,7 +488,7 @@
             },
             "description": "<p>SP 7</p>\n<p>&nbsp;</p>\n<p>The favored protection for the past 90 years. To quote DuPont: Kevlar&reg; is a heat-resistant, synthetic, lightweight fiber that delivers high tensile strength that brings improved protection and performance across a range of industries and applications. Like when people are trying to stab or shoot you. Can be made into clothes, vests, jackets, business suits, and even bikinis.</p>",
             "file": "armor",
-            "name": "Kevlar\u00c2\u00ae",
+            "name": "Kevlar",
             "price": 50,
             "type": "armor"
         },
@@ -251,7 +628,7 @@
             "description": "<p>A heavily enhanced skeleton and support structure with even more hydraulic and myomar muscles.</p>\n<p>&bull; User increases their BODY to 14.</p>\n<p>&bull; This increase in BODY changes a Character's HP and Death Save.</p>\n<p>&bull; This cannot increase the user's BODY to 15 or higher.</p>\n<p>&bull; <strong>Installation requires BODY 8 and Two Grafted Muscle and Bone Lace.</strong></p>",
             "file": "borgware",
             "internal": false,
-            "name": "Implanted Linear Frame \u00c3\u0178 (Beta)",
+            "name": "Implanted Linear Frame Beta",
             "price": 5000,
             "psychosis": 14,
             "type": "cyberware"
@@ -278,7 +655,7 @@
             "description": "<p>An enhanced skeleton and support structure with hydraulic and myomar muscles.</p>\n<p>&bull; User increases their BODY to 12.</p>\n<p>&bull; This increase in BODY changes a Character's HP and Death Save.</p>\n<p>&bull; This cannot increase the user's BODY to 13 or higher.</p>\n<p>&bull; <strong>Installation requires BODY 6 and Grafted Muscle and Bone Lace.</strong></p>",
             "file": "borgware",
             "internal": false,
-            "name": "Implanted Linear Frame \u00e2\u02c6\u2018 (Sigma)",
+            "name": "Implanted Linear Frame Sigma",
             "price": 1000,
             "psychosis": 14,
             "type": "cyberware"
@@ -557,7 +934,7 @@
             "description": "<p>Cyberarm Option. Monofilament whip implanted in the user's thumb. A Medium Melee Weapon (2d6 damage, 2 ROF) that can be successfully concealed without a Check. When wielded as a weapon, user can't hold anything in this arm's hand. <strong>Can be installed as the only piece of Cyberware in a meat arm.</strong></p>",
             "file": "cyberlimbs-cyberarm",
             "internal": false,
-            "name": "Slice \u00e2\u20ac\u02dcN Dice",
+            "name": "Slice 'N Dice",
             "price": 500,
             "psychosis": 3,
             "type": "cyberware"
@@ -593,7 +970,7 @@
             "description": "<p>Cyberlimb Option. Artificial skin coating for Cyberlimb. <strong>Requires a Cyberarm or Cyberleg but does not take an Option Slot.</strong></p>",
             "file": "cyberlimbs-cyberlegs",
             "internal": false,
-            "name": "Realskinn\u00e2\u201e\u00a2 Covering - limb option",
+            "name": "Realskinn Covering - limb option",
             "price": 500,
             "psychosis": 0,
             "type": "cyberware"
@@ -611,7 +988,7 @@
             "description": "<p>Cyberlimb Option. Shiny metallic coating for Cyberlimb. +2 to Wardrobe and Style. This bonus only applies once.<strong> Requires a Cyberarm or Cyberleg but does not take an Option Slot.</strong></p>",
             "file": "cyberlimbs-cyberlegs",
             "internal": false,
-            "name": "Superchrome\u00c2\u00ae Covering - limb option",
+            "name": "Superchrome Covering - limb option",
             "price": 100,
             "psychosis": 0,
             "type": "cyberware"
@@ -881,7 +1258,7 @@
             "description": "<p>All night, every night. And they'll never know.</p>",
             "file": "internal-body-cyberware",
             "internal": true,
-            "name": "Mr. Studd\u00e2\u201e\u00a2 Sexual Implant",
+            "name": "Mr. Studd Sexual Implant",
             "price": 100,
             "psychosis": 7,
             "type": "cyberware"
@@ -935,7 +1312,7 @@
             "description": "<p>Be a Venus, be the fire. Be desire.</p>",
             "file": "internal-body-cyberware",
             "internal": true,
-            "name": "Midnight Lady\u00e2\u201e\u00a2 Sexual Implant",
+            "name": "Midnight Lady Sexual Implant",
             "price": 100,
             "psychosis": 7,
             "type": "cyberware"
@@ -1134,540 +1511,630 @@
     "fashion": [
         {
             "description": "Homeless Ragged Vagrant",
+            "file": "fashion",
             "name": "Bottoms Bag Lady Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
+            "file": "fashion",
             "name": "Top Bag Lady Chic",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
+            "file": "fashion",
             "name": "Jacket Bag Lady Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
+            "file": "fashion",
             "name": "Footwear Bag Lady Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
+            "file": "fashion",
             "name": "Jewelry Bag Lady Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
+            "file": "fashion",
             "name": "Mirrorshades Bag Lady Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
+            "file": "fashion",
             "name": "Glasses Bag Lady Chic",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
+            "file": "fashion",
             "name": "Contact Lenses Bag Lady Chic",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
+            "file": "fashion",
             "name": "Hats Bag Lady Chic",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
+            "file": "fashion",
             "name": "Bottoms Gang Colors",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
+            "file": "fashion",
             "name": "Top Gang Colors",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
+            "file": "fashion",
             "name": "Jacket Gang Colors",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
+            "file": "fashion",
             "name": "Footwear Gang Colors",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
+            "file": "fashion",
             "name": "Jewelry Gang Colors",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
+            "file": "fashion",
             "name": "Mirrorshades Gang Colors",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
+            "file": "fashion",
             "name": "Glasses Gang Colors",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
+            "file": "fashion",
             "name": "Contact Lenses Gang Colors",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
+            "file": "fashion",
             "name": "Hats Gang Colors",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
+            "file": "fashion",
             "name": "Bottoms Generic Chic",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
+            "file": "fashion",
             "name": "Top Generic Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
+            "file": "fashion",
             "name": "Jacket Generic Chic",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
+            "file": "fashion",
             "name": "Footwear Generic Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
+            "file": "fashion",
             "name": "Jewelry Generic Chic",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
+            "file": "fashion",
             "name": "Mirrorshades Generic Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
+            "file": "fashion",
             "name": "Glasses Generic Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
+            "file": "fashion",
             "name": "Contact Lenses Generic Chic",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
+            "file": "fashion",
             "name": "Hats Generic Chic",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
+            "file": "fashion",
             "name": "Bottoms Bohemian",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
+            "file": "fashion",
             "name": "Top Bohemian",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
+            "file": "fashion",
             "name": "Jacket Bohemian",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
+            "file": "fashion",
             "name": "Footwear Bohemian",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
+            "file": "fashion",
             "name": "Jewelry Bohemian",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
+            "file": "fashion",
             "name": "Mirrorshades Bohemian",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
+            "file": "fashion",
             "name": "Glasses Bohemian",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
+            "file": "fashion",
             "name": "Contact Lenses Bohemian",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
+            "file": "fashion",
             "name": "Hats Bohemian",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
+            "file": "fashion",
             "name": "Bottoms Leisurewear",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
+            "file": "fashion",
             "name": "Top Leisurewear",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
+            "file": "fashion",
             "name": "Jacket Leisurewear",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
+            "file": "fashion",
             "name": "Footwear Leisurewear",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
+            "file": "fashion",
             "name": "Jewelry Leisurewear",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
+            "file": "fashion",
             "name": "Mirrorshades Leisurewear",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
+            "file": "fashion",
             "name": "Glasses Leisurewear",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
+            "file": "fashion",
             "name": "Contact Lenses Leisurewear",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
+            "file": "fashion",
             "name": "Hats Leisurewear",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
+            "file": "fashion",
             "name": "Bottoms Nomad Leathers",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
+            "file": "fashion",
             "name": "Top Nomad Leathers",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
+            "file": "fashion",
             "name": "Jacket Nomad Leathers",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
+            "file": "fashion",
             "name": "Footwear Nomad Leathers",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
+            "file": "fashion",
             "name": "Jewelry Nomad Leathers",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
+            "file": "fashion",
             "name": "Mirrorshades Nomad Leathers",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
+            "file": "fashion",
             "name": "Glasses Nomad Leathers",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
+            "file": "fashion",
             "name": "Contact Lenses Nomad Leathers",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
+            "file": "fashion",
             "name": "Hats Nomad Leathers",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
+            "file": "fashion",
             "name": "Bottoms Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
+            "file": "fashion",
             "name": "Top Asia Pop",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
+            "file": "fashion",
             "name": "Jacket Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
+            "file": "fashion",
             "name": "Footwear Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
+            "file": "fashion",
             "name": "Jewelry Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
+            "file": "fashion",
             "name": "Mirrorshades Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
+            "file": "fashion",
             "name": "Glasses Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
+            "file": "fashion",
             "name": "Contact Lenses Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
+            "file": "fashion",
             "name": "Hats Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
+            "file": "fashion",
             "name": "Bottoms Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
+            "file": "fashion",
             "name": "Top Urban Flash",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
+            "file": "fashion",
             "name": "Jacket Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
+            "file": "fashion",
             "name": "Footwear Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
+            "file": "fashion",
             "name": "Jewelry Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
+            "file": "fashion",
             "name": "Mirrorshades Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
+            "file": "fashion",
             "name": "Glasses Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
+            "file": "fashion",
             "name": "Contact Lenses Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
+            "file": "fashion",
             "name": "Hats Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
+            "file": "fashion",
             "name": "Bottoms Businesswear",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
+            "file": "fashion",
             "name": "Top Businesswear",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
+            "file": "fashion",
             "name": "Jacket Businesswear",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
+            "file": "fashion",
             "name": "Footwear Businesswear",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
+            "file": "fashion",
             "name": "Jewelry Businesswear",
             "price": 5000,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
+            "file": "fashion",
             "name": "Mirrorshades Businesswear",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
+            "file": "fashion",
             "name": "Glasses Businesswear",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
+            "file": "fashion",
             "name": "Contact Lenses Businesswear",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
+            "file": "fashion",
             "name": "Hats Businesswear",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
+            "file": "fashion",
             "name": "Bottoms High Fashion",
             "price": 1000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
+            "file": "fashion",
             "name": "Top High Fashion",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
+            "file": "fashion",
             "name": "Jacket High Fashion",
             "price": 1000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
+            "file": "fashion",
             "name": "Footwear High Fashion",
             "price": 5000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
+            "file": "fashion",
             "name": "Jewelry High Fashion",
             "price": 5000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
+            "file": "fashion",
             "name": "Mirrorshades High Fashion",
             "price": 1000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
+            "file": "fashion",
             "name": "Glasses High Fashion",
             "price": 1000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
+            "file": "fashion",
             "name": "Contact Lenses High Fashion",
             "price": 1000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
+            "file": "fashion",
             "name": "Hats High Fashion",
             "price": 5000,
             "type": "fashion"
@@ -1684,7 +2151,7 @@
         {
             "description": "<p>Powered exoskeleton, giving the user even more tremendous strength.</p>\n<p>&bull; User increases their BODY to 12 while plugged into the frame using two installations of Interface Plugs. This cannot increase the user's BODY to 13 or higher. This increase in BODY does not increase the user's HP or change their Death Save.</p>\n<p>&bull; Requires 1 installations of Interface Plugs to operate</p>",
             "file": "items",
-            "name": "Linear Frame \u00e2\u02c6\u2018 (Sigma)",
+            "name": "Linear Frame Sigma",
             "price": 0,
             "type": "gear"
         },
@@ -1705,7 +2172,7 @@
         {
             "description": "<p>Powered exoskeleton, giving the user tremendous strength.</p>\n<p>&bull; User increases their BODY to 14 while plugged into the frame. This cannot increase the user's BODY to 15 or higher. This increase in BODY <strong>does not </strong>increase the user's HP or change their Death Save.</p>\n<p>&bull; Requires 2 installation of Interface Plugs to operate.</p>",
             "file": "items",
-            "name": "Linear Frame \u00c3\u0178 (Beta)",
+            "name": "Linear Frame Beta",
             "price": 0,
             "type": "gear"
         },

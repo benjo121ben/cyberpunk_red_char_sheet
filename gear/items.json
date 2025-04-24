@@ -9,7 +9,7 @@
     {
         "description": "<p>Powered exoskeleton, giving the user even more tremendous strength.</p>\n<p>&bull; User increases their BODY to 12 while plugged into the frame using two installations of Interface Plugs. This cannot increase the user's BODY to 13 or higher. This increase in BODY does not increase the user's HP or change their Death Save.</p>\n<p>&bull; Requires 1 installations of Interface Plugs to operate</p>",
         "file": "items",
-        "name": "Linear Frame \u00e2\u02c6\u2018 (Sigma)",
+        "name": "Linear Frame Sigma",
         "price": 0,
         "type": "gear"
     },
@@ -30,7 +30,7 @@
     {
         "description": "<p>Powered exoskeleton, giving the user tremendous strength.</p>\n<p>&bull; User increases their BODY to 14 while plugged into the frame. This cannot increase the user's BODY to 15 or higher. This increase in BODY <strong>does not </strong>increase the user's HP or change their Death Save.</p>\n<p>&bull; Requires 2 installation of Interface Plugs to operate.</p>",
         "file": "items",
-        "name": "Linear Frame \u00c3\u0178 (Beta)",
+        "name": "Linear Frame Beta",
         "price": 0,
         "type": "gear"
     },

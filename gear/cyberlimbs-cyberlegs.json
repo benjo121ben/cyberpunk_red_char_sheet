@@ -30,7 +30,7 @@
         "description": "<p>Cyberlimb Option. Artificial skin coating for Cyberlimb. <strong>Requires a Cyberarm or Cyberleg but does not take an Option Slot.</strong></p>",
         "file": "cyberlimbs-cyberlegs",
         "internal": false,
-        "name": "Realskinn\u00e2\u201e\u00a2 Covering - limb option",
+        "name": "Realskinn Covering - limb option",
         "price": 500,
         "psychosis": 0,
         "type": "cyberware"
@@ -48,7 +48,7 @@
         "description": "<p>Cyberlimb Option. Shiny metallic coating for Cyberlimb. +2 to Wardrobe and Style. This bonus only applies once.<strong> Requires a Cyberarm or Cyberleg but does not take an Option Slot.</strong></p>",
         "file": "cyberlimbs-cyberlegs",
         "internal": false,
-        "name": "Superchrome\u00c2\u00ae Covering - limb option",
+        "name": "Superchrome Covering - limb option",
         "price": 100,
         "psychosis": 0,
         "type": "cyberware"

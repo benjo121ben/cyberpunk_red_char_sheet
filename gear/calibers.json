@@ -34,6 +34,8 @@
             "basic",
             "ap",
             "expansive",
+            "incendiary",
+            "smart",
             "rubber"
         ],
         "only_one": false
@@ -48,31 +50,46 @@
     },
     "grenade": {
         "name": "Grenade",
-        "allowed_types" : [
-            "ap", "biotoxin", "emp", "flashbang", "incendiary", "poison", "sleep", "smoke", "teargas"
+        "allowed_types": [
+            "ap",
+            "biotoxin",
+            "emp",
+            "flashbang",
+            "incendiary",
+            "poison",
+            "sleep",
+            "smoke",
+            "teargas"
         ],
         "only_one": true
     },
     "rocket": {
         "name": "Rocket",
-        "allowed_types" : [
-            "ap", "smart"
+        "allowed_types": [
+            "ap",
+            "smart"
         ],
         "only_one": true
     },
     "arrow": {
         "name": "Arrow",
         "allowed_types": [
-            "basic", "ap", "biotoxin", "poison", "rubber", "sleep", "smart"
+            "basic",
+            "ap",
+            "biotoxin",
+            "poison",
+            "rubber",
+            "sleep",
+            "smart"
         ],
         "only_one": false
     },
     "paintball": {
         "name": "Paintball",
         "allowed_types": [
-            "basic", "acid"
+            "basic",
+            "acid"
         ],
         "only_one": false
     }
-    
 }

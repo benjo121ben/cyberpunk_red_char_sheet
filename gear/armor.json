@@ -17,7 +17,7 @@
         },
         "description": "<p>SP 7</p>\n<p>&nbsp;</p>\n<p>The favored protection for the past 90 years. To quote DuPont: Kevlar&reg; is a heat-resistant, synthetic, lightweight fiber that delivers high tensile strength that brings improved protection and performance across a range of industries and applications. Like when people are trying to stab or shoot you. Can be made into clothes, vests, jackets, business suits, and even bikinis.</p>",
         "file": "armor",
-        "name": "Kevlar\u00c2\u00ae",
+        "name": "Kevlar",
         "price": 50,
         "type": "armor"
     },

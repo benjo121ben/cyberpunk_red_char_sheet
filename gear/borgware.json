@@ -12,7 +12,7 @@
         "description": "<p>A heavily enhanced skeleton and support structure with even more hydraulic and myomar muscles.</p>\n<p>&bull; User increases their BODY to 14.</p>\n<p>&bull; This increase in BODY changes a Character's HP and Death Save.</p>\n<p>&bull; This cannot increase the user's BODY to 15 or higher.</p>\n<p>&bull; <strong>Installation requires BODY 8 and Two Grafted Muscle and Bone Lace.</strong></p>",
         "file": "borgware",
         "internal": false,
-        "name": "Implanted Linear Frame \u00c3\u0178 (Beta)",
+        "name": "Implanted Linear Frame Beta",
         "price": 5000,
         "psychosis": 14,
         "type": "cyberware"
@@ -39,7 +39,7 @@
         "description": "<p>An enhanced skeleton and support structure with hydraulic and myomar muscles.</p>\n<p>&bull; User increases their BODY to 12.</p>\n<p>&bull; This increase in BODY changes a Character's HP and Death Save.</p>\n<p>&bull; This cannot increase the user's BODY to 13 or higher.</p>\n<p>&bull; <strong>Installation requires BODY 6 and Grafted Muscle and Bone Lace.</strong></p>",
         "file": "borgware",
         "internal": false,
-        "name": "Implanted Linear Frame \u00e2\u02c6\u2018 (Sigma)",
+        "name": "Implanted Linear Frame Sigma",
         "price": 1000,
         "psychosis": 14,
         "type": "cyberware"

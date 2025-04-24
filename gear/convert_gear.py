@@ -2,7 +2,7 @@ import os
 import pathlib
 import json
 
-ignore_files = ["final_dict.json", "armor_sp.json"]
+ignore_files = ["final_dict.json", "armor_sp.json", "calibers.json"]
 simplify_keys = ["price", "internal", "psychosis", "burst", "damage", "fullauto", "rof", "skill", "weapontype"]
 weap_data = ["burst", "damage", "fullauto", "rof", "skill", "weapontype", "ammo"]
 
@@ -164,6 +164,9 @@ def combine_final_data():
         if fname == "fashion":
             handle_fashion_file(data, final_dict)
 
+        elif fname == "ammunition_types":
+            handle_ammo_file(data, final_dict)
+
         elif not ("type" in first_entry_data):
             raise Exception("object does not have type: " + fname)
 
@@ -200,11 +203,48 @@ def handle_fashion_file(fashion_file_list, output_dict):
                 "name": single_item + " " + cat_name,
                 "description": description,
                 "price": price,
-                "type": "fashion"
+                "type": "fashion",
+                "file": "fashion"
             }
             output_data.append(single_fashion_item)
 
     output_dict["fashion"] = output_data
+
+def handle_ammo_file(ammo_file_list, output_dict):
+    ammo_types = {}
+
+    for ammo_type in ammo_file_list:
+        selector = ammo_type["selector"]
+        del ammo_type["selector"]
+        ammo_types[selector] = ammo_type
+
+
+    calibers_dict: dict = {}
+    with open("calibers.json", "r") as file:
+        calibers_dict = json.loads(file.read())
+
+    output_data = []
+
+    for caliber_key, caliber in calibers_dict.items():
+        variants_list = caliber["variants"] if "variants" in caliber else [""]
+        for variant in variants_list: 
+            for ammo_type_key in caliber["allowed_types"]:
+
+                ammo_type_data = {}
+                for key, val in ammo_types[ammo_type_key].items():
+                    ammo_type_data[key] = val
+
+                full_ammo_name = variant + " " + caliber["name"] + " " + ammo_type_data["name"]
+                full_caliber_name = variant.lower().replace(" ", "_").replace(".", "") + ("_" if variant != "" else "") + caliber_key
+
+                ammo_type_data["name"] = full_ammo_name
+                ammo_type_data["caliber"] = full_caliber_name
+                ammo_type_data["only_one"] = caliber["only_one"]
+                
+                output_data.append(ammo_type_data)
+
+
+    output_dict["ammunition"] = output_data
 
 def main():
     convert_db()
