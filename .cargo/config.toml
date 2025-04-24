@@ -4,6 +4,12 @@ rustflags = [
   "erase_components",
 ]
 
+[target.x86_64-unknown-linux-gnu]
+rustflags = [
+   "--cfg",
+   "erase_components",
+]
+
 [target.wasm32-unknown-unknown]
 rustflags = [
    "--cfg",
