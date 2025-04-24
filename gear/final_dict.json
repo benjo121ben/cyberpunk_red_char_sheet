@@ -2,61 +2,61 @@
     "ammunition": [
         {
             "caliber": "rifle",
-            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
-            "name": " Rifle Basic Ammunition",
+            "name": "Rifle Basic Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
         },
         {
             "caliber": "rifle",
-            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
-            "name": " Rifle Armor-Piercing Ammunition",
+            "name": "Rifle Armor-Piercing Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "rifle",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.</p>\n<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
+            "description": "<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
             "file": "ammunition_types",
-            "name": " Rifle Expansive Ammunition",
+            "name": "Rifle Expansive Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "rifle",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "description": "<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
             "file": "ammunition_types",
-            "name": " Rifle Incendiary Ammunition",
+            "name": "Rifle Incendiary Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "rifle",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
+            "description": "<p>Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
             "file": "ammunition_types",
-            "name": " Rifle Rubber Ammunition",
+            "name": "Rifle Rubber Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
         },
         {
             "caliber": "rifle",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
-            "name": " Rifle Smart Ammunition",
+            "name": "Rifle Smart Ammunition",
             "only_one": false,
             "price": 500,
             "type": "gear"
         },
         {
             "caliber": "medium_pistol",
-            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
             "name": "Medium Pistol Basic Ammunition",
             "only_one": false,
@@ -65,7 +65,7 @@
         },
         {
             "caliber": "medium_pistol",
-            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
             "name": "Medium Pistol Armor-Piercing Ammunition",
             "only_one": false,
@@ -74,7 +74,7 @@
         },
         {
             "caliber": "medium_pistol",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.</p>\n<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
+            "description": "<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
             "file": "ammunition_types",
             "name": "Medium Pistol Expansive Ammunition",
             "only_one": false,
@@ -83,7 +83,7 @@
         },
         {
             "caliber": "medium_pistol",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "description": "<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
             "file": "ammunition_types",
             "name": "Medium Pistol Incendiary Ammunition",
             "only_one": false,
@@ -92,7 +92,7 @@
         },
         {
             "caliber": "medium_pistol",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
+            "description": "<p>Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
             "file": "ammunition_types",
             "name": "Medium Pistol Rubber Ammunition",
             "only_one": false,
@@ -101,7 +101,7 @@
         },
         {
             "caliber": "medium_pistol",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
             "name": "Medium Pistol Smart Ammunition",
             "only_one": false,
@@ -110,7 +110,7 @@
         },
         {
             "caliber": "heavy_pistol",
-            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
             "name": "Heavy Pistol Basic Ammunition",
             "only_one": false,
@@ -119,7 +119,7 @@
         },
         {
             "caliber": "heavy_pistol",
-            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
             "name": "Heavy Pistol Armor-Piercing Ammunition",
             "only_one": false,
@@ -128,7 +128,7 @@
         },
         {
             "caliber": "heavy_pistol",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.</p>\n<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
+            "description": "<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
             "file": "ammunition_types",
             "name": "Heavy Pistol Expansive Ammunition",
             "only_one": false,
@@ -137,7 +137,7 @@
         },
         {
             "caliber": "heavy_pistol",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "description": "<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
             "file": "ammunition_types",
             "name": "Heavy Pistol Incendiary Ammunition",
             "only_one": false,
@@ -146,7 +146,7 @@
         },
         {
             "caliber": "heavy_pistol",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
+            "description": "<p>Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
             "file": "ammunition_types",
             "name": "Heavy Pistol Rubber Ammunition",
             "only_one": false,
@@ -155,7 +155,7 @@
         },
         {
             "caliber": "heavy_pistol",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
             "name": "Heavy Pistol Smart Ammunition",
             "only_one": false,
@@ -164,7 +164,7 @@
         },
         {
             "caliber": "v_heavy_pistol",
-            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
             "name": "V. Heavy Pistol Basic Ammunition",
             "only_one": false,
@@ -173,7 +173,7 @@
         },
         {
             "caliber": "v_heavy_pistol",
-            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
             "name": "V. Heavy Pistol Armor-Piercing Ammunition",
             "only_one": false,
@@ -182,7 +182,7 @@
         },
         {
             "caliber": "v_heavy_pistol",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.</p>\n<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
+            "description": "<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
             "file": "ammunition_types",
             "name": "V. Heavy Pistol Expansive Ammunition",
             "only_one": false,
@@ -191,7 +191,7 @@
         },
         {
             "caliber": "v_heavy_pistol",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "description": "<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
             "file": "ammunition_types",
             "name": "V. Heavy Pistol Incendiary Ammunition",
             "only_one": false,
@@ -200,7 +200,7 @@
         },
         {
             "caliber": "v_heavy_pistol",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
+            "description": "<p>Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
             "file": "ammunition_types",
             "name": "V. Heavy Pistol Rubber Ammunition",
             "only_one": false,
@@ -209,7 +209,7 @@
         },
         {
             "caliber": "v_heavy_pistol",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
             "name": "V. Heavy Pistol Smart Ammunition",
             "only_one": false,
@@ -218,243 +218,243 @@
         },
         {
             "caliber": "slug",
-            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
-            "name": " Slug Basic Ammunition",
+            "name": "Slug Basic Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
         },
         {
             "caliber": "slug",
-            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
-            "name": " Slug Armor-Piercing Ammunition",
+            "name": "Slug Armor-Piercing Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "slug",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.</p>\n<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
+            "description": "<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
             "file": "ammunition_types",
-            "name": " Slug Expansive Ammunition",
+            "name": "Slug Expansive Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "slug",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "description": "<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
             "file": "ammunition_types",
-            "name": " Slug Incendiary Ammunition",
+            "name": "Slug Incendiary Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "slug",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
-            "name": " Slug Smart Ammunition",
+            "name": "Slug Smart Ammunition",
             "only_one": false,
             "price": 500,
             "type": "gear"
         },
         {
             "caliber": "slug",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
+            "description": "<p>Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
             "file": "ammunition_types",
-            "name": " Slug Rubber Ammunition",
-            "only_one": false,
-            "price": 10,
-            "type": "gear"
-        },
-        {
-            "caliber": "shell",
-            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
-            "file": "ammunition_types",
-            "name": " Shotgun Shell Basic Ammunition",
+            "name": "Slug Rubber Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
         },
         {
             "caliber": "shell",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
-            "name": " Shotgun Shell Incendiary Ammunition",
+            "name": "Shotgun Shell",
+            "only_one": false,
+            "price": 10,
+            "type": "gear"
+        },
+        {
+            "caliber": "shell",
+            "description": "<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "file": "ammunition_types",
+            "name": "Incendiary Shotgun Shell",
             "only_one": false,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "grenade",
-            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
-            "name": " Grenade Armor-Piercing Ammunition",
+            "name": "Armor-Piercing Grenade",
             "only_one": true,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "grenade",
-            "description": "<p>Ammo Types Available: Arrows and Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV15 Resist Torture/Drugs Check. Anyone who fails is dealt 3d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
+            "description": "<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV15 Resist Torture/Drugs Check. Anyone who fails is dealt 3d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
             "file": "ammunition_types",
-            "name": " Grenade Biotoxin Ammunition",
+            "name": "Biotoxin Grenade",
             "only_one": true,
             "price": 500,
             "type": "gear"
         },
         {
             "caliber": "grenade",
-            "description": "<p>Ammo Types Available: Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone hit by your attack must instead attempt to beat a DV15 Cybertech Check. If they fail, the GM chooses 2 pieces of their Cyberware or carried electronics to become inoperable for 1 minute. Cyberlimbs that are rendered inoperable act as their meat counterparts do when they have been dismembered, but they still hang loosely. See Critical Injuries on pg. 187 .</p>",
+            "description": "<p>When using this ammunition, you deal no damage with your attack. Anyone hit by your attack must instead attempt to beat a DV15 Cybertech Check. If they fail, the GM chooses 2 pieces of their Cyberware or carried electronics to become inoperable for 1 minute. Cyberlimbs that are rendered inoperable act as their meat counterparts do when they have been dismembered, but they still hang loosely. See Critical Injuries on pg. 187 .</p>",
             "file": "ammunition_types",
-            "name": " Grenade EMP Ammunition",
+            "name": "EMP Grenade",
             "only_one": true,
             "price": 500,
             "type": "gear"
         },
         {
             "caliber": "grenade",
-            "description": "<p>Ammo Types Available: Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone hit by your attack must instead attempt to beat a DV15 Resist Torture/Drugs Check. Anyone who fails suffers the Damaged Eye and Damaged Ear Critical Injuries (see pg. 188) for the next minute. You do not take the Bonus Damage from the Critical Injuries.</p>",
+            "description": "<p>When using this ammunition, you deal no damage with your attack. Anyone hit by your attack must instead attempt to beat a DV15 Resist Torture/Drugs Check. Anyone who fails suffers the Damaged Eye and Damaged Ear Critical Injuries (see pg. 188) for the next minute. You do not take the Bonus Damage from the Critical Injuries.</p>",
             "file": "ammunition_types",
-            "name": " Grenade Flashbang Ammunition",
+            "name": "Flashbang Grenade",
             "only_one": true,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "grenade",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, Grenades, and Shotgun Shells.</p>\n<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
+            "description": "<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
             "file": "ammunition_types",
-            "name": " Grenade Incendiary Ammunition",
+            "name": "Incendiary Grenade",
             "only_one": true,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "grenade",
-            "description": "<p>Ammo Types Available: Arrows and Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is dealt 2d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
+            "description": "<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is dealt 2d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
             "file": "ammunition_types",
-            "name": " Grenade Poison Ammunition",
+            "name": "Poison Grenade",
             "only_one": true,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "grenade",
-            "description": "<p>Ammo Types Available: Arrows and Grenades</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is now Prone (see pg. 169) and Unconscious for 1 minute or until they are woken by taking damage, or by someone else using an Action that touches them.</p>",
+            "description": "<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is now Prone (see pg. 169) and Unconscious for 1 minute or until they are woken by taking damage, or by someone else using an Action that touches them.</p>",
             "file": "ammunition_types",
-            "name": " Grenade Sleep Ammunition",
+            "name": "Sleep Grenade",
             "only_one": true,
             "price": 500,
             "type": "gear"
         },
         {
             "caliber": "grenade",
-            "description": "<p>Ammo Types Available: Grenades only.</p>\n<p>Obscures a 10m/yd by 10m/yd area with smoke for a minute on impact. The typical penalty for trying to perform a task obscured by smoke is -4.</p>",
+            "description": "<p>Obscures a 10m/yd by 10m/yd area with smoke for a minute on impact. The typical penalty for trying to perform a task obscured by smoke is -4.</p>",
             "file": "ammunition_types",
-            "name": " Grenade Smoke Ammunition",
+            "name": "Smoke Grenade",
             "only_one": true,
             "price": 50,
             "type": "gear"
         },
         {
             "caliber": "grenade",
-            "description": "<p>Ammo Types Available: Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone with meat eyes hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails suffers the Damaged Eye Critical injury (see pg. 188) for the next minute. You do not take the Bonus Damage from the Critical Injury.</p>",
+            "description": "<p>When using this ammunition, you deal no damage with your attack. Anyone with meat eyes hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails suffers the Damaged Eye Critical injury (see pg. 188) for the next minute. You do not take the Bonus Damage from the Critical Injury.</p>",
             "file": "ammunition_types",
-            "name": " Grenade Teargas Ammunition",
+            "name": "Teargas Grenade",
             "only_one": true,
             "price": 50,
             "type": "gear"
         },
         {
             "caliber": "rocket",
-            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
-            "name": " Rocket Armor-Piercing Ammunition",
+            "name": "Rocket Armor-Piercing Ammunition",
             "only_one": true,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "rocket",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
-            "name": " Rocket Smart Ammunition",
+            "name": "Rocket Smart Ammunition",
             "only_one": true,
             "price": 500,
             "type": "gear"
         },
         {
             "caliber": "arrow",
-            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
-            "name": " Arrow Basic Ammunition",
+            "name": "Basic Arrow",
             "only_one": false,
             "price": 10,
             "type": "gear"
         },
         {
             "caliber": "arrow",
-            "description": "<p>All except Shotgun Shells When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
+            "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
-            "name": " Arrow Armor-Piercing Ammunition",
+            "name": "Armor-Piercing Arrow",
             "only_one": false,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "arrow",
-            "description": "<p>Ammo Types Available: Arrows and Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV15 Resist Torture/Drugs Check. Anyone who fails is dealt 3d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
+            "description": "<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV15 Resist Torture/Drugs Check. Anyone who fails is dealt 3d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
             "file": "ammunition_types",
-            "name": " Arrow Biotoxin Ammunition",
+            "name": "Biotoxin Arrow",
             "only_one": false,
             "price": 500,
             "type": "gear"
         },
         {
             "caliber": "arrow",
-            "description": "<p>Ammo Types Available: Arrows and Grenades only.</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is dealt 2d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
+            "description": "<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is dealt 2d6 damage directly to their HP. Their armor isn't ablated because it wasn't interacted with.</p>",
             "file": "ammunition_types",
-            "name": " Arrow Poison Ammunition",
+            "name": "Poison Arrow",
             "only_one": false,
             "price": 100,
             "type": "gear"
         },
         {
             "caliber": "arrow",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Slugs.<br /><br />Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
+            "description": "<p>Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
             "file": "ammunition_types",
-            "name": " Arrow Rubber Ammunition",
+            "name": "Rubber Arrow",
             "only_one": false,
             "price": 10,
             "type": "gear"
         },
         {
             "caliber": "arrow",
-            "description": "<p>Ammo Types Available: Arrows and Grenades</p>\n<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is now Prone (see pg. 169) and Unconscious for 1 minute or until they are woken by taking damage, or by someone else using an Action that touches them.</p>",
+            "description": "<p>When using this ammunition, you deal no damage with your attack. Anyone meat hit by your attack must instead attempt to beat a DV13 Resist Torture/Drugs Check. Anyone who fails is now Prone (see pg. 169) and Unconscious for 1 minute or until they are woken by taking damage, or by someone else using an Action that touches them.</p>",
             "file": "ammunition_types",
-            "name": " Arrow Sleep Ammunition",
+            "name": "Sleep Arrow",
             "only_one": false,
             "price": 500,
             "type": "gear"
         },
         {
             "caliber": "arrow",
-            "description": "<p>Ammo Types Available: Arrows, Bullets, and Rockets Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
+            "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
-            "name": " Arrow Smart Ammunition",
+            "name": "Smart Arrow",
             "only_one": false,
             "price": 500,
             "type": "gear"
         },
         {
             "caliber": "paintball",
-            "description": "<p>All except Grenades and Rockets. This is the standard ammunition for the weapon. It has no special features.</p>",
+            "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
-            "name": " Paintball Basic Ammunition",
+            "name": "Paintball Basic Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -463,7 +463,7 @@
             "caliber": "paintball",
             "description": "<p>Acid Paintballs deal no damage, however they always ablate armor by 1</p>",
             "file": "ammunition_types",
-            "name": " Paintball Acid Ammunition",
+            "name": "Paintball Acid Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"

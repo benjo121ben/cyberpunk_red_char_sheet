@@ -225,6 +225,8 @@ def handle_ammo_file(ammo_file_list, output_dict):
 
     output_data = []
 
+    reverse_names = ["grenade", "arrow", "shell"]
+
     for caliber_key, caliber in calibers_dict.items():
         variants_list = caliber["variants"] if "variants" in caliber else [""]
         for variant in variants_list: 
@@ -234,7 +236,18 @@ def handle_ammo_file(ammo_file_list, output_dict):
                 for key, val in ammo_types[ammo_type_key].items():
                     ammo_type_data[key] = val
 
-                full_ammo_name = variant + " " + caliber["name"] + " " + ammo_type_data["name"]
+                full_ammo_name = ""
+                if caliber_key in reverse_names:
+                    full_ammo_name = ammo_type_data["name"] + " " + caliber["name"]
+                    full_ammo_name = full_ammo_name.replace("Ammunition ", "")
+                else:
+                    print(caliber_key)
+                    full_ammo_name = variant + " " + caliber["name"] + " " + ammo_type_data["name"]
+                    full_ammo_name = full_ammo_name.strip()
+
+                if caliber_key == "shell":
+                    full_ammo_name = full_ammo_name.replace("Basic ", "")
+                
                 full_caliber_name = variant.lower().replace(" ", "_").replace(".", "") + ("_" if variant != "" else "") + caliber_key
 
                 ammo_type_data["name"] = full_ammo_name

@@ -155,6 +155,8 @@ pub struct Ammunition {
     pub price: i32,
     #[serde(rename = "type")]
     pub type_field: String,
+    pub caliber: String,
+    pub only_one: bool
 }
 
 //needed to set default bools
