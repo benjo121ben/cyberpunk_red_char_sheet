@@ -79,6 +79,26 @@ select:hover {
 	background-color: var(--highlight-color-second);
 }
 
+textarea {
+	font-family: inherit;
+	font-size: large;
+	margin-top: unset;
+	border: unset;
+	border-radius: 5;
+	height: 500;
+	resize: none;
+	cursor: text;
+}
+
+textarea:hover {
+	border: unset;
+}
+
+textarea:focus {
+	outline: 0;
+	border: unset;
+}
+
 input {
 	font-family: inherit;
 }
@@ -466,6 +486,10 @@ input {
 	max-height: 50vh;
 }
 
+div:has(> .weapon_view) {
+	gap: 10px
+}
+
 .weapon_view {
 	display: grid;
 	grid-template-columns: 225 0.5fr 0.5fr 0.5fr 1fr 1fr;
@@ -580,4 +604,19 @@ input {
 
 .shop_variant_select {
 	margin-bottom: 10px;
+}
+
+.journal_tabs {
+	display: flex;
+	flex-direction: row;
+
+	> div {
+		padding: 2;
+	}
+}
+
+.center_split {
+	display: grid;
+	grid-template-columns: 1.2fr 1fr;	
+	gap: 20px;
 }

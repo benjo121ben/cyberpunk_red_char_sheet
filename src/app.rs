@@ -3,6 +3,7 @@ use leptos::logging::log;
 use std::error::Error;
 use super::skill_view::{SkillList, StatsView};
 use super::resource_views::{HealthView, MoneyView};
+use crate::text_views::TextCenterSection;
 use std::fs::read_to_string;
 use std::path::Path;
 use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title};
@@ -249,7 +250,14 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                         <StatsView/>
                         <ArmorSelectionView/>
                     </div>
-                    <GearView/>
+                    <div class="center_split">
+                        <div class="flex_col">
+                            <GearView/>
+                        </div>
+                        <div class="flex_col">
+                            <TextCenterSection/>
+                        </div>
+                    </div>
                 </div>
                 <div class="right_div">
                     <img class="char_image" src="Matchbox.jpg"/>

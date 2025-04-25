@@ -94,6 +94,10 @@ impl Skill {
 
 impl Character {
     pub fn zero() -> Character {
+        let class_journal = Journal {
+            name: "class".to_string(),
+            text: "".to_string()
+        };
         let mut char = Character {
             name: String::from("Test"),
             alias: String::from("Alias"),
@@ -108,7 +112,7 @@ impl Character {
             ip: 0,
             money: 0,
             stats: CharStats { intelligence: 0, reflex: 0, dexterity: 0, technique: 0, cool: 0, willpower: 0, luck: 0, luck_current: 0, movement: 0, body: 0, empathy: 0 },
-            journals: vec![Journal::default()],
+            journals: vec![class_journal, Journal::default()],
             skills: IndexMap::new(),
             gear_list: IndexMap::new(),
             flags: IndexMap::new(),
