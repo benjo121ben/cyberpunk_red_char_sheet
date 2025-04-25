@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 
-use crate::help::get_char_signal_from_ctx;
+use crate::{help::get_char_signal_from_ctx, icon_views::{AddIcon, RemoveIcon}, journal::Journal};
 
 #[component]
 pub fn TextCenterSection() -> impl IntoView {
@@ -10,9 +10,36 @@ pub fn TextCenterSection() -> impl IntoView {
         let index = journal_index.get();
         cyberpunk_signal.read().journals.get(index).cloned().expect("journal should exist inside character")
     });
+
+    let input_signal = RwSignal::new(false);
+
     view! {
         <section class="flex_col journal_section">
             <div class="journal_tabs"> 
+                <RemoveIcon on:click=move|_| {
+                    if journal_index.get() == 0 {
+                        return;
+                    }
+                    cyberpunk_signal.write().journals.remove(journal_index.get());
+                    journal_index.update(|val| *val -= 1);
+                }/>
+                <Show
+                    when=move|| !input_signal.get()
+                >
+                    <AddIcon on:click=move|_| input_signal.set(true) />
+                </Show>
+                <Show
+                    when=move|| input_signal.get()
+                >
+                    <input class="new_journal_input" value="" on:change=move|ev| {
+                        let value = event_target_value(&ev);
+                        cyberpunk_signal.write().journals.push(Journal{
+                            name: value,
+                            text: "".to_string()
+                        });
+                        input_signal.set(false);
+                    }/>
+                </Show>
                 <For 
                     each=move||{0..(cyberpunk_signal.read().journals.len())}
                     key=move|index| {index.to_string()}

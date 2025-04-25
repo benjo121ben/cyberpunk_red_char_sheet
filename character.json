@@ -54,7 +54,7 @@
       "type": "weapons",
       "weapon_data": {
         "ammo": null,
-        "bonus": null,
+        "bonus": 1,
         "burst": false,
         "damage": "3d6",
         "fullauto": false,
@@ -108,11 +108,7 @@
   "journals": [
     {
       "name": "class",
-      "text": "# Contacts and Clients\nCity gang honcho, minor politician, Corp Exec, well known person in the neighbourhood\n\n# Haggle\nWhen you buy 5 or more of the same item you can get one more of that item for free\n\nyou can get 10% more or less than market price when buying or selling\n\n# Grease\nI know how to get along well with at least 1 other culture in my area, getting 1 Language at Lvl 4\n\nFixers know how to get things on the black market and are adept at navigating the complex social customs of the street, where hundreds of cultures and economic levels collide. \nFixers maintain vast webs of contacts and clients who they can reach out to source goods, favors, or information. \nFixers can also source desirable resources and make favorable deals.\n"
-    },
-    {
-      "name": "misc",
-      "text": ""
+      "text": "# Contacts and Clients\nCity gang honcho, minor politician, Corp Exec, well known person in the neighbourhood\n\n# Haggle\nWhen you buy 5 or more of the same item you can get one more of that item for free\n\nyou can get 10% more or less than market price when buying or selling\n\n# Grease\nI know how to get along well with at least 1 other culture in my area, getting 1 Language at Lvl 4\n\nFixers know how to get things on the black market and are adept at navigating the complex social customs of the street, where hundreds of cultures and economic levels collide. \nFixers maintain vast webs of contacts and clients who they can reach out to source goods, favors, or information. \nFixers can also source desirable resources and make favorable deals."
     }
   ],
   "skills": {
@@ -527,7 +523,7 @@
   },
   "gear_list": {},
   "flags": {
-    "filter_zeros": true,
+    "filter_zeros": false,
     "group_by_stat": false
   }
 }

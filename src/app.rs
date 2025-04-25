@@ -151,9 +151,11 @@ pub fn App() -> AnyView {
         // content for this welcome page
         <Router>
             <main>
+                <div class="root_div">
                 <Routes fallback=|| "Page not found.".into_view()>
                     <Route path=StaticSegment("") view=HomePage/>
                 </Routes>
+                </div>
             </main>
         </Router>
     }.into_any()
