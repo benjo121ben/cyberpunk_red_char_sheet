@@ -3,7 +3,7 @@ use leptos::logging::log;
 use std::error::Error;
 use super::skill_view::{SkillList, StatsView};
 use super::resource_views::{HealthView, MoneyView};
-use crate::text_views::{TextCenterSection, RoleTextArea};
+use crate::text_views::TextCenterSection;
 use std::fs::read_to_string;
 use std::path::Path;
 use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title};
@@ -265,7 +265,6 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                         <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
                         <MoneyView/>
                     </div>
-                    <RoleTextArea/>
                 </div>
             </div>
         </div>
