@@ -31,7 +31,7 @@ pub fn TextCenterSection() -> impl IntoView {
                 />
             </div>
             <textarea 
-                class="center-text-area" 
+                class="center_text_area" 
                 class:first-tab-selected=move||journal_index() == 0
                 on:change=move |event| {
                     cyberpunk_signal.update(|c| {
@@ -45,5 +45,24 @@ pub fn TextCenterSection() -> impl IntoView {
                 prop:value=move || center_journal_memo.get().text.clone()
             />
         </section>
+    }
+}
+#[component]
+pub fn RoleTextArea() -> impl IntoView {
+    let cyberpunk_signal = get_char_signal_from_ctx();
+    view!{
+        <textarea 
+            class="role_text_area" 
+            on:change=move |event| {
+                cyberpunk_signal.update(|c| {
+                    let val: String = event_target_value(&event);
+                    c.journals.get_mut(0).and_then(|journal|{
+                        journal.text = val.clone();
+                        Some(val)
+                    });
+                })
+            }
+            prop:value=move || cyberpunk_signal.read().journals.get(0).expect("class journal should exist").text.clone()
+        />
     }
 }

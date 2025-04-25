@@ -85,7 +85,6 @@ textarea {
 	margin-top: unset;
 	border: unset;
 	border-radius: 5;
-	height: 500;
 	resize: none;
 	cursor: text;
 }
@@ -620,3 +619,13 @@ div:has(> .weapon_view) {
 	grid-template-columns: 1.2fr 1fr;	
 	gap: 20px;
 }
+
+.center_text_area {
+	height: 500;
+}
+
+.role_text_area {
+	width: 100%;
+	height: 300px;
+}
+
