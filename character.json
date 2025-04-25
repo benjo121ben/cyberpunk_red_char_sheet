@@ -7,7 +7,7 @@
     {
       "armor_data": {
         "sp": 11,
-        "sp_current": 9,
+        "sp_current": 8,
         "penalty": 0,
         "head": true
       },
@@ -33,7 +33,7 @@
     {
       "armor_data": {
         "sp": 12,
-        "sp_current": 12,
+        "sp_current": 9,
         "penalty": 2,
         "head": false
       },

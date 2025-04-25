@@ -4,7 +4,7 @@
             "caliber": "rifle",
             "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
-            "name": "Rifle Basic Ammunition",
+            "name": "Rifle - Basic Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -13,7 +13,7 @@
             "caliber": "rifle",
             "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
-            "name": "Rifle Armor-Piercing Ammunition",
+            "name": "Rifle - Armor-Piercing Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -22,7 +22,7 @@
             "caliber": "rifle",
             "description": "<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
             "file": "ammunition_types",
-            "name": "Rifle Expansive Ammunition",
+            "name": "Rifle - Expansive Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -31,7 +31,7 @@
             "caliber": "rifle",
             "description": "<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
             "file": "ammunition_types",
-            "name": "Rifle Incendiary Ammunition",
+            "name": "Rifle - Incendiary Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -40,7 +40,7 @@
             "caliber": "rifle",
             "description": "<p>Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
             "file": "ammunition_types",
-            "name": "Rifle Rubber Ammunition",
+            "name": "Rifle - Rubber Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -49,7 +49,7 @@
             "caliber": "rifle",
             "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
-            "name": "Rifle Smart Ammunition",
+            "name": "Rifle - Smart Ammunition",
             "only_one": false,
             "price": 500,
             "type": "gear"
@@ -58,7 +58,7 @@
             "caliber": "medium_pistol",
             "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
-            "name": "Medium Pistol Basic Ammunition",
+            "name": "Medium Pistol - Basic Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -67,7 +67,7 @@
             "caliber": "medium_pistol",
             "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
-            "name": "Medium Pistol Armor-Piercing Ammunition",
+            "name": "Medium Pistol - Armor-Piercing Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -76,7 +76,7 @@
             "caliber": "medium_pistol",
             "description": "<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
             "file": "ammunition_types",
-            "name": "Medium Pistol Expansive Ammunition",
+            "name": "Medium Pistol - Expansive Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -85,7 +85,7 @@
             "caliber": "medium_pistol",
             "description": "<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
             "file": "ammunition_types",
-            "name": "Medium Pistol Incendiary Ammunition",
+            "name": "Medium Pistol - Incendiary Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -94,7 +94,7 @@
             "caliber": "medium_pistol",
             "description": "<p>Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
             "file": "ammunition_types",
-            "name": "Medium Pistol Rubber Ammunition",
+            "name": "Medium Pistol - Rubber Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -103,7 +103,7 @@
             "caliber": "medium_pistol",
             "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
-            "name": "Medium Pistol Smart Ammunition",
+            "name": "Medium Pistol - Smart Ammunition",
             "only_one": false,
             "price": 500,
             "type": "gear"
@@ -112,7 +112,7 @@
             "caliber": "heavy_pistol",
             "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
-            "name": "Heavy Pistol Basic Ammunition",
+            "name": "Heavy Pistol - Basic Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -121,7 +121,7 @@
             "caliber": "heavy_pistol",
             "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
-            "name": "Heavy Pistol Armor-Piercing Ammunition",
+            "name": "Heavy Pistol - Armor-Piercing Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -130,7 +130,7 @@
             "caliber": "heavy_pistol",
             "description": "<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
             "file": "ammunition_types",
-            "name": "Heavy Pistol Expansive Ammunition",
+            "name": "Heavy Pistol - Expansive Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -139,7 +139,7 @@
             "caliber": "heavy_pistol",
             "description": "<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
             "file": "ammunition_types",
-            "name": "Heavy Pistol Incendiary Ammunition",
+            "name": "Heavy Pistol - Incendiary Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -148,7 +148,7 @@
             "caliber": "heavy_pistol",
             "description": "<p>Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
             "file": "ammunition_types",
-            "name": "Heavy Pistol Rubber Ammunition",
+            "name": "Heavy Pistol - Rubber Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -157,7 +157,7 @@
             "caliber": "heavy_pistol",
             "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
-            "name": "Heavy Pistol Smart Ammunition",
+            "name": "Heavy Pistol - Smart Ammunition",
             "only_one": false,
             "price": 500,
             "type": "gear"
@@ -166,7 +166,7 @@
             "caliber": "v_heavy_pistol",
             "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
-            "name": "V. Heavy Pistol Basic Ammunition",
+            "name": "V. Heavy Pistol - Basic Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -175,7 +175,7 @@
             "caliber": "v_heavy_pistol",
             "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
-            "name": "V. Heavy Pistol Armor-Piercing Ammunition",
+            "name": "V. Heavy Pistol - Armor-Piercing Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -184,7 +184,7 @@
             "caliber": "v_heavy_pistol",
             "description": "<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
             "file": "ammunition_types",
-            "name": "V. Heavy Pistol Expansive Ammunition",
+            "name": "V. Heavy Pistol - Expansive Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -193,7 +193,7 @@
             "caliber": "v_heavy_pistol",
             "description": "<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
             "file": "ammunition_types",
-            "name": "V. Heavy Pistol Incendiary Ammunition",
+            "name": "V. Heavy Pistol - Incendiary Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -202,7 +202,7 @@
             "caliber": "v_heavy_pistol",
             "description": "<p>Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
             "file": "ammunition_types",
-            "name": "V. Heavy Pistol Rubber Ammunition",
+            "name": "V. Heavy Pistol - Rubber Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -211,7 +211,7 @@
             "caliber": "v_heavy_pistol",
             "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
-            "name": "V. Heavy Pistol Smart Ammunition",
+            "name": "V. Heavy Pistol - Smart Ammunition",
             "only_one": false,
             "price": 500,
             "type": "gear"
@@ -220,7 +220,7 @@
             "caliber": "slug",
             "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
-            "name": "Slug Basic Ammunition",
+            "name": "Slug - Basic Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -229,7 +229,7 @@
             "caliber": "slug",
             "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
-            "name": "Slug Armor-Piercing Ammunition",
+            "name": "Slug - Armor-Piercing Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -238,7 +238,7 @@
             "caliber": "slug",
             "description": "<p>When using this ammunition, whenever you cause the Foreign Object Critical Injury, the victim rolls again on the Critical Injury table (see pg. 187) until they roll a Critical Injury that isn't Foreign Object. The victim then suffers that Critical Injury as well. This second injury deals no Bonus Damage.</p>",
             "file": "ammunition_types",
-            "name": "Slug Expansive Ammunition",
+            "name": "Slug - Expansive Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -247,7 +247,7 @@
             "caliber": "slug",
             "description": "<p>When using this ammunition, whenever you deal damage to a target through their armor, you ignite the target. Until your target spends an Action to put themselves out, they take 2 damage directly to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.</p>",
             "file": "ammunition_types",
-            "name": "Slug Incendiary Ammunition",
+            "name": "Slug - Incendiary Ammunition",
             "only_one": false,
             "price": 100,
             "type": "gear"
@@ -256,7 +256,7 @@
             "caliber": "slug",
             "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
-            "name": "Slug Smart Ammunition",
+            "name": "Slug - Smart Ammunition",
             "only_one": false,
             "price": 500,
             "type": "gear"
@@ -265,7 +265,7 @@
             "caliber": "slug",
             "description": "<p>Damage dealt using this ammunition cannot cause a Critical Injury. Additionally, attacks made with this ammunition cannot ablate armor. If damage dealt by this ammunition would reduce a target with more than 1 HP to less than 0 HP, they are instead left at 1 HP.</p>",
             "file": "ammunition_types",
-            "name": "Slug Rubber Ammunition",
+            "name": "Slug - Rubber Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -373,7 +373,7 @@
             "caliber": "rocket",
             "description": "<p>When using this ammunition, you ablate armor by 2 instead of 1 whenever you would ablate armor.</p>",
             "file": "ammunition_types",
-            "name": "Rocket Armor-Piercing Ammunition",
+            "name": "Rocket - Armor-Piercing Ammunition",
             "only_one": true,
             "price": 100,
             "type": "gear"
@@ -382,7 +382,7 @@
             "caliber": "rocket",
             "description": "<p>Targeting Scope Cyberware is required in order to make use of Smart Ammunition.</p>\n<p>When fired by a User without Targeting Scope Cyberware, Smart Ammunition won't fire even when the trigger is pulled, as a safety feature. When using this ammunition, whenever you miss a shot by 4 or less when using a weapon's single shot firing mode, your missed shot immediately has a second chance to hit your target. This second chance to hit is made by rolling again to hit the exact same shot DV on the range table which you missed, except that you add 10 to the d10 instead of anything you would typically add to the Check, with the only exception being LUCK. A target that can dodge bullets can choose to dodge this ranged attack as normal.</p>",
             "file": "ammunition_types",
-            "name": "Rocket Smart Ammunition",
+            "name": "Rocket - Smart Ammunition",
             "only_one": true,
             "price": 500,
             "type": "gear"
@@ -454,7 +454,7 @@
             "caliber": "paintball",
             "description": "<p>This is the standard ammunition for the weapon. It has no special features.</p>",
             "file": "ammunition_types",
-            "name": "Paintball Basic Ammunition",
+            "name": "Paintball - Basic Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -463,7 +463,7 @@
             "caliber": "paintball",
             "description": "<p>Acid Paintballs deal no damage, however they always ablate armor by 1</p>",
             "file": "ammunition_types",
-            "name": "Paintball Acid Ammunition",
+            "name": "Paintball - Acid Ammunition",
             "only_one": false,
             "price": 10,
             "type": "gear"
@@ -1512,630 +1512,630 @@
         {
             "description": "Homeless Ragged Vagrant",
             "file": "fashion",
-            "name": "Bottoms Bag Lady Chic",
+            "name": "Bottoms - Bag Lady Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
             "file": "fashion",
-            "name": "Top Bag Lady Chic",
+            "name": "Top - Bag Lady Chic",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
             "file": "fashion",
-            "name": "Jacket Bag Lady Chic",
+            "name": "Jacket - Bag Lady Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
             "file": "fashion",
-            "name": "Footwear Bag Lady Chic",
+            "name": "Footwear - Bag Lady Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
             "file": "fashion",
-            "name": "Jewelry Bag Lady Chic",
+            "name": "Jewelry - Bag Lady Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
             "file": "fashion",
-            "name": "Mirrorshades Bag Lady Chic",
+            "name": "Mirrorshades - Bag Lady Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
             "file": "fashion",
-            "name": "Glasses Bag Lady Chic",
+            "name": "Glasses - Bag Lady Chic",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
             "file": "fashion",
-            "name": "Contact Lenses Bag Lady Chic",
+            "name": "Contact Lenses - Bag Lady Chic",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Homeless Ragged Vagrant",
             "file": "fashion",
-            "name": "Hats Bag Lady Chic",
+            "name": "Hats - Bag Lady Chic",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
             "file": "fashion",
-            "name": "Bottoms Gang Colors",
+            "name": "Bottoms - Gang Colors",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
             "file": "fashion",
-            "name": "Top Gang Colors",
+            "name": "Top - Gang Colors",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
             "file": "fashion",
-            "name": "Jacket Gang Colors",
+            "name": "Jacket - Gang Colors",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
             "file": "fashion",
-            "name": "Footwear Gang Colors",
+            "name": "Footwear - Gang Colors",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
             "file": "fashion",
-            "name": "Jewelry Gang Colors",
+            "name": "Jewelry - Gang Colors",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
             "file": "fashion",
-            "name": "Mirrorshades Gang Colors",
+            "name": "Mirrorshades - Gang Colors",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
             "file": "fashion",
-            "name": "Glasses Gang Colors",
+            "name": "Glasses - Gang Colors",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
             "file": "fashion",
-            "name": "Contact Lenses Gang Colors",
+            "name": "Contact Lenses - Gang Colors",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Dangerous Violent Rebellious",
             "file": "fashion",
-            "name": "Hats Gang Colors",
+            "name": "Hats - Gang Colors",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
             "file": "fashion",
-            "name": "Bottoms Generic Chic",
+            "name": "Bottoms - Generic Chic",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
             "file": "fashion",
-            "name": "Top Generic Chic",
+            "name": "Top - Generic Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
             "file": "fashion",
-            "name": "Jacket Generic Chic",
+            "name": "Jacket - Generic Chic",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
             "file": "fashion",
-            "name": "Footwear Generic Chic",
+            "name": "Footwear - Generic Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
             "file": "fashion",
-            "name": "Jewelry Generic Chic",
+            "name": "Jewelry - Generic Chic",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
             "file": "fashion",
-            "name": "Mirrorshades Generic Chic",
+            "name": "Mirrorshades - Generic Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
             "file": "fashion",
-            "name": "Glasses Generic Chic",
+            "name": "Glasses - Generic Chic",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
             "file": "fashion",
-            "name": "Contact Lenses Generic Chic",
+            "name": "Contact Lenses - Generic Chic",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Standard Colorful Modular",
             "file": "fashion",
-            "name": "Hats Generic Chic",
+            "name": "Hats - Generic Chic",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
             "file": "fashion",
-            "name": "Bottoms Bohemian",
+            "name": "Bottoms - Bohemian",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
             "file": "fashion",
-            "name": "Top Bohemian",
+            "name": "Top - Bohemian",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
             "file": "fashion",
-            "name": "Jacket Bohemian",
+            "name": "Jacket - Bohemian",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
             "file": "fashion",
-            "name": "Footwear Bohemian",
+            "name": "Footwear - Bohemian",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
             "file": "fashion",
-            "name": "Jewelry Bohemian",
+            "name": "Jewelry - Bohemian",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
             "file": "fashion",
-            "name": "Mirrorshades Bohemian",
+            "name": "Mirrorshades - Bohemian",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
             "file": "fashion",
-            "name": "Glasses Bohemian",
+            "name": "Glasses - Bohemian",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
             "file": "fashion",
-            "name": "Contact Lenses Bohemian",
+            "name": "Contact Lenses - Bohemian",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Folksy Retro Free Spirited",
             "file": "fashion",
-            "name": "Hats Bohemian",
+            "name": "Hats - Bohemian",
             "price": 10,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
             "file": "fashion",
-            "name": "Bottoms Leisurewear",
+            "name": "Bottoms - Leisurewear",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
             "file": "fashion",
-            "name": "Top Leisurewear",
+            "name": "Top - Leisurewear",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
             "file": "fashion",
-            "name": "Jacket Leisurewear",
+            "name": "Jacket - Leisurewear",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
             "file": "fashion",
-            "name": "Footwear Leisurewear",
+            "name": "Footwear - Leisurewear",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
             "file": "fashion",
-            "name": "Jewelry Leisurewear",
+            "name": "Jewelry - Leisurewear",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
             "file": "fashion",
-            "name": "Mirrorshades Leisurewear",
+            "name": "Mirrorshades - Leisurewear",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
             "file": "fashion",
-            "name": "Glasses Leisurewear",
+            "name": "Glasses - Leisurewear",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
             "file": "fashion",
-            "name": "Contact Lenses Leisurewear",
+            "name": "Contact Lenses - Leisurewear",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Comfort Agility Athleticism",
             "file": "fashion",
-            "name": "Hats Leisurewear",
+            "name": "Hats - Leisurewear",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
             "file": "fashion",
-            "name": "Bottoms Nomad Leathers",
+            "name": "Bottoms - Nomad Leathers",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
             "file": "fashion",
-            "name": "Top Nomad Leathers",
+            "name": "Top - Nomad Leathers",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
             "file": "fashion",
-            "name": "Jacket Nomad Leathers",
+            "name": "Jacket - Nomad Leathers",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
             "file": "fashion",
-            "name": "Footwear Nomad Leathers",
+            "name": "Footwear - Nomad Leathers",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
             "file": "fashion",
-            "name": "Jewelry Nomad Leathers",
+            "name": "Jewelry - Nomad Leathers",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
             "file": "fashion",
-            "name": "Mirrorshades Nomad Leathers",
+            "name": "Mirrorshades - Nomad Leathers",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
             "file": "fashion",
-            "name": "Glasses Nomad Leathers",
+            "name": "Glasses - Nomad Leathers",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
             "file": "fashion",
-            "name": "Contact Lenses Nomad Leathers",
+            "name": "Contact Lenses - Nomad Leathers",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Western Rugged Tribal",
             "file": "fashion",
-            "name": "Hats Nomad Leathers",
+            "name": "Hats - Nomad Leathers",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
             "file": "fashion",
-            "name": "Bottoms Asia Pop",
+            "name": "Bottoms - Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
             "file": "fashion",
-            "name": "Top Asia Pop",
+            "name": "Top - Asia Pop",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
             "file": "fashion",
-            "name": "Jacket Asia Pop",
+            "name": "Jacket - Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
             "file": "fashion",
-            "name": "Footwear Asia Pop",
+            "name": "Footwear - Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
             "file": "fashion",
-            "name": "Jewelry Asia Pop",
+            "name": "Jewelry - Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
             "file": "fashion",
-            "name": "Mirrorshades Asia Pop",
+            "name": "Mirrorshades - Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
             "file": "fashion",
-            "name": "Glasses Asia Pop",
+            "name": "Glasses - Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
             "file": "fashion",
-            "name": "Contact Lenses Asia Pop",
+            "name": "Contact Lenses - Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Bright Costume-like Youthful",
             "file": "fashion",
-            "name": "Hats Asia Pop",
+            "name": "Hats - Asia Pop",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
             "file": "fashion",
-            "name": "Bottoms Urban Flash",
+            "name": "Bottoms - Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
             "file": "fashion",
-            "name": "Top Urban Flash",
+            "name": "Top - Urban Flash",
             "price": 20,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
             "file": "fashion",
-            "name": "Jacket Urban Flash",
+            "name": "Jacket - Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
             "file": "fashion",
-            "name": "Footwear Urban Flash",
+            "name": "Footwear - Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
             "file": "fashion",
-            "name": "Jewelry Urban Flash",
+            "name": "Jewelry - Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
             "file": "fashion",
-            "name": "Mirrorshades Urban Flash",
+            "name": "Mirrorshades - Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
             "file": "fashion",
-            "name": "Glasses Urban Flash",
+            "name": "Glasses - Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
             "file": "fashion",
-            "name": "Contact Lenses Urban Flash",
+            "name": "Contact Lenses - Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Flashy Technological Streetwear",
             "file": "fashion",
-            "name": "Hats Urban Flash",
+            "name": "Hats - Urban Flash",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
             "file": "fashion",
-            "name": "Bottoms Businesswear",
+            "name": "Bottoms - Businesswear",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
             "file": "fashion",
-            "name": "Top Businesswear",
+            "name": "Top - Businesswear",
             "price": 50,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
             "file": "fashion",
-            "name": "Jacket Businesswear",
+            "name": "Jacket - Businesswear",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
             "file": "fashion",
-            "name": "Footwear Businesswear",
+            "name": "Footwear - Businesswear",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
             "file": "fashion",
-            "name": "Jewelry Businesswear",
+            "name": "Jewelry - Businesswear",
             "price": 5000,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
             "file": "fashion",
-            "name": "Mirrorshades Businesswear",
+            "name": "Mirrorshades - Businesswear",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
             "file": "fashion",
-            "name": "Glasses Businesswear",
+            "name": "Glasses - Businesswear",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
             "file": "fashion",
-            "name": "Contact Lenses Businesswear",
+            "name": "Contact Lenses - Businesswear",
             "price": 100,
             "type": "fashion"
         },
         {
             "description": "Leadership Presence Authority",
             "file": "fashion",
-            "name": "Hats Businesswear",
+            "name": "Hats - Businesswear",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
             "file": "fashion",
-            "name": "Bottoms High Fashion",
+            "name": "Bottoms - High Fashion",
             "price": 1000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
             "file": "fashion",
-            "name": "Top High Fashion",
+            "name": "Top - High Fashion",
             "price": 500,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
             "file": "fashion",
-            "name": "Jacket High Fashion",
+            "name": "Jacket - High Fashion",
             "price": 1000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
             "file": "fashion",
-            "name": "Footwear High Fashion",
+            "name": "Footwear - High Fashion",
             "price": 5000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
             "file": "fashion",
-            "name": "Jewelry High Fashion",
+            "name": "Jewelry - High Fashion",
             "price": 5000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
             "file": "fashion",
-            "name": "Mirrorshades High Fashion",
+            "name": "Mirrorshades - High Fashion",
             "price": 1000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
             "file": "fashion",
-            "name": "Glasses High Fashion",
+            "name": "Glasses - High Fashion",
             "price": 1000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
             "file": "fashion",
-            "name": "Contact Lenses High Fashion",
+            "name": "Contact Lenses - High Fashion",
             "price": 1000,
             "type": "fashion"
         },
         {
             "description": "Exclusive Designer Couture",
             "file": "fashion",
-            "name": "Hats High Fashion",
+            "name": "Hats - High Fashion",
             "price": 5000,
             "type": "fashion"
         }

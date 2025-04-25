@@ -200,7 +200,7 @@ def handle_fashion_file(fashion_file_list, output_dict):
         for index, single_item in enumerate(fashion_item_list):
             price = category["item_prices"][index]
             single_fashion_item = {
-                "name": single_item + " " + cat_name,
+                "name": single_item + " - " + cat_name,
                 "description": description,
                 "price": price,
                 "type": "fashion",
@@ -242,7 +242,7 @@ def handle_ammo_file(ammo_file_list, output_dict):
                     full_ammo_name = full_ammo_name.replace("Ammunition ", "")
                 else:
                     print(caliber_key)
-                    full_ammo_name = variant + " " + caliber["name"] + " " + ammo_type_data["name"]
+                    full_ammo_name = variant + " " + caliber["name"] + " - " + ammo_type_data["name"]
                     full_ammo_name = full_ammo_name.strip()
 
                 if caliber_key == "shell":

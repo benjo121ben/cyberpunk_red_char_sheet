@@ -130,7 +130,7 @@ input {
 .center_div {
 	display: flex;
 	flex-direction: column;
-	gap: 5px;
+	gap: 10px;
 	flex-grow: 1;
 	flex-basis: 5;
 }
@@ -354,7 +354,7 @@ input {
 	font-size: x-large;
 	background-color: var(--highlight-color-second);
 	color: var(--dark-background-color);
-	padding: 2px;
+	padding: 5px;
 	white-space: nowrap;
 }
 
@@ -376,6 +376,7 @@ input {
 
 .name_list_wrapper {
 	overflow-y: scroll;
+	scrollbar-width: auto;
 	flex-shrink: 0;
 	min-height: 0;
 	height: 100%;
@@ -386,8 +387,13 @@ input {
 .name_list {
 	display: grid;
 	grid-template-rows: 1fr;
-	gap: 10px;
+	gap: 2px;
 	width: 20vw;
+
+	span {
+		padding: 5;
+
+	}
 
 	span:hover {
 		background-color: var(--warning-color);
@@ -470,8 +476,25 @@ input {
 	border-radius: 5;
 }
 
+.weapon_bonus {
+	text-align: center;
+}
+
+.weapon_rof {
+	text-align: center;
+}
+
+.weapon_damage {
+	text-align: center;
+}
+
+.weapon_ammo {
+	display: flex;
+	justify-content: center;
+}
+
 .ammo_svg {
-	max-width: 50px;
+	width: 50px;
 }
 
 .center_div_first_row {
@@ -553,4 +576,8 @@ input {
 		border: unset;
 		outline: unset;
 	}
+}
+
+.shop_variant_select {
+	margin-bottom: 10px;
 }

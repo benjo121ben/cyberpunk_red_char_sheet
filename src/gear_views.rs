@@ -61,25 +61,27 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
     });
     view!{
         <div class="weapon_view">
-            <div class="weapon_name">{move|| item_memo.get().name.clone()}</div>
-            <div class="weapon_bonus" 
+            <span class="weapon_name">{move|| item_memo.get().name.clone()}</span>
+            <span class="weapon_bonus" 
                 class:has_penalty=move||has_penalty()
             >
                 {move|| get_skill_value.get() + weapon_bonus()}
-            </div>
-            <div class="weapon_rof">rof {move|| item_memo.get().weapon_data.rof.clone()}</div>
-            <div class="weapon_damage">{move|| item_memo.get().weapon_data.damage.clone()}</div>
+            </span>
+            <span class="weapon_rof">rof {move|| item_memo.get().weapon_data.rof.clone()}</span>
+            <span class="weapon_damage">{move|| item_memo.get().weapon_data.damage.clone()}</span>
             <Show when=move|| has_ammo.get()>
-                <AmmoView count=ammo_memo 
-                    on:click=move|_| char_signal.update(|c|{
-                        c.weapons.get_mut(index).and_then(|weap: &mut Weapon|
-                            weap
-                                .weapon_data
-                                .ammo.as_mut()
-                                .and_then(|ammo_data: &mut WeaponAmmoData| {ammo_data.shoot(); Some(ammo_data)})
-                        );
-                    })
-                />
+                <div class="weapon_ammo">
+                    <AmmoView count=ammo_memo 
+                        on:click=move|_| char_signal.update(|c|{
+                            c.weapons.get_mut(index).and_then(|weap: &mut Weapon|
+                                weap
+                                    .weapon_data
+                                    .ammo.as_mut()
+                                    .and_then(|ammo_data: &mut WeaponAmmoData| {ammo_data.shoot(); Some(ammo_data)})
+                            );
+                        })
+                    />
+                </div>
             </Show>
             <Show when=move|| !has_ammo.get()>
                 <div/>
