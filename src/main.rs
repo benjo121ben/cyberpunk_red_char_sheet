@@ -8,7 +8,7 @@ async fn main() {
     use leptos_axum::{generate_route_list, LeptosRoutes};
     use cp_red_char_sheet::app::*;
 
-    let conf = get_configuration(None).unwrap();
+    let conf = get_configuration(Some("Cargo.toml")).unwrap();
     let addr = conf.leptos_options.site_addr;
     let leptos_options = conf.leptos_options;
     // Generate the list of routes in your Leptos App

@@ -143,7 +143,7 @@ pub fn App() -> AnyView {
     view! {
         // injects a stylesheet into the document <head>
         // id=leptos means cargo-leptos will hot-reload this stylesheet
-        <Stylesheet id="leptos" href="/pkg/test-leptos.css"/>
+        <Stylesheet id="leptos" href="/pkg/cp_red_char_sheet.css"/>
 
         // sets the document title
         <Title text="Welcome to Leptos"/>

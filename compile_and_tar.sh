@@ -6,10 +6,11 @@ mkdir $t_dir &&
 mkdir $t_dir/dev_saves &&
 mkdir $t_dir/gear &&
 cp -r target/site/. $t_dir/site/ &&
-mv $t_dir/site/pkg/cyberpunk_app.wasm $t_dir/site/pkg/cyberpunk_app_bg.wasm &&
+# this was at some point necessary, might become relevant again who knows
+# mv $t_dir/site/pkg/cp_red_char_sheet.wasm $t_dir/site/pkg/cp_red_char_sheet_bg.wasm &&
 cp -r gear/. $t_dir/gear/ &&
 cp character.json $t_dir/character.json &&
 cp target/release/cp_red_char_sheet $t_dir/cp_red_char_sheet &&
-cp Cargo.toml $t_dir/Cargo.toml &&
+cp Cargo_deploy.toml $t_dir/Cargo.toml && # cargo deploy sets site different
 tar czf cyberpunk-app.tar.gz -C $t_dir . &&
 echo project built and zipped into tar file

@@ -126,18 +126,17 @@ input {
 }
 
 .root_div {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-rows: 40 40 min-content;
+	gap: 5;
+	grid-auto-flow: row;
 	height: 100%;
-	min-height: unset;
 }
 
 .base_div {
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
-	min-height: unset;
-	flex-grow: 1;
 }
 
 .columns {
@@ -271,14 +270,17 @@ input {
 	background-color: var(--light-background-color);
 	gap: 5px;
 	overflow: hidden;
+	grid-row-start: 1;
+	grid-column-start: 1;
 }
 
 .health_text {
 	@extend .health_commons;
 	z-index: 10;
 	text-align: center;
-	margin-top: -40px;
 	font-size: large;
+	grid-row-start: 1;
+	grid-column-start: 1;
 }
 
 .health_bar {
