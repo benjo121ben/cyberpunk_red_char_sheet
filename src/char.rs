@@ -4,6 +4,14 @@ use indexmap::IndexMap;
 use serde::{Deserialize, Serialize};
 use super::{journal::Journal, gear::*};
 
+pub enum GearType {
+    Drugs,
+    Gear,
+    Hardware,
+    Programs,
+    Fashion
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Character {
     pub name: String,
@@ -43,7 +51,19 @@ pub struct Character {
     pub skills: IndexMap<String, Skill>,
     
     #[serde(default)]
-    pub gear_list: IndexMap<String, i32>,
+    pub gear: IndexMap<String, i32>,
+
+    #[serde(default)]
+    pub cyberdeck_hardware: IndexMap<String, i32>,
+
+    #[serde(default)]
+    pub drugs: IndexMap<String, i32>,
+
+    #[serde(default)]
+    pub fashion: IndexMap<String, i32>,
+
+    #[serde(default)]
+    pub programs: IndexMap<String, i32>,
     
     #[serde(default)]
     pub flags: IndexMap<String, bool>
@@ -114,7 +134,11 @@ impl Character {
             stats: CharStats { intelligence: 0, reflex: 0, dexterity: 0, technique: 0, cool: 0, willpower: 0, luck: 0, luck_current: 0, movement: 0, body: 0, empathy: 0 },
             journals: vec![class_journal, Journal::default()],
             skills: IndexMap::new(),
-            gear_list: IndexMap::new(),
+            gear: IndexMap::new(),
+            drugs: IndexMap::new(),
+            fashion: IndexMap::new(),
+            cyberdeck_hardware: IndexMap::new(),
+            programs: IndexMap::new(),
             flags: IndexMap::new(),
         };
 
@@ -334,10 +358,18 @@ impl Character {
         std::cmp::max(head_armor_penalty, body_armor_penalty)
     }
 
-    pub fn add_gear(&mut self, name: String) {
+    pub fn add_gear(&mut self, gear_type: GearType,name: String) {
         let changed_name = name.to_lowercase().replace(" ", "_");
-        if self.gear_list.get_mut(&changed_name).and_then(|val| Some(*val += 1)).is_none() {
-            self.gear_list.insert(changed_name, 1);
+        let relevant_map = match gear_type {
+            GearType::Drugs => &mut self.drugs,
+            GearType::Gear => &mut self.gear,
+            GearType::Hardware => &mut self.cyberdeck_hardware,
+            GearType::Programs => &mut self.programs,
+            GearType::Fashion => &mut self.fashion,
+        };
+        
+        if relevant_map.get_mut(&changed_name).and_then(|val| Some(*val += 1)).is_none() {
+            relevant_map.insert(changed_name, 1);
         }
     }
 

@@ -1,7 +1,7 @@
 use std::vec;
 use leptos::prelude::*;
 
-use crate::{gear::{GearData, ShopItemVisualData}, help::get_char_signal_from_ctx};
+use crate::{char::GearType, gear::{GearData, ShopItemVisualData}, help::get_char_signal_from_ctx};
 
 #[derive(Clone, Default, Debug, Eq, PartialEq)] 
 pub struct ShopModalData {
@@ -100,6 +100,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 }
                 cyberpunk_signal.update(|c|c.weapons.push(bought_item));
             },
+            
             "Ammo" => {
                 let bought_item = gear_data.ammunition.iter()
                     .find(|item| item.name == current_item.name)
@@ -117,6 +118,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                     }
                 });
             },
+            
             "Armor" => {
                 let mut bought_item = gear_data.armor.iter()
                     .find(|item| item.name == current_item.name)
@@ -130,6 +132,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 }
                 cyberpunk_signal.update(|c|c.armors.push(bought_item));
             },
+            
             "Cyberware" =>{
                 let bought_item = gear_data.cyberware.iter()
                     .find(|item| item.name == current_item.name)
@@ -137,10 +140,11 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                     .expect("expect item to exist");
                 
                 if must_pay && !check_money_and_reduce(bought_item.price) {
-                    return;
+                    return; 
                 }
                 cyberpunk_signal.update(|c|c.cyberware.push(bought_item));
             },
+            
             "Drugs" => {
                 let bought_item = gear_data.drugs.iter()
                     .find(|item| item.name == current_item.name)
@@ -150,8 +154,9 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 if must_pay && !check_money_and_reduce(bought_item.price) {
                     return;
                 }
-                cyberpunk_signal.update(|c|c.add_gear(bought_item.name));
+                cyberpunk_signal.update(|c|c.add_gear(GearType::Drugs, bought_item.name));
             },
+
             "Gear" => {
                 let bought_item = gear_data.items.iter()
                     .find(|item| item.name == current_item.name)
@@ -161,8 +166,9 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 if must_pay && !check_money_and_reduce(bought_item.price) {
                     return;
                 }
-                cyberpunk_signal.update(|c|c.add_gear(bought_item.name));
+                cyberpunk_signal.update(|c|c.add_gear(GearType::Gear, bought_item.name));
             },
+            
             "Hardware" => {
                 let bought_item = gear_data.cyberdeck_hardware.iter()
                     .find(|item| item.name == current_item.name)
@@ -172,9 +178,10 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 if must_pay && !check_money_and_reduce(bought_item.price) {
                     return;
                 }
-                cyberpunk_signal.update(|c|c.add_gear(bought_item.name));
+                cyberpunk_signal.update(|c|c.add_gear(GearType::Hardware, bought_item.name));
 
             },
+            
             "Programs" => {
                 let bought_item = gear_data.programs.iter()
                     .find(|item| item.name == current_item.name)
@@ -184,8 +191,9 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 if must_pay && !check_money_and_reduce(bought_item.price) {
                     return;
                 }
-                cyberpunk_signal.update(|c|c.add_gear(bought_item.name));
+                cyberpunk_signal.update(|c|c.add_gear(GearType::Programs, bought_item.name));
             },
+            
             _ => panic!("this shop tab does not have any data")
         };
     };

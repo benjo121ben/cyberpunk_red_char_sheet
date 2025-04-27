@@ -1,7 +1,7 @@
 {
   "name": "Samantha Banks",
   "alias": "Matchbox",
-  "current_armor_body": 2,
+  "current_armor_body": 1,
   "current_armor_head": 0,
   "armors": [
     {
@@ -20,7 +20,7 @@
     {
       "armor_data": {
         "sp": 11,
-        "sp_current": 10,
+        "sp_current": 5,
         "penalty": 0,
         "head": false
       },
@@ -86,10 +86,12 @@
       }
     }
   ],
-  "ammo": {},
+  "ammo": {
+    "rifle_-_expansive_ammunition": 50
+  },
   "cyberware": [],
   "humanity": 55,
-  "hp_current": 23,
+  "hp_current": 21,
   "ip": 80,
   "money": 2277,
   "stats": {
@@ -521,7 +523,13 @@
       "stat": "int"
     }
   },
-  "gear_list": {},
+  "gear": {
+    "agent": 4
+  },
+  "cyberdeck_hardware": {},
+  "drugs": {},
+  "fashion": {},
+  "programs": {},
   "flags": {
     "filter_zeros": true,
     "group_by_stat": false

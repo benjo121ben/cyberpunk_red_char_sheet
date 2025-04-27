@@ -9,6 +9,7 @@ use crate::resource_views::AmmoView;
 pub fn GearView() -> impl IntoView {
     view! {
         <AllWeaponsView/>
+        <AllItemsView/>
     }
 }
 
@@ -240,5 +241,52 @@ pub fn ArmorSelectionView() -> impl IntoView {
                 </select>
             </div>
         </div>
+    }
+}
+
+#[component]
+pub fn AllItemsView() -> impl IntoView {
+    let char_signal = get_char_signal_from_ctx();
+    let gear_data: GearData = use_context().expect("Gear Data should exist");
+    view! {
+        <For each=move|| {char_signal.read().cyberware.clone().into_iter().enumerate().collect::<Vec<_>>()}
+            key=move|(indx, cyber)| cyber.name.to_lowercase().clone()
+            children=move|(indx, cyber)| {
+                view! {
+                    <div class="flex_row">
+                        <span>{move || cyber.name.to_string()}</span>
+                        <button on:click=move|_|{char_signal.write().cyberware.remove(indx);}/>
+                    </div>
+                }
+            }
+        />
+        <For each=move|| {char_signal.read().gear.clone().into_iter().collect::<Vec<_>>()}
+            key=move|(key, amount)| key.clone()
+            children=move|(key, amount)| {
+                let find_item = gear_data.items.iter().find(|find_item| {
+                    let changed_name = find_item.name.to_lowercase().replace(" ", "_");
+                    changed_name == key
+                }).cloned().expect("expecting item to exist");
+                view! {
+                    <div class="flex_row">
+                        <span>{move || find_item.clone().name.to_string()}</span>
+                        <span>{move || amount.to_string()}</span>
+                        <button on:click=move|_|{ let key_clone = key.clone(); char_signal.write().gear.shift_remove(&key_clone);}/>
+                    </div>
+                }
+            }
+        />
+
+        <For each=move|| {char_signal.read().armors.clone().into_iter().enumerate().collect::<Vec<_>>()}
+            key=move|(indx, armor)| armor.name.to_lowercase().clone()
+            children=move|(indx, armor)| {
+                view! {
+                    <div class="flex_row">
+                        <span>{move || armor.name.to_string()}</span>
+                        <button on:click=move|_|{char_signal.write().armors.remove(indx);}/>
+                    </div>
+                }
+            }
+        />
     }
 }
