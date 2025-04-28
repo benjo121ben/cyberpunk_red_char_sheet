@@ -66,6 +66,36 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
             .or(Some(0))
             .unwrap()
     });
+
+    let reload = move || char_signal.update(|cyberpunk|{
+        let weapon = cyberpunk.weapons.get_mut(index).expect("expecting weapon to exist");
+        
+        if weapon.weapon_data.ammo.is_none() {
+            return;
+        }
+        let ammo_data: &mut WeaponAmmoData = weapon.weapon_data.ammo.as_mut().expect("expecting ammo to be present");
+        
+        if ammo_data.current_ammo_type.is_none() {
+            return;
+        }        
+        let current_ammo = ammo_data.current_ammo_type.clone().unwrap();
+        
+        //check if we still have ammo in the inventory
+        let inventory_ammo = cyberpunk.ammo.get_mut(&current_ammo);
+        if inventory_ammo.is_none() {
+            return;
+        }
+        let inventory_ammo = inventory_ammo.expect("inventory ammo cannot be none at this point");
+        let clip_size = ammo_data.max;
+        let refill_amount = std::cmp::min(*inventory_ammo, clip_size);
+        
+        ammo_data.value += refill_amount;
+        *inventory_ammo -= refill_amount;
+        if *inventory_ammo <= 0 {
+            cyberpunk.ammo.shift_remove(&current_ammo);
+        }
+        
+    });
     view!{
         <div class="weapon_view">
             <span class="weapon_name">{move|| item_memo.get().name.clone()}</span>
@@ -102,14 +132,9 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                 </button>
                 <Show when=move|| has_ammo.get()>
                     <button
-                        on:click=move|_| char_signal.update(|c|{
-                            c.weapons.get_mut(index).and_then(|weap: &mut Weapon|
-                                weap
-                                    .weapon_data
-                                    .ammo.as_mut()
-                                    .and_then(|ammo_data: &mut WeaponAmmoData| {ammo_data.reload(); Some(ammo_data)})
-                            );
-                        })>
+                        on:click=move|_| {
+                            
+                        }>
                         RELOAD
                     </button>
                 </Show>
@@ -129,6 +154,9 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                 >
                     +1
                 </button>
+                <select>
+
+                </select>
             </div>
         </div>
     }

@@ -2622,6 +2622,9 @@
             "type": "weapons",
             "weapon_data": {
                 "ammo": {
+                    "compatible_calibers": [
+                        "rifle"
+                    ],
                     "max": 4,
                     "min": 0,
                     "value": 0
@@ -2641,11 +2644,6 @@
             "price": 50,
             "type": "weapons",
             "weapon_data": {
-                "ammo": {
-                    "max": null,
-                    "min": 0,
-                    "value": 0
-                },
                 "burst": false,
                 "damage": "1d6",
                 "fullauto": false,
@@ -2661,11 +2659,6 @@
             "price": 100,
             "type": "weapons",
             "weapon_data": {
-                "ammo": {
-                    "max": null,
-                    "min": 0,
-                    "value": 0
-                },
                 "burst": false,
                 "damage": "3d6",
                 "fullauto": false,
@@ -2682,6 +2675,9 @@
             "type": "weapons",
             "weapon_data": {
                 "ammo": {
+                    "compatible_calibers": [
+                        "medium_pistol"
+                    ],
                     "max": 12,
                     "min": 0,
                     "value": 0
@@ -2702,6 +2698,9 @@
             "type": "weapons",
             "weapon_data": {
                 "ammo": {
+                    "compatible_calibers": [
+                        "arrow"
+                    ],
                     "max": 1,
                     "min": 0,
                     "value": 0
@@ -2722,6 +2721,9 @@
             "type": "weapons",
             "weapon_data": {
                 "ammo": {
+                    "compatible_calibers": [
+                        "h_pistol"
+                    ],
                     "max": 40,
                     "min": 0,
                     "value": 0
@@ -2741,11 +2743,6 @@
             "price": 100,
             "type": "weapons",
             "weapon_data": {
-                "ammo": {
-                    "max": null,
-                    "min": 0,
-                    "value": 0
-                },
                 "burst": false,
                 "damage": "4d6",
                 "fullauto": false,
@@ -2762,6 +2759,9 @@
             "type": "weapons",
             "weapon_data": {
                 "ammo": {
+                    "compatible_calibers": [
+                        "rifle"
+                    ],
                     "max": 25,
                     "min": 0,
                     "value": 0
@@ -2782,6 +2782,10 @@
             "type": "weapons",
             "weapon_data": {
                 "ammo": {
+                    "compatible_calibers": [
+                        "slug",
+                        "shell"
+                    ],
                     "max": 4,
                     "min": 0,
                     "value": 0
@@ -2802,6 +2806,9 @@
             "type": "weapons",
             "weapon_data": {
                 "ammo": {
+                    "compatible_calibers": [
+                        "rocket"
+                    ],
                     "max": 1,
                     "min": 0,
                     "value": 0
@@ -2822,6 +2829,9 @@
             "type": "weapons",
             "weapon_data": {
                 "ammo": {
+                    "compatible_calibers": [
+                        "heavy_pistol"
+                    ],
                     "max": 8,
                     "min": 0,
                     "value": 0
@@ -2841,11 +2851,6 @@
             "price": 50,
             "type": "weapons",
             "weapon_data": {
-                "ammo": {
-                    "max": null,
-                    "min": 0,
-                    "value": 0
-                },
                 "burst": false,
                 "damage": "2d6",
                 "fullauto": false,
@@ -2862,6 +2867,9 @@
             "type": "weapons",
             "weapon_data": {
                 "ammo": {
+                    "compatible_calibers": [
+                        "grenade"
+                    ],
                     "max": 2,
                     "min": 0,
                     "value": 0
@@ -2882,6 +2890,9 @@
             "type": "weapons",
             "weapon_data": {
                 "ammo": {
+                    "compatible_calibers": [
+                        "medium_pistol"
+                    ],
                     "max": 30,
                     "min": 0,
                     "value": 0
@@ -2902,6 +2913,9 @@
             "type": "weapons",
             "weapon_data": {
                 "ammo": {
+                    "compatible_calibers": [
+                        "v_heavy_pistol"
+                    ],
                     "max": 8,
                     "min": 0,
                     "value": 0

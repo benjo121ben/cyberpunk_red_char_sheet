@@ -137,14 +137,15 @@ pub struct WeaponData {
     pub fullauto: bool,
     pub rof: i32,
     pub skill: String,
-    pub weapontype: String,
+    pub weapontype: String
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct WeaponAmmoData {
-    pub max: Option<i32>,
+    pub max: i32,
     pub value: i32,
-    pub ammo_type: Option<String>
+    pub current_ammo_type: Option<String>,
+    pub compatible_calibers: Vec<String>
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
@@ -310,12 +311,5 @@ impl ShopItem for Program {
 impl WeaponAmmoData {
     pub fn shoot(&mut self) {
         self.value = std::cmp::max(0, self.value - 1);
-    }
-
-    pub fn reload(&mut self) {
-        self.max.and_then(|max_val| {
-            self.value = max_val;
-            Some(max_val)
-        });
     }
 }

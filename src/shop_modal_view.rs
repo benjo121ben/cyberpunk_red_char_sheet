@@ -90,11 +90,10 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
         let current_item = currenty_selected_item.get();
         match current_tab.get().1.as_str() {
             "Weapons" => {
-                let mut bought_item = gear_data.weapons.iter()
+                let bought_item = gear_data.weapons.iter()
                     .find(|item| item.name == current_item.name)
                     .cloned()
                     .expect("expect item to exist");
-                bought_item.weapon_data.ammo = bought_item.weapon_data.ammo.filter(|ammo_data| ammo_data.max.is_some());
                 if must_pay && !check_money_and_reduce(bought_item.price) {
                     return;
                 }

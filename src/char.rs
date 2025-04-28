@@ -225,40 +225,20 @@ impl Character {
             (false, "Resist Torture & Drugs"),
         ];
 
-        for (diff, key) in cool_skills {
-            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
-            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "cool".to_string() });
-        }
+        let add_skills_from_list = move |char: &mut Character, skill_list: Vec<(bool, &str)>, stat: &str| {
+            for (diff, key) in skill_list {
+                let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
+                char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: stat.to_string() });
+            }
+        };
 
-        for (diff, key) in dex_skills {
-            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
-            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "dex".to_string() });
-        }
-
-        for (diff, key) in emp_skills {
-            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
-            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "emp".to_string() });
-        }
-
-        for (diff, key) in int_skills {
-            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
-            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "int".to_string() });
-        }
-
-        for (diff, key) in ref_skills {
-            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
-            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "ref".to_string() });
-        }
-
-        for (diff, key) in tech_skills {
-            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
-            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "tech".to_string() });
-        }
-
-        for (diff, key) in will_skills {
-            let lowercase_name = key.to_string().to_lowercase().replace(" ", "_");
-            char.skills.insert(lowercase_name, Skill { name: key.to_string(), nr: 0, difficult_train: diff, stat: "will".to_string() });
-        }
+        add_skills_from_list(&mut char, cool_skills, "cool");
+        add_skills_from_list(&mut char, dex_skills, "dex");
+        add_skills_from_list(&mut char, emp_skills, "emp");
+        add_skills_from_list(&mut char, int_skills, "int");
+        add_skills_from_list(&mut char, ref_skills, "ref");
+        add_skills_from_list(&mut char, tech_skills, "tech");
+        add_skills_from_list(&mut char, will_skills, "will");
 
         return char;
     }

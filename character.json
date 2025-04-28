@@ -36,12 +36,30 @@
       "personalized_name": "",
       "description": "A brief item description goes here...",
       "file": "weapons",
+      "name": "Very Heavy Melee Weapon",
+      "price": 100,
+      "type": "weapons",
+      "weapon_data": {
+        "ammo": null,
+        "bonus": null,
+        "burst": false,
+        "damage": "4d6",
+        "fullauto": false,
+        "rof": 1,
+        "skill": "melee_weapon",
+        "weapontype": "meleeweapon"
+      }
+    },
+    {
+      "personalized_name": "",
+      "description": "A brief item description goes here...",
+      "file": "weapons",
       "name": "Heavy Melee Weapon",
       "price": 100,
       "type": "weapons",
       "weapon_data": {
         "ammo": null,
-        "bonus": 1,
+        "bonus": null,
         "burst": false,
         "damage": "3d6",
         "fullauto": false,
@@ -60,34 +78,19 @@
       "weapon_data": {
         "ammo": {
           "max": 8,
-          "value": 5,
-          "ammo_type": null
+          "value": 0,
+          "current_ammo_type": null,
+          "compatible_calibers": [
+            "heavy_pistol"
+          ]
         },
-        "bonus": null,
+        "bonus": 1,
         "burst": false,
         "damage": "3d6",
         "fullauto": false,
         "rof": 2,
         "skill": "handgun",
         "weapontype": "pistol"
-      }
-    },
-    {
-      "personalized_name": "",
-      "description": "A brief item description goes here...",
-      "file": "weapons",
-      "name": "Light Melee Weapon",
-      "price": 50,
-      "type": "weapons",
-      "weapon_data": {
-        "ammo": null,
-        "bonus": null,
-        "burst": false,
-        "damage": "1d6",
-        "fullauto": false,
-        "rof": 2,
-        "skill": "melee_weapon",
-        "weapontype": "meleeweapon"
       }
     }
   ],
