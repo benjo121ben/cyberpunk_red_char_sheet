@@ -142,7 +142,7 @@ input {
 
 .health_text {
 	@extend .health_commons;
-	z-index: 10;
+	z-index: 1;
 	text-align: center;
 	margin-top: -40px;
 	font-size: large;
@@ -332,7 +332,7 @@ input {
 	top:0;
 	left:0;
 	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
+	z-index: 100; /* Sit on top */
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
 	overflow: auto; /* Enable scroll if needed */
