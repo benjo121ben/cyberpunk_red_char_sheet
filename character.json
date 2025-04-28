@@ -91,7 +91,12 @@
       }
     }
   ],
-  "ammo": {},
+  "ammo": {
+    "armor-piercing_grenade": 1,
+    "heavy_pistol_-_armor-piercing_ammunition": 20,
+    "heavy_pistol_-_basic_ammunition": 30,
+    "teargas_grenade": 1
+  },
   "cyberware": [
     {
       "description": "<p>Cyberaudio Option. Beeps when user is within 2m/yds of a tap, bug, or other listening device. Requires a Cyberaudio Suite.</p>",
@@ -579,7 +584,7 @@
   "fashion": {},
   "programs": {},
   "flags": {
-    "filter_zeros": true,
+    "filter_zeros": false,
     "group_by_stat": false
   }
 }

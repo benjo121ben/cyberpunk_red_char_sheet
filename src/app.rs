@@ -253,9 +253,7 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                         <ArmorSelectionView/>
                     </div>
                     <div class="center_split">
-                        <div class="flex_col">
-                            <GearView/>
-                        </div>
+                        <GearView/>
                         <div class="flex_col">
                             <TextCenterSection/>
                         </div>
