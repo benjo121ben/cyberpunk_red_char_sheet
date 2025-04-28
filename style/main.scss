@@ -166,6 +166,12 @@ input {
 	color: var(--penalty);
 }
 
+.light_bg_rounded_padded {
+	background-color: var(--light-background-color);
+	padding: 5;
+	border-radius: 5;
+}
+
 .stat_view {
 	@extend .bordered;
 	display: flex;
@@ -180,12 +186,10 @@ input {
 }
 
 .stat_entry {
+	@extend .light_bg_rounded_padded;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: var(--light-background-color);
-	border-radius: 5px;
-	padding: 5px;
 }
 
 .skill_list {
@@ -653,5 +657,33 @@ div:has(> .weapon_view) {
 .role_text_area {
 	width: 100%;
 	height: 300px;
+}
+
+.gear_list_wrapper {
+	height: 500;
+	overflow-y: scroll;
+}
+
+.gear_list {
+	display: flex;
+	flex-direction: column;
+	gap: 10;
+
+	hr {
+		margin: unset;
+		align-self: center
+	}
+}
+
+.gear_view {
+	@extend .light_bg_rounded_padded;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	
+	> button {
+		width: fit-content;
+		justify-self: end;
+	}
 }
 

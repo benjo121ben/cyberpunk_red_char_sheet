@@ -7,7 +7,7 @@
     {
       "armor_data": {
         "sp": 11,
-        "sp_current": 9,
+        "sp_current": 11,
         "penalty": 0,
         "head": true
       },
@@ -20,26 +20,13 @@
     {
       "armor_data": {
         "sp": 11,
-        "sp_current": 5,
+        "sp_current": 11,
         "penalty": 0,
         "head": false
       },
       "description": "<p>SP 11</p>\n<p>&nbsp;</p>\n<p>A combination of Kevlar&reg; and plastic meshes inserted into the weave of the fabric. Armorjack provides superior protection, especially against high-velocity bullets.</p>",
       "file": "armor",
       "name": "Light Armorjack",
-      "price": 100,
-      "type": "armor"
-    },
-    {
-      "armor_data": {
-        "sp": 12,
-        "sp_current": 9,
-        "penalty": 2,
-        "head": false
-      },
-      "description": "<p>SP 12</p>\n<p>Armor Penalty : -2 REF, DEX, and MOVE</p>\n<p>Heavier Armorjack, with solid plastic plating, reinforced with thicker Kevlar&reg; mesh. Typical Street wear, this combines decent protection with a decent ost.</p>",
-      "file": "armor",
-      "name": "Medium Armorjack",
       "price": 100,
       "type": "armor"
     }
@@ -73,7 +60,7 @@
       "weapon_data": {
         "ammo": {
           "max": 8,
-          "value": 8,
+          "value": 5,
           "ammo_type": null
         },
         "bonus": null,
@@ -84,16 +71,60 @@
         "skill": "handgun",
         "weapontype": "pistol"
       }
+    },
+    {
+      "personalized_name": "",
+      "description": "A brief item description goes here...",
+      "file": "weapons",
+      "name": "Light Melee Weapon",
+      "price": 50,
+      "type": "weapons",
+      "weapon_data": {
+        "ammo": null,
+        "bonus": null,
+        "burst": false,
+        "damage": "1d6",
+        "fullauto": false,
+        "rof": 2,
+        "skill": "melee_weapon",
+        "weapontype": "meleeweapon"
+      }
     }
   ],
-  "ammo": {
-    "rifle_-_expansive_ammunition": 50
-  },
-  "cyberware": [],
+  "ammo": {},
+  "cyberware": [
+    {
+      "description": "<p>Cyberaudio Option. Beeps when user is within 2m/yds of a tap, bug, or other listening device. Requires a Cyberaudio Suite.</p>",
+      "file": "cyberaudio",
+      "internal": true,
+      "name": "Bug Detector",
+      "price": 100,
+      "psychosis": 2,
+      "type": "cyberware"
+    },
+    {
+      "description": "<p>Cyberaudio Suite is installed invisibly in the inner skull. System has 3 Option Slots for Cyberaudio Options. User can only have one Cyberaudio Suite installed.</p>",
+      "file": "cyberaudio",
+      "internal": false,
+      "name": "Cyberaudio Suite",
+      "price": 0,
+      "psychosis": 0,
+      "type": "cyberware"
+    },
+    {
+      "description": "<p>2\"x4\" (5cm x 10cm) space with a Realskinn&trade; zipper. Contents can be successfully concealed without a Check.</p>",
+      "file": "external-body-cyberware",
+      "internal": false,
+      "name": "Subdermal Pocket",
+      "price": 100,
+      "psychosis": 3,
+      "type": "cyberware"
+    }
+  ],
   "humanity": 55,
-  "hp_current": 21,
+  "hp_current": 45,
   "ip": 80,
-  "money": 2277,
+  "money": 2477,
   "stats": {
     "intelligence": 6,
     "reflex": 6,
@@ -102,7 +133,7 @@
     "cool": 8,
     "willpower": 6,
     "luck": 6,
-    "luck_current": 6,
+    "luck_current": 4,
     "movement": 6,
     "body": 7,
     "empathy": 7
@@ -111,6 +142,10 @@
     {
       "name": "class",
       "text": "# Contacts and Clients\nCity gang honcho, minor politician, Corp Exec, well known person in the neighbourhood\n\n# Haggle\nWhen you buy 5 or more of the same item you can get one more of that item for free\n\nyou can get 10% more or less than market price when buying or selling\n\n# Grease\nI know how to get along well with at least 1 other culture in my area, getting 1 Language at Lvl 4\n\nFixers know how to get things on the black market and are adept at navigating the complex social customs of the street, where hundreds of cultures and economic levels collide. \nFixers maintain vast webs of contacts and clients who they can reach out to source goods, favors, or information. \nFixers can also source desirable resources and make favorable deals."
+    },
+    {
+      "name": "test",
+      "text": "ashfpisahpaihg"
     }
   ],
   "skills": {
@@ -524,7 +559,20 @@
     }
   },
   "gear": {
-    "agent": 4
+    "agent": 1,
+    "airhypo": 1,
+    "anti-smog_breathing_mask": 1,
+    "audio_recorder": 1,
+    "carryall": 1,
+    "computer": 1,
+    "disposable_cell_phone:": 2,
+    "duct_tape": 2,
+    "flashlight": 1,
+    "food_stick": 4,
+    "handcuffs": 1,
+    "inflatable_bed_&_sleep-bag": 1,
+    "lock_picking_set": 1,
+    "memory_chips": 2
   },
   "cyberdeck_hardware": {},
   "drugs": {},

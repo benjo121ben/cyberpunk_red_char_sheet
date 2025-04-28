@@ -1,3 +1,4 @@
+use indexmap::IndexMap;
 use leptos::prelude::*;
 use std::cmp::{max, min};
 use crate::gear::*;
@@ -8,8 +9,11 @@ use crate::resource_views::AmmoView;
 #[component]
 pub fn GearView() -> impl IntoView {
     view! {
-        <AllWeaponsView/>
-        <AllItemsView/>
+        <div class="gear_list_wrapper">
+            <AllWeaponsView/>
+            <hr style="width:90%"/>
+            <AllItemsView/>
+        </div>
     }
 }
 
@@ -17,14 +21,16 @@ pub fn GearView() -> impl IntoView {
 pub fn AllWeaponsView() -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
     view! {
-        <For each=move|| 0..char_signal.read().weapons.len()
-            key=move|index| index.to_string()
-            children=move|index| {
-                view! {
-                    <SingleWeaponView index/>
+        <div class="gear_list">
+            <For each=move|| 0..char_signal.read().weapons.len()
+                key=move|index| index.to_string()
+                children=move|index| {
+                    view! {
+                        <SingleWeaponView index/>
+                    }
                 }
-            }
-        />
+            />
+        </div>
     }
 }
 
@@ -248,45 +254,111 @@ pub fn ArmorSelectionView() -> impl IntoView {
 pub fn AllItemsView() -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
     let gear_data: GearData = use_context().expect("Gear Data should exist");
+    let reduce_or_remove = move |item_map: &mut IndexMap<String, i32>, key: &String| {
+        match item_map.get_mut(key) {
+            Some(value) => {
+                if *value <= 1 {
+                    item_map.shift_remove(key);
+                }
+                else {
+                    *value -= 1;
+                }
+            },
+            None => todo!(),
+        }
+    };
     view! {
-        <For each=move|| {char_signal.read().cyberware.clone().into_iter().enumerate().collect::<Vec<_>>()}
-            key=move|(indx, cyber)| cyber.name.to_lowercase().clone()
-            children=move|(indx, cyber)| {
-                view! {
-                    <div class="flex_row">
-                        <span>{move || cyber.name.to_string()}</span>
-                        <button on:click=move|_|{char_signal.write().cyberware.remove(indx);}/>
-                    </div>
+        <div class="gear_list">
+            <For each=move|| {char_signal.read().cyberware.clone().into_iter().enumerate().collect::<Vec<_>>()}
+                key=move|(_, cyber)| cyber.name.to_lowercase().clone()
+                children=move|(indx, cyber)| {
+                    view! {
+                        <div class="gear_view">
+                            <span>{move || cyber.name.to_string()}</span>
+                            <button on:click=move|_|{char_signal.write().cyberware.remove(indx);}>
+                                X
+                            </button>
+                        </div>
+                    }
                 }
-            }
-        />
-        <For each=move|| {char_signal.read().gear.clone().into_iter().collect::<Vec<_>>()}
-            key=move|(key, amount)| key.clone()
-            children=move|(key, amount)| {
-                let find_item = gear_data.items.iter().find(|find_item| {
-                    let changed_name = find_item.name.to_lowercase().replace(" ", "_");
-                    changed_name == key
-                }).cloned().expect("expecting item to exist");
-                view! {
-                    <div class="flex_row">
-                        <span>{move || find_item.clone().name.to_string()}</span>
-                        <span>{move || amount.to_string()}</span>
-                        <button on:click=move|_|{ let key_clone = key.clone(); char_signal.write().gear.shift_remove(&key_clone);}/>
-                    </div>
+            />
+            <hr style="width:90%"/>
+            <For each=move|| {char_signal.read().gear.clone().into_iter().map(|(key, _)| key).collect::<Vec<_>>()}
+                key=move|key| key.clone()
+                children=move|key| {
+                    let find_item = gear_data.items.iter().find(|find_item| {
+                        let changed_name = find_item.name.to_lowercase().replace(" ", "_");
+                        changed_name == key
+                    }).cloned().expect("expecting item to exist");
+                    let key_clone = key.clone();
+                    view! {
+                        <div class="gear_view">
+                            <span>
+                                {move || char_signal.read().gear.get(&key).expect("expecting item amount to exist").to_string()}x
+                                {move || find_item.clone().name.to_string()}
+                            </span>
+                            <button on:click=move|_|{ 
+                                let change_fn = reduce_or_remove.clone(); 
+                                char_signal.update(|c| {
+                                    change_fn(&mut c.gear, &key_clone)
+                                })
+                            }>
+                                X
+                            </button>
+                        </div>
+                    }
                 }
-            }
-        />
+            />
 
-        <For each=move|| {char_signal.read().armors.clone().into_iter().enumerate().collect::<Vec<_>>()}
-            key=move|(indx, armor)| armor.name.to_lowercase().clone()
-            children=move|(indx, armor)| {
-                view! {
-                    <div class="flex_row">
-                        <span>{move || armor.name.to_string()}</span>
-                        <button on:click=move|_|{char_signal.write().armors.remove(indx);}/>
-                    </div>
+            <hr style="width:90%"/>
+            <For each=move|| {char_signal.read().armors.clone().into_iter().enumerate().collect::<Vec<_>>()}
+                key=move|(_, armor)| armor.name.to_lowercase().clone()
+                children=move|(indx, armor)| {
+                    view! {
+                        <div class="gear_view">
+                            <span>{move || format!(
+                                "{} {}", 
+                                armor.name.to_string(), 
+                                armor.armor_data.head
+                                    .then(||"(Head)")
+                                    .or(Some("(Body)"))
+                                    .unwrap()
+                            )}</span>
+                            <button on:click=move|_|{char_signal.write().armors.remove(indx);}>
+                                X
+                            </button>
+                        </div>
+                    }
                 }
-            }
-        />
+            />
+        
+            <hr style="width:90%"/>
+            <For each=move|| {char_signal.read().ammo.clone().into_iter().map(|(key, _)| key).collect::<Vec<_>>()}
+                key=move|key| key.clone()
+                children=move|key| {
+                    let find_item = gear_data.ammunition.iter().find(|find_item| {
+                        let changed_name = find_item.name.to_lowercase().replace(" ", "_");
+                        changed_name == key
+                    }).cloned().expect("expecting item to exist");
+                    let key_clone = key.clone();
+                    view! {
+                        <div class="gear_view">
+                            <span>
+                                {move || char_signal.read().ammo.get(&key).expect("expecting item amount to exist").to_string()}x
+                                {move || find_item.clone().name.to_string()}
+                            </span>
+                            <button on:click=move|_|{ 
+                                let change_fn = reduce_or_remove.clone(); 
+                                char_signal.update(|c| {
+                                    change_fn(&mut c.ammo, &key_clone)
+                                })
+                            }>
+                                X
+                            </button>
+                        </div>
+                    }
+                }
+            />
+        </div>
     }
 }
