@@ -217,7 +217,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                     }).collect::<Vec<_>>()}
                 </div>
                 <hr/>
-                <ShopList variant_options current_variant currently_selected_index current_items_memo/>
+                <ShopList current_tab variant_options current_variant currently_selected_index current_items_memo/>
                 //<p inner_html={move|| data.get().description}/>
                 <div class="shop_bottom_row">
                     <div class="money_wrapper"><span class="money">{move || cyberpunk_signal.read().money}</span></div>
@@ -236,7 +236,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
 }
 
 #[component]
-pub fn ShopList(variant_options: Memo<Vec<String>>, current_variant:RwSignal<String>, currently_selected_index: RwSignal<usize>, current_items_memo: Memo<Vec<ShopItemVisualData>>) -> AnyView {
+pub fn ShopList(current_tab: RwSignal<(usize, String)>, variant_options: Memo<Vec<String>>, current_variant:RwSignal<String>, currently_selected_index: RwSignal<usize>, current_items_memo: Memo<Vec<ShopItemVisualData>>) -> AnyView {
     let currenty_selected_item = Memo::new(move |_| {
         current_items_memo.read().get(currently_selected_index.get()).expect("item to exist").clone()
     });
@@ -249,6 +249,7 @@ pub fn ShopList(variant_options: Memo<Vec<String>>, current_variant:RwSignal<Str
                         prop:value=move|| current_variant.get()
                         on:change:target=move |ev| {
                             let val = ev.target().value();
+                            currently_selected_index.set(0);
                             current_variant.set(val);
                         }
                     >
@@ -263,7 +264,7 @@ pub fn ShopList(variant_options: Memo<Vec<String>>, current_variant:RwSignal<Str
                 </Show>
                 <div class="name_list">
                     <For each=move||{current_items_memo.get().into_iter().enumerate().collect::<Vec<_>>()}
-                        key=move|(_, shop_item)|shop_item.name.clone()
+                        key=move|(_, shop_item)| current_tab.get().1 + shop_item.name.clone().as_str() //category needs to be added to key, since some gear is also cyberware with the same name
                         children=move|(index, shop_item)| {
                             let name = shop_item.name.clone();
                             view!{
