@@ -301,30 +301,23 @@ input {
 	height: 30px;
 	gap: 5px;
 	transform: skew(-10deg);
-}
 
-.armor_text {
-	text-align: end;
-	transform: skew(-10deg);
-	margin-right: 5px;
-}
+	.resource_bar {
+		width: 20px;
+		background-color: var(--highlight-color-second);
+		border-color: var(--highlight-color-second);
+	}
 
-.armor_bar {
-	width: 20px;
-	background-color: var(--highlight-color-second);
-	border-color: var(--highlight-color-second);
-}
+	.head_armor_bar {
+		background-color: var(--warning-color);
+		border-color: var(--warning-color);
+	}
 
-.head_armor_bar {
-	@extend .armor_bar;
-	background-color: var(--warning-color);
-	border-color: var(--warning-color);
-}
-
-.armor_bar_empty {
-	background-color: unset;
-	border-width: 2px;
-	border-style: dashed;
+	.resource_bar_empty {
+		background-color: unset;
+		border-width: 2px;
+		border-style: dashed;
+	}
 }
 
 .modal {

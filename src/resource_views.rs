@@ -65,10 +65,20 @@ pub fn ArmorBar(nr: i32, head: bool) -> impl IntoView {
             armor.map(|a| a.armor_data.sp_current).or(Some(0)).unwrap()
         })
     });
+    let additional_class = head.then(|| "head_armor_bar".to_string());
     view! {
-        <div class="armor_bar" class:head_armor_bar=move||head class:armor_bar_empty=move|| {get_current_sp.get() <= nr}/>
+        <ResourceBar threshold=nr current_resource_state=get_current_sp opt_additional_classes=additional_class />
     }
 
+}
+
+#[component]
+pub fn ResourceBar(threshold: i32, current_resource_state: Memo<i32>, opt_additional_classes:Option<String>) -> impl IntoView {
+    let additional_classes = opt_additional_classes.or(Some("".to_string())).unwrap();
+    let classes = additional_classes + " resource_bar";
+    view! {
+        <div class=classes class=("resource_bar_empty", move||current_resource_state.get() <= threshold)/>
+    }
 }
 
 #[component]
