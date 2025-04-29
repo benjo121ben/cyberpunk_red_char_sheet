@@ -38,6 +38,7 @@ pub fn AllWeaponsView() -> impl IntoView {
 pub fn SingleWeaponView(index:usize) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
     let show_ammo_select_signal = RwSignal::new(false);
+    let show_weapon_name_input = RwSignal::new(false);
 
     let item_memo = Memo::new(move|_| {
         char_signal.read().weapons.get(index).unwrap().clone()
@@ -78,7 +79,29 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
 
     view!{
         <div class="weapon_view">
-            <span class="weapon_name">{move|| item_memo.get().name.clone()}</span>
+            <Show when=move||!show_weapon_name_input.get()>
+                <span class="weapon_name"
+                    on:click=move|_| show_weapon_name_input.set(true)
+                >
+                    {move|| {
+                        let item = item_memo.get();
+                        (item.personalized_name != "")
+                            .then(|| item.personalized_name)
+                            .or(Some(item.name))
+                            .clone()
+                            .unwrap()
+                    }}
+                </span>
+            </Show>
+            <Show when=move||show_weapon_name_input.get()>
+                <input class="weapon_name_input" 
+                    prop:value=move||item_memo.get().personalized_name.clone()
+                    on:change=move|ev| {
+                        char_signal.update(|cyberpunk| cyberpunk.weapons.get_mut(index).unwrap().personalized_name = event_target_value(&ev));
+                        show_weapon_name_input.set(false);
+                    }
+                />
+            </Show>
             <span class="weapon_bonus" 
                 class:has_penalty=move||has_penalty()
             >
