@@ -364,28 +364,14 @@ pub fn HealthAdjustPopup(visible_signal: RwSignal<bool>) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
     let head_damage_signal = RwSignal::new(false);
     let change_health = move |amount: i32| {
+        let negative_amount = -amount;
         char_signal.update(|c| {
-            c.change_health_with_armor(head_damage_signal.get(), amount);
+            c.change_health_with_armor(head_damage_signal.get(), negative_amount);
         });
     };
 
     view! {
         <dialog class="health_popup">
-            <input autofocus 
-                class="health_change_input" 
-                placeholder="damage"
-                type="number" 
-                on:change=move|ev| {
-                    let change_health_clone = change_health;
-                    match event_target_value(&ev).parse::<i32>() {
-                        Ok(number) => {
-                            change_health_clone(number);
-                        },
-                        Err(_) => {},
-                    };
-                    visible_signal.set(false);
-                }
-            /> 
             <div class="flex_row">
                 <RemoveIcon on:click=move|_| {char_signal.write().change_health_without_armor(-1);}/>
                 <AddIcon on:click=move|_| {char_signal.write().change_health_without_armor(1);}/>
@@ -393,6 +379,21 @@ pub fn HealthAdjustPopup(visible_signal: RwSignal<bool>) -> impl IntoView {
             <div class="flex_row">
                 Head
                 <input type="checkbox" on:change=move|_| head_damage_signal.update(|a| *a= !*a)/>
+                <input autofocus 
+                    class="health_change_input" 
+                    placeholder="damage"
+                    type="number" 
+                    on:change=move|ev| {
+                        let change_health_clone = change_health;
+                        match event_target_value(&ev).parse::<i32>() {
+                            Ok(number) => {
+                                change_health_clone(number);
+                            },
+                            Err(_) => {},
+                        };
+                        visible_signal.set(false);
+                    }
+                /> 
             </div>
         </dialog>
     }

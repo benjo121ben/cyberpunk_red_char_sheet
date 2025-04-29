@@ -694,14 +694,20 @@ div:has(> .weapon_view) {
 	position: fixed;
 	top: 6%;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: 3px;
+	padding: 7px;
+	gap: 20px;
 	border: unset;
 	border-radius: 5px;
 	background-color: var(--dark-background-color);
 	color: var(--text-color);
+
+	> div {
+		align-items: baseline;
+		gap: 2px;
+	}
 
 	input {
 		border: unset;
