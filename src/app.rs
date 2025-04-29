@@ -265,6 +265,15 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                         <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
                         <MoneyView/>
                     </div>
+                    <input class="ip_input" type="number" prop:value=move||char_rw_signal.read().ip on:change=move|ev| {
+                        match event_target_value(&ev).parse::<i32>() {
+                            Ok(val) => {
+                                char_rw_signal.write().ip = val;
+                            },
+                            Err(_) => {},
+                        };
+                    }>
+                    </input>
                 </div>
             </div>
         </div>

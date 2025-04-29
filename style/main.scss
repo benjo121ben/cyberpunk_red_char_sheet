@@ -92,6 +92,11 @@ input {
 	font-family: inherit;
 }
 
+input[type=number] {
+	appearance: auto;
+	-moz-appearance: textfield;
+}
+
 .flex_row {
 	display: flex;
 	flex-direction: row;
@@ -543,12 +548,17 @@ div:has(> .weapon_view) {
 }
 
 .ammo_select {
-	margin-top: 5;
+	margin-top: 3px;
+	margin-bottom: 3px;
 	width: 100%;
+	border: transparent 3px solid;
+	text-align: center;
 }
 
 .ammo_reload {
 	width: 100%;
+	background-color: unset;
+	border: 3px var(--highlight-color-second) dashed;
 }
 
 .linear_ammo_grid {
@@ -641,11 +651,6 @@ div:has(> .weapon_view) {
 		text-align: center;
 		max-width: 100px;
 		
-	}
-
-	input[type=number] {
-		appearance: auto;
-		-moz-appearance: textfield;
 	}
 
 	input:focus {
@@ -743,5 +748,10 @@ div:has(> .weapon_view) {
 		width: fit-content;
 		justify-self: end;
 	}
+}
+
+.ip_input {
+	text-align: center;
+	width: 150;
 }
 
