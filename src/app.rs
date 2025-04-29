@@ -329,7 +329,9 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                         </div>
                     </div>
                     <div class="right_div">
-                        <img class="char_image" src="Matchbox.jpg"/>
+                        <div class="behind_image">
+                            <img class="char_image" src="Matchbox.jpg"/>
+                        </div>
                         <div class="flex_row justify_center">
                             <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
                             <MoneyView/>

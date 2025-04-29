@@ -44,7 +44,6 @@ dialog {
 button {
 	border: unset;
 	border-radius: 3px;
-	margin: 2px;
 	font-family: inherit;
 	font-size: inherit;
 	padding: 2px 4px 2px 4px;
@@ -162,6 +161,11 @@ input[type=number] {
 
 
 	--skill-highlight: var(--highlight-color-second);
+
+	img {
+		opacity: 0.6;
+		background-color: var(--penalty);
+	}
 }
 
 .name {
@@ -234,6 +238,7 @@ input[type=number] {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	gap: 5px;
 }
 
 .center_div {
@@ -425,12 +430,22 @@ input[type=number] {
 	color: var(--warning-color);
 }
 
+button:has(+ .money) {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
 .money {
 	font-size: x-large;
 	background-color: var(--highlight-color-second);
 	color: var(--dark-background-color);
 	padding: 5px;
 	white-space: nowrap;
+}
+
+button + .money {
+	border-top-right-radius: 5;
+	border-bottom-right-radius: 5;
 }
 
 .money::after {
@@ -534,11 +549,17 @@ input[type=number] {
 }
 
 .char_image {
-	@extend .bordered;
 	padding: unset;
 	border-color: var(--warning-color);
 	border-radius: 5;
-	max-height: 50vh;
+	max-height: 60vh;
+}
+
+.behind_image {
+	border-radius: 5;
+	max-height: 60vh;
+	background-color: #5c0404;
+	max-width: fit-content;
 }
 
 div:has(> .weapon_view) {
@@ -671,6 +692,7 @@ div:has(> .weapon_view) {
 .weapon_buttons {
 	display: flex;
 	flex-direction: row-reverse;
+	gap: 5px;
 }
 
 .health_popup {
