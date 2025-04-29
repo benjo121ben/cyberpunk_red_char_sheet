@@ -189,6 +189,9 @@ pub fn ArmorSelectionView() -> impl IntoView {
         });
     };
 
+    let current_head_armor_val_memo = Memo::new(move |_| {char_signal.read().current_armor_head.or(Some(100)).unwrap().to_string()});
+    let current_body_armor_val_memo = Memo::new(move |_| {char_signal.read().current_armor_body.or(Some(100)).unwrap().to_string()});
+
     view! {
         <div class="armor_selection">
             <div class="single_armor_selection">
@@ -206,7 +209,6 @@ pub fn ArmorSelectionView() -> impl IntoView {
                 </Show>
                 <select 
                     class="head_armor_select"
-                    prop:value=move || {char_signal.read().current_armor_head.or(Some(100)).unwrap()}
                     on:change:target=move |ev| {
                         let val = ev.target().value().parse().unwrap();
                         if val == 100 {
@@ -218,12 +220,22 @@ pub fn ArmorSelectionView() -> impl IntoView {
                         }
                     }
                 >
-                    <option value=move||format!("{}", 100)>No Armor equipped</option>
+                    <option 
+                        selected=move || current_head_armor_val_memo() == "100"
+                        value=move||format!("{}", 100)>
+                        No Armor equipped
+                    </option>
+
                     <For 
                         each=move|| head_armors.get()
                         key=move|(_, armor)| armor.name.clone()
                         children=move|(index, armor)| {
-                            view! {<option value=index.to_string()>{armor.name.clone()}</option>}
+                            view! {
+                                <option 
+                                    selected=move || current_head_armor_val_memo() == index.to_string()
+                                    value=index.to_string()>
+                                    {armor.name.clone()}
+                                </option>}
                         }
                     />
                 </select>
@@ -243,7 +255,6 @@ pub fn ArmorSelectionView() -> impl IntoView {
                 </Show>
                 <select 
                     class="body_armor_select"
-                    prop:value=move || {char_signal.read().current_armor_body.or(Some(100)).unwrap()}
                     on:change:target=move |ev| {
                         let val = ev.target().value().parse().unwrap();
                         if val == 100 {
@@ -251,16 +262,24 @@ pub fn ArmorSelectionView() -> impl IntoView {
                         }
                         else {
                             char_signal.update(|c| c.current_armor_body = Some(val));
-
                         }
                     }
                 >
-                    <option value=move||format!("{}", 100)>No Armor equipped</option>
+                    <option 
+                        selected=move || current_body_armor_val_memo() == "100".to_string()
+                        value=move||format!("{}", 100)>
+                        No Armor equipped
+                    </option>
                     <For 
                         each=move|| body_armors.get()
                         key=move|(_, armor)| armor.name.clone()
                         children=move|(index, armor)| {
-                            view! {<option value=index.to_string()>{armor.name.clone()}</option>}
+                            view! {
+                                <option 
+                                    selected=move || current_body_armor_val_memo() == index.to_string()
+                                    value=index.to_string()>
+                                    {armor.name.clone()}
+                                </option>}
                         }
                     />
                 </select>

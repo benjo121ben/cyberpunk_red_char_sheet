@@ -19,7 +19,6 @@ use crate::resource_views::{ArmorView, HealthAdjustPopup};
 use crate::shop_modal_view::{ShopModalData, ShopModalView};
 
 pub fn read_gear_data_from_file<P: AsRef<Path>>(path: P) -> Result<GearData, Box<dyn Error>> {
-
     // Open the file in read-only mode with buffer.
     let check_file_path_result = std::fs::exists(&path);
     match check_file_path_result {
@@ -47,7 +46,6 @@ pub fn read_gear_data_from_file<P: AsRef<Path>>(path: P) -> Result<GearData, Box
 
 
 pub fn read_character_data_from_file<P: AsRef<Path>>(path: P) -> Result<Character, Box<dyn Error>> {
-
     // Open the file in read-only mode with buffer.
     let check_file_path_result = std::fs::exists(&path);
     match check_file_path_result {
@@ -70,6 +68,28 @@ pub fn read_character_data_from_file<P: AsRef<Path>>(path: P) -> Result<Characte
         },
     }
     
+
+}
+
+pub fn check_password_file(pass: String) -> Result<(),  Box<dyn Error>> {
+    let exists = std::fs::exists("passw.txt")?;
+    let ret_val = if exists {
+        log!("Filepath exists");
+        let file_str = read_to_string("passw.txt").expect("reading to go without issue");
+        if file_str == pass {
+            Ok(())
+        }
+        else {
+            Err("password incorrect".to_string())
+        }
+    } else {
+        Err("no passw file found".to_string())
+    };
+
+    ret_val.or_else(|errorstring|{
+        log!("{errorstring}");
+        return Err(Box::from(errorstring));
+    })
 
 }
 
@@ -117,6 +137,15 @@ pub async fn set_char_data(char: Character) -> Result<i32, ServerFnError> {
     }
 }
 
+#[server(CheckPassword, "/api", "Url", "check_password")]
+pub async fn check_password(passw: String) -> Result<(), ServerFnError> {
+    let result = check_password_file(passw);
+    match result {
+        Ok(_) => Ok(()),
+        Err(error) => Err(ServerFnError::new(error)),
+    }
+}
+
 pub fn shell(options: LeptosOptions) -> impl IntoView {
     view! {
         <!DOCTYPE html>
@@ -151,13 +180,46 @@ pub fn App() -> AnyView {
         // content for this welcome page
         <Router>
             <main>
-                <div class="root_div">
-                    <Routes fallback=|| "Page not found.".into_view()>
-                        <Route path=StaticSegment("") view=HomePage/>
-                    </Routes>
-                </div>
+                <Routes fallback=|| "Page not found.".into_view()>
+                    <Route path=StaticSegment("") view=Login/>
+                </Routes>
             </main>
         </Router>
+    }.into_any()
+}
+
+#[component]
+fn Login() -> AnyView {
+    let show_main_page = RwSignal::new(false);
+    let action_error = RwSignal::new("".to_string());
+    let try_login = Action::new(move |password: &String| {
+        let pw_clone = password.clone();
+        async move {
+            let result = check_password(pw_clone).await;
+            if result.is_ok() {
+                show_main_page.set(true);
+            }
+        }
+    });
+
+    view! {
+        <Show when=move|| !show_main_page.get()>
+            <div class="login_div">
+                <input type="text"
+                    value=""
+                    prop:value=move|| {let _ = show_main_page(); "".to_string()}
+                    on:change=move|ev| {
+                        try_login.dispatch(event_target_value(&ev));
+                    }
+                />
+            </div>
+        </Show>
+        <Show when=move|| {action_error.get() != "".to_string()}>
+            <span>{move || action_error.get()}</span>
+        </Show>
+        <Show when=move|| show_main_page.get()>
+            <HomePage/>
+        </Show>
     }.into_any()
 }
 
@@ -217,63 +279,71 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
     let shop_modal_signal = RwSignal::new(ShopModalData::default());
     let damage_popup_signal = RwSignal::new(false);
 
+    let danger_zone_memo = Memo::new(move|_| {
+        char_rw_signal.read().get_wounded_action_penalty() >= 2
+    });
+
     view! {
-        <ShopModalView data=shop_modal_signal/>
-        <HealthView on:click=move|_| damage_popup_signal.update(|v| *v = !*v)/>
-        <Show when=move||damage_popup_signal.get()>
-            <HealthAdjustPopup visible_signal=damage_popup_signal/>
-        </Show>
-        <div class="base_div">
-            <div class="first_row">
-                <h1 class="name">{move || char_rw_signal.read().name.clone()} / {move || char_rw_signal.read().alias.clone()}</h1>
-                <div class="head_body_armor">
-                    <ArmorView head=true/> 
-                    <ArmorView head=false/> 
-                </div>
-            </div>
-            <div class="columns">
-                <div class="left_column">
-                    <div class="skill_buttons">
-                        <button on:click=move|_| {unlocked_signal.update(|s| *s = !*s) }>
-                            {move|| {
-                                if unlocked_signal.get(){"UNLOCKED".to_string()} 
-                                else {"LOCKED".to_string()}
-                            }}
-                        </button>
-                        <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("filter_zeros"))>FILTER</button>
-                        <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("group_by_stat"))>GROUP</button>
-                    </div>
-                    <div class="skill_list">
-                        <SkillList unlocked_signal=unlocked_signal/>
+        <div class="root_div"
+            class:danger_zone=move ||danger_zone_memo.get()
+        >
+            <ShopModalView data=shop_modal_signal/>
+            <HealthView on:click=move|_| damage_popup_signal.update(|v| *v = !*v)/>
+            <Show when=move||damage_popup_signal.get()>
+                <HealthAdjustPopup visible_signal=damage_popup_signal/>
+            </Show>
+            <div class="base_div">
+                <div class="first_row">
+                    <h1 class="name">{move || char_rw_signal.read().name.clone()} / {move || char_rw_signal.read().alias.clone()}</h1>
+                    <div class="head_body_armor">
+                        <ArmorView head=true/> 
+                        <ArmorView head=false/> 
                     </div>
                 </div>
-                <div class="center_div">
-                    <div class="center_div_first_row">
-                        <StatsView/>
-                        <ArmorSelectionView/>
-                    </div>
-                    <div class="center_split">
-                        <GearView/>
-                        <div class="flex_col">
-                            <TextCenterSection/>
+                <div class="columns">
+                    <div class="left_column">
+                        <div class="skill_buttons">
+                            <button on:click=move|_| {unlocked_signal.update(|s| *s = !*s) }>
+                                {move|| {
+                                    if unlocked_signal.get(){"UNLOCKED".to_string()} 
+                                    else {"LOCKED".to_string()}
+                                }}
+                            </button>
+                            <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("filter_zeros"))>FILTER</button>
+                            <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("group_by_stat"))>GROUP</button>
+                        </div>
+                        <div class="skill_list">
+                            <SkillList unlocked_signal=unlocked_signal/>
                         </div>
                     </div>
-                </div>
-                <div class="right_div">
-                    <img class="char_image" src="Matchbox.jpg"/>
-                    <div class="flex_row justify_center">
-                        <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
-                        <MoneyView/>
+                    <div class="center_div">
+                        <div class="center_div_first_row">
+                            <StatsView/>
+                            <ArmorSelectionView/>
+                        </div>
+                        <div class="center_split">
+                            <GearView/>
+                            <div class="flex_col">
+                                <TextCenterSection/>
+                            </div>
+                        </div>
                     </div>
-                    <input class="ip_input" type="number" prop:value=move||char_rw_signal.read().ip on:change=move|ev| {
-                        match event_target_value(&ev).parse::<i32>() {
-                            Ok(val) => {
-                                char_rw_signal.write().ip = val;
-                            },
-                            Err(_) => {},
-                        };
-                    }>
-                    </input>
+                    <div class="right_div">
+                        <img class="char_image" src="Matchbox.jpg"/>
+                        <div class="flex_row justify_center">
+                            <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
+                            <MoneyView/>
+                        </div>
+                        <input class="ip_input" type="number" prop:value=move||char_rw_signal.read().ip on:change=move|ev| {
+                            match event_target_value(&ev).parse::<i32>() {
+                                Ok(val) => {
+                                    char_rw_signal.write().ip = val;
+                                },
+                                Err(_) => {},
+                            };
+                        }>
+                        </input>
+                    </div>
                 </div>
             </div>
         </div>
