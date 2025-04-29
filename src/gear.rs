@@ -313,3 +313,7 @@ impl WeaponAmmoData {
         self.value = std::cmp::max(0, self.value - 1);
     }
 }
+
+pub fn get_map_key(obj: &impl ShopItem) -> String {
+    obj.get_name().to_lowercase().replace(" ", "_")
+}

@@ -106,6 +106,10 @@ input {
 	justify-content: center;
 }
 
+.align_center {
+	align-items: center;
+}
+
 .root_div {
 	position: absolute;
 	width: 100%;
@@ -498,7 +502,7 @@ div:has(> .weapon_view) {
 
 .weapon_view {
 	display: grid;
-	grid-template-columns: 225 0.5fr 0.5fr 0.5fr 1fr 1fr;
+	grid-template-columns: 200 0.5fr 0.5fr 0.5fr 1fr;
 	gap: 10px;
 	background-color: var(--light-background-color);
 	align-items: center;
@@ -519,8 +523,49 @@ div:has(> .weapon_view) {
 }
 
 .weapon_ammo {
+	grid-column-start: span 5;
+	grid-row-start: 2;
+}
+
+.ammo_view_linear {
 	display: flex;
-	justify-content: center;
+	align-items: center;
+	gap: 5;
+}
+
+.ammo_text {
+	padding: 2;
+	border-radius: 5;
+	text-wrap: nowrap;
+	color: var(--highlight-color-second);
+	background-color: var(--background-color);
+}
+
+.ammo_select {
+	margin-top: 5;
+	width: 100%;
+}
+
+.ammo_reload {
+	width: 100%;
+}
+
+.linear_ammo_grid {
+	height: 20px;
+	display: grid;
+	gap: 10px;
+	width: 100%;
+
+	.resource_bar {
+		background-color: var(--highlight-color-second);
+		border-color: var(--highlight-color-second);
+	}
+
+	.resource_bar_empty {
+		background-color: unset;
+		border-width: 2px;
+		border-style: dashed;
+	}
 }
 
 .ammo_svg {
@@ -644,10 +689,18 @@ div:has(> .weapon_view) {
 }
 
 .center_split {
-	display: grid;
+	display: flex;
 	grid-template-columns: 1.2fr 1fr;	
 	gap: 20px;
 	min-height: 0;
+
+	> div:nth-child(1) {
+		flex: 1 0 0;
+	}
+
+	> div:nth-child(2) {
+		flex: 0 1 0;
+	}
 }
 
 .center_text_area {
@@ -664,7 +717,6 @@ div:has(> .weapon_view) {
 
 .gear_list_wrapper {
 	overflow-y: scroll;
-	flex: 1 1 0;
 	min-height: 0;
 }
 

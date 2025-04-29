@@ -4,7 +4,7 @@ use std::cmp::{max, min};
 use crate::gear::*;
 use crate::icon_views::{AddIcon, RemoveIcon};
 use crate::help::get_char_signal_from_ctx;
-use crate::resource_views::AmmoView;
+use crate::resource_views::AmmoViewLinear;
 
 #[component]
 pub fn GearView() -> impl IntoView {
@@ -37,6 +37,8 @@ pub fn AllWeaponsView() -> impl IntoView {
 #[component]
 pub fn SingleWeaponView(index:usize) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
+    let show_ammo_select_signal = RwSignal::new(false);
+
     let item_memo = Memo::new(move|_| {
         char_signal.read().weapons.get(index).unwrap().clone()
     });
@@ -56,10 +58,17 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
 
     let has_ammo = Memo::new(move |_| item_memo.get().weapon_data.ammo.is_some());
 
-    let ammo_memo = Memo::new(move |_| {
-        char_signal.read().weapons.get(index)
-            .cloned()
+    let ammo_max_memo = Memo::new(move |_| {
+        item_memo.get()
+            .weapon_data
+            .ammo
+            .and_then(|ammo_data|Some(ammo_data.max))
+            .or(Some(0))
             .unwrap()
+    });
+
+    let ammo_memo = Memo::new(move |_| {
+        item_memo.get()
             .weapon_data
             .ammo
             .and_then(|ammo_data|Some(ammo_data.value))
@@ -67,35 +76,6 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
             .unwrap()
     });
 
-    let reload = move || char_signal.update(|cyberpunk|{
-        let weapon = cyberpunk.weapons.get_mut(index).expect("expecting weapon to exist");
-        
-        if weapon.weapon_data.ammo.is_none() {
-            return;
-        }
-        let ammo_data: &mut WeaponAmmoData = weapon.weapon_data.ammo.as_mut().expect("expecting ammo to be present");
-        
-        if ammo_data.current_ammo_type.is_none() {
-            return;
-        }        
-        let current_ammo = ammo_data.current_ammo_type.clone().unwrap();
-        
-        //check if we still have ammo in the inventory
-        let inventory_ammo = cyberpunk.ammo.get_mut(&current_ammo);
-        if inventory_ammo.is_none() {
-            return;
-        }
-        let inventory_ammo = inventory_ammo.expect("inventory ammo cannot be none at this point");
-        let clip_size = ammo_data.max;
-        let refill_amount = std::cmp::min(*inventory_ammo, clip_size);
-        
-        ammo_data.value += refill_amount;
-        *inventory_ammo -= refill_amount;
-        if *inventory_ammo <= 0 {
-            cyberpunk.ammo.shift_remove(&current_ammo);
-        }
-        
-    });
     view!{
         <div class="weapon_view">
             <span class="weapon_name">{move|| item_memo.get().name.clone()}</span>
@@ -106,23 +86,6 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
             </span>
             <span class="weapon_rof">rof {move|| item_memo.get().weapon_data.rof.clone()}</span>
             <span class="weapon_damage">{move|| item_memo.get().weapon_data.damage.clone()}</span>
-            <Show when=move|| has_ammo.get()>
-                <div class="weapon_ammo">
-                    <AmmoView count=ammo_memo 
-                        on:click=move|_| char_signal.update(|c|{
-                            c.weapons.get_mut(index).and_then(|weap: &mut Weapon|
-                                weap
-                                    .weapon_data
-                                    .ammo.as_mut()
-                                    .and_then(|ammo_data: &mut WeaponAmmoData| {ammo_data.shoot(); Some(ammo_data)})
-                            );
-                        })
-                    />
-                </div>
-            </Show>
-            <Show when=move|| !has_ammo.get()>
-                <div/>
-            </Show>
             <div class="weapon_buttons">
                 <button
                     on:click=move|_| char_signal.update(|c|{
@@ -132,10 +95,8 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                 </button>
                 <Show when=move|| has_ammo.get()>
                     <button
-                        on:click=move|_| {
-                            
-                        }>
-                        RELOAD
+                        on:click=move|_| show_ammo_select_signal.update(|val| *val = !*val)>
+                        AMMO
                     </button>
                 </Show>
                 <button
@@ -154,10 +115,17 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                 >
                     +1
                 </button>
-                <select>
-
-                </select>
             </div>
+            <Show when=move|| has_ammo.get()>
+                <div class="weapon_ammo">
+                    <AmmoViewLinear 
+                        count=ammo_memo 
+                        max=ammo_max_memo
+                        weapon_index=index
+                        show_ammo_select=show_ammo_select_signal
+                    />
+                </div>
+            </Show>
         </div>
     }
 }

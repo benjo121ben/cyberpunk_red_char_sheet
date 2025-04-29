@@ -1,12 +1,13 @@
 use leptos::prelude::*;
 use std::cmp::{min, max};
 
+use crate::gear::{get_map_key, GearData, Weapon, WeaponAmmoData};
 use crate::help::get_char_signal_from_ctx;
 use crate::icon_views::{AddIcon, RemoveIcon};
 
 
 #[component]
-pub fn AmmoView(count: Memo<i32>) -> AnyView {
+pub fn AmmoViewRadial(count: Memo<i32>) -> AnyView {
     let check_visibility = move |nr| {
         if count.get() >= nr { "hidden"  } else {"visible"}
     };
@@ -55,6 +56,162 @@ pub fn HealthView() -> AnyView {
     }.into_any()
 }
 
+#[component]
+pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, show_ammo_select: RwSignal<bool>) -> impl IntoView {
+    let char_signal = get_char_signal_from_ctx();
+    let gear_data: GearData = use_context().expect("AmmoViewLinear: gear_data should exist at this point"); 
+
+    let weapon_ammo_data_memo = Memo::new(move|_| {
+        let weapon = char_signal.read().weapons.get(weapon_index).cloned().expect("expecting weapon to exist");
+        weapon
+            .weapon_data
+            .ammo.clone()
+            .expect("expecting ammo to be present").clone()
+    });
+
+    let get_ammo_gear_data = move |key: &String| {
+        gear_data.ammunition.iter().find(|ammo| get_map_key(*ammo) == *key).cloned().expect("ammo should exist in gear_data")
+    };
+
+    let current_ammo_is_in_inventory = Memo::new(move |_| { 
+        let ammo_data = weapon_ammo_data_memo();
+        
+        match ammo_data.current_ammo_type {
+            Some(key) => char_signal.read().ammo.get(&key).is_some(),
+            None => false,
+        }
+    });
+
+    let reload = move || char_signal.update(|cyberpunk|{
+        let weapon = cyberpunk.weapons.get_mut(weapon_index).expect("expecting weapon to exist");
+        
+        if weapon.weapon_data.ammo.is_none() {
+            return;
+        }
+        let ammo_data: &mut WeaponAmmoData = weapon.weapon_data.ammo.as_mut().expect("expecting ammo to be present");
+        
+        if ammo_data.current_ammo_type.is_none() {
+            return;
+        }        
+        let current_ammo = ammo_data.current_ammo_type.clone().unwrap();
+        
+        //check if we still have ammo in the inventory
+        let inventory_ammo = cyberpunk.ammo.get_mut(&current_ammo);
+        if inventory_ammo.is_none() {
+            return;
+        }
+        let inventory_ammo = inventory_ammo.expect("inventory ammo cannot be none at this point");
+        let clip_size = ammo_data.max;
+        let refill_amount = std::cmp::min(*inventory_ammo, clip_size);
+        
+        ammo_data.value += refill_amount;
+        *inventory_ammo -= refill_amount;
+        if *inventory_ammo <= 0 {
+            cyberpunk.ammo.shift_remove(&current_ammo);
+        }
+        
+    });
+
+    let ammo_options = Memo::new(move |_| {
+        let weapon_calibers = weapon_ammo_data_memo().compatible_calibers;
+            
+        //filter available ammo by caliber
+        char_signal.read().ammo.iter()
+            .map(|(key, _)| (key.clone(), get_ammo_gear_data(key)))
+            .filter(|(_, ammo)| weapon_calibers.contains(&ammo.caliber))
+            .map(|(key, ammo)| (key, ammo.name.clone()))
+            .collect::<Vec<_>>()
+    });
+
+    let swap_ammo = move|new_ammo_key: String| {
+        char_signal.update(|c|{
+            let weapon = c.weapons.get_mut(weapon_index).unwrap();
+            let new_val = (new_ammo_key.as_str() != "no_ammo")
+                .then_some(new_ammo_key);
+
+            let ammo_data = 
+                weapon
+                .weapon_data
+                .ammo.as_mut()
+                .unwrap();
+            
+
+            //put current ammo back into inventory
+            if ammo_data.current_ammo_type.is_some() {
+                let current_ammo_key = ammo_data.current_ammo_type.clone().unwrap();
+                let current_ammo_amount = ammo_data.value;
+                if c.ammo.get_mut(&current_ammo_key).and_then(|val| Some(*val += current_ammo_amount)).is_none() {
+                    c.ammo.insert(current_ammo_key, current_ammo_amount);
+                }
+            }
+
+            ammo_data.current_ammo_type = new_val;
+            ammo_data.value = 0;
+            
+        });
+        show_ammo_select.set(false);
+        reload();
+    };
+    
+    view! {
+        <Show when=move||{count.get() > 0}>
+            <div class="ammo_view_linear"
+                on:click=move|_| char_signal.update(|c|{
+                    c.weapons.get_mut(weapon_index).and_then(|weap: &mut Weapon|
+                        weap
+                            .weapon_data
+                            .ammo.as_mut()
+                            .and_then(|ammo_data: &mut WeaponAmmoData| {ammo_data.shoot(); Some(ammo_data)})
+                    );
+                })
+            >
+                <div 
+                    class="linear_ammo_grid"
+                    style:grid-template-columns=move || {format!("repeat({}, 1fr)", max.get())}
+                >
+                    <For each={move || 0..max.get()}
+                        key=move|nr| nr.to_string()
+                        children=move |nr| {
+                            view! {
+                                <ResourceBar threshold=nr current_resource_state=count/>
+                            } 
+                        }
+                    />
+                </div>
+                <span class="ammo_text">
+                    {move || count.get()} / {move || max.get()}
+                </span>
+            </div>
+        </Show>
+        <Show when=move||{count.get() <= 0 && !show_ammo_select.get()}>
+            <button class="ammo_reload" on:click=move |_| show_ammo_select.set(true)>RELOAD</button>
+        </Show>
+        <Show when=move||{show_ammo_select.get()}>
+            <select class="ammo_select"
+                prop:value=move || {
+                    current_ammo_is_in_inventory()
+                        .then(|| weapon_ammo_data_memo.get().current_ammo_type.unwrap())
+                        .or(Some("no_ammo".to_string()))
+                        .unwrap()
+                }
+                on:change:target=move|ev| {
+                    let new_ammo_key = ev.target().value();
+                    swap_ammo(new_ammo_key)
+                }
+            >
+                <option value=move||format!("no_ammo")>No Ammo</option>
+                <For 
+                    each=move|| ammo_options()
+                    key=move|(key, _)| key.clone()
+                    children=move|(key, name)| {
+                        view! {<option value=key.to_string()>{name.clone()}</option>}
+                    }
+                />
+            </select>
+        </Show>
+    }
+}
+
 
 #[component]
 pub fn ArmorBar(nr: i32, head: bool) -> impl IntoView {
@@ -65,15 +222,14 @@ pub fn ArmorBar(nr: i32, head: bool) -> impl IntoView {
             armor.map(|a| a.armor_data.sp_current).or(Some(0)).unwrap()
         })
     });
-    let additional_class = head.then(|| "head_armor_bar".to_string());
+    let additional_class = head.then(|| "head_armor_bar").or(Some("")).unwrap().to_string();
     view! {
-        <ResourceBar threshold=nr current_resource_state=get_current_sp opt_additional_classes=additional_class />
+        <ResourceBar threshold=nr current_resource_state=get_current_sp opt_additional_classes=additional_class/>
     }
-
 }
 
 #[component]
-pub fn ResourceBar(threshold: i32, current_resource_state: Memo<i32>, opt_additional_classes:Option<String>) -> impl IntoView {
+pub fn ResourceBar(threshold: i32, current_resource_state: Memo<i32>, #[prop(optional)]opt_additional_classes:Option<String>) -> impl IntoView {
     let additional_classes = opt_additional_classes.or(Some("".to_string())).unwrap();
     let classes = additional_classes + " resource_bar";
     view! {
