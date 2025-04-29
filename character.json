@@ -1,8 +1,8 @@
 {
   "name": "Samantha Banks",
   "alias": "Matchbox",
-  "current_armor_body": 2,
-  "current_armor_head": 3,
+  "current_armor_body": 1,
+  "current_armor_head": 0,
   "armors": [
     {
       "armor_data": {
@@ -35,7 +35,7 @@
     {
       "armor_data": {
         "sp": 12,
-        "sp_current": 13,
+        "sp_current": 12,
         "penalty": 2,
         "head": false,
         "bonus": 1
@@ -90,8 +90,8 @@
       "weapon_data": {
         "ammo": {
           "max": 8,
-          "value": 0,
-          "current_ammo_type": null,
+          "value": 8,
+          "current_ammo_type": "heavy_pistol_-_basic_ammunition",
           "compatible_calibers": [
             "heavy_pistol"
           ]
@@ -104,13 +104,37 @@
         "skill": "handgun",
         "weapontype": "pistol"
       }
+    },
+    {
+      "personalized_name": "",
+      "description": "A brief item description goes here...",
+      "file": "weapons",
+      "name": "Shotgun",
+      "price": 500,
+      "type": "weapons",
+      "weapon_data": {
+        "ammo": {
+          "max": 4,
+          "value": 0,
+          "current_ammo_type": null,
+          "compatible_calibers": [
+            "slug",
+            "shell"
+          ]
+        },
+        "bonus": null,
+        "burst": false,
+        "damage": "5d6",
+        "fullauto": false,
+        "rof": 1,
+        "skill": "shoulder_arms",
+        "weapontype": "shotgun"
+      }
     }
   ],
   "ammo": {
-    "armor-piercing_grenade": 1,
     "heavy_pistol_-_armor-piercing_ammunition": 20,
-    "heavy_pistol_-_basic_ammunition": 30,
-    "teargas_grenade": 1
+    "heavy_pistol_-_basic_ammunition": 29
   },
   "cyberware": [
     {
@@ -160,9 +184,9 @@
     }
   ],
   "humanity": 44,
-  "hp_current": 45,
-  "ip": 200,
-  "money": 1027,
+  "hp_current": 43,
+  "ip": 270,
+  "money": 1507,
   "stats": {
     "intelligence": 6,
     "reflex": 6,
@@ -171,7 +195,7 @@
     "cool": 8,
     "willpower": 6,
     "luck": 6,
-    "luck_current": 4,
+    "luck_current": 6,
     "movement": 6,
     "body": 7,
     "empathy": 7
@@ -183,15 +207,23 @@
     },
     {
       "name": "Story",
-      "text": "Spoof@bozo.circus - tag von dem hacker der in das hochhaus eingebrochen ist"
+      "text": "Spoof@bozo.circus - tag von dem hacker der in das hochhaus eingebrochen ist\n\nWir konfronzieren robbers vor einem von Jack's  Gebäuden und nehmen einen gefangen\nKASIM'S - türkisches cafe im Glenn (mall), NEt24 leute haben die situation beobachtet\n- barkeep -> Kasym Beck\n- destiny hondel \n\nFahren nach Woodland Park (up and coming, viel Bauprojekte)\n\nCircue de Bozo -> Spoof hat es auf Jack abgesehen"
     },
     {
       "name": "NPCs",
-      "text": ""
+      "text": "- Grace Steele -> Gitarristin"
     },
     {
       "name": "items",
       "text": "bought cyberware and smart weapon upgrade"
+    },
+    {
+      "name": "Range",
+      "text": "             0-6 | 7-12 | 13-25 | 26-50 | 51-100 | 101-200 | 201-400 | 401-800 \nPistol     13     15        20        25         30           30\nGrena    16     15        15        17         20           22             25\nSMG      15     13        15        20         25           25             30\nShotg    13     15        20        25         30           35             \nAss R     17     16        15        13         15           20             25           30\nSnip       30     25        25        20         15           16             17           20\nBow       15     13        15        17         20           22\nRock      17     16        15        15         20           20             25           30    "
+    },
+    {
+      "name": "IMprovements",
+      "text": "- Humanity\n- cyberware max humanity\n- weapon attachments\n- cyberwear slots\n- armor improvements"
     }
   ],
   "skills": {
@@ -625,7 +657,7 @@
   "fashion": {},
   "programs": {},
   "flags": {
-    "filter_zeros": false,
+    "filter_zeros": true,
     "group_by_stat": false
   }
 }
