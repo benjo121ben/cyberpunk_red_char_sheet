@@ -1,7 +1,9 @@
+@import "animations.scss";
+
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+	box-sizing: border-box; 
 }
 
 :root {
@@ -163,8 +165,7 @@ input[type=number] {
 	--skill-highlight: var(--highlight-color-second);
 
 	img {
-		opacity: 0.6;
-		background-color: var(--penalty);
+		opacity: 0.85;
 	}
 }
 
@@ -553,13 +554,7 @@ button + .money {
 	border-color: var(--warning-color);
 	border-radius: 5;
 	max-height: 60vh;
-}
-
-.behind_image {
-	border-radius: 5;
-	max-height: 60vh;
-	background-color: #5c0404;
-	max-width: fit-content;
+	animation: turn_up 0.3s;
 }
 
 div:has(> .weapon_view) {
