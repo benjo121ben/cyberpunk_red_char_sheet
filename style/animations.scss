@@ -8,7 +8,10 @@
     0% {
       transform: scaleX(0);
     }
-    80% {
+    60% {
+        transform: scaleX(0);
+    }
+    95% {
       transform: scaleX(1.1);
     }
     100% {

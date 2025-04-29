@@ -547,6 +547,7 @@ button + .money {
 	justify-content: flex-end;
 	flex-grow: 1;
 	margin-top: -32px;
+	gap: 5px;
 }
 
 .char_image {
@@ -554,7 +555,7 @@ button + .money {
 	border-color: var(--warning-color);
 	border-radius: 5;
 	max-height: 60vh;
-	animation: turn_up 0.3s;
+	animation: turn_up 0.7s;
 }
 
 div:has(> .weapon_view) {
@@ -569,6 +570,10 @@ div:has(> .weapon_view) {
 	align-items: center;
 	padding: 5px;
 	border-radius: 5;
+}
+
+.weapon_view:hover {
+	background-color: var(--dark-background-color);
 }
 
 .weapon_bonus {
@@ -812,6 +817,10 @@ div:has(> .weapon_view) {
 		width: fit-content;
 		justify-self: end;
 	}
+}
+
+.gear_view:hover {
+	background-color: var(--dark-background-color);
 }
 
 .ip_input {

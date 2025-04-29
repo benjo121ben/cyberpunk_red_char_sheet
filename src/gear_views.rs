@@ -4,6 +4,7 @@ use std::cmp::{max, min};
 use crate::gear::*;
 use crate::icon_views::{AddIcon, RemoveIcon};
 use crate::help::get_char_signal_from_ctx;
+use crate::info_modal_view::SimpleModalData;
 use crate::resource_views::AmmoViewLinear;
 
 #[component]
@@ -39,6 +40,7 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
     let show_ammo_select_signal = RwSignal::new(false);
     let show_weapon_name_input = RwSignal::new(false);
+    let simple_modal_signal: RwSignal<SimpleModalData> = use_context().expect("allitemsview: simple modal should exist");
 
     let item_memo = Memo::new(move|_| {
         char_signal.read().weapons.get(index).unwrap().clone()
@@ -78,10 +80,22 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
     });
 
     view!{
-        <div class="weapon_view">
+        <div class="weapon_view"
+            on:click=move|_| {
+                simple_modal_signal.update(|data| {
+                    data.title = item_memo().name.clone();
+                    data.description = item_memo().description.clone();
+                    data.show();
+                });
+                show_weapon_name_input.set(false);
+            }
+        >
             <Show when=move||!show_weapon_name_input.get()>
                 <span class="weapon_name"
-                    on:click=move|_| show_weapon_name_input.set(true)
+                    on:click=move|ev| {
+                        ev.stop_propagation();
+                        show_weapon_name_input.set(true)
+                    }
                 >
                     {move|| {
                         let item = item_memo.get();
@@ -96,6 +110,7 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
             <Show when=move||show_weapon_name_input.get()>
                 <input class="weapon_name_input" 
                     prop:value=move||item_memo.get().personalized_name.clone()
+                    on:click=move|ev| ev.stop_propagation()
                     on:change=move|ev| {
                         char_signal.update(|cyberpunk| cyberpunk.weapons.get_mut(index).unwrap().personalized_name = event_target_value(&ev));
                         show_weapon_name_input.set(false);
@@ -111,30 +126,37 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
             <span class="weapon_damage">{move|| item_memo.get().weapon_data.damage.clone()}</span>
             <div class="weapon_buttons">
                 <button
-                    on:click=move|_| char_signal.update(|c|{
+                    on:click=move|ev| char_signal.update(|c|{
+                        ev.stop_propagation();
                         c.weapons.remove(index);
                     })>
                     X
                 </button>
                 <Show when=move|| has_ammo.get()>
                     <button
-                        on:click=move|_| show_ammo_select_signal.update(|val| *val = !*val)>
+                        on:click=move|ev| {
+                            ev.stop_propagation();
+                            show_ammo_select_signal.update(|val| *val = !*val)
+                        }>
                         AMMO
                     </button>
                 </Show>
                 <button
                     class:selected_tab=move || weapon_bonus() != 0
-                    on:click=move|_| {char_signal.update(|c| {
-                        c.weapons.get_mut(index).and_then(|weap: &mut Weapon| {
-                            if weap.weapon_data.bonus.is_some() {
-                                weap.weapon_data.bonus = None;
-                            }
-                            else {
-                                weap.weapon_data.bonus = Some(1);
-                            }
-                            Some(weap)
-                        });
-                    })}
+                    on:click=move|ev| {
+                        ev.stop_propagation();
+                        char_signal.update(|c| {
+                            c.weapons.get_mut(index).and_then(|weap: &mut Weapon| {
+                                if weap.weapon_data.bonus.is_some() {
+                                    weap.weapon_data.bonus = None;
+                                }
+                                else {
+                                    weap.weapon_data.bonus = Some(1);
+                                }
+                                Some(weap)
+                            });
+                        })
+                    }
                 >
                     +1
                 </button>
@@ -305,13 +327,23 @@ pub fn AllItemsView() -> impl IntoView {
             None => todo!(),
         }
     };
+
+    let simple_modal_signal: RwSignal<SimpleModalData> = use_context().expect("allitemsview: simple modal should exist");
+
     view! {
         <div class="gear_list">
             <For each=move|| {char_signal.read().cyberware.clone().into_iter().enumerate().collect::<Vec<_>>()}
                 key=move|(_, cyber)| cyber.name.to_lowercase().clone()
                 children=move|(indx, cyber)| {
+                    let cyber_clone = cyber.clone();
                     view! {
-                        <div class="gear_view">
+                        <div class="gear_view"
+                            on:click=move|_| simple_modal_signal.update(|data| {
+                                data.title = cyber_clone.name.clone();
+                                data.description = cyber_clone.description.clone();
+                                data.show();
+                            })
+                        >
                             <span>{move || cyber.name.to_string()}</span>
                             <button on:click=move|_|{char_signal.write().cyberware.remove(indx);}>
                                 X
@@ -329,8 +361,15 @@ pub fn AllItemsView() -> impl IntoView {
                         changed_name == key
                     }).cloned().expect("expecting item to exist");
                     let key_clone = key.clone();
+                    let find_item_clone = find_item.clone();
                     view! {
-                        <div class="gear_view">
+                        <div class="gear_view"
+                            on:click=move|_| simple_modal_signal.update(|data| {
+                                data.title = find_item_clone.name.clone();
+                                data.description = find_item_clone.description.clone();
+                                data.show();
+                            })
+                        >
                             <span>
                                 {move || char_signal.read().gear.get(&key).expect("expecting item amount to exist").to_string()}x
                                 {move || find_item.clone().name.to_string()}
@@ -352,8 +391,15 @@ pub fn AllItemsView() -> impl IntoView {
             <For each=move|| {char_signal.read().armors.clone().into_iter().enumerate().collect::<Vec<_>>()}
                 key=move|(_, armor)| armor.name.to_lowercase().clone()
                 children=move|(indx, armor)| {
+                    let armor_clone = armor.clone();
                     view! {
-                        <div class="gear_view">
+                        <div class="gear_view"
+                            on:click=move|_| simple_modal_signal.update(|data| {
+                                data.title = armor_clone.name.clone();
+                                data.description = armor_clone.description.clone();
+                                data.show();
+                            })
+                        >
                             <span>{move || format!(
                                 "{} {}", 
                                 armor.name.to_string(), 
@@ -379,8 +425,15 @@ pub fn AllItemsView() -> impl IntoView {
                         changed_name == key
                     }).cloned().expect("expecting item to exist");
                     let key_clone = key.clone();
+                    let find_item_clone = find_item.clone();
                     view! {
-                        <div class="gear_view">
+                        <div class="gear_view"
+                            on:click=move|_| simple_modal_signal.update(|data| {
+                                data.title = find_item_clone.name.clone();
+                                data.description = find_item_clone.description.clone();
+                                data.show();
+                            })
+                        >
                             <span>
                                 {move || char_signal.read().ammo.get(&key).expect("expecting item amount to exist").to_string()}x
                                 {move || find_item.clone().name.to_string()}

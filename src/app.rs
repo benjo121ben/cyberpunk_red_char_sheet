@@ -3,6 +3,7 @@ use leptos::logging::log;
 use std::error::Error;
 use super::skill_view::{SkillList, StatsView};
 use super::resource_views::{HealthView, MoneyView};
+use crate::info_modal_view::{SimpleModalData, SimpleModalView};
 use crate::text_views::TextCenterSection;
 use std::fs::read_to_string;
 use std::path::Path;
@@ -262,9 +263,6 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
         let _ = set_char_data(char_copy.clone()).await;
     });
 
-    provide_context(char_rw_signal);
-    provide_context(gear_data);
-
     Effect::new(move |prev| {
         let _ = char_rw_signal.get();
         match prev {
@@ -277,17 +275,23 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
     });
 
     let shop_modal_signal = RwSignal::new(ShopModalData::default());
+    let simple_modal_signal = RwSignal::new(SimpleModalData::default());
     let damage_popup_signal = RwSignal::new(false);
 
     let danger_zone_memo = Memo::new(move|_| {
         char_rw_signal.read().get_wounded_action_penalty() >= 2
     });
 
+    provide_context(char_rw_signal);
+    provide_context(gear_data);
+    provide_context(simple_modal_signal);
+
     view! {
         <div class="root_div"
             class:danger_zone=move ||danger_zone_memo.get()
         >
             <ShopModalView data=shop_modal_signal/>
+            <SimpleModalView data=simple_modal_signal/>
             <HealthView on:click=move|_| damage_popup_signal.update(|v| *v = !*v)/>
             <Show when=move||damage_popup_signal.get()>
                 <HealthAdjustPopup visible_signal=damage_popup_signal/>

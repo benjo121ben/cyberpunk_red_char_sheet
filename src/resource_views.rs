@@ -188,14 +188,17 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
     view! {
         <Show when=move||{count.get() > 0}>
             <div class="ammo_view_linear"
-                on:click=move|_| char_signal.update(|c|{
-                    c.weapons.get_mut(weapon_index).and_then(|weap: &mut Weapon|
-                        weap
-                            .weapon_data
-                            .ammo.as_mut()
-                            .and_then(|ammo_data: &mut WeaponAmmoData| {ammo_data.shoot(); Some(ammo_data)})
-                    );
-                })
+                on:click=move|ev| {
+                    ev.stop_propagation();
+                    char_signal.update(|c|{
+                        c.weapons.get_mut(weapon_index).and_then(|weap: &mut Weapon|
+                            weap
+                                .weapon_data
+                                .ammo.as_mut()
+                                .and_then(|ammo_data: &mut WeaponAmmoData| {ammo_data.shoot(); Some(ammo_data)})
+                        );
+                    });
+                }
             >
                 <div 
                     class="linear_ammo_grid"
@@ -217,7 +220,8 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
         </Show>
         <Show when=move||{count.get() <= 0 && !show_ammo_select.get()}>
             <button class="ammo_reload" 
-                on:click=move |_| {
+                on:click=move |ev| {
+                    ev.stop_propagation();
                     if reload().is_err() {
                         show_ammo_select.set(true)
                     }
@@ -228,6 +232,9 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
         </Show>
         <Show when=move||{show_ammo_select.get()}>
             <select class="ammo_select"
+                on:click=move|ev| {
+                    ev.stop_propagation();
+                }
                 on:change:target=move|ev| {
                     let new_ammo_key = ev.target().value();
                     swap_ammo(new_ammo_key)

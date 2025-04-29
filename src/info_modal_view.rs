@@ -1,15 +1,10 @@
-use std::vec;
-
 use leptos::prelude::*;
-
-use crate::views::stats_views::TraitView;
 
 #[derive(Clone, Default, Debug, Eq, PartialEq)] 
 pub struct SimpleModalData {
     visible: bool, 
     pub title: String, 
-    pub description: String,
-    pub traits: Vec<String>
+    pub description: String
 }
 
 impl SimpleModalData {
@@ -21,7 +16,6 @@ impl SimpleModalData {
         self.visible = false;
         self.title = String::new();
         self.description = String::new();
-        self.traits = vec![];
     }
     
 }
@@ -34,14 +28,6 @@ pub fn SimpleModalView(data: RwSignal<SimpleModalData>) -> impl IntoView {
                 <div class="modal_content" on:click=move |_| {}>
                     <h2>{move|| data.get().title}</h2>
                     <hr/>
-                    <Show when=move||{data.get().traits.len() > 0}>
-                        {move || {
-                            let traits = data.get().traits;
-                            view!{
-                                <TraitView trait_names=traits/>
-                            }
-                        }}
-                    </Show>
                     <p inner_html={move|| data.get().description}/>
                 </div>
             </div>
