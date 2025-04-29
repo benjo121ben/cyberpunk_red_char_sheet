@@ -76,7 +76,7 @@ pub fn check_password_file(pass: String) -> Result<(),  Box<dyn Error>> {
     let exists = std::fs::exists("passw.txt")?;
     let ret_val = if exists {
         log!("Filepath exists");
-        let file_str = read_to_string("passw.txt").expect("reading to go without issue");
+        let file_str = read_to_string("passw.txt").expect("reading to go without issue").replace("\n", "").trim().to_string();
         if file_str == pass {
             Ok(())
         }
