@@ -323,7 +323,7 @@ pub fn ArmorView(head: bool) -> AnyView {
     });
     let get_max_sp = Memo::new(move |_| {
         let armor = armor_memo.get();
-        armor.map(|a| a.armor_data.sp).or(Some(0)).unwrap()
+        armor.map(|a| a.armor_data.sp + a.armor_data.bonus.or(Some(0)).unwrap()).or(Some(0)).unwrap()
     });
 
     let ablate_repair_armor = move |amount: i32| {
@@ -335,7 +335,7 @@ pub fn ArmorView(head: bool) -> AnyView {
                 c.get_current_body_armor_mut()
             };
             mut_armor.and_then(|armor| {
-                let max_sp = armor.armor_data.sp;
+                let max_sp = armor.armor_data.sp + armor.armor_data.bonus.or(Some(0)).unwrap();
                 armor.armor_data.sp_current = min(max(armor.armor_data.sp_current + amount, 0), max_sp);
                 Some(armor)
             });

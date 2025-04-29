@@ -60,7 +60,8 @@ pub struct ArmorData {
     pub sp_current: i32,
     pub penalty: i32,
     #[serde(default="is_false")]
-    pub head: bool
+    pub head: bool,
+    pub bonus: Option<i32>,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]

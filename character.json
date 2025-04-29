@@ -1,15 +1,16 @@
 {
   "name": "Samantha Banks",
   "alias": "Matchbox",
-  "current_armor_body": 1,
-  "current_armor_head": 0,
+  "current_armor_body": 2,
+  "current_armor_head": 3,
   "armors": [
     {
       "armor_data": {
         "sp": 11,
         "sp_current": 11,
         "penalty": 0,
-        "head": true
+        "head": true,
+        "bonus": null
       },
       "description": "<p>SP 11</p>\n<p>&nbsp;</p>\n<p>A combination of Kevlar&reg; and plastic meshes inserted into the weave of the fabric. Armorjack provides superior protection, especially against high-velocity bullets.</p>",
       "file": "armor",
@@ -22,11 +23,40 @@
         "sp": 11,
         "sp_current": 11,
         "penalty": 0,
-        "head": false
+        "head": false,
+        "bonus": null
       },
       "description": "<p>SP 11</p>\n<p>&nbsp;</p>\n<p>A combination of Kevlar&reg; and plastic meshes inserted into the weave of the fabric. Armorjack provides superior protection, especially against high-velocity bullets.</p>",
       "file": "armor",
       "name": "Light Armorjack",
+      "price": 100,
+      "type": "armor"
+    },
+    {
+      "armor_data": {
+        "sp": 12,
+        "sp_current": 13,
+        "penalty": 2,
+        "head": false,
+        "bonus": 1
+      },
+      "description": "<p>SP 12</p>\n<p>Armor Penalty : -2 REF, DEX, and MOVE</p>\n<p>Heavier Armorjack, with solid plastic plating, reinforced with thicker Kevlar&reg; mesh. Typical Street wear, this combines decent protection with a decent ost.</p>",
+      "file": "armor",
+      "name": "Medium Armorjack",
+      "price": 100,
+      "type": "armor"
+    },
+    {
+      "armor_data": {
+        "sp": 12,
+        "sp_current": 12,
+        "penalty": 2,
+        "head": true,
+        "bonus": null
+      },
+      "description": "<p>SP 12</p>\n<p>Armor Penalty : -2 REF, DEX, and MOVE</p>\n<p>Heavier Armorjack, with solid plastic plating, reinforced with thicker Kevlar&reg; mesh. Typical Street wear, this combines decent protection with a decent ost.</p>",
+      "file": "armor",
+      "name": "Medium Armorjack",
       "price": 100,
       "type": "armor"
     }
@@ -41,7 +71,7 @@
       "type": "weapons",
       "weapon_data": {
         "ammo": null,
-        "bonus": null,
+        "bonus": 1,
         "burst": false,
         "damage": "3d6",
         "fullauto": false,
@@ -109,12 +139,30 @@
       "price": 100,
       "psychosis": 3,
       "type": "cyberware"
+    },
+    {
+      "description": "<p>Wired artificial nervous system, required to use Neuralware, and Subdermal Grips. System has 5 Option Slots for Neuralware options.</p>",
+      "file": "neuralware",
+      "internal": true,
+      "name": "Neural Link",
+      "price": 500,
+      "psychosis": 7,
+      "type": "cyberware"
+    },
+    {
+      "description": "<p>Neuralware Option. Plugs in the wrist or head that allow user to jack into and make use of Smartguns, Cyberdecks, heavy machinery, and drive vehicles with no hands! Multiple installations allow user to be plugged into multiple things at the same time. <strong>Requires Neural Link.</strong></p>",
+      "file": "neuralware",
+      "internal": true,
+      "name": "Interface Plugs",
+      "price": 500,
+      "psychosis": 7,
+      "type": "cyberware"
     }
   ],
-  "humanity": 55,
+  "humanity": 44,
   "hp_current": 45,
   "ip": 200,
-  "money": 2477,
+  "money": 1027,
   "stats": {
     "intelligence": 6,
     "reflex": 6,
@@ -134,8 +182,16 @@
       "text": "# Contacts and Clients\nCity gang honcho, minor politician, Corp Exec, well known person in the neighbourhood\n\n# Haggle\nWhen you buy 5 or more of the same item you can get one more of that item for free\n\nyou can get 10% more or less than market price when buying or selling\n\n# Grease\nI know how to get along well with at least 1 other culture in my area, getting 1 Language at Lvl 4\n\nFixers know how to get things on the black market and are adept at navigating the complex social customs of the street, where hundreds of cultures and economic levels collide. \nFixers maintain vast webs of contacts and clients who they can reach out to source goods, favors, or information. \nFixers can also source desirable resources and make favorable deals."
     },
     {
-      "name": "test",
-      "text": "ashfpisahpaihg"
+      "name": "Story",
+      "text": "Spoof@bozo.circus - tag von dem hacker der in das hochhaus eingebrochen ist"
+    },
+    {
+      "name": "NPCs",
+      "text": ""
+    },
+    {
+      "name": "items",
+      "text": "bought cyberware and smart weapon upgrade"
     }
   ],
   "skills": {
