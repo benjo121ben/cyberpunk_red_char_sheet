@@ -1,4 +1,5 @@
 use leptos::prelude::*;
+use leptos::logging::log;
 use std::cmp::{min, max};
 
 use crate::gear::{get_map_key, GearData, Weapon, WeaponAmmoData};
@@ -73,44 +74,73 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
         gear_data.ammunition.iter().find(|ammo| get_map_key(*ammo) == *key).cloned().expect("ammo should exist in gear_data")
     };
 
-    let current_ammo_is_in_inventory = Memo::new(move |_| { 
+    let need_to_add_current_ammo_option = Memo::new(move |_| { 
         let ammo_data = weapon_ammo_data_memo();
         
-        match ammo_data.current_ammo_type {
-            Some(key) => char_signal.read().ammo.get(&key).is_some(),
-            None => false,
+        if ammo_data.current_ammo_type.is_none() {
+            return false;
         }
+
+        let ammo_type = ammo_data.current_ammo_type.unwrap();
+        char_signal.read().ammo.get(&ammo_type).is_none()
     });
 
-    let reload = move || char_signal.update(|cyberpunk|{
-        let weapon = cyberpunk.weapons.get_mut(weapon_index).expect("expecting weapon to exist");
-        
-        if weapon.weapon_data.ammo.is_none() {
-            return;
-        }
-        let ammo_data: &mut WeaponAmmoData = weapon.weapon_data.ammo.as_mut().expect("expecting ammo to be present");
-        
+    let get_ammo_gear_data_clone = get_ammo_gear_data.clone();
+    let get_current_ammo_data_for_option = Memo::new(move |_| {
+        let ammo_data = weapon_ammo_data_memo();     
+
         if ammo_data.current_ammo_type.is_none() {
-            return;
-        }        
-        let current_ammo = ammo_data.current_ammo_type.clone().unwrap();
-        
-        //check if we still have ammo in the inventory
-        let inventory_ammo = cyberpunk.ammo.get_mut(&current_ammo);
-        if inventory_ammo.is_none() {
-            return;
+            return Some(("no_ammo".to_string(), "".to_string()))
         }
-        let inventory_ammo = inventory_ammo.expect("inventory ammo cannot be none at this point");
-        let clip_size = ammo_data.max;
-        let refill_amount = std::cmp::min(*inventory_ammo, clip_size);
-        
-        ammo_data.value += refill_amount;
-        *inventory_ammo -= refill_amount;
-        if *inventory_ammo <= 0 {
-            cyberpunk.ammo.shift_remove(&current_ammo);
-        }
-        
+        let ammo_type = ammo_data.current_ammo_type.expect("expect ammo to exist");
+        let gear_data = get_ammo_gear_data_clone(&ammo_type);
+        Some((ammo_type, gear_data.name))
+    }); 
+
+    let get_current_ammo_select_key =  Memo::new(move |_| {
+        weapon_ammo_data_memo.get()
+        .current_ammo_type
+        .or(Some("no_ammo".to_string()))
+        .unwrap()
     });
+
+    let reload = move || {
+        let mut ret = Ok(());
+        char_signal.update(|cyberpunk|{
+            let weapon = cyberpunk.weapons.get_mut(weapon_index).expect("expecting weapon to exist");
+            
+            if weapon.weapon_data.ammo.is_none() {
+                ret = Err(());
+                return;
+            }
+            let ammo_data: &mut WeaponAmmoData = weapon.weapon_data.ammo.as_mut().expect("expecting ammo to be present");
+            
+            if ammo_data.current_ammo_type.is_none() {
+                ret = Err(());
+                return;
+            }        
+            let current_ammo = ammo_data.current_ammo_type.clone().unwrap();
+            
+            //check if we still have ammo in the inventory
+            let inventory_ammo = cyberpunk.ammo.get_mut(&current_ammo);
+            if inventory_ammo.is_none() {
+                ret = Err(());
+                return;
+            }
+            let inventory_ammo = inventory_ammo.expect("inventory ammo cannot be none at this point");
+            let clip_size = ammo_data.max;
+            let refill_amount = std::cmp::min(*inventory_ammo, clip_size);
+            
+            ammo_data.value += refill_amount;
+            *inventory_ammo -= refill_amount;
+            log!("inv {}", *inventory_ammo);
+            if *inventory_ammo <= 0 {
+                cyberpunk.ammo.shift_remove(&current_ammo);
+            }
+            return;
+        });
+        ret
+    };
 
     let ammo_options = Memo::new(move |_| {
         let weapon_calibers = weapon_ammo_data_memo().compatible_calibers;
@@ -140,8 +170,10 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
             if ammo_data.current_ammo_type.is_some() {
                 let current_ammo_key = ammo_data.current_ammo_type.clone().unwrap();
                 let current_ammo_amount = ammo_data.value;
-                if c.ammo.get_mut(&current_ammo_key).and_then(|val| Some(*val += current_ammo_amount)).is_none() {
-                    c.ammo.insert(current_ammo_key, current_ammo_amount);
+                if current_ammo_amount > 0 {
+                    if c.ammo.get_mut(&current_ammo_key).and_then(|val| Some(*val += current_ammo_amount)).is_none() {
+                        c.ammo.insert(current_ammo_key, current_ammo_amount);
+                    }
                 }
             }
 
@@ -184,27 +216,60 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
             </div>
         </Show>
         <Show when=move||{count.get() <= 0 && !show_ammo_select.get()}>
-            <button class="ammo_reload" on:click=move |_| show_ammo_select.set(true)>RELOAD</button>
+            <button class="ammo_reload" 
+                on:click=move |_| {
+                    if reload().is_err() {
+                        show_ammo_select.set(true)
+                    }
+                }
+            >
+                RELOAD
+            </button>
         </Show>
         <Show when=move||{show_ammo_select.get()}>
             <select class="ammo_select"
-                prop:value=move || {
-                    current_ammo_is_in_inventory()
-                        .then(|| weapon_ammo_data_memo.get().current_ammo_type.unwrap())
-                        .or(Some("no_ammo".to_string()))
-                        .unwrap()
-                }
                 on:change:target=move|ev| {
                     let new_ammo_key = ev.target().value();
                     swap_ammo(new_ammo_key)
                 }
             >
-                <option value=move||format!("no_ammo")>No Ammo</option>
+                <option 
+                    selected=move||{
+                        get_current_ammo_select_key() == "no_ammo".to_string()
+                    }
+                    value=move||format!("no_ammo")
+                >
+                    No Ammo
+                </option>
+                <Show when=move|| need_to_add_current_ammo_option()>
+                    <option 
+                        value=move|| {
+                            get_current_ammo_data_for_option()
+                            .expect("expecting current ammo data to exist")
+                            .0.clone()
+                        }
+                        selected=move||{
+                            get_current_ammo_select_key() == get_current_ammo_data_for_option()
+                                .expect("expecting current ammo data to exist")
+                                .0.to_string()
+                        }
+                    >
+                        {move || get_current_ammo_data_for_option().expect("expecting current ammo data to exist").1.clone()}
+                    </option>
+                </Show>
                 <For 
                     each=move|| ammo_options()
                     key=move|(key, _)| key.clone()
                     children=move|(key, name)| {
-                        view! {<option value=key.to_string()>{name.clone()}</option>}
+                        let key_clone = key.clone();
+                        view! {
+                            <option 
+                                selected=move||{
+                                    get_current_ammo_select_key() == key.to_string()
+                                }
+                                value=key_clone.to_string()>{name.clone()}
+                            </option>
+                        }
                     }
                 />
             </select>
