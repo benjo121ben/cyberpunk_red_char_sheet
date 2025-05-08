@@ -1,7 +1,7 @@
 use indexmap::IndexMap;
 use leptos::prelude::*;
 use std::cmp::{max, min};
-use crate::gear::*;
+use cp_char_data::gear::*;
 use crate::icon_views::{AddIcon, RemoveIcon};
 use crate::help::get_char_signal_from_ctx;
 use crate::info_modal_view::SimpleModalData;

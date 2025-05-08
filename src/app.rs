@@ -13,8 +13,8 @@ use leptos_router::{
     StaticSegment,
 };
 
-use crate::char::Character;
-use crate::gear::GearData;
+use cp_char_data::char::Character;
+use cp_char_data::gear::GearData;
 use crate::gear_views::{ArmorSelectionView, GearView};
 use crate::resource_views::{ArmorView, HealthAdjustPopup};
 use crate::shop_modal_view::{ShopModalData, ShopModalView};

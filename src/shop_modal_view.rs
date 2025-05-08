@@ -1,7 +1,7 @@
 use std::vec;
 use leptos::prelude::*;
-
-use crate::{char::GearType, gear::{GearData, ShopItemVisualData}, help::get_char_signal_from_ctx};
+use cp_char_data::{char::GearType, gear::{GearData, ShopItemVisualData}};
+use crate::help::get_char_signal_from_ctx;
 
 #[derive(Clone, Default, Debug, Eq, PartialEq)] 
 pub struct ShopModalData {

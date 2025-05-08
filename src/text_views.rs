@@ -1,6 +1,7 @@
 use leptos::prelude::*;
 
-use crate::{help::get_char_signal_from_ctx, icon_views::{AddIcon, RemoveIcon}, journal::Journal};
+use cp_char_data::journal::Journal;
+use crate::{help::get_char_signal_from_ctx, icon_views::{AddIcon, RemoveIcon}};
 
 #[component]
 pub fn TextCenterSection() -> impl IntoView {

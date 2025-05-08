@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 use std::cmp::max;
 
-use super::char::Skill;
+use cp_char_data::char::Skill;
 use super::help::get_char_signal_from_ctx;
 
 #[component]

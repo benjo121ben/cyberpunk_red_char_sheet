@@ -1,4 +1,3 @@
-pub mod journal;
 pub mod help;
 pub mod skill_view;
 pub mod resource_views;
@@ -8,8 +7,6 @@ pub mod text_views;
 pub mod info_modal_view;
 pub mod shop_modal_view;
 pub mod app;
-pub mod gear;
-pub mod char;
 
 #[cfg(feature = "hydrate")]
 #[wasm_bindgen::prelude::wasm_bindgen]

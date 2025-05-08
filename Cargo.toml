@@ -19,6 +19,7 @@ tokio = { version = "1", features = ["rt-multi-thread"], optional = true }
 wasm-bindgen = { version = "=0.2.100", optional = true }
 chrono = {version = "0.4.40"}
 indexmap = {version = "2.9.0", features = ["serde"]}
+cp_char_data= {path = "./src/cp_char_data"}
 
 [features]
 hydrate = [

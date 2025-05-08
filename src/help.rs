@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-use super::char::Character;
+use cp_char_data::char::Character;
 
 pub fn get_char_signal_from_ctx() -> RwSignal<Character>{
     let char_signal_opt: Option<RwSignal<Character>> = use_context();

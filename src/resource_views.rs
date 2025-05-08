@@ -2,7 +2,7 @@ use leptos::prelude::*;
 use leptos::logging::log;
 use std::cmp::{min, max};
 
-use crate::gear::{get_map_key, GearData, Weapon, WeaponAmmoData};
+use cp_char_data::gear::{get_map_key, GearData, Weapon, WeaponAmmoData};
 use crate::help::get_char_signal_from_ctx;
 use crate::icon_views::{AddIcon, RemoveIcon};
 
