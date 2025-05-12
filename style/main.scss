@@ -247,16 +247,22 @@ input[type=number] {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	flex-grow: 1;
+	flex-grow: 4;
 	flex-basis: 5;
 }
 
 .right_div {
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
+	flex-shrink: 3;
+	flex-basis: 10px;
+}
+
+.edit_char_options {
+	display: flex;
+	flex-direction: column;
 	align-items: center;
-	flex-shrink: 1;
-	flex-basis: 0;
 }
 
 .has_penalty {
@@ -554,8 +560,8 @@ button + .money {
 	padding: unset;
 	border-color: var(--warning-color);
 	border-radius: 5;
-	max-height: 60vh;
 	animation: turn_up 0.7s;
+	width: 100%;
 }
 
 div:has(> .weapon_view) {
@@ -564,7 +570,8 @@ div:has(> .weapon_view) {
 
 .weapon_view {
 	display: grid;
-	grid-template-columns: 200 0.5fr 0.5fr 0.5fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	width: 100%;
 	gap: 10px;
 	background-color: var(--light-background-color);
 	align-items: center;
@@ -574,6 +581,17 @@ div:has(> .weapon_view) {
 
 .weapon_view:hover {
 	background-color: var(--dark-background-color);
+}
+
+.weapon_center_div_wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.weapon_center_div {
+	display: grid;
+	grid-template-columns: 17px 50px 33px;
+	gap: 5px;
 }
 
 .weapon_bonus {
@@ -590,7 +608,7 @@ div:has(> .weapon_view) {
 }
 
 .weapon_ammo {
-	grid-column-start: span 5;
+	grid-column-start: span 3;
 	grid-row-start: 2;
 }
 
@@ -685,6 +703,12 @@ div:has(> .weapon_view) {
 	}
 }
 
+.icon {
+	width: 24px;
+	height: 24px;
+	flex-shrink: 0;
+}
+
 .icon * {
 	fill: var(--text-color);
 }
@@ -732,6 +756,12 @@ div:has(> .weapon_view) {
 	margin-bottom: 10px;
 }
 
+.journal_tab_wrapper {
+	min-width: 0;
+	overflow-x: scroll;
+	scrollbar-width: none;
+}
+
 .journal_section {
 	height: 100%;
 }
@@ -774,7 +804,8 @@ div:has(> .weapon_view) {
 	}
 
 	> div:nth-child(2) {
-		flex: 4 1 auto;
+		flex: 4 3 20px;
+		min-width: 0;
 	}
 }
 

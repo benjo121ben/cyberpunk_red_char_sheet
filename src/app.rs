@@ -3,6 +3,7 @@ use leptos::logging::log;
 use std::error::Error;
 use super::skill_view::{SkillList, StatsView};
 use super::resource_views::{HealthView, MoneyView};
+use crate::app::server_fn::codec::Json;
 use crate::info_modal_view::{SimpleModalData, SimpleModalView};
 use crate::text_views::TextCenterSection;
 use std::fs::read_to_string;
@@ -129,7 +130,7 @@ pub async fn get_all_data() -> Result<(Character, GearData), ServerFnError> {
     }
 }
 
-#[server(SetCharData, "/api", "Url", "set_char_data")]
+#[server(name=SetCharData, prefix="/api", input=Json, output=Json, endpoint="set_char_data")]
 pub async fn set_char_data(char: Character) -> Result<i32, ServerFnError> {
     let result = write_char_to_file("./character.json", &char);
     match result {
@@ -138,7 +139,7 @@ pub async fn set_char_data(char: Character) -> Result<i32, ServerFnError> {
     }
 }
 
-#[server(CheckPassword, "/api", "Url", "check_password")]
+#[server(name=CheckPassword, prefix="/api", input=Json, output=Json, endpoint="check_password")]
 pub async fn check_password(passw: String) -> Result<(), ServerFnError> {
     let result = check_password_file(passw);
     match result {
@@ -333,22 +334,24 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                         </div>
                     </div>
                     <div class="right_div">
-                        <div class="behind_image">
+                        <div class="image_wrapper">
                             <img class="char_image" src="Matchbox.jpg"/>
                         </div>
-                        <div class="flex_row justify_center">
-                            <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
-                            <MoneyView/>
+                        <div class="edit_char_options">
+                            <div class="flex_row justify_center">
+                                <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
+                                <MoneyView/>
+                            </div>
+                            <input class="ip_input" type="number" prop:value=move||char_rw_signal.read().ip on:change=move|ev| {
+                                match event_target_value(&ev).parse::<i32>() {
+                                    Ok(val) => {
+                                        char_rw_signal.write().ip = val;
+                                    },
+                                    Err(_) => {},
+                                };
+                            }>
+                            </input>
                         </div>
-                        <input class="ip_input" type="number" prop:value=move||char_rw_signal.read().ip on:change=move|ev| {
-                            match event_target_value(&ev).parse::<i32>() {
-                                Ok(val) => {
-                                    char_rw_signal.write().ip = val;
-                                },
-                                Err(_) => {},
-                            };
-                        }>
-                        </input>
                     </div>
                 </div>
             </div>

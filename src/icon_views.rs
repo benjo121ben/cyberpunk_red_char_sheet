@@ -5,8 +5,6 @@ use leptos::prelude::*;
 pub fn AddIcon() -> impl IntoView {
     view! {
         <svg
-            width="24"
-            height="24"
             viewBox="0 0 24 24"
             fill="none"
             class="icon"
@@ -30,8 +28,6 @@ pub fn AddIcon() -> impl IntoView {
 pub fn RemoveIcon() -> impl IntoView {
     view! {
         <svg
-            width="24"
-            height="24"
             viewBox="0 0 24 24"
             class="icon"
             fill="none"

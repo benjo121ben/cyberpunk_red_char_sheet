@@ -117,13 +117,17 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                     }
                 />
             </Show>
-            <span class="weapon_bonus" 
-                class:has_penalty=move||has_penalty()
-            >
-                {move|| get_skill_value.get() + weapon_bonus()}
-            </span>
-            <span class="weapon_rof">rof {move|| item_memo.get().weapon_data.rof.clone()}</span>
-            <span class="weapon_damage">{move|| item_memo.get().weapon_data.damage.clone()}</span>
+            <div class="weapon_center_div_wrapper">
+                <div class="weapon_center_div">
+                    <span class="weapon_bonus" 
+                        class:has_penalty=move||has_penalty()
+                    >
+                        {move|| get_skill_value.get() + weapon_bonus()}
+                    </span>
+                    <span class="weapon_rof">rof {move|| item_memo.get().weapon_data.rof.clone()}</span>
+                    <span class="weapon_damage">{move|| item_memo.get().weapon_data.damage.clone()}</span>
+                </div>
+            </div>
             <div class="weapon_buttons">
                 <button
                     on:click=move|ev| char_signal.update(|c|{
