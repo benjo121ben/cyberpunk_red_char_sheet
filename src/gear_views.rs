@@ -128,7 +128,7 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                     <span class="weapon_damage">{move|| item_memo.get().weapon_data.damage.clone()}</span>
                 </div>
             </div>
-            <div class="weapon_buttons">
+            <div class="gear_buttons">
                 <button
                     on:click=move|ev| char_signal.update(|c|{
                         ev.stop_propagation();
@@ -396,6 +396,15 @@ pub fn AllItemsView() -> impl IntoView {
                 key=move|(_, armor)| armor.name.to_lowercase().clone()
                 children=move|(indx, armor)| {
                     let armor_clone = armor.clone();
+                    let armor_bonus = move || {
+                        char_signal.read()
+                            .armors.get(indx)
+                            .expect("expect armor to exist")
+                            .armor_data
+                            .bonus.clone()
+                            .or(Some(0))
+                            .unwrap()
+                    };
                     view! {
                         <div class="gear_view"
                             on:click=move|_| simple_modal_signal.update(|data| {
@@ -412,9 +421,31 @@ pub fn AllItemsView() -> impl IntoView {
                                     .or(Some("(Body)"))
                                     .unwrap()
                             )}</span>
-                            <button on:click=move|_|{char_signal.write().armors.remove(indx);}>
-                                X
-                            </button>
+
+                            <div class="gear_buttons">
+                                <button on:click=move|_|{char_signal.write().armors.remove(indx);}>
+                                    X
+                                </button>
+                                <button
+                                    class:selected_tab=move || armor_bonus() != 0
+                                    on:click=move|ev| {
+                                        ev.stop_propagation();
+                                        char_signal.update(|c| {
+                                            c.armors.get_mut(indx).and_then(|armor: &mut Armor| {
+                                                if armor.armor_data.bonus.is_some() {
+                                                    armor.armor_data.bonus = None;
+                                                }
+                                                else {
+                                                    armor.armor_data.bonus = Some(1);
+                                                }
+                                                Some(armor)
+                                            });
+                                        })
+                                    }
+                                >
+                                    +1
+                                </button>
+                            </div>
                         </div>
                     }
                 }
