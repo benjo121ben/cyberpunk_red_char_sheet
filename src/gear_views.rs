@@ -433,9 +433,11 @@ pub fn AllItemsView() -> impl IntoView {
                                         char_signal.update(|c| {
                                             c.armors.get_mut(indx).and_then(|armor: &mut Armor| {
                                                 if armor.armor_data.bonus.is_some() {
+                                                    armor.armor_data.sp_current = max(armor.armor_data.sp_current -1, 0);
                                                     armor.armor_data.bonus = None;
                                                 }
                                                 else {
+                                                    armor.armor_data.sp_current += 1;
                                                     armor.armor_data.bonus = Some(1);
                                                 }
                                                 Some(armor)
