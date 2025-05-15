@@ -1,6 +1,7 @@
 use indexmap::{Equivalent, IndexMap};
 use leptos::logging::log;
 use leptos::prelude::*;
+use leptos::tachys::view;
 use std::cmp::{max, min};
 use cp_char_data::gear::*;
 use crate::icon_views::{AddIcon, RemoveIcon};
@@ -177,6 +178,27 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                     />
                 </div>
             </Show>
+            <WeaponAttachmentView index/>
+        </div>
+    }
+}
+
+#[component]
+pub fn WeaponAttachmentView(index:usize) -> impl IntoView {
+    let char_signal = get_char_signal_from_ctx();
+    let weapon_memo = Memo::new(move|_| {
+        char_signal.read().weapons.get(index).unwrap().clone()
+    });
+    view!{
+        <div class="attachment_view">
+            <For each=move|| weapon_memo.get().weapon_data.attachments.clone()
+                key=move|attachment| attachment.clone()
+                children=move|attachment| {
+                    view! {
+                        <span>{move || attachment.clone()}</span>
+                    }
+                }
+            />
         </div>
     }
 }

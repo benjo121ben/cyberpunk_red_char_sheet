@@ -591,12 +591,28 @@ div:has(> .weapon_view) {
 
 .weapon_center_div {
 	display: grid;
-	grid-template-columns: 17px 50px 33px;
+	grid-template-columns: 27px 50px 33px;
 	gap: 5px;
 }
 
 .weapon_bonus {
 	text-align: center;
+}
+
+.weapon_bonus::before {
+	content: "(";
+}
+
+.weapon_bonus::after {
+	content: ")";
+}
+
+.attachment_view{
+	grid-column-start: span 3;
+	font-size: medium;
+	font-family: Tahoma, Geneva, Verdana, sans-serif;
+	font-style: italic;
+	margin-top: -5px;
 }
 
 .weapon_rof {
@@ -610,7 +626,6 @@ div:has(> .weapon_view) {
 
 .weapon_ammo {
 	grid-column-start: span 3;
-	grid-row-start: 2;
 }
 
 .ammo_view_linear {
