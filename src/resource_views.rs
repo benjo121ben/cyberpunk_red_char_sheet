@@ -370,10 +370,11 @@ pub fn ArmorView(head: bool) -> AnyView {
 pub fn HealthAdjustPopup(visible_signal: RwSignal<bool>) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
     let head_damage_signal = RwSignal::new(false);
+    let melee_damage_signal = RwSignal::new(false);
     let change_health = move |amount: i32| {
         let negative_amount = -amount;
         char_signal.update(|c| {
-            c.change_health_with_armor(head_damage_signal.get(), negative_amount);
+            c.change_health_with_armor(head_damage_signal.get(), melee_damage_signal.get(), negative_amount);
         });
     };
 
@@ -386,6 +387,8 @@ pub fn HealthAdjustPopup(visible_signal: RwSignal<bool>) -> impl IntoView {
             <div class="flex_row">
                 Head
                 <input type="checkbox" on:change=move|_| head_damage_signal.update(|a| *a= !*a)/>
+                Melee
+                <input type="checkbox" on:change=move|_| melee_damage_signal.update(|a| *a= !*a)/>
                 <input autofocus 
                     class="health_change_input" 
                     placeholder="damage"

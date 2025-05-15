@@ -357,7 +357,7 @@ impl Character {
         self.hp_current = min(max(self.hp_current + amount, 0), self.calc_max_health());
     }
 
-    pub fn change_health_with_armor(&mut self, head_damage:bool, amount: i32) {
+    pub fn change_health_with_armor(&mut self, head_damage:bool, melee_damage: bool, amount: i32) {
         if amount >= 0 {
             self.hp_current = min(self.hp_current + amount, self.calc_max_health());
             return;
@@ -370,7 +370,14 @@ impl Character {
         };
 
         let current_sp = armor
-            .and_then(|a| Some(a.sp_current))
+            .and_then(|a| Some(
+                if melee_damage {
+                    (a.sp_current as f32 / 2.0).ceil() as i32
+                }
+                else {
+                    a.sp_current
+                }
+            ))
             .or(Some(0))
             .unwrap()
         ;
