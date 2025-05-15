@@ -446,3 +446,45 @@ pub fn MoneyView() -> impl IntoView {
         </Show>
     }
 }
+
+#[component]
+pub fn IPView() -> impl IntoView {
+    let char_signal = get_char_signal_from_ctx();
+    view! {
+        <div class="ip_view">
+            <label>IP:</label>
+            <input class="ip_input" type="number" prop:value=move||char_signal.read().ip on:change=move|ev| {
+                match event_target_value(&ev).parse::<i32>() {
+                    Ok(val) => {
+                        char_signal.write().ip = val;
+                    },
+                    Err(_) => {},
+                };
+            }/>
+        </div>
+    }
+}
+
+#[component]
+pub fn HumanityView() -> impl IntoView {
+    let char_signal = get_char_signal_from_ctx();
+    view! {
+        <div class="humanity_view">
+            <label>Humanity:</label>
+            <input class="humanity_input" type="number"
+                prop:value=move||char_signal.read().humanity
+                on:change=move |ev| {
+                    match event_target_value(&ev).parse::<i32>() {
+                        Ok(number) => {
+                            char_signal.update(|cyberpunk| {
+                                cyberpunk.humanity = max(0, min(number, cyberpunk.get_max_humanity()))
+                            })
+                        },
+                        Err(_) => {},
+                    }
+                }
+            />
+            <span> / {move || char_signal.read().get_max_humanity()}</span>
+        </div>
+    }
+}

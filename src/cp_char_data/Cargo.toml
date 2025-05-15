@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+leptos = { version = "0.8.2", features = ["nightly"] }
 serde = { version = "1.0.219", features = ["derive"]} 
 serde_json = { version = "1.0.140", features = ["preserve_order"] }
 indexmap = {version = "2.9.0", features = ["serde"]}

@@ -262,7 +262,8 @@ input[type=number] {
 .edit_char_options {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: stretch;
+	gap: 5px;
 }
 
 .has_penalty {
@@ -854,8 +855,23 @@ div:has(> .weapon_view) {
 	background-color: var(--dark-background-color);
 }
 
-.ip_input {
-	text-align: center;
-	width: 150;
+.ip_view {
+	@extend .flex_row;
+	justify-content: center;
+	gap: 5px;
+	input {
+		text-align: center;
+		max-width: 50px;
+	}
+}
+
+.humanity_view {
+	@extend .flex_row;
+	justify-content: center;
+	gap: 5px;
+	> input {
+		max-width: 40px;
+		text-align: right;
+	}
 }
 

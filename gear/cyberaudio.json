@@ -85,8 +85,8 @@
         "file": "cyberaudio",
         "internal": false,
         "name": "Cyberaudio Suite",
-        "price": 0,
-        "psychosis": 0,
+        "price": 500,
+        "psychosis": 7,
         "type": "cyberware"
     },
     {

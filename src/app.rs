@@ -17,7 +17,7 @@ use leptos_router::{
 use cp_char_data::char::Character;
 use cp_char_data::gear::GearData;
 use crate::gear_views::{ArmorSelectionView, GearView};
-use crate::resource_views::{ArmorView, HealthAdjustPopup};
+use crate::resource_views::{ArmorView, HealthAdjustPopup, HumanityView, IPView};
 use crate::shop_modal_view::{ShopModalData, ShopModalView};
 
 pub fn read_gear_data_from_file<P: AsRef<Path>>(path: P) -> Result<GearData, Box<dyn Error>> {
@@ -342,15 +342,8 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                                 <button on:click=move|_| shop_modal_signal.update(|data| data.show())>SHOP</button>
                                 <MoneyView/>
                             </div>
-                            <input class="ip_input" type="number" prop:value=move||char_rw_signal.read().ip on:change=move|ev| {
-                                match event_target_value(&ev).parse::<i32>() {
-                                    Ok(val) => {
-                                        char_rw_signal.write().ip = val;
-                                    },
-                                    Err(_) => {},
-                                };
-                            }>
-                            </input>
+                            <IPView/>
+                            <HumanityView/>
                         </div>
                     </div>
                 </div>

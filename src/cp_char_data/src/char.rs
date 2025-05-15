@@ -418,4 +418,14 @@ impl Character {
 
         got_neural_link && (got_grip || got_plugs)
     }
+
+    pub fn get_max_humanity(&self) -> i32 {
+        let abs_max: i32 = self.stats.empathy * 10;
+        let penalty: i32 = self.cyberware.iter()
+            .filter(|cyber| cyber.psychosis > 0)
+            .map(|cyber| {
+                if cyber.file.as_str() == "borgware" { 4 } else { 2 }
+            }).sum();
+        abs_max - penalty
+    }
 }

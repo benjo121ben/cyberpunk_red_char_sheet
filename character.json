@@ -150,15 +150,6 @@
       "type": "cyberware"
     },
     {
-      "description": "<p>Cyberaudio Suite is installed invisibly in the inner skull. System has 3 Option Slots for Cyberaudio Options. User can only have one Cyberaudio Suite installed.</p>",
-      "file": "cyberaudio",
-      "internal": false,
-      "name": "Cyberaudio Suite",
-      "price": 0,
-      "psychosis": 0,
-      "type": "cyberware"
-    },
-    {
       "description": "<p>2\"x4\" (5cm x 10cm) space with a Realskinn&trade; zipper. Contents can be successfully concealed without a Check.</p>",
       "file": "external-body-cyberware",
       "internal": false,
@@ -181,6 +172,15 @@
       "file": "neuralware",
       "internal": true,
       "name": "Interface Plugs",
+      "price": 500,
+      "psychosis": 7,
+      "type": "cyberware"
+    },
+    {
+      "description": "<p>Cyberaudio Suite is installed invisibly in the inner skull. System has 3 Option Slots for Cyberaudio Options. User can only have one Cyberaudio Suite installed.</p>",
+      "file": "cyberaudio",
+      "internal": false,
+      "name": "Cyberaudio Suite",
       "price": 500,
       "psychosis": 7,
       "type": "cyberware"
