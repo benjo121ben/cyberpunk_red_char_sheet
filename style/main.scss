@@ -732,6 +732,7 @@ div:has(> .weapon_view) {
 	border-radius: 5px;
 	background-color: var(--dark-background-color);
 	color: var(--text-color);
+	z-index: 2;
 
 	> div {
 		align-items: baseline;
@@ -743,7 +744,6 @@ div:has(> .weapon_view) {
 		outline: unset;
 		text-align: center;
 		max-width: 100px;
-		
 	}
 
 	input:focus {

@@ -1,4 +1,5 @@
 use indexmap::IndexMap;
+use leptos::logging::log;
 use leptos::prelude::*;
 use std::cmp::{max, min};
 use cp_char_data::gear::*;
@@ -194,7 +195,8 @@ pub fn ArmorSelectionView() -> impl IntoView {
     let body_armors = Memo::new(move |_| char_signal.read()
         .armors
         .clone()
-        .into_iter().enumerate()
+        .into_iter()
+        .enumerate()
         .filter(|(_, armor)|!armor.armor_data.head)
         .collect::<Vec<_>>())
     ;
@@ -336,21 +338,23 @@ pub fn AllItemsView() -> impl IntoView {
 
     view! {
         <div class="gear_list">
-            <For each=move|| {char_signal.read().cyberware.clone().into_iter().enumerate().collect::<Vec<_>>()}
-                key=move|(_, cyber)| cyber.name.to_lowercase().clone()
-                children=move|(indx, cyber)| {
-                    let cyber_clone = cyber.clone();
+            <For each=move|| {0..char_signal.read().cyberware.len()}
+                key=move|indx| indx.to_string()
+                children=move|indx| {
+                    let cyber_memo = Memo::new(move|_| char_signal.read().cyberware.get(indx).expect("expect cyberware to exist in list").clone());
                     view! {
                         <div class="gear_view"
                             on:click=move|_| simple_modal_signal.update(|data| {
-                                data.title = cyber_clone.name.clone();
-                                data.description = cyber_clone.description.clone();
+                                let cyber = cyber_memo.get();
+                                data.title = cyber.name.clone();
+                                data.description = cyber.description.clone();
                                 data.show();
                             })
                         >
-                            <span>{move || cyber.name.to_string()}</span>
+                            <span>{move || cyber_memo.get().name.to_string()}</span>
                             <button on:click=move|ev|{
                                 ev.stop_propagation();
+                                log!("rem index {}", indx);
                                 char_signal.write().cyberware.remove(indx);
                             }>
                                 X
@@ -396,14 +400,12 @@ pub fn AllItemsView() -> impl IntoView {
             />
 
             <hr style="width:90%"/>
-            <For each=move|| {char_signal.read().armors.clone().into_iter().enumerate().collect::<Vec<_>>()}
-                key=move|(_, armor)| armor.name.to_lowercase().clone()
-                children=move|(indx, armor)| {
-                    let armor_clone = armor.clone();
+            <For each=move|| {0..char_signal.read().armors.len()}
+                key=move|index| index.to_string()
+                children=move|indx| {
+                    let armor_memo = Memo::new(move|_| char_signal.read().armors.get(indx).expect("expect armor to exist").clone());
                     let armor_bonus = move || {
-                        char_signal.read()
-                            .armors.get(indx)
-                            .expect("expect armor to exist")
+                        armor_memo.get()
                             .armor_data
                             .bonus.clone()
                             .or(Some(0))
@@ -412,15 +414,15 @@ pub fn AllItemsView() -> impl IntoView {
                     view! {
                         <div class="gear_view"
                             on:click=move|_| simple_modal_signal.update(|data| {
-                                data.title = armor_clone.name.clone();
-                                data.description = armor_clone.description.clone();
+                                data.title = armor_memo.get().name.clone();
+                                data.description = armor_memo.get().description.clone();
                                 data.show();
                             })
                         >
                             <span>{move || format!(
                                 "{} {}", 
-                                armor.name.to_string(), 
-                                armor.armor_data.head
+                                armor_memo.get().name.to_string(), 
+                                armor_memo.get().armor_data.head
                                     .then(||"(Head)")
                                     .or(Some("(Body)"))
                                     .unwrap()
@@ -428,8 +430,9 @@ pub fn AllItemsView() -> impl IntoView {
 
                             <div class="gear_buttons">
                                 <button on:click=move|ev|{
-                                    char_signal.write().armors.remove(indx);
                                     ev.stop_propagation();
+                                    log!("rem index {}", indx);
+                                    char_signal.write().armors.remove(indx);
                                 }>
                                     X
                                 </button>
