@@ -77,7 +77,8 @@
         "fullauto": false,
         "rof": 2,
         "skill": "melee_weapon",
-        "weapontype": "meleeweapon"
+        "weapontype": "meleeweapon",
+        "attachments": []
       }
     },
     {
@@ -102,7 +103,8 @@
         "fullauto": false,
         "rof": 2,
         "skill": "handgun",
-        "weapontype": "pistol"
+        "weapontype": "pistol",
+        "attachments": []
       }
     },
     {
@@ -128,7 +130,8 @@
         "fullauto": false,
         "rof": 1,
         "skill": "shoulder_arms",
-        "weapontype": "shotgun"
+        "weapontype": "shotgun",
+        "attachments": []
       }
     }
   ],

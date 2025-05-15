@@ -32,6 +32,7 @@ impl ShopItemVisualData {
 pub struct GearData {
     pub ammunition: Vec<Ammunition>,
     pub armor: Vec<Armor>,
+    pub attachments: Vec<Attachment>,
     #[serde(rename = "cyberdeck-hardware")]
     pub cyberdeck_hardware: Vec<CyberdeckHardware>,
     pub cyberware: Vec<Cyberware>,
@@ -138,7 +139,9 @@ pub struct WeaponData {
     pub fullauto: bool,
     pub rof: i32,
     pub skill: String,
-    pub weapontype: String
+    pub weapontype: String,
+    #[serde(default)]
+    pub attachments: Vec<String>
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
@@ -160,6 +163,28 @@ pub struct Ammunition {
     pub caliber: String,
     pub only_one: bool
 }
+
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct Attachment {
+    pub name: String,
+    pub shorthand: String,
+    #[serde(rename = "type")]
+    pub type_field: String,
+    pub file: String,
+    pub price: i64,
+    pub slot_size: i32,
+    pub description: String,
+    pub selector: Selector,
+    pub slot_type: Option<String>,
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct Selector {
+    pub skill: Option<String>,
+    pub range: String,
+    pub exclude_type: Option<String>,
+}
+
 
 //needed to set default bools
 pub fn is_false() -> bool { false }

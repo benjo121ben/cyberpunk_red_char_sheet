@@ -570,6 +570,111 @@
             "type": "shield"
         }
     ],
+    "attachments": [
+        {
+            "description": "<p>When wielded, this weapon can also be used as a Light Melee Weapon (1d6 ROF-2). While the bayonet is attached to a weapon, the weapon cannot be concealed under clothing.</p>",
+            "file": "attachments",
+            "name": "Bayonet",
+            "price": 100,
+            "selector": {
+                "range": "ranged",
+                "skill": "shoulder_arms"
+            },
+            "shorthand": "Bayonet",
+            "slot_size": 1,
+            "type": "attachment"
+        },
+        {
+            "description": "<p>The weapon holds a maximum number of shots equal to its Drum entry on the Clip Chart below. Only one clip can be attached to a weapon at a time. While this is attached to a weapon, it cannot be concealed under clothing.</p>",
+            "file": "attachments",
+            "name": "Drum Magazine",
+            "price": 500,
+            "selector": {
+                "exclude_type": "bow",
+                "range": "ranged"
+            },
+            "shorthand": "Drum-mag",
+            "slot_size": 1,
+            "slot_type": "mag",
+            "type": "attachment"
+        },
+        {
+            "description": "<p>The weapon holds a maximum number of shots equal to its Extended entry on the Clip Chart below. Only one clip can be attached to a weapon at a time. While this is attached to a weapon, it cannot be concealed under clothing.</p>",
+            "file": "attachments",
+            "name": "Extended Magazine",
+            "price": 100,
+            "selector": {
+                "exclude_type": "bow",
+                "range": "ranged"
+            },
+            "shorthand": "Ext-mag",
+            "slot_size": 1,
+            "slot_type": "mag",
+            "type": "attachment"
+        },
+        {
+            "description": "<p>When wielded in two hands, the weapon can also be used as a Grenade Launcher, with only 1 grenade in its magazine. While this is attached to a weapon, it cannot be concealed under clothing. <br/><b>Requires 2 Attachment Slots.</b></p>",
+            "file": "attachments",
+            "name": "Grenade Launcher Underbarrel",
+            "price": 500,
+            "selector": {
+                "range": "ranged",
+                "skill": "shoulder_arms"
+            },
+            "shorthand": "Grnd",
+            "slot_size": 2,
+            "type": "attachment"
+        },
+        {
+            "description": "<p>Reduces penalties imposed on your firing at a target obscured to your by darkness, smoke, fog, etc. to 0. Looking through the scope, you can distinguish hot meat from cold metal, but not more specifically than that. You can't tell the brand of their Cyberarm from a distance, or see any of its internal surprised, for example.</p>",
+            "file": "attachments",
+            "name": "Infrared Nightvision Scope",
+            "price": 500,
+            "selector": {
+                "range": "ranged"
+            },
+            "shorthand": "Heat-night-scope",
+            "slot_size": 1,
+            "type": "attachment"
+        },
+        {
+            "description": "<p>When wielded in two hands, the weapon can also be used as a Shotgun, with only 2 shots in its magazine. While this is attached to a weapon, it cannot be concealed under clothing. <br/><b>Requires 2 Attachment Slots.</b></p>",
+            "file": "attachments",
+            "name": "Shotgun Underbarrel",
+            "price": 500,
+            "selector": {
+                "range": "ranged",
+                "skill": "shoulder_arms"
+            },
+            "shorthand": "Shotg",
+            "slot_size": 2,
+            "type": "attachment"
+        },
+        {
+            "description": "<p>Installing or uninstalling a Smargun Link takes an hour. A weapon is a Smartgun only when it has a Smartgun Link attached to it. Special Cyberware is required to take advantage of a Smartgun. A Smartgun Link must be connected to you with Interface Plugs or a Subdermal Grip in order to operate, both of which require you to have a Neural Link. A Subdermal Grip connects a Smartgun held in it automatically. You can plug in Interface Plugs as part of drawing a Smartgun into a free hand, as long as your Interface Plugs aren't already plugged into something else. Being disarmed of your Smartgun doesn't snap your cables, it just unplugs them from the Smartgun. Plugging them back in isn't an Action should you have the Smartgun in your hand, as their ports are designed for ease-of-use. <i>Why go through all this trouble?</i> Because when making Ranged Attacks with one, you add a +1 to your Check.<br/><b>Requires 2 Attachment Slots.</b></p>",
+            "file": "attachments",
+            "name": "Smargun Link",
+            "price": 500,
+            "selector": {
+                "range": "ranged"
+            },
+            "shorthand": "Smart",
+            "slot_size": 2,
+            "type": "attachment"
+        },
+        {
+            "description": "<p>Looking through this scope, user can see detail up to 800m/yds away. When attacking a target 51m/yds or further away with either a weapon's shingle shot firing mode, or an Aimed Shot, you can add a +1 to your Check. Does not stack with TeleOptics Cyberware.</p>",
+            "file": "attachments",
+            "name": "Sniping Scope",
+            "price": 100,
+            "selector": {
+                "range": "ranged"
+            },
+            "shorthand": "Sniper",
+            "slot_size": 1,
+            "type": "attachment"
+        }
+    ],
     "cyberdeck-hardware": [
         {
             "description": "<p>A Cyberdeck with Hardened Circuitry cannot be rendered temporarily disabled, rendered inoperable, or destroyed by EMP effects like pulses, or Non-Black ICE Program Effects.</p>",
@@ -615,6 +720,51 @@
         }
     ],
     "cyberware": [
+        {
+            "description": "<p>Twin flattened antennae protruding from the user's head improving their Cyberaudio Suite, sometimes referred to as \"Rabbit Ears.\" User can install up to 5 additional Cyberaudio Options into their Cyberaudio Suite. User can only have one Sensor Array installed. <strong>Requires Cyberaudio Suite but doesn't take up a Cyberaudio Option Slot.</strong></p>",
+            "file": "borgware",
+            "internal": false,
+            "name": "Sensor Array",
+            "price": 1000,
+            "psychosis": 14,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>A heavily enhanced skeleton and support structure with even more hydraulic and myomar muscles.</p>\n<p>&bull; User increases their BODY to 14.</p>\n<p>&bull; This increase in BODY changes a Character's HP and Death Save.</p>\n<p>&bull; This cannot increase the user's BODY to 15 or higher.</p>\n<p>&bull; <strong>Installation requires BODY 8 and Two Grafted Muscle and Bone Lace.</strong></p>",
+            "file": "borgware",
+            "internal": false,
+            "name": "Implanted Linear Frame Beta",
+            "price": 5000,
+            "psychosis": 14,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>User can mount 2 Cyberarms under first set of arms. User can only have one Artificial Shoulder Mount installed.</p>",
+            "file": "borgware",
+            "internal": false,
+            "name": "Artificial Shoulder Mount",
+            "price": 1000,
+            "psychosis": 14,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>User can mount up to 5 additional Cybereyes into the MultiOptic Mount. <strong>Cybereyes sold and installed separately.</strong> User can only have one MultiOptic Mount installed.</p>",
+            "file": "borgware",
+            "internal": false,
+            "name": "MultiOptic Mount",
+            "price": 1000,
+            "psychosis": 14,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>An enhanced skeleton and support structure with hydraulic and myomar muscles.</p>\n<p>&bull; User increases their BODY to 12.</p>\n<p>&bull; This increase in BODY changes a Character's HP and Death Save.</p>\n<p>&bull; This cannot increase the user's BODY to 13 or higher.</p>\n<p>&bull; <strong>Installation requires BODY 6 and Grafted Muscle and Bone Lace.</strong></p>",
+            "file": "borgware",
+            "internal": false,
+            "name": "Implanted Linear Frame Sigma",
+            "price": 1000,
+            "psychosis": 14,
+            "type": "cyberware"
+        },
         {
             "description": "<p>Cyberaudio Option. Beeps when user is within 2m/yds of a tap, bug, or other listening device. Requires a Cyberaudio Suite.</p>",
             "file": "cyberaudio",
@@ -721,366 +871,6 @@
             "name": "Audio Recorder",
             "price": 100,
             "psychosis": 2,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Cybereye Option. User is immune to blindness or other effects caused by dangerous flashes of light, like those of a flashbang. <strong>Requires two Cybereyes and must be paired.</strong></p>",
-            "file": "cyberoptics",
-            "internal": true,
-            "name": "Anti-Dazzle",
-            "price": 100,
-            "psychosis": 2,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Cybereye Option. User can see detail up to 800m/yds away. When attacking a target 51m/yds or further away with either a weapon's single shot firing mode or an Aimed Shot, you can add a +1 to your Check. Multiple installations of this option provide user no additional benefit. Does not stack with Sniping Scope Weapon Attachment. <strong>Requires a Cybereye</strong></p>",
-            "file": "cyberoptics",
-            "internal": false,
-            "name": "TeleOptics",
-            "price": 500,
-            "psychosis": 3,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Cybereye Option. Cosmetic upgrade allows unlimited color and pattern changes to be made as an Action. Eye can optionally be temperature sensitive or reactant to hormone changes in the body. Requires a Cybereye.</p>",
-            "file": "cyberoptics",
-            "internal": true,
-            "name": "Color Shift",
-            "price": 100,
-            "psychosis": 2,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Cybereye Option. User adds +2 to their Perception, Lip Reading, and Conceal/Reveal Object Skills for Checks which include sight. Requires two Cybereyes and must be paired. Multiple installations of this option provide user no additional benefit.</p>",
-            "file": "cyberoptics",
-            "internal": true,
-            "name": "Image Enhance",
-            "price": 500,
-            "psychosis": 3,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>All following options are installed in an artificial eye that replaces a meat one. Each Cybereye has 3 Option Slots for Cybereye Options. Some options must be paired to work properly (purchased twice and installed in two different Cybereyes on a user. Humanity Loss is calculated separately for each purchase).</p>",
-            "file": "cyberoptics",
-            "internal": true,
-            "name": "Cybereye - Base/Req.",
-            "price": 100,
-            "psychosis": 7,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Cybereye Option. Dartgun Exotic Weapon, with only a single shot in the clip, concealed inside the Cybereye. Requires a Cybereye and takes 3 Option Slots.</p>",
-            "file": "cyberoptics",
-            "internal": true,
-            "name": "Dartgun",
-            "price": 500,
-            "psychosis": 2,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Cybereye Option. Camera in eye records video and audio to a standard Memory Chip or a linked Agent. Requires a Cybereye and takes 2 Option Slots.</p>",
-            "file": "cyberoptics",
-            "internal": true,
-            "name": "MicroVideo",
-            "price": 500,
-            "psychosis": 2,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Cybereye Option. Projects cyberspace imagery over user's view of the world. Never forget your Virtuality Goggles again. Requires two Cybereyes and must be paired.</p>",
-            "file": "cyberoptics",
-            "internal": true,
-            "name": "Virtuality",
-            "price": 100,
-            "psychosis": 2,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Cybereye Option. Projects a tiny subscreen into user's normal field of vision for messages, video, etc. from a user's other cyberware or electronics. Picture in a picture for real life. <strong>Requires a Cybereye. </strong></p>",
-            "file": "cyberoptics",
-            "internal": true,
-            "name": "Chyron",
-            "price": 100,
-            "psychosis": 2,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Cybereye Option. Reduces penalties imposed by darkness and other intangible obscurement, like smoke, fog, etc. to 0. User can distinguish hot meat from cold metal but cannot see through anything that could provide cover.<strong> Requires two Cybereyes, must be paired, and takes 2 Option Slots per Cybereye.</strong></p>",
-            "file": "cyberoptics",
-            "internal": true,
-            "name": "Low Light/ Infrared/ UV",
-            "price": 500,
-            "psychosis": 3,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>c Cybereye Option. User gets a +1 to their Check when making an Aimed Shot. Multiple installations of this option provide user no additional benefit. Requires a Cybereye.</p>",
-            "file": "cyberoptics",
-            "internal": true,
-            "name": "Targeting Scope",
-            "price": 500,
-            "psychosis": 3,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Cybereye Option. Radiation readings within 100m/yds of the user are displayed in user's vision hovering over their source in the form of a blue glow. Requires a Cybereye.</p>",
-            "file": "cyberoptics",
-            "internal": true,
-            "name": "Radiation Detector",
-            "price": 1000,
-            "psychosis": 3,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Cybereye Option. Microscope providing user up to 400x magnification. Requires a Cybereye.</p>",
-            "file": "cyberoptics",
-            "internal": true,
-            "name": "MicroOptics",
-            "price": 100,
-            "psychosis": 2,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>2\"x4\" (5cm x 10cm) space with a Realskinn&trade; zipper. Contents can be successfully concealed without a Check.</p>",
-            "file": "external-body-cyberware",
-            "internal": false,
-            "name": "Subdermal Pocket",
-            "price": 100,
-            "psychosis": 3,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Holster inside the user's body can store a weapon already capable of concealment so that it can be successfully concealed without a roll. Weapon can be drawn from the hidden holster without an Action, as long as it is implanted in an easily accessible place on the user's body. You don't want one in your thigh unless you don't wear pants.</p>",
-            "file": "external-body-cyberware",
-            "internal": false,
-            "name": "Hidden Holster",
-            "price": 500,
-            "psychosis": 7,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>User's body and head are armored at SP7. Your SP in any location is determined by your highest source of SP in that location. Additionally, whenever your armor is ablated in a location, all your sources of SP in that location are ablated at the same time. Whenever the user successfully completes a day of natural healing, nanomachines present in the Skin Weave repair both the body and head location of the Skin Weave for one point of its lost SP.&nbsp;</p>",
-            "file": "external-body-cyberware",
-            "internal": false,
-            "name": "Skin Weave",
-            "price": 500,
-            "psychosis": 7,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>User's body and head are armored at SP11. Your SP in any location is determined by your highest source of SP in that location. Additionally, whenever your armor is ablated in a location, all your sources of SP in that location are ablated at the same time. Whenever the user successfully completes a day of natural healing, nanomachines present in the Subdermal Armor repair both the body and head location of the Subdermal Armor for one point of its lost SP.</p>",
-            "file": "external-body-cyberware",
-            "internal": false,
-            "name": "Subdermal Armor",
-            "price": 1000,
-            "psychosis": 14,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Subdermal implant generates a constant LED readout of the current time and date visible through the skin.</p>",
-            "file": "fashionware",
-            "internal": false,
-            "name": "Skinwatch",
-            "price": 100,
-            "psychosis": 0,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Popularized by the media sensation UR, these thin silver lines run in circuit-like patterns across the body. Many people believe they act as a \"Faraday cage\" to protect you from radiation and EMP effects but so far there&rsquo;s no scientific backing to these claims. But they sure do look cool. Most people wear EMP Threading as a fashion statement.</p>",
-            "file": "fashionware",
-            "internal": false,
-            "name": "EMP Threading",
-            "price": 100,
-            "psychosis": 0,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Dyes and pigments infused into the skin to permanently change its hue, the applications of which can range from hiding blemishes to the desire for neon-green skin. Pigments can optionally be temperature-sensitive or reactant to hormone changes in the body. <strong>A user with Chemskin and Techhair adds +2 to their Personal Grooming Skill for having both. (This bonus only applies once)</strong></p>",
-            "file": "fashionware",
-            "internal": false,
-            "name": "Chemskin",
-            "price": 100,
-            "psychosis": 0,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Color-light-emitting artificial hair. Hair can optionally be temperature sensitive, motorized to extend/retract, or reactant to hormone changes in the body. <strong>A user with Chemskin and Techhair adds +2 to their Personal Grooming Skill for having both. (This bonus only applies once.</strong></p>",
-            "file": "fashionware",
-            "internal": false,
-            "name": "Techhair",
-            "price": 100,
-            "psychosis": 0,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>l Color-changing lenses implanted into the eye. Several patterns are also available. Lenses can optionally be temperature-sensitive or reactant to hormone changes in the body. Only one choice of color and pattern can be made, but the user can deactivate the color change at any time desired without an Action.</p>",
-            "file": "fashionware",
-            "internal": false,
-            "name": "Shift Tacts",
-            "price": 100,
-            "psychosis": 0,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Subdermal patches store light and project colored tattoos under the skin. The larger the piece, the more installations of this fashionware you need to complete it. <strong>A user with a three or more Light Tattoo installations adds +2 to their Wardrobe &amp; Style Skill. (This bonus only applies once.</strong></p>",
-            "file": "fashionware",
-            "internal": false,
-            "name": "Light Tattoo",
-            "price": 100,
-            "psychosis": 0,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Subdermal implant which generates a constant LED readout of pulse, temperature, respiration, blood sugar, etc. You can link your Biomonitor to your Agent to allow it to track your wellness.</p>",
-            "file": "fashionware",
-            "internal": false,
-            "name": "Biomonitor",
-            "price": 100,
-            "psychosis": 0,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Chipware. While installed into a Chipware Socket, the user's sense of smell is boosted, allowing them to use the Tracking Skill to track scent in addition to visual clues. <strong>Requires Chipware Socket.</strong></p>",
-            "file": "neuralware",
-            "internal": true,
-            "name": "Olfactory Boost",
-            "price": 100,
-            "psychosis": 7,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Chipware. While installed into a Chipware Socket, it boosts the user's sense of touch, allowing them to detect motion within 20m/yds of them, as long as their hand is touching a surface. While in use as a motion detector, that hand can't be used to do anything else. <strong>Requires Chipware Socket.</strong></p>",
-            "file": "neuralware",
-            "internal": true,
-            "name": "Tactile Boost",
-            "price": 100,
-            "psychosis": 7,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Neuralware Option. Plugs in the wrist or head that allow user to jack into and make use of Smartguns, Cyberdecks, heavy machinery, and drive vehicles with no hands! Multiple installations allow user to be plugged into multiple things at the same time. <strong>Requires Neural Link.</strong></p>",
-            "file": "neuralware",
-            "internal": true,
-            "name": "Interface Plugs",
-            "price": 500,
-            "psychosis": 7,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Chipware. The standard for data storage. While installed into a Chipware socket, the user's cyberware can store data on it or access data stored on it. <strong>Requires Chipware Socket.</strong></p>",
-            "file": "neuralware",
-            "internal": true,
-            "name": "Memory Chip",
-            "price": 10,
-            "psychosis": 0,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Neuralware Option. A single socket installed in the back of the neck that allows quick installation of a single piece of Chipware, of which there are many varieties.</p>\n<p>Installing or uninstalling a single piece of Chipware from a Chipware Socket is an Action.</p>\n<p>The first time you install a piece of Chipware you've never used before, you always accrue Humanity Loss. Re-installing Chipware you've already used doesn't do this. <strong>Chipware does not take up a Neural Link Option Slot. </strong></p>\n<p>Multiple sockets may be installed, but each must be paid for individually. <strong>Requires Neural Link.</strong></p>",
-            "file": "neuralware",
-            "internal": true,
-            "name": "Chipware Socket",
-            "price": 500,
-            "psychosis": 7,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Chipware. While installed into a Chipware Socket, a Skill Chip makes the Skill it was made for trained for the user at +3, unless the user's Skill was already trained higher than +3, in which case it does nothing. Skill Chips for (x2) cost Skills are 1,000eb, chips for all other skills are 500eb. <strong>Requires Chipware Socket.</strong></p>",
-            "file": "neuralware",
-            "internal": true,
-            "name": "Skill Chip",
-            "price": 500,
-            "psychosis": 7,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Neuralware Option. Always-on Speedware that provides consistently improved reaction time. User adds +2 to their Initiative Rolls. Only a single piece of Speedware can be installed into a user at a time. <strong>Requires Neural Link.</strong></p>",
-            "file": "neuralware",
-            "internal": true,
-            "name": "Kerenzikov",
-            "price": 500,
-            "psychosis": 14,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Wired artificial nervous system, required to use Neuralware, and Subdermal Grips. System has 5 Option Slots for Neuralware options.</p>",
-            "file": "neuralware",
-            "internal": true,
-            "name": "Neural Link",
-            "price": 500,
-            "psychosis": 7,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Chipware. While installed into a Chipware Socket, a Pain Editor shuts off the user's pain receptors dynamically, allowing them to ignore the effects of the Seriously Wounded Wound State. <strong>Requires Chipware Socket.</strong></p>",
-            "file": "neuralware",
-            "internal": true,
-            "name": "Pain Editor",
-            "price": 1000,
-            "psychosis": 14,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Neuralware Option. Speedware that provides short boosts of highly improved reaction time. When activated as an Action, the user adds +3 to any Initiative Roll they make in the next minute, after which Sandevistan cannot be activated again for an hour. Only a single piece of Speedware can be installed into a user at a time. <strong>Requires Neural Link.</strong></p>",
-            "file": "neuralware",
-            "internal": true,
-            "name": "Sandevistan",
-            "price": 500,
-            "psychosis": 7,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Chipware. While installed into a Chipware Socket, allows user to test substances to find their precise chemical composition as an Action, identifying most substances instantly from a wide database of samples. <strong>Requires Chipware Socket.</strong></p>",
-            "file": "neuralware",
-            "internal": true,
-            "name": "Chemical Analyzer",
-            "price": 500,
-            "psychosis": 3,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>Twin flattened antennae protruding from the user's head improving their Cyberaudio Suite, sometimes referred to as \"Rabbit Ears.\" User can install up to 5 additional Cyberaudio Options into their Cyberaudio Suite. User can only have one Sensor Array installed. <strong>Requires Cyberaudio Suite but doesn't take up a Cyberaudio Option Slot.</strong></p>",
-            "file": "borgware",
-            "internal": false,
-            "name": "Sensor Array",
-            "price": 1000,
-            "psychosis": 14,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>A heavily enhanced skeleton and support structure with even more hydraulic and myomar muscles.</p>\n<p>&bull; User increases their BODY to 14.</p>\n<p>&bull; This increase in BODY changes a Character's HP and Death Save.</p>\n<p>&bull; This cannot increase the user's BODY to 15 or higher.</p>\n<p>&bull; <strong>Installation requires BODY 8 and Two Grafted Muscle and Bone Lace.</strong></p>",
-            "file": "borgware",
-            "internal": false,
-            "name": "Implanted Linear Frame Beta",
-            "price": 5000,
-            "psychosis": 14,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>User can mount 2 Cyberarms under first set of arms. User can only have one Artificial Shoulder Mount installed.</p>",
-            "file": "borgware",
-            "internal": false,
-            "name": "Artificial Shoulder Mount",
-            "price": 1000,
-            "psychosis": 14,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>User can mount up to 5 additional Cybereyes into the MultiOptic Mount. <strong>Cybereyes sold and installed separately.</strong> User can only have one MultiOptic Mount installed.</p>",
-            "file": "borgware",
-            "internal": false,
-            "name": "MultiOptic Mount",
-            "price": 1000,
-            "psychosis": 14,
-            "type": "cyberware"
-        },
-        {
-            "description": "<p>An enhanced skeleton and support structure with hydraulic and myomar muscles.</p>\n<p>&bull; User increases their BODY to 12.</p>\n<p>&bull; This increase in BODY changes a Character's HP and Death Save.</p>\n<p>&bull; This cannot increase the user's BODY to 13 or higher.</p>\n<p>&bull; <strong>Installation requires BODY 6 and Grafted Muscle and Bone Lace.</strong></p>",
-            "file": "borgware",
-            "internal": false,
-            "name": "Implanted Linear Frame Sigma",
-            "price": 1000,
-            "psychosis": 14,
             "type": "cyberware"
         },
         {
@@ -1354,6 +1144,222 @@
             "type": "cyberware"
         },
         {
+            "description": "<p>Cybereye Option. User is immune to blindness or other effects caused by dangerous flashes of light, like those of a flashbang. <strong>Requires two Cybereyes and must be paired.</strong></p>",
+            "file": "cyberoptics",
+            "internal": true,
+            "name": "Anti-Dazzle",
+            "price": 100,
+            "psychosis": 2,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Cybereye Option. User can see detail up to 800m/yds away. When attacking a target 51m/yds or further away with either a weapon's single shot firing mode or an Aimed Shot, you can add a +1 to your Check. Multiple installations of this option provide user no additional benefit. Does not stack with Sniping Scope Weapon Attachment. <strong>Requires a Cybereye</strong></p>",
+            "file": "cyberoptics",
+            "internal": false,
+            "name": "TeleOptics",
+            "price": 500,
+            "psychosis": 3,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Cybereye Option. Cosmetic upgrade allows unlimited color and pattern changes to be made as an Action. Eye can optionally be temperature sensitive or reactant to hormone changes in the body. Requires a Cybereye.</p>",
+            "file": "cyberoptics",
+            "internal": true,
+            "name": "Color Shift",
+            "price": 100,
+            "psychosis": 2,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Cybereye Option. User adds +2 to their Perception, Lip Reading, and Conceal/Reveal Object Skills for Checks which include sight. Requires two Cybereyes and must be paired. Multiple installations of this option provide user no additional benefit.</p>",
+            "file": "cyberoptics",
+            "internal": true,
+            "name": "Image Enhance",
+            "price": 500,
+            "psychosis": 3,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>All following options are installed in an artificial eye that replaces a meat one. Each Cybereye has 3 Option Slots for Cybereye Options. Some options must be paired to work properly (purchased twice and installed in two different Cybereyes on a user. Humanity Loss is calculated separately for each purchase).</p>",
+            "file": "cyberoptics",
+            "internal": true,
+            "name": "Cybereye - Base/Req.",
+            "price": 100,
+            "psychosis": 7,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Cybereye Option. Dartgun Exotic Weapon, with only a single shot in the clip, concealed inside the Cybereye. Requires a Cybereye and takes 3 Option Slots.</p>",
+            "file": "cyberoptics",
+            "internal": true,
+            "name": "Dartgun",
+            "price": 500,
+            "psychosis": 2,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Cybereye Option. Camera in eye records video and audio to a standard Memory Chip or a linked Agent. Requires a Cybereye and takes 2 Option Slots.</p>",
+            "file": "cyberoptics",
+            "internal": true,
+            "name": "MicroVideo",
+            "price": 500,
+            "psychosis": 2,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Cybereye Option. Projects cyberspace imagery over user's view of the world. Never forget your Virtuality Goggles again. Requires two Cybereyes and must be paired.</p>",
+            "file": "cyberoptics",
+            "internal": true,
+            "name": "Virtuality",
+            "price": 100,
+            "psychosis": 2,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Cybereye Option. Projects a tiny subscreen into user's normal field of vision for messages, video, etc. from a user's other cyberware or electronics. Picture in a picture for real life. <strong>Requires a Cybereye. </strong></p>",
+            "file": "cyberoptics",
+            "internal": true,
+            "name": "Chyron",
+            "price": 100,
+            "psychosis": 2,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Cybereye Option. Reduces penalties imposed by darkness and other intangible obscurement, like smoke, fog, etc. to 0. User can distinguish hot meat from cold metal but cannot see through anything that could provide cover.<strong> Requires two Cybereyes, must be paired, and takes 2 Option Slots per Cybereye.</strong></p>",
+            "file": "cyberoptics",
+            "internal": true,
+            "name": "Low Light/ Infrared/ UV",
+            "price": 500,
+            "psychosis": 3,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>c Cybereye Option. User gets a +1 to their Check when making an Aimed Shot. Multiple installations of this option provide user no additional benefit. Requires a Cybereye.</p>",
+            "file": "cyberoptics",
+            "internal": true,
+            "name": "Targeting Scope",
+            "price": 500,
+            "psychosis": 3,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Cybereye Option. Radiation readings within 100m/yds of the user are displayed in user's vision hovering over their source in the form of a blue glow. Requires a Cybereye.</p>",
+            "file": "cyberoptics",
+            "internal": true,
+            "name": "Radiation Detector",
+            "price": 1000,
+            "psychosis": 3,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Cybereye Option. Microscope providing user up to 400x magnification. Requires a Cybereye.</p>",
+            "file": "cyberoptics",
+            "internal": true,
+            "name": "MicroOptics",
+            "price": 100,
+            "psychosis": 2,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>2\"x4\" (5cm x 10cm) space with a Realskinn&trade; zipper. Contents can be successfully concealed without a Check.</p>",
+            "file": "external-body-cyberware",
+            "internal": false,
+            "name": "Subdermal Pocket",
+            "price": 100,
+            "psychosis": 3,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Holster inside the user's body can store a weapon already capable of concealment so that it can be successfully concealed without a roll. Weapon can be drawn from the hidden holster without an Action, as long as it is implanted in an easily accessible place on the user's body. You don't want one in your thigh unless you don't wear pants.</p>",
+            "file": "external-body-cyberware",
+            "internal": false,
+            "name": "Hidden Holster",
+            "price": 500,
+            "psychosis": 7,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>User's body and head are armored at SP7. Your SP in any location is determined by your highest source of SP in that location. Additionally, whenever your armor is ablated in a location, all your sources of SP in that location are ablated at the same time. Whenever the user successfully completes a day of natural healing, nanomachines present in the Skin Weave repair both the body and head location of the Skin Weave for one point of its lost SP.&nbsp;</p>",
+            "file": "external-body-cyberware",
+            "internal": false,
+            "name": "Skin Weave",
+            "price": 500,
+            "psychosis": 7,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>User's body and head are armored at SP11. Your SP in any location is determined by your highest source of SP in that location. Additionally, whenever your armor is ablated in a location, all your sources of SP in that location are ablated at the same time. Whenever the user successfully completes a day of natural healing, nanomachines present in the Subdermal Armor repair both the body and head location of the Subdermal Armor for one point of its lost SP.</p>",
+            "file": "external-body-cyberware",
+            "internal": false,
+            "name": "Subdermal Armor",
+            "price": 1000,
+            "psychosis": 14,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Subdermal implant generates a constant LED readout of the current time and date visible through the skin.</p>",
+            "file": "fashionware",
+            "internal": false,
+            "name": "Skinwatch",
+            "price": 100,
+            "psychosis": 0,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Popularized by the media sensation UR, these thin silver lines run in circuit-like patterns across the body. Many people believe they act as a \"Faraday cage\" to protect you from radiation and EMP effects but so far there&rsquo;s no scientific backing to these claims. But they sure do look cool. Most people wear EMP Threading as a fashion statement.</p>",
+            "file": "fashionware",
+            "internal": false,
+            "name": "EMP Threading",
+            "price": 100,
+            "psychosis": 0,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Dyes and pigments infused into the skin to permanently change its hue, the applications of which can range from hiding blemishes to the desire for neon-green skin. Pigments can optionally be temperature-sensitive or reactant to hormone changes in the body. <strong>A user with Chemskin and Techhair adds +2 to their Personal Grooming Skill for having both. (This bonus only applies once)</strong></p>",
+            "file": "fashionware",
+            "internal": false,
+            "name": "Chemskin",
+            "price": 100,
+            "psychosis": 0,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Color-light-emitting artificial hair. Hair can optionally be temperature sensitive, motorized to extend/retract, or reactant to hormone changes in the body. <strong>A user with Chemskin and Techhair adds +2 to their Personal Grooming Skill for having both. (This bonus only applies once.</strong></p>",
+            "file": "fashionware",
+            "internal": false,
+            "name": "Techhair",
+            "price": 100,
+            "psychosis": 0,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>l Color-changing lenses implanted into the eye. Several patterns are also available. Lenses can optionally be temperature-sensitive or reactant to hormone changes in the body. Only one choice of color and pattern can be made, but the user can deactivate the color change at any time desired without an Action.</p>",
+            "file": "fashionware",
+            "internal": false,
+            "name": "Shift Tacts",
+            "price": 100,
+            "psychosis": 0,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Subdermal patches store light and project colored tattoos under the skin. The larger the piece, the more installations of this fashionware you need to complete it. <strong>A user with a three or more Light Tattoo installations adds +2 to their Wardrobe &amp; Style Skill. (This bonus only applies once.</strong></p>",
+            "file": "fashionware",
+            "internal": false,
+            "name": "Light Tattoo",
+            "price": 100,
+            "psychosis": 0,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Subdermal implant which generates a constant LED readout of pulse, temperature, respiration, blood sugar, etc. You can link your Biomonitor to your Agent to allow it to track your wellness.</p>",
+            "file": "fashionware",
+            "internal": false,
+            "name": "Biomonitor",
+            "price": 100,
+            "psychosis": 0,
+            "type": "cyberware"
+        },
+        {
             "description": "<p>All night, every night. And they'll never know.</p>",
             "file": "internal-body-cyberware",
             "internal": true,
@@ -1468,6 +1474,105 @@
             "name": "Toxin Binders",
             "price": 100,
             "psychosis": 2,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Chipware. While installed into a Chipware Socket, the user's sense of smell is boosted, allowing them to use the Tracking Skill to track scent in addition to visual clues. <strong>Requires Chipware Socket.</strong></p>",
+            "file": "neuralware",
+            "internal": true,
+            "name": "Olfactory Boost",
+            "price": 100,
+            "psychosis": 7,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Chipware. While installed into a Chipware Socket, it boosts the user's sense of touch, allowing them to detect motion within 20m/yds of them, as long as their hand is touching a surface. While in use as a motion detector, that hand can't be used to do anything else. <strong>Requires Chipware Socket.</strong></p>",
+            "file": "neuralware",
+            "internal": true,
+            "name": "Tactile Boost",
+            "price": 100,
+            "psychosis": 7,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Neuralware Option. Plugs in the wrist or head that allow user to jack into and make use of Smartguns, Cyberdecks, heavy machinery, and drive vehicles with no hands! Multiple installations allow user to be plugged into multiple things at the same time. <strong>Requires Neural Link.</strong></p>",
+            "file": "neuralware",
+            "internal": true,
+            "name": "Interface Plugs",
+            "price": 500,
+            "psychosis": 7,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Chipware. The standard for data storage. While installed into a Chipware socket, the user's cyberware can store data on it or access data stored on it. <strong>Requires Chipware Socket.</strong></p>",
+            "file": "neuralware",
+            "internal": true,
+            "name": "Memory Chip",
+            "price": 10,
+            "psychosis": 0,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Neuralware Option. A single socket installed in the back of the neck that allows quick installation of a single piece of Chipware, of which there are many varieties.</p>\n<p>Installing or uninstalling a single piece of Chipware from a Chipware Socket is an Action.</p>\n<p>The first time you install a piece of Chipware you've never used before, you always accrue Humanity Loss. Re-installing Chipware you've already used doesn't do this. <strong>Chipware does not take up a Neural Link Option Slot. </strong></p>\n<p>Multiple sockets may be installed, but each must be paid for individually. <strong>Requires Neural Link.</strong></p>",
+            "file": "neuralware",
+            "internal": true,
+            "name": "Chipware Socket",
+            "price": 500,
+            "psychosis": 7,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Chipware. While installed into a Chipware Socket, a Skill Chip makes the Skill it was made for trained for the user at +3, unless the user's Skill was already trained higher than +3, in which case it does nothing. Skill Chips for (x2) cost Skills are 1,000eb, chips for all other skills are 500eb. <strong>Requires Chipware Socket.</strong></p>",
+            "file": "neuralware",
+            "internal": true,
+            "name": "Skill Chip",
+            "price": 500,
+            "psychosis": 7,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Neuralware Option. Always-on Speedware that provides consistently improved reaction time. User adds +2 to their Initiative Rolls. Only a single piece of Speedware can be installed into a user at a time. <strong>Requires Neural Link.</strong></p>",
+            "file": "neuralware",
+            "internal": true,
+            "name": "Kerenzikov",
+            "price": 500,
+            "psychosis": 14,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Wired artificial nervous system, required to use Neuralware, and Subdermal Grips. System has 5 Option Slots for Neuralware options.</p>",
+            "file": "neuralware",
+            "internal": true,
+            "name": "Neural Link",
+            "price": 500,
+            "psychosis": 7,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Chipware. While installed into a Chipware Socket, a Pain Editor shuts off the user's pain receptors dynamically, allowing them to ignore the effects of the Seriously Wounded Wound State. <strong>Requires Chipware Socket.</strong></p>",
+            "file": "neuralware",
+            "internal": true,
+            "name": "Pain Editor",
+            "price": 1000,
+            "psychosis": 14,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Neuralware Option. Speedware that provides short boosts of highly improved reaction time. When activated as an Action, the user adds +3 to any Initiative Roll they make in the next minute, after which Sandevistan cannot be activated again for an hour. Only a single piece of Speedware can be installed into a user at a time. <strong>Requires Neural Link.</strong></p>",
+            "file": "neuralware",
+            "internal": true,
+            "name": "Sandevistan",
+            "price": 500,
+            "psychosis": 7,
+            "type": "cyberware"
+        },
+        {
+            "description": "<p>Chipware. While installed into a Chipware Socket, allows user to test substances to find their precise chemical composition as an Action, identifying most substances instantly from a wide database of samples. <strong>Requires Chipware Socket.</strong></p>",
+            "file": "neuralware",
+            "internal": true,
+            "name": "Chemical Analyzer",
+            "price": 500,
+            "psychosis": 3,
             "type": "cyberware"
         }
     ],

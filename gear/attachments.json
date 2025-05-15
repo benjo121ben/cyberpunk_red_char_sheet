@@ -1,0 +1,105 @@
+[
+    {
+        "description": "<p>When wielded, this weapon can also be used as a Light Melee Weapon (1d6 ROF-2). While the bayonet is attached to a weapon, the weapon cannot be concealed under clothing.</p>",
+        "file": "attachments",
+        "name": "Bayonet",
+        "price": 100,
+        "selector": {
+            "range": "ranged",
+            "skill": "shoulder_arms"
+        },
+        "shorthand": "Bayonet",
+        "slot_size": 1,
+        "type": "attachment"
+    },
+    {
+        "description": "<p>The weapon holds a maximum number of shots equal to its Drum entry on the Clip Chart below. Only one clip can be attached to a weapon at a time. While this is attached to a weapon, it cannot be concealed under clothing.</p>",
+        "file": "attachments",
+        "name": "Drum Magazine",
+        "price": 500,
+        "selector": {
+            "exclude_type": "bow",
+            "range": "ranged"
+        },
+        "shorthand": "Drum-mag",
+        "slot_size": 1,
+        "slot_type": "mag",
+        "type": "attachment"
+    },
+    {
+        "description": "<p>The weapon holds a maximum number of shots equal to its Extended entry on the Clip Chart below. Only one clip can be attached to a weapon at a time. While this is attached to a weapon, it cannot be concealed under clothing.</p>",
+        "file": "attachments",
+        "name": "Extended Magazine",
+        "price": 100,
+        "selector": {
+            "exclude_type": "bow",
+            "range": "ranged"
+        },
+        "shorthand": "Ext-mag",
+        "slot_size": 1,
+        "slot_type": "mag",
+        "type": "attachment"
+    },
+    {
+        "description": "<p>When wielded in two hands, the weapon can also be used as a Grenade Launcher, with only 1 grenade in its magazine. While this is attached to a weapon, it cannot be concealed under clothing. <br/><b>Requires 2 Attachment Slots.</b></p>",
+        "file": "attachments",
+        "name": "Grenade Launcher Underbarrel",
+        "price": 500,
+        "selector": {
+            "range": "ranged",
+            "skill": "shoulder_arms"
+        },
+        "shorthand": "Grnd",
+        "slot_size": 2,
+        "type": "attachment"
+    },
+    {
+        "description": "<p>Reduces penalties imposed on your firing at a target obscured to your by darkness, smoke, fog, etc. to 0. Looking through the scope, you can distinguish hot meat from cold metal, but not more specifically than that. You can't tell the brand of their Cyberarm from a distance, or see any of its internal surprised, for example.</p>",
+        "file": "attachments",
+        "name": "Infrared Nightvision Scope",
+        "price": 500,
+        "selector": {
+            "range": "ranged"
+        },
+        "shorthand": "Heat-night-scope",
+        "slot_size": 1,
+        "type": "attachment"
+    },
+    {
+        "description": "<p>When wielded in two hands, the weapon can also be used as a Shotgun, with only 2 shots in its magazine. While this is attached to a weapon, it cannot be concealed under clothing. <br/><b>Requires 2 Attachment Slots.</b></p>",
+        "file": "attachments",
+        "name": "Shotgun Underbarrel",
+        "price": 500,
+        "selector": {
+            "range": "ranged",
+            "skill": "shoulder_arms"
+        },
+        "shorthand": "Shotg",
+        "slot_size": 2,
+        "type": "attachment"
+    },
+    {
+        "description": "<p>Installing or uninstalling a Smargun Link takes an hour. A weapon is a Smartgun only when it has a Smartgun Link attached to it. Special Cyberware is required to take advantage of a Smartgun. A Smartgun Link must be connected to you with Interface Plugs or a Subdermal Grip in order to operate, both of which require you to have a Neural Link. A Subdermal Grip connects a Smartgun held in it automatically. You can plug in Interface Plugs as part of drawing a Smartgun into a free hand, as long as your Interface Plugs aren't already plugged into something else. Being disarmed of your Smartgun doesn't snap your cables, it just unplugs them from the Smartgun. Plugging them back in isn't an Action should you have the Smartgun in your hand, as their ports are designed for ease-of-use. <i>Why go through all this trouble?</i> Because when making Ranged Attacks with one, you add a +1 to your Check.<br/><b>Requires 2 Attachment Slots.</b></p>",
+        "file": "attachments",
+        "name": "Smargun Link",
+        "price": 500,
+        "selector": {
+            "range": "ranged"
+        },
+        "shorthand": "Smart",
+        "slot_size": 2,
+        "type": "attachment"
+    },
+    {
+        "description": "<p>Looking through this scope, user can see detail up to 800m/yds away. When attacking a target 51m/yds or further away with either a weapon's shingle shot firing mode, or an Aimed Shot, you can add a +1 to your Check. Does not stack with TeleOptics Cyberware.</p>",
+        "file": "attachments",
+        "name": "Sniping Scope",
+        "price": 100,
+        "selector": {
+            "range": "ranged"
+        },
+        "shorthand": "Sniper",
+        "slot_size": 1,
+        "type": "attachment"
+    }
+]
