@@ -349,7 +349,10 @@ pub fn AllItemsView() -> impl IntoView {
                             })
                         >
                             <span>{move || cyber.name.to_string()}</span>
-                            <button on:click=move|_|{char_signal.write().cyberware.remove(indx);}>
+                            <button on:click=move|ev|{
+                                ev.stop_propagation();
+                                char_signal.write().cyberware.remove(indx);
+                            }>
                                 X
                             </button>
                         </div>
@@ -378,7 +381,8 @@ pub fn AllItemsView() -> impl IntoView {
                                 {move || char_signal.read().gear.get(&key).expect("expecting item amount to exist").to_string()}x
                                 {move || find_item.clone().name.to_string()}
                             </span>
-                            <button on:click=move|_|{ 
+                            <button on:click=move|ev|{ 
+                                ev.stop_propagation();
                                 let change_fn = reduce_or_remove.clone(); 
                                 char_signal.update(|c| {
                                     change_fn(&mut c.gear, &key_clone)
@@ -423,7 +427,10 @@ pub fn AllItemsView() -> impl IntoView {
                             )}</span>
 
                             <div class="gear_buttons">
-                                <button on:click=move|_|{char_signal.write().armors.remove(indx);}>
+                                <button on:click=move|ev|{
+                                    char_signal.write().armors.remove(indx);
+                                    ev.stop_propagation();
+                                }>
                                     X
                                 </button>
                                 <button
@@ -475,7 +482,8 @@ pub fn AllItemsView() -> impl IntoView {
                                 {move || char_signal.read().ammo.get(&key).expect("expecting item amount to exist").to_string()}x
                                 {move || find_item.clone().name.to_string()}
                             </span>
-                            <button on:click=move|_|{ 
+                            <button on:click=move|ev|{ 
+                                ev.stop_propagation();
                                 let change_fn = reduce_or_remove.clone(); 
                                 char_signal.update(|c| {
                                     change_fn(&mut c.ammo, &key_clone)
