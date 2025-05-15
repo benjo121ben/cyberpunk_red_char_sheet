@@ -343,3 +343,7 @@ impl WeaponAmmoData {
 pub fn get_map_key(obj: &impl ShopItem) -> String {
     obj.get_name().to_lowercase().replace(" ", "_")
 }
+
+pub fn get_map_key_from_name(name: &str) -> String {
+    name.to_lowercase().replace(" ", "_")
+}

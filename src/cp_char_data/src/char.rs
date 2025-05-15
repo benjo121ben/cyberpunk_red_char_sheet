@@ -406,4 +406,16 @@ impl Character {
             return 0;
         }
     } 
+
+    pub fn got_cyber(&self, name: &str) -> bool {
+        self.cyberware.iter().find(|cyber| get_map_key(*cyber).as_str() == get_map_key_from_name(name)).is_some()
+    }
+
+    pub fn can_use_smar_weapons(&self) -> bool{
+        let got_neural_link = self.got_cyber("Neural Link");
+        let got_grip = self.got_cyber("Subdermal Grip");
+        let got_plugs = self.got_cyber("Interface Plugs");
+
+        got_neural_link && (got_grip || got_plugs)
+    }
 }
