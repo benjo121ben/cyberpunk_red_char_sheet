@@ -84,8 +84,8 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
         <div class="weapon_view"
             on:click=move|_| {
                 simple_modal_signal.update(|data| {
-                    data.title = item_memo().name.clone();
-                    data.description = item_memo().description.clone();
+                    data.title = item_memo().get_name().clone();
+                    data.description = item_memo().get_description().clone();
                     data.show();
                 });
                 show_weapon_name_input.set(false);
@@ -98,14 +98,7 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                         show_weapon_name_input.set(true)
                     }
                 >
-                    {move|| {
-                        let item = item_memo.get();
-                        (item.personalized_name != "")
-                            .then(|| item.personalized_name)
-                            .or(Some(item.name))
-                            .clone()
-                            .unwrap()
-                    }}
+                    {move|| item_memo.get().get_name().clone()}
                 </span>
             </Show>
             <Show when=move||show_weapon_name_input.get()>
@@ -189,7 +182,7 @@ pub fn ArmorSelectionView() -> impl IntoView {
         .clone()
         .into_iter()
         .enumerate()
-        .filter(|(_, armor)|armor.armor_data.head)
+        .filter(|(_, armor)|armor.head)
         .collect::<Vec<_>>())
     ;
     let body_armors = Memo::new(move |_| char_signal.read()
@@ -197,7 +190,7 @@ pub fn ArmorSelectionView() -> impl IntoView {
         .clone()
         .into_iter()
         .enumerate()
-        .filter(|(_, armor)|!armor.armor_data.head)
+        .filter(|(_, armor)|!armor.head)
         .collect::<Vec<_>>())
     ;
 
@@ -210,8 +203,8 @@ pub fn ArmorSelectionView() -> impl IntoView {
                 c.get_current_body_armor_mut()
             };
             mut_armor.and_then(|armor| {
-                let max_sp = armor.armor_data.sp;
-                armor.armor_data.sp_current = min(max(armor.armor_data.sp_current + amount, 0), max_sp);
+                let max_sp = armor.sp;
+                armor.sp_current = min(max(armor.sp_current + amount, 0), max_sp);
                 Some(armor)
             });
         });
@@ -256,13 +249,13 @@ pub fn ArmorSelectionView() -> impl IntoView {
 
                     <For 
                         each=move|| head_armors.get()
-                        key=move|(_, armor)| armor.name.clone()
+                        key=move|(_, armor)| armor.get_name().clone()
                         children=move|(index, armor)| {
                             view! {
                                 <option 
                                     selected=move || current_head_armor_val_memo() == index.to_string()
                                     value=index.to_string()>
-                                    {armor.name.clone()}
+                                    {armor.get_name().clone()}
                                 </option>}
                         }
                     />
@@ -300,13 +293,13 @@ pub fn ArmorSelectionView() -> impl IntoView {
                     </option>
                     <For 
                         each=move|| body_armors.get()
-                        key=move|(_, armor)| armor.name.clone()
+                        key=move|(_, armor)| armor.get_name().clone()
                         children=move|(index, armor)| {
                             view! {
                                 <option 
                                     selected=move || current_body_armor_val_memo() == index.to_string()
                                     value=index.to_string()>
-                                    {armor.name.clone()}
+                                    {armor.get_name().clone()}
                                 </option>}
                         }
                     />
@@ -346,12 +339,12 @@ pub fn AllItemsView() -> impl IntoView {
                         <div class="gear_view"
                             on:click=move|_| simple_modal_signal.update(|data| {
                                 let cyber = cyber_memo.get();
-                                data.title = cyber.name.clone();
-                                data.description = cyber.description.clone();
+                                data.title = cyber.get_name().clone();
+                                data.description = cyber.get_description().clone();
                                 data.show();
                             })
                         >
-                            <span>{move || cyber_memo.get().name.to_string()}</span>
+                            <span>{move || cyber_memo.get().get_name().to_string()}</span>
                             <button on:click=move|ev|{
                                 ev.stop_propagation();
                                 log!("rem index {}", indx);
@@ -406,7 +399,6 @@ pub fn AllItemsView() -> impl IntoView {
                     let armor_memo = Memo::new(move|_| char_signal.read().armors.get(indx).expect("expect armor to exist").clone());
                     let armor_bonus = move || {
                         armor_memo.get()
-                            .armor_data
                             .bonus.clone()
                             .or(Some(0))
                             .unwrap()
@@ -414,15 +406,15 @@ pub fn AllItemsView() -> impl IntoView {
                     view! {
                         <div class="gear_view"
                             on:click=move|_| simple_modal_signal.update(|data| {
-                                data.title = armor_memo.get().name.clone();
-                                data.description = armor_memo.get().description.clone();
+                                data.title = armor_memo.get().get_name().clone();
+                                data.description = armor_memo.get().get_description().clone();
                                 data.show();
                             })
                         >
                             <span>{move || format!(
                                 "{} {}", 
-                                armor_memo.get().name.to_string(), 
-                                armor_memo.get().armor_data.head
+                                armor_memo.get().get_name().to_string(), 
+                                armor_memo.get().head
                                     .then(||"(Head)")
                                     .or(Some("(Body)"))
                                     .unwrap()
@@ -442,13 +434,13 @@ pub fn AllItemsView() -> impl IntoView {
                                         ev.stop_propagation();
                                         char_signal.update(|c| {
                                             c.armors.get_mut(indx).and_then(|armor: &mut Armor| {
-                                                if armor.armor_data.bonus.is_some() {
-                                                    armor.armor_data.sp_current = max(armor.armor_data.sp_current -1, 0);
-                                                    armor.armor_data.bonus = None;
+                                                if armor.bonus.is_some() {
+                                                    armor.sp_current = max(armor.sp_current -1, 0);
+                                                    armor.bonus = None;
                                                 }
                                                 else {
-                                                    armor.armor_data.sp_current += 1;
-                                                    armor.armor_data.bonus = Some(1);
+                                                    armor.sp_current += 1;
+                                                    armor.bonus = Some(1);
                                                 }
                                                 Some(armor)
                                             });
@@ -468,7 +460,7 @@ pub fn AllItemsView() -> impl IntoView {
                 key=move|key| key.clone()
                 children=move|key| {
                     let find_item = gear_data.ammunition.iter().find(|find_item| {
-                        let changed_name = find_item.name.to_lowercase().replace(" ", "_");
+                        let changed_name = get_map_key_from_name(find_item.get_name());
                         changed_name == key
                     }).cloned().expect("expecting item to exist");
                     let key_clone = key.clone();
@@ -476,14 +468,14 @@ pub fn AllItemsView() -> impl IntoView {
                     view! {
                         <div class="gear_view"
                             on:click=move|_| simple_modal_signal.update(|data| {
-                                data.title = find_item_clone.name.clone();
-                                data.description = find_item_clone.description.clone();
+                                data.title = find_item_clone.get_name().clone();
+                                data.description = find_item_clone.get_description().clone();
                                 data.show();
                             })
                         >
                             <span>
                                 {move || char_signal.read().ammo.get(&key).expect("expecting item amount to exist").to_string()}x
-                                {move || find_item.clone().name.to_string()}
+                                {move || find_item.clone().get_name().to_string()}
                             </span>
                             <button on:click=move|ev|{ 
                                 ev.stop_propagation();

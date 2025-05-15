@@ -12,6 +12,12 @@ pub enum GearType {
     Fashion
 }
 
+pub enum Quality {
+    Average,
+    Excellent,
+    Poor
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Character {
     pub name: String,
@@ -328,11 +334,11 @@ impl Character {
 
     pub fn get_current_armor_penalty(&self) -> i32{
         let head_armor_penalty = self.get_current_head_armor()
-            .map(|armor|armor.armor_data.penalty)
+            .map(|armor|armor.penalty)
             .or(Some(0))
             .unwrap();
         let body_armor_penalty = self.get_current_body_armor()
-            .map(|armor|armor.armor_data.penalty)
+            .map(|armor|armor.penalty)
             .or(Some(0))
             .unwrap();
         std::cmp::max(head_armor_penalty, body_armor_penalty)
@@ -370,7 +376,7 @@ impl Character {
         };
 
         let current_sp = armor
-            .and_then(|a| Some(a.armor_data.sp_current))
+            .and_then(|a| Some(a.sp_current))
             .or(Some(0))
             .unwrap()
         ;
@@ -389,7 +395,7 @@ impl Character {
 
         let mut_armor = if head_damage {self.get_current_head_armor_mut()} else {self.get_current_body_armor_mut()};
         mut_armor.and_then(|a| {
-            a.armor_data.sp_current -= 1;
+            a.sp_current -= 1;
             Some(a)
         });
     }
@@ -424,7 +430,7 @@ impl Character {
         let penalty: i32 = self.cyberware.iter()
             .filter(|cyber| cyber.psychosis > 0)
             .map(|cyber| {
-                if cyber.file.as_str() == "borgware" { 4 } else { 2 }
+                if cyber.get_file().as_str() == "borgware" { 4 } else { 2 }
             }).sum();
         abs_max - penalty
     }

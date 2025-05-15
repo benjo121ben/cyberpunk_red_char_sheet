@@ -1,9 +1,7 @@
 [
     {
-        "armor_data": {
-            "penalty": 0,
-            "sp": 4
-        },
+        "penalty": 0,
+        "sp": 4,
         "description": "<p>SP 4<br /><br />Thin leather with reinforced pads at shoulders, hips, and gut. Favored by Nomads and other 'punks who ride bikes. This also includes all those road-warrior wannabes wearing open-butt chaps and random sports equipment.</p>",
         "file": "armor",
         "name": "Leathers",
@@ -11,10 +9,8 @@
         "type": "armor"
     },
     {
-        "armor_data": {
-            "penalty": 0,
-            "sp": 7
-        },
+        "penalty": 0,
+        "sp": 7,
         "description": "<p>SP 7</p>\n<p>&nbsp;</p>\n<p>The favored protection for the past 90 years. To quote DuPont: Kevlar&reg; is a heat-resistant, synthetic, lightweight fiber that delivers high tensile strength that brings improved protection and performance across a range of industries and applications. Like when people are trying to stab or shoot you. Can be made into clothes, vests, jackets, business suits, and even bikinis.</p>",
         "file": "armor",
         "name": "Kevlar",
@@ -22,10 +18,8 @@
         "type": "armor"
     },
     {
-        "armor_data": {
-            "penalty": 0,
-            "sp": 11
-        },
+        "penalty": 0,
+        "sp": 11,
         "description": "<p>SP 11</p>\n<p>&nbsp;</p>\n<p>A combination of Kevlar&reg; and plastic meshes inserted into the weave of the fabric. Armorjack provides superior protection, especially against high-velocity bullets.</p>",
         "file": "armor",
         "name": "Light Armorjack",
@@ -33,10 +27,8 @@
         "type": "armor"
     },
     {
-        "armor_data": {
-            "penalty": 0,
-            "sp": 11
-        },
+        "penalty": 0,
+        "sp": 11,
         "description": "<p>SP 11</p>\n<p>&nbsp;</p>\n<p>Skinsuit with impact absorbing, sintered armorgel layered in key body areas. Surprisingly, they are also breathable and quite comfortable. Besides giving you a measure of protection, a Bodyweight Suit also has a place to store your Cyberdeck and supports your Interface Plugs so they stay out of the way while you're busy brain-burning that fool who just dared to pop a Hellhound on you. Many Netrunners wear clothing over their Bodyweight Suits, but plenty don't. It's a matter of personal style. <strong>Unlike other armor, a Bodyweight Suit isn't bought in two pieces, and must always be worn on both your body and head location</strong>. Each location has its own SP11. When repaired, both pieces are repaired at the same time. You can't wear more than one Bodyweight Suit. <strong>Wearing a Bodyweight Suit adds one Hardware only Option Slot to a Cyberdeck connected to it.</strong> Hardware installed in the Bodyweight Suit cannot be accessed if the armor isn't worn and can only take up 1 Option Slot.</p>",
         "file": "armor",
         "name": "Bodyweight Suit",
@@ -44,10 +36,8 @@
         "type": "armor"
     },
     {
-        "armor_data": {
-            "penalty": 2,
-            "sp": 12
-        },
+        "penalty": 2,
+        "sp": 12,
         "description": "<p>SP 12</p>\n<p>Armor Penalty : -2 REF, DEX, and MOVE</p>\n<p>Heavier Armorjack, with solid plastic plating, reinforced with thicker Kevlar&reg; mesh. Typical Street wear, this combines decent protection with a decent ost.</p>",
         "file": "armor",
         "name": "Medium Armorjack",
@@ -55,10 +45,8 @@
         "type": "armor"
     },
     {
-        "armor_data": {
-            "penalty": 2,
-            "sp": 13
-        },
+        "penalty": 2,
+        "sp": 13,
         "description": "<p>SP 13</p>\n<p>Armor Penalty : -2 REF, DEX, and MOVE</p>\n<p>&nbsp;</p>\n<p>The thickest Armorjack, combining denser Kevlar&reg; and a layered mix of plastic and mesh weaves. It stops all but the heaviest attacks, but costs a pretty eb.</p>",
         "file": "armor",
         "name": "Heavy Armorjack",
@@ -66,10 +54,8 @@
         "type": "armor"
     },
     {
-        "armor_data": {
-            "penalty": 4,
-            "sp": 15
-        },
+        "penalty": 4,
+        "sp": 15,
         "description": "<p>SP 15</p>\n<p>Armor Penalty : -4 REF, DEX, and MOVE</p>\n<p>&nbsp;</p>\n<p>This is the 21st century version of the time-honored flak vest and pants with metal plates designed to provide protection from high explosive weaponry, artillery, grenades, shotguns, and anti-personnel mines. Modern flak will also stop many of the higher caliber rounds from automatic rifles.</p>",
         "file": "armor",
         "name": "Flak",
@@ -77,10 +63,8 @@
         "type": "armor"
     },
     {
-        "armor_data": {
-            "penalty": 4,
-            "sp": 18
-        },
+        "penalty": 4,
+        "sp": 18,
         "description": "<p>SP 18</p>\n<p>Armor Penalty : -4 REF, DEX, and MOVE</p>\n<p>&nbsp;</p>\n<p>You know how Evil Empire Storm Troopers just seem to stand there and take the hit? Metalgear&reg; is the Dark Future equivalent of that type of armor: solid metal and plastic plates on a mesh body cover. Metalgear&reg; will stop almost anything, but you're going to be easier to hit than a one-legged bantha in a potho race.</p>",
         "file": "armor",
         "name": "Metalgear",
@@ -88,10 +72,8 @@
         "type": "armor"
     },
     {
-        "armor_data": {
-            "penalty": 0,
-            "sp": 10
-        },
+        "penalty": 0,
+        "sp": 10,
         "description": "<p>SP: 10hp (which is reduced by damage)<br /><br />Armor Penalty : None, but always takes up one arm&nbsp;</p>\n<p>&nbsp;</p>\n<p>A transparent polycarbonate shield that can protect you in a firefight. See Using a Shield in the Friday Night Firefight Section (pg. 183)</p>",
         "file": "armor",
         "name": "Bulletproof Shield",

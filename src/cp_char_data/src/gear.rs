@@ -1,15 +1,16 @@
 use serde::Deserialize;
 use serde::Serialize;
 
-pub trait ShopItem {
+pub trait Shoppable {
     fn get_name(&self) -> &String;
     fn get_description(&self) -> &String;
     fn get_price(&self) -> i32;
     fn get_type(&self) -> &String;
+    fn get_file(&self) -> &String;
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-pub struct ShopItemVisualData {
+pub struct ShoppableVisualData {
     pub name: String,
     pub description: String,
     pub price: i32,
@@ -17,8 +18,8 @@ pub struct ShopItemVisualData {
     pub type_data: String
 }
 
-impl ShopItemVisualData {
-    pub fn from(item: &impl ShopItem) -> Self {
+impl ShoppableVisualData {
+    pub fn from(item: &impl Shoppable) -> Self {
         Self { 
             name: item.get_name().clone(),
             description: item.get_description().clone(),
@@ -34,28 +35,35 @@ pub struct GearData {
     pub armor: Vec<Armor>,
     pub attachments: Vec<Attachment>,
     #[serde(rename = "cyberdeck-hardware")]
-    pub cyberdeck_hardware: Vec<CyberdeckHardware>,
+    pub cyberdeck_hardware: Vec<ItemData>,
     pub cyberware: Vec<Cyberware>,
-    pub drugs: Vec<Drug>,
-    pub fashion: Vec<ShopItemVisualData>,
-    pub items: Vec<Item>,
-    pub programs: Vec<Program>,
+    pub drugs: Vec<ItemData>,
+    pub fashion: Vec<ShoppableVisualData>,
+    pub items: Vec<ItemData>,
+    pub programs: Vec<ItemData>,
     pub weapons: Vec<Weapon>
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct ItemData {
+    pub name: String,
+    pub price: i32,
+    pub description: String,
+    pub file: String,
+    #[serde(rename = "type")]
+    pub type_field: String,
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Armor {
-    pub armor_data: ArmorData,
     pub description: String,
     pub file: String,
     pub name: String,
     pub price: i32,
     #[serde(rename = "type")]
     pub type_field: String,
-}
 
-#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-pub struct ArmorData {
+    //armor data
     pub sp: i32,
     #[serde(default)]
     pub sp_current: i32,
@@ -63,16 +71,6 @@ pub struct ArmorData {
     #[serde(default="is_false")]
     pub head: bool,
     pub bonus: Option<i32>,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-pub struct CyberdeckHardware {
-    pub description: String,
-    pub file: String,
-    pub name: String,
-    pub price: i32,
-    #[serde(rename = "type")]
-    pub type_field: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
@@ -87,43 +85,14 @@ pub struct Cyberware {
     pub type_field: String,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-pub struct Drug {
-    pub description: String,
-    pub file: String,
-    pub name: String,
-    pub price: i32,
-    #[serde(rename = "type")]
-    pub type_field: String,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-pub struct Item {
-    pub description: String,
-    pub file: String,
-    pub name: String,
-    pub price: i32,
-    #[serde(rename = "type")]
-    pub type_field: String,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-pub struct Program {
-    pub description: String,
-    pub file: String,
-    pub name: String,
-    pub price: i32,
-    #[serde(rename = "type")]
-    pub type_field: String,
-}
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Weapon {
+    pub name: String,
     #[serde(default)]
     pub personalized_name: String,
     pub description: String,
     pub file: String,
-    pub name: String,
     pub price: i32,
     #[serde(rename = "type")]
     pub type_field: String,
@@ -190,7 +159,7 @@ pub struct Selector {
 pub fn is_false() -> bool { false }
 
 
-impl ShopItem for Armor {
+impl Shoppable for Armor {
     fn get_name(&self) -> &String {
         return &self.name;
     }
@@ -205,10 +174,14 @@ impl ShopItem for Armor {
 
     fn get_type(&self) -> &String {
         return &self.type_field;
+    }
+
+    fn get_file(&self) -> &String {
+        return &self.file;
     }
 }
 
-impl ShopItem for Weapon {
+impl Shoppable for Weapon {
     fn get_name(&self) -> &String {
         return &self.name;
     }
@@ -223,10 +196,14 @@ impl ShopItem for Weapon {
 
     fn get_type(&self) -> &String {
         return &self.type_field;
+    }
+
+    fn get_file(&self) -> &String {
+        return &self.file;
     }
 }
 
-impl ShopItem for Ammunition {
+impl Shoppable for Ammunition {
     fn get_name(&self) -> &String {
         return &self.name;
     }
@@ -241,10 +218,14 @@ impl ShopItem for Ammunition {
 
     fn get_type(&self) -> &String {
         return &self.type_field;
+    }
+
+    fn get_file(&self) -> &String {
+        return &self.file;
     }
 }
 
-impl ShopItem for Cyberware {
+impl Shoppable for Cyberware {
     fn get_name(&self) -> &String {
         return &self.name;
     }
@@ -259,10 +240,14 @@ impl ShopItem for Cyberware {
 
     fn get_type(&self) -> &String {
         return &self.type_field;
+    }
+
+    fn get_file(&self) -> &String {
+        return &self.file;
     }
 }
 
-impl ShopItem for CyberdeckHardware {
+impl Shoppable for ItemData {
     fn get_name(&self) -> &String {
         return &self.name;
     }
@@ -278,59 +263,9 @@ impl ShopItem for CyberdeckHardware {
     fn get_type(&self) -> &String {
         return &self.type_field;
     }
-}
 
-impl ShopItem for Drug {
-    fn get_name(&self) -> &String {
-        return &self.name;
-    }
-
-    fn get_description(&self) -> &String {
-        return &self.description;
-    }
-
-    fn get_price(&self) -> i32 {
-        return self.price;
-    }
-
-    fn get_type(&self) -> &String {
-        return &self.type_field;
-    }
-}
-
-impl ShopItem for Item {
-    fn get_name(&self) -> &String {
-        return &self.name;
-    }
-
-    fn get_description(&self) -> &String {
-        return &self.description;
-    }
-
-    fn get_price(&self) -> i32 {
-        return self.price;
-    }
-
-    fn get_type(&self) -> &String {
-        return &self.type_field;
-    }
-}
-
-impl ShopItem for Program {
-    fn get_name(&self) -> &String {
-        return &self.name;
-    }
-
-    fn get_description(&self) -> &String {
-        return &self.description;
-    }
-
-    fn get_price(&self) -> i32 {
-        return self.price;
-    }
-
-    fn get_type(&self) -> &String {
-        return &self.type_field;
+    fn get_file(&self) -> &String {
+        return &self.file;
     }
 }
 
@@ -340,7 +275,7 @@ impl WeaponAmmoData {
     }
 }
 
-pub fn get_map_key(obj: &impl ShopItem) -> String {
+pub fn get_map_key(obj: &impl Shoppable) -> String {
     obj.get_name().to_lowercase().replace(" ", "_")
 }
 

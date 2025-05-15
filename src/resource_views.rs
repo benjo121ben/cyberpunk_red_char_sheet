@@ -2,7 +2,7 @@ use leptos::prelude::*;
 use leptos::logging::log;
 use std::cmp::{min, max};
 
-use cp_char_data::gear::{get_map_key, GearData, Weapon, WeaponAmmoData};
+use cp_char_data::gear::{get_map_key, GearData, Shoppable, Weapon, WeaponAmmoData};
 use crate::help::get_char_signal_from_ctx;
 use crate::icon_views::{AddIcon, RemoveIcon};
 
@@ -94,7 +94,7 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
         }
         let ammo_type = ammo_data.current_ammo_type.expect("expect ammo to exist");
         let gear_data = get_ammo_gear_data_clone(&ammo_type);
-        Some((ammo_type, gear_data.name))
+        Some((ammo_type, gear_data.get_name().clone()))
     }); 
 
     let get_current_ammo_select_key =  Memo::new(move |_| {
@@ -149,7 +149,7 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
         char_signal.read().ammo.iter()
             .map(|(key, _)| (key.clone(), get_ammo_gear_data(key)))
             .filter(|(_, ammo)| weapon_calibers.contains(&ammo.caliber))
-            .map(|(key, ammo)| (key, ammo.name.clone()))
+            .map(|(key, ammo)| (key, ammo.get_name().clone()))
             .collect::<Vec<_>>()
     });
 
@@ -291,7 +291,7 @@ pub fn ArmorBar(nr: i32, head: bool) -> impl IntoView {
     let get_current_sp = Memo::new(move |_| {
         char_signal.with(|cyberpunk| {
             let armor = if head {cyberpunk.get_current_head_armor()} else {cyberpunk.get_current_body_armor()};
-            armor.map(|a| a.armor_data.sp_current).or(Some(0)).unwrap()
+            armor.map(|a| a.sp_current).or(Some(0)).unwrap()
         })
     });
     let additional_class = head.then(|| "head_armor_bar").or(Some("")).unwrap().to_string();
@@ -319,11 +319,11 @@ pub fn ArmorView(head: bool) -> AnyView {
     });
     let get_current_sp = Memo::new(move |_| {
         let armor = armor_memo.get();
-        armor.map(|a| a.armor_data.sp_current).or(Some(0)).unwrap()
+        armor.map(|a| a.sp_current).or(Some(0)).unwrap()
     });
     let get_max_sp = Memo::new(move |_| {
         let armor = armor_memo.get();
-        armor.map(|a| a.armor_data.sp + a.armor_data.bonus.or(Some(0)).unwrap()).or(Some(0)).unwrap()
+        armor.map(|a| a.sp + a.bonus.or(Some(0)).unwrap()).or(Some(0)).unwrap()
     });
 
     let ablate_repair_armor = move |amount: i32| {
@@ -335,8 +335,8 @@ pub fn ArmorView(head: bool) -> AnyView {
                 c.get_current_body_armor_mut()
             };
             mut_armor.and_then(|armor| {
-                let max_sp = armor.armor_data.sp + armor.armor_data.bonus.or(Some(0)).unwrap();
-                armor.armor_data.sp_current = min(max(armor.armor_data.sp_current + amount, 0), max_sp);
+                let max_sp = armor.sp + armor.bonus.or(Some(0)).unwrap();
+                armor.sp_current = min(max(armor.sp_current + amount, 0), max_sp);
                 Some(armor)
             });
         });
