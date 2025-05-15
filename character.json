@@ -5,87 +5,79 @@
   "current_armor_head": 0,
   "armors": [
     {
-      "armor_data": {
-        "sp": 11,
-        "sp_current": 11,
-        "penalty": 0,
-        "head": true,
-        "bonus": null
-      },
       "description": "<p>SP 11</p>\n<p>&nbsp;</p>\n<p>A combination of Kevlar&reg; and plastic meshes inserted into the weave of the fabric. Armorjack provides superior protection, especially against high-velocity bullets.</p>",
       "file": "armor",
       "name": "Light Armorjack",
       "price": 100,
-      "type": "armor"
+      "type": "armor",
+      "sp": 11,
+      "sp_current": 11,
+      "penalty": 0,
+      "head": true,
+      "bonus": null
     },
     {
-      "armor_data": {
-        "sp": 11,
-        "sp_current": 11,
-        "penalty": 0,
-        "head": false,
-        "bonus": null
-      },
       "description": "<p>SP 11</p>\n<p>&nbsp;</p>\n<p>A combination of Kevlar&reg; and plastic meshes inserted into the weave of the fabric. Armorjack provides superior protection, especially against high-velocity bullets.</p>",
       "file": "armor",
       "name": "Light Armorjack",
       "price": 100,
-      "type": "armor"
+      "type": "armor",
+      "sp": 11,
+      "sp_current": 11,
+      "penalty": 0,
+      "head": false,
+      "bonus": null
     },
     {
-      "armor_data": {
-        "sp": 12,
-        "sp_current": 12,
-        "penalty": 2,
-        "head": false,
-        "bonus": 1
-      },
       "description": "<p>SP 12</p>\n<p>Armor Penalty : -2 REF, DEX, and MOVE</p>\n<p>Heavier Armorjack, with solid plastic plating, reinforced with thicker Kevlar&reg; mesh. Typical Street wear, this combines decent protection with a decent ost.</p>",
       "file": "armor",
       "name": "Medium Armorjack",
       "price": 100,
-      "type": "armor"
+      "type": "armor",
+      "sp": 12,
+      "sp_current": 12,
+      "penalty": 2,
+      "head": false,
+      "bonus": 1
     },
     {
-      "armor_data": {
-        "sp": 12,
-        "sp_current": 12,
-        "penalty": 2,
-        "head": true,
-        "bonus": null
-      },
       "description": "<p>SP 12</p>\n<p>Armor Penalty : -2 REF, DEX, and MOVE</p>\n<p>Heavier Armorjack, with solid plastic plating, reinforced with thicker Kevlar&reg; mesh. Typical Street wear, this combines decent protection with a decent ost.</p>",
       "file": "armor",
       "name": "Medium Armorjack",
       "price": 100,
-      "type": "armor"
+      "type": "armor",
+      "sp": 12,
+      "sp_current": 12,
+      "penalty": 2,
+      "head": true,
+      "bonus": null
     }
   ],
   "weapons": [
     {
+      "name": "Heavy Melee Weapon",
       "personalized_name": "Tomoe (melee)",
       "description": "A brief item description goes here...",
       "file": "weapons",
-      "name": "Heavy Melee Weapon",
       "price": 100,
       "type": "weapons",
       "weapon_data": {
         "ammo": null,
-        "bonus": 1,
         "burst": false,
         "damage": "3d6",
         "fullauto": false,
         "rof": 2,
         "skill": "melee_weapon",
         "weapontype": "meleeweapon",
-        "attachments": []
+        "attachments": [],
+        "quality": "Average"
       }
     },
     {
+      "name": "Heavy Pistol",
       "personalized_name": "The eight ways to meet god",
       "description": "A brief item description goes here...",
       "file": "weapons",
-      "name": "Heavy Pistol",
       "price": 100,
       "type": "weapons",
       "weapon_data": {
@@ -97,21 +89,23 @@
             "heavy_pistol"
           ]
         },
-        "bonus": 1,
         "burst": false,
         "damage": "3d6",
         "fullauto": false,
         "rof": 2,
         "skill": "handgun",
         "weapontype": "pistol",
-        "attachments": []
+        "attachments": [
+          "Smart"
+        ],
+        "quality": "Average"
       }
     },
     {
+      "name": "Shotgun",
       "personalized_name": "",
       "description": "A brief item description goes here...",
       "file": "weapons",
-      "name": "Shotgun",
       "price": 500,
       "type": "weapons",
       "weapon_data": {
@@ -124,14 +118,14 @@
             "shell"
           ]
         },
-        "bonus": null,
         "burst": false,
         "damage": "5d6",
         "fullauto": false,
         "rof": 1,
         "skill": "shoulder_arms",
         "weapontype": "shotgun",
-        "attachments": []
+        "attachments": [],
+        "quality": "Average"
       }
     }
   ],

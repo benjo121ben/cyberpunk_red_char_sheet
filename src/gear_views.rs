@@ -1,4 +1,4 @@
-use indexmap::IndexMap;
+use indexmap::{Equivalent, IndexMap};
 use leptos::logging::log;
 use leptos::prelude::*;
 use std::cmp::{max, min};
@@ -58,7 +58,12 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
         char_signal.read().get_stat(&stat).1
     });
 
-    let weapon_bonus = move || item_memo.get().weapon_data.bonus.or(Some(0)).unwrap();
+    let weapon_bonus = move || {
+        let weapon = item_memo.get();
+        let quality_bonus = (weapon.weapon_data.quality == ItemQuality::Excellent) as i32;
+        let smart_bonus: i32 = weapon.weapon_data.attachments.contains(&"Smart".to_string()) as i32;
+        quality_bonus + smart_bonus
+    };
 
     let has_ammo = Memo::new(move |_| item_memo.get().weapon_data.ammo.is_some());
 
@@ -140,23 +145,26 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                     </button>
                 </Show>
                 <button
-                    class:selected_tab=move || weapon_bonus() != 0
+                    class:selected_tab=move || item_memo.get().weapon_data.quality == ItemQuality::Excellent
                     on:click=move|ev| {
                         ev.stop_propagation();
                         char_signal.update(|c| {
                             c.weapons.get_mut(index).and_then(|weap: &mut Weapon| {
-                                if weap.weapon_data.bonus.is_some() {
-                                    weap.weapon_data.bonus = None;
-                                }
-                                else {
-                                    weap.weapon_data.bonus = Some(1);
-                                }
+                                weap.weapon_data.quality = match weap.weapon_data.quality {
+                                    ItemQuality::Average => ItemQuality::Excellent,
+                                    ItemQuality::Excellent => ItemQuality::Poor,
+                                    ItemQuality::Poor => ItemQuality::Average,
+                                };
                                 Some(weap)
                             });
                         })
                     }
                 >
-                    +1
+                    {move || match char_signal.read().weapons.get(index).unwrap().weapon_data.quality {
+                        ItemQuality::Average => "A",
+                        ItemQuality::Excellent => "E",
+                        ItemQuality::Poor => "P",
+                    }.to_string()}
                 </button>
             </div>
             <Show when=move|| has_ammo.get()>

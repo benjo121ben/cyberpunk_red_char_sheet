@@ -29,6 +29,19 @@ impl ShoppableVisualData {
     }
 }
 
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub enum ItemQuality {
+    Average,
+    Excellent,
+    Poor
+}
+
+impl Default for ItemQuality {
+    fn default() -> Self {
+        ItemQuality::Average
+    }
+}
+
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct GearData {
     pub ammunition: Vec<Ammunition>,
@@ -102,7 +115,6 @@ pub struct Weapon {
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct WeaponData {
     pub ammo: Option<WeaponAmmoData>,
-    pub bonus: Option<i32>,
     pub burst: bool,
     pub damage: String,
     pub fullauto: bool,
@@ -110,7 +122,9 @@ pub struct WeaponData {
     pub skill: String,
     pub weapontype: String,
     #[serde(default)]
-    pub attachments: Vec<String>
+    pub attachments: Vec<String>,
+    #[serde(default)]
+    pub quality: ItemQuality
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]

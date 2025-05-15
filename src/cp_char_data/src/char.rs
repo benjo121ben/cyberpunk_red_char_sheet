@@ -12,12 +12,6 @@ pub enum GearType {
     Fashion
 }
 
-pub enum Quality {
-    Average,
-    Excellent,
-    Poor
-}
-
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Character {
     pub name: String,

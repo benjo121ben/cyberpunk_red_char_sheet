@@ -1,6 +1,6 @@
 use std::vec;
 use leptos::prelude::*;
-use cp_char_data::{char::GearType, gear::{get_map_key, GearData, Shoppable, ShopItemVisualData}};
+use cp_char_data::{char::GearType, gear::{get_map_key, GearData, Shoppable, ShoppableVisualData}};
 use crate::help::get_char_signal_from_ctx;
 
 #[derive(Clone, Default, Debug, Eq, PartialEq)] 
@@ -56,18 +56,18 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
     
     let tabs = vec!["Weapons", "Ammo", "Armor", "Cyberware", "Drugs", "Gear", "Fashion", "Hardware", "Programs"];
 
-    let current_items_memo: Memo<Vec<ShopItemVisualData>> = Memo::new(move |_| {
+    let current_items_memo: Memo<Vec<ShoppableVisualData>> = Memo::new(move |_| {
         let gear_data: GearData = use_context().expect("Expecting gear data existence");
         let mut list = match current_tab.get().1.as_str() {
-            "Weapons" => gear_data.weapons.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
-            "Ammo" => gear_data.ammunition.iter().filter(|ammo| ammo.caliber == current_variant.get()).map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
-            "Armor" => gear_data.armor.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
-            "Cyberware" => gear_data.cyberware.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
-            "Drugs" => gear_data.drugs.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
-            "Gear" => gear_data.items.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
+            "Weapons" => gear_data.weapons.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            "Ammo" => gear_data.ammunition.iter().filter(|ammo| ammo.caliber == current_variant.get()).map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            "Armor" => gear_data.armor.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            "Cyberware" => gear_data.cyberware.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            "Drugs" => gear_data.drugs.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            "Gear" => gear_data.items.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
             "Fashion" => gear_data.fashion.clone(),
-            "Hardware" => gear_data.cyberdeck_hardware.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
-            "Programs" => gear_data.programs.iter().map(|val| ShopItemVisualData::from(val)).collect::<Vec<_>>(),
+            "Hardware" => gear_data.cyberdeck_hardware.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            "Programs" => gear_data.programs.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
             _ => panic!("this shop tab does not have any data")
         };
         list.sort_by(|val,val2| val.name.cmp(&val2.name));
@@ -235,7 +235,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
 }
 
 #[component]
-pub fn ShopList(current_tab: RwSignal<(usize, String)>, variant_options: Memo<Vec<String>>, current_variant:RwSignal<String>, currently_selected_index: RwSignal<usize>, current_items_memo: Memo<Vec<ShopItemVisualData>>) -> AnyView {
+pub fn ShopList(current_tab: RwSignal<(usize, String)>, variant_options: Memo<Vec<String>>, current_variant:RwSignal<String>, currently_selected_index: RwSignal<usize>, current_items_memo: Memo<Vec<ShoppableVisualData>>) -> AnyView {
     let currenty_selected_item = Memo::new(move |_| {
         current_items_memo.read().get(currently_selected_index.get()).expect("item to exist").clone()
     });
