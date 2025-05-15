@@ -1,7 +1,6 @@
-use indexmap::{Equivalent, IndexMap};
+use indexmap::IndexMap;
 use leptos::logging::log;
 use leptos::prelude::*;
-use leptos::tachys::view;
 use std::cmp::{max, min};
 use cp_char_data::gear::*;
 use crate::icon_views::{AddIcon, RemoveIcon};
@@ -43,6 +42,7 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
     let show_ammo_select_signal = RwSignal::new(false);
     let show_weapon_name_input = RwSignal::new(false);
     let simple_modal_signal: RwSignal<SimpleModalData> = use_context().expect("allitemsview: simple modal should exist");
+    let range_table_signal: RwSignal<RangeType> = use_context().expect("expect range table to be set");
 
     let item_memo = Memo::new(move|_| {
         char_signal.read().weapons.get(index).unwrap().clone()
@@ -95,6 +95,12 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
                     data.show();
                 });
                 show_weapon_name_input.set(false);
+            }
+            on:mouseover=move |_| {
+                range_table_signal.set(item_memo.get().weapon_data.weapontype)
+            }
+            on:mouseleave=move |_| {
+                range_table_signal.set(RangeType::None)
             }
         >
             <Show when=move||!show_weapon_name_input.get()>
@@ -522,4 +528,65 @@ pub fn AllItemsView() -> impl IntoView {
             />
         </div>
     }
+}
+
+fn get_row_table(weapon_type: RangeType) -> Vec<i32> {
+    match weapon_type {
+        RangeType::Pistol => vec![13, 15, 20, 25, 30, 30],
+        RangeType::Shotgun => vec![13, 15, 20, 25, 30, 35],
+        RangeType::Assault => vec![17, 16, 15, 13, 15, 20, 25, 30],
+        RangeType::Sniper => vec![30, 25, 25, 20, 15, 16, 17, 20],
+        RangeType::SMG => vec![15, 13, 15, 20, 25, 25, 30],
+        RangeType::Bow => vec![15, 13, 15, 17, 20, 22],
+        RangeType::Grenade => vec![16, 15, 15, 17, 20, 22, 25],
+        RangeType::Rocket => vec![17, 16, 15, 15, 20, 20, 25, 30],
+        RangeType::None => vec![],
+        RangeType::Melee => vec![],
+    }
+}
+
+#[component]
+pub fn RangeTable() -> impl IntoView {
+    let range_table_signal: RwSignal<RangeType> = use_context().expect("expect range table to be set");
+    let distance_vec = vec![(6, 3), (12, 6), (25, 12), (50, 25), (100, 50), (200, 100), (400, 200), (800, 400)];
+    let value_list = move || get_row_table(range_table_signal.get());
+
+    view! {
+        <Show when=move || {value_list().len() > 0}>
+            <table>
+                <tr>
+                    {
+                        let vector_clone = distance_vec.clone();
+                        move || {
+                            vector_clone.clone().into_iter().map(|(meter, squares)|{
+                            view! {
+                                <th>
+                                    {format!("{} ({})", meter, squares)}
+                                </th>
+                            }
+                        }).collect::<Vec<_>>()
+                    }}
+                </tr>
+                <tr>
+                    <For each=move|| 0..8
+                        key=move|indx| indx.to_string()
+                        children=move |indx| {
+                            let value = move || {
+                                value_list()
+                                .get(indx)
+                                .map(|val| val.to_string())
+                                .or(Some("N/A".to_string()))
+                                .unwrap()
+                            };
+                            view!{
+                                <td class:dark_bg=move||value().as_str() == "N/A">{move || value()}</td>
+                            }
+                        }
+                    />
+                </tr>
+            </table>
+
+        </Show>
+    }
+    
 }

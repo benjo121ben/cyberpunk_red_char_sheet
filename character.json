@@ -68,7 +68,7 @@
         "fullauto": false,
         "rof": 2,
         "skill": "melee_weapon",
-        "weapontype": "meleeweapon",
+        "weapontype": "Melee",
         "attachments": [],
         "quality": "Excellent"
       }
@@ -94,7 +94,7 @@
         "fullauto": false,
         "rof": 2,
         "skill": "handgun",
-        "weapontype": "pistol",
+        "weapontype": "Pistol",
         "attachments": [
           "Smart"
         ],
@@ -123,7 +123,7 @@
         "fullauto": false,
         "rof": 1,
         "skill": "shoulder_arms",
-        "weapontype": "shotgun",
+        "weapontype": "Shotgun",
         "attachments": [],
         "quality": "Average"
       }
@@ -192,7 +192,7 @@
     "cool": 8,
     "willpower": 6,
     "luck": 6,
-    "luck_current": 0,
+    "luck_current": 6,
     "movement": 6,
     "body": 7,
     "empathy": 7

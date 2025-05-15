@@ -15,8 +15,8 @@ use leptos_router::{
 };
 
 use cp_char_data::char::Character;
-use cp_char_data::gear::GearData;
-use crate::gear_views::{ArmorSelectionView, GearView};
+use cp_char_data::gear::{GearData, RangeType};
+use crate::gear_views::{ArmorSelectionView, GearView, RangeTable};
 use crate::resource_views::{ArmorView, HealthAdjustPopup, HumanityView, IPView};
 use crate::shop_modal_view::{ShopModalData, ShopModalView};
 
@@ -264,6 +264,8 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
         let _ = set_char_data(char_copy.clone()).await;
     });
 
+    let weapon_range_table_signal = RwSignal::new(RangeType::None);
+
     Effect::new(move |prev| {
         let _ = char_rw_signal.get();
         match prev {
@@ -284,6 +286,7 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
     });
 
     provide_context(char_rw_signal);
+    provide_context(weapon_range_table_signal);
     provide_context(gear_data);
     provide_context(simple_modal_signal);
 
@@ -330,6 +333,7 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                             <GearView/>
                             <div class="flex_col">
                                 <TextCenterSection/>
+                                <RangeTable/>
                             </div>
                         </div>
                     </div>

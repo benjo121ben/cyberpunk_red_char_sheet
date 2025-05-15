@@ -23,7 +23,7 @@
 @font-face {
 	font-family: "Moonrising";
 	src: 
-		url("Moonrising.tff")
+		url("Moonrising.ttf")
 		local("Moonrising")
 }
 
@@ -97,6 +97,24 @@ input {
 input[type=number] {
 	appearance: auto;
 	-moz-appearance: textfield;
+}
+
+table {
+	background-color: var(--light-background-color);
+	border-radius: 5px;
+	padding: 5px;
+	text-align: center;
+
+	margin-top: 5px;
+
+	th, td {
+		border-left: 2px solid var(--highlight-color-second);
+		border-right: 2px solid var(--highlight-color-second);
+	}
+
+	th {
+		border-bottom: 1px solid var(--highlight-color-second);
+	}
 }
 
 .flex_row {
@@ -178,6 +196,10 @@ input[type=number] {
 	border: var(--highlight-color) 3px solid;
 	border-radius: 10px;
 	padding: 10px;
+}
+
+.dark_bg {
+	background-color: var(--dark-background-color);
 }
 
 
@@ -889,4 +911,3 @@ div:has(> .weapon_view) {
 		text-align: right;
 	}
 }
-

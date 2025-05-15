@@ -9,6 +9,20 @@ pub trait Shoppable {
     fn get_file(&self) -> &String;
 }
 
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub enum RangeType {
+    Pistol,
+    Shotgun,
+    Assault,
+    Sniper,
+    SMG,
+    Bow,
+    Grenade,
+    Rocket,
+    Melee,
+    None
+}
+
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ShoppableVisualData {
     pub name: String,
@@ -99,7 +113,7 @@ pub struct Cyberware {
 }
 
 
-#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Weapon {
     pub name: String,
     #[serde(default)]
@@ -112,7 +126,7 @@ pub struct Weapon {
     pub weapon_data: WeaponData,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct WeaponData {
     pub ammo: Option<WeaponAmmoData>,
     pub burst: bool,
@@ -120,11 +134,11 @@ pub struct WeaponData {
     pub fullauto: bool,
     pub rof: i32,
     pub skill: String,
-    pub weapontype: String,
     #[serde(default)]
     pub attachments: Vec<String>,
     #[serde(default)]
-    pub quality: ItemQuality
+    pub quality: ItemQuality,
+    pub weapontype: RangeType
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]

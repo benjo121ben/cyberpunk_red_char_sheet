@@ -19,7 +19,7 @@
             "fullauto": false,
             "rof": 1,
             "skill": "shoulder_arms",
-            "weapontype": "carbine"
+            "weapontype": "Sniper"
         }
     },
     {
@@ -34,7 +34,7 @@
             "fullauto": false,
             "rof": 2,
             "skill": "melee_weapon",
-            "weapontype": "meleeweapon"
+            "weapontype": "Melee"
         }
     },
     {
@@ -49,7 +49,7 @@
             "fullauto": false,
             "rof": 2,
             "skill": "melee_weapon",
-            "weapontype": "meleeweapon"
+            "weapontype": "Melee"
         }
     },
     {
@@ -72,7 +72,7 @@
             "fullauto": false,
             "rof": 2,
             "skill": "handgun",
-            "weapontype": "pistol"
+            "weapontype": "Pistol"
         }
     },
     {
@@ -95,7 +95,7 @@
             "fullauto": false,
             "rof": 1,
             "skill": "archery",
-            "weapontype": "pistol"
+            "weapontype": "Bow"
         }
     },
     {
@@ -118,7 +118,7 @@
             "fullauto": true,
             "rof": 1,
             "skill": "handgun",
-            "weapontype": "submachinegun"
+            "weapontype": "SMG"
         }
     },
     {
@@ -133,7 +133,7 @@
             "fullauto": false,
             "rof": 1,
             "skill": "melee_weapon",
-            "weapontype": "meleeweapon"
+            "weapontype": "Melee"
         }
     },
     {
@@ -156,7 +156,7 @@
             "fullauto": true,
             "rof": 1,
             "skill": "shoulder_arms",
-            "weapontype": "assaultrifle"
+            "weapontype": "Assault"
         }
     },
     {
@@ -180,7 +180,7 @@
             "fullauto": false,
             "rof": 1,
             "skill": "shoulder_arms",
-            "weapontype": "shotgun"
+            "weapontype": "Shotgun"
         }
     },
     {
@@ -203,7 +203,7 @@
             "fullauto": false,
             "rof": 1,
             "skill": "heavy_weapons",
-            "weapontype": "pistol"
+            "weapontype": "Rocket"
         }
     },
     {
@@ -226,7 +226,7 @@
             "fullauto": false,
             "rof": 2,
             "skill": "handgun",
-            "weapontype": "pistol"
+            "weapontype": "Pistol"
         }
     },
     {
@@ -241,7 +241,7 @@
             "fullauto": false,
             "rof": 2,
             "skill": "melee_weapon",
-            "weapontype": "meleeweapon"
+            "weapontype": "Melee"
         }
     },
     {
@@ -264,7 +264,7 @@
             "fullauto": false,
             "rof": 1,
             "skill": "heavy_weapons",
-            "weapontype": "pistol"
+            "weapontype": "Grenade"
         }
     },
     {
@@ -287,7 +287,7 @@
             "fullauto": true,
             "rof": 1,
             "skill": "handgun",
-            "weapontype": "submachinegun"
+            "weapontype": "SMG"
         }
     },
     {
@@ -310,7 +310,7 @@
             "fullauto": false,
             "rof": 1,
             "skill": "handgun",
-            "weapontype": "pistol"
+            "weapontype": "Pistol"
         }
     }
 ]
