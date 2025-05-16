@@ -68,9 +68,9 @@
         "fullauto": false,
         "rof": 2,
         "skill": "melee_weapon",
-        "weapontype": "Melee",
         "attachments": [],
-        "quality": "Excellent"
+        "quality": "Excellent",
+        "weapontype": "Melee"
       }
     },
     {
@@ -94,11 +94,11 @@
         "fullauto": false,
         "rof": 2,
         "skill": "handgun",
-        "weapontype": "Pistol",
         "attachments": [
           "Smart"
         ],
-        "quality": "Average"
+        "quality": "Average",
+        "weapontype": "Pistol"
       }
     },
     {
@@ -123,9 +123,9 @@
         "fullauto": false,
         "rof": 1,
         "skill": "shoulder_arms",
-        "weapontype": "Shotgun",
         "attachments": [],
-        "quality": "Average"
+        "quality": "Average",
+        "weapontype": "Shotgun"
       }
     }
   ],
@@ -182,8 +182,8 @@
   ],
   "humanity": 44,
   "hp_current": 45,
-  "ip": 270,
-  "money": 2982,
+  "ip": 50,
+  "money": 3482,
   "stats": {
     "intelligence": 6,
     "reflex": 6,
@@ -200,7 +200,7 @@
   "journals": [
     {
       "name": "class",
-      "text": "# Contacts and Clients\nCity gang honcho, minor politician, Corp Exec, well known person in the neighbourhood\n\n# Haggle\nWhen you buy 5 or more of the same item you can get one more of that item for free\n\nyou can get 10% more or less than market price when buying or selling\n\n# Grease\nI know how to get along well with at least 1 other culture in my area, getting 1 Language at Lvl 4\n\nFixers know how to get things on the black market and are adept at navigating the complex social customs of the street, where hundreds of cultures and economic levels collide. \nFixers maintain vast webs of contacts and clients who they can reach out to source goods, favors, or information. \nFixers can also source desirable resources and make favorable deals."
+      "text": "Fixer LvL 5 (Operator)\n# Contacts and Clients\nMajor City player, City politico, neighborhood celebrity.\n\n# Haggle (Cool + Trading + Operator + 1d10)\n- If successful, you can negotiate the pay per person for a Job up 20%\n- When you buy 5 or more of the same item you can get one more of that item for free\n- You can get 10% more or less than market price when buying or selling\n\n# Grease\nI know how to get along well with at least 3 other culture in my area, getting 3 Language at Lvl 4\n\n#Reach\nOnce per month, working with other Fixers of your rank, you can set up a Night Market. While at a Night Market that you have helped organize, you can always find a place to source up to Super Luxury items.\n\nFixers know how to get things on the black market and are adept at navigating the complex social customs of the street, where hundreds of cultures and economic levels collide. \nFixers maintain vast webs of contacts and clients who they can reach out to source goods, favors, or information. \nFixers can also source desirable resources and make favorable deals."
     },
     {
       "name": "Story",
@@ -452,9 +452,21 @@
       "difficult_train": false,
       "stat": "int"
     },
+    "language_(turkish)": {
+      "name": "Language (Turkish)",
+      "nr": 4,
+      "difficult_train": false,
+      "stat": "int"
+    },
+    "language_(chinese)": {
+      "name": "Language (Chinese)",
+      "nr": 4,
+      "difficult_train": false,
+      "stat": "int"
+    },
     "language_(mexican)": {
       "name": "Language (Mexican)",
-      "nr": 3,
+      "nr": 4,
       "difficult_train": false,
       "stat": "int"
     },
@@ -654,7 +666,7 @@
   "fashion": {},
   "programs": {},
   "flags": {
-    "filter_zeros": false,
+    "filter_zeros": true,
     "group_by_stat": false
   }
 }
