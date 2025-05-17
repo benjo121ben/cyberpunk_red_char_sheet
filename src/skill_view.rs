@@ -53,8 +53,8 @@ fn SingleStatEntryView(entry: String) -> impl IntoView {
 
     view! {
         <div class="stat_entry"
-            on:click=move |_| decrease_luck()
-            on:contextmenu=move |_| reset_luck()
+            on:click=move |ev| {ev.stop_propagation(); ev.prevent_default(); decrease_luck();}
+            on:contextmenu=move |ev| {ev.stop_propagation(); ev.prevent_default(); reset_luck();}
         >
             <div class="stat_header">
                 {let name_clone = entry.clone(); move|| name_clone.clone()}
@@ -217,8 +217,8 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
         </div>
         <div class="skill_entry_value" 
             class:has_penalty=move|| has_penalty()
-            on:click=move|_| update_skill(1) 
-            on:contextmenu=move|_| update_skill_clone(-1)>
+            on:click=move|ev| {ev.stop_propagation(); ev.prevent_default(); update_skill(1); } 
+            on:contextmenu=move|ev| {ev.stop_propagation(); ev.prevent_default();  update_skill_clone(-1); }>
                 {get_skill_value}
         </div>
     }

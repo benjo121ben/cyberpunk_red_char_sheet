@@ -182,7 +182,7 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
             
         });
         show_ammo_select.set(false);
-        reload();
+        let _ = reload();
     };
     
     view! {
@@ -310,7 +310,7 @@ pub fn ResourceBar(threshold: i32, current_resource_state: Memo<i32>, #[prop(opt
 }
 
 #[component]
-pub fn ArmorView(head: bool) -> AnyView {
+pub fn CurrentArmorView(head: bool) -> AnyView {
     let char_signal = get_char_signal_from_ctx();
     let armor_memo = Memo::new(move |_| {
         char_signal.with(|cyberpunk| {
@@ -345,8 +345,8 @@ pub fn ArmorView(head: bool) -> AnyView {
     view! {
         <div class="flex_col">
             <div class="armor_row"
-                on:click=move|_| {let change_armor = ablate_repair_armor; change_armor(1)}
-                on:contextmenu=move|_| {let change_armor = ablate_repair_armor; change_armor(-1)}
+                on:click=move|ev| { ev.stop_propagation();  ev.prevent_default(); let change_armor = ablate_repair_armor; change_armor(1);}
+                on:contextmenu=move|ev| { ev.stop_propagation();  ev.prevent_default(); let change_armor = ablate_repair_armor; change_armor(-1);}
                 style:grid-template-columns=move || {format!("repeat({}, 1fr)", get_max_sp())}
             >
                 <For each={move || 0..get_max_sp()}
@@ -360,6 +360,48 @@ pub fn ArmorView(head: bool) -> AnyView {
                 {move || {
                     let armor_tag = if head {"Head "} else {"Body "};
                     format!("{}{}/{}", armor_tag, get_current_sp(), get_max_sp())
+                }}
+            </div>
+        </div>
+    }.into_any()
+}
+
+#[component]
+pub fn ShieldView(armor_index: usize) -> AnyView {
+    let char_signal = get_char_signal_from_ctx();
+    let shield_memo = Memo::new(move|_| char_signal.read().armors.get(armor_index).expect("expecting armor to exist").clone());
+    let get_current_sp = Memo::new(move |_| {
+        shield_memo.get().sp_current
+    });
+    let get_max_sp = Memo::new(move |_| {
+        shield_memo.get().sp
+    });
+
+    let ablate_repair_armor = move |amount: i32| {
+        char_signal.update(|c| {
+            let mut_armor = c.armors.get_mut(armor_index).expect("expecting armor to exist");
+            let max_sp = mut_armor.get_max_sp();
+            mut_armor.sp_current = min(max(mut_armor.sp_current + amount, 0), max_sp);
+        });
+    };
+
+    view! {
+        <div class="flex_row">
+            <div class="shield_row"
+                on:click=move|ev| { ev.stop_propagation(); ev.prevent_default();  let change_armor = ablate_repair_armor; change_armor(1);}
+                on:contextmenu=move|ev| { ev.stop_propagation(); ev.prevent_default();  let change_armor = ablate_repair_armor; change_armor(-1);}
+                style:grid-template-columns=move || {format!("repeat({}, 1fr)", get_max_sp())}
+            >
+                <For each={move || 0..get_max_sp()}
+                    key=move|nr| nr.to_string()
+                    children=move |nr| {
+                        view! {<ResourceBar threshold=nr current_resource_state=get_current_sp/>} 
+                    }
+                />
+            </div>
+            <div class="armor_text">
+                {move || {
+                    format!("{}/{}", get_current_sp(), get_max_sp())
                 }}
             </div>
         </div>

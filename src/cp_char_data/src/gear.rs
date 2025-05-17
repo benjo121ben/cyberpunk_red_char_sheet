@@ -297,6 +297,12 @@ impl Shoppable for ItemData {
     }
 }
 
+impl Armor {
+    pub fn get_max_sp(&self) -> i32 {
+        return self.sp + self.bonus.or(Some(0)).unwrap()
+    }
+}
+
 impl WeaponAmmoData {
     pub fn shoot(&mut self) {
         self.value = std::cmp::max(0, self.value - 1);

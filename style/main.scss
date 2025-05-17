@@ -404,6 +404,40 @@ table {
 	}
 }
 
+.armor_text {
+	min-width: 40px;
+}
+
+div:has(> .shield_row) {
+	grid-column-start: span 2;
+	gap: 10px;
+	align-items: center;
+	margin-top: 5px;
+}
+
+.shield_row {
+	display: grid;
+	height: 20px;
+	gap: 5px;
+	flex-grow: 1;
+
+	.resource_bar {
+		background-color: var(--highlight-color-second);
+		border-color: var(--highlight-color-second);
+	}
+
+	.head_armor_bar {
+		background-color: var(--warning-color);
+		border-color: var(--warning-color);
+	}
+
+	.resource_bar_empty {
+		background-color: unset;
+		border-width: 2px;
+		border-style: dashed;
+	}
+}
+
 .modal {
 	display:flex;
 	top:0;

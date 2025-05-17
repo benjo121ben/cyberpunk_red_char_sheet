@@ -125,7 +125,10 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                     .expect("expect item to exist");
 
                 bought_item.sp_current = bought_item.sp;
-                bought_item.head = head_armor.get();
+                //shields do not go on head 
+                if bought_item.type_field.as_str() == "armor" {
+                    bought_item.head = head_armor.get();
+                }
                 if must_pay && !check_money_and_reduce(bought_item.get_price()) {
                     return;
                 }

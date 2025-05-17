@@ -17,7 +17,7 @@ use leptos_router::{
 use cp_char_data::char::Character;
 use cp_char_data::gear::{GearData, RangeType};
 use crate::gear_views::{ArmorSelectionView, GearView, RangeTable};
-use crate::resource_views::{ArmorView, HealthAdjustPopup, HumanityView, IPView};
+use crate::resource_views::{CurrentArmorView, HealthAdjustPopup, HumanityView, IPView};
 use crate::shop_modal_view::{ShopModalData, ShopModalView};
 
 pub fn read_gear_data_from_file<P: AsRef<Path>>(path: P) -> Result<GearData, Box<dyn Error>> {
@@ -304,8 +304,8 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                 <div class="first_row">
                     <h1 class="name">{move || char_rw_signal.read().name.clone()} / {move || char_rw_signal.read().alias.clone()}</h1>
                     <div class="head_body_armor">
-                        <ArmorView head=true/> 
-                        <ArmorView head=false/> 
+                        <CurrentArmorView head=true/> 
+                        <CurrentArmorView head=false/> 
                     </div>
                 </div>
                 <div class="columns">

@@ -6,7 +6,7 @@ use cp_char_data::gear::*;
 use crate::icon_views::{AddIcon, RemoveIcon};
 use crate::help::get_char_signal_from_ctx;
 use crate::info_modal_view::SimpleModalData;
-use crate::resource_views::AmmoViewLinear;
+use crate::resource_views::{AmmoViewLinear, ShieldView};
 
 #[component]
 pub fn GearView() -> impl IntoView {
@@ -440,51 +440,66 @@ pub fn AllItemsView() -> impl IntoView {
                             .unwrap()
                     };
                     view! {
-                        <div class="gear_view"
-                            on:click=move|_| simple_modal_signal.update(|data| {
-                                data.title = armor_memo.get().get_name().clone();
-                                data.description = armor_memo.get().get_description().clone();
-                                data.show();
-                            })
-                        >
-                            <span>{move || format!(
-                                "{} {}", 
-                                armor_memo.get().get_name().to_string(), 
-                                armor_memo.get().head
-                                    .then(||"(Head)")
-                                    .or(Some("(Body)"))
-                                    .unwrap()
-                            )}</span>
-
-                            <div class="gear_buttons">
-                                <button on:click=move|ev|{
-                                    ev.stop_propagation();
-                                    log!("rem index {}", indx);
-                                    char_signal.write().armors.remove(indx);
-                                }>
-                                    X
-                                </button>
-                                <button
-                                    class:selected_tab=move || armor_bonus() != 0
-                                    on:click=move|ev| {
-                                        ev.stop_propagation();
-                                        char_signal.update(|c| {
-                                            c.armors.get_mut(indx).and_then(|armor: &mut Armor| {
-                                                if armor.bonus.is_some() {
-                                                    armor.sp_current = max(armor.sp_current -1, 0);
-                                                    armor.bonus = None;
-                                                }
-                                                else {
-                                                    armor.sp_current += 1;
-                                                    armor.bonus = Some(1);
-                                                }
-                                                Some(armor)
-                                            });
-                                        })
+                        <div class="armor_gear_div">
+                            <div class="gear_view"
+                                on:click=move|_| simple_modal_signal.update(|data| {
+                                    data.title = armor_memo.get().get_name().clone();
+                                    data.description = armor_memo.get().get_description().clone();
+                                    data.show();
+                                })
+                            >
+                                <span>{move || format!(
+                                    "{}{}", 
+                                    armor_memo.get().get_name().to_string(), 
+                                    {
+                                        let armor = armor_memo.get();
+                                        if armor.type_field.as_str() != "armor" {
+                                            ""
+                                        }    
+                                        else if armor.head {
+                                            " (Head)"
+                                        }
+                                        else {
+                                            " (Body)"
+                                        }
                                     }
-                                >
-                                    +1
-                                </button>
+                                )}</span>
+
+                                <div class="gear_buttons">
+                                    <button on:click=move|ev|{
+                                        ev.stop_propagation();
+                                        log!("rem index {}", indx);
+                                        char_signal.write().armors.remove(indx);
+                                    }>
+                                        X
+                                    </button>
+                                    <Show when=move || armor_memo.get().type_field.as_str() == "armor">
+                                        <button
+                                            class:selected_tab=move || armor_bonus() != 0
+                                            on:click=move|ev| {
+                                                ev.stop_propagation();
+                                                char_signal.update(|c| {
+                                                    c.armors.get_mut(indx).and_then(|armor: &mut Armor| {
+                                                        if armor.bonus.is_some() {
+                                                            armor.sp_current = max(armor.sp_current -1, 0);
+                                                            armor.bonus = None;
+                                                        }
+                                                        else {
+                                                            armor.sp_current += 1;
+                                                            armor.bonus = Some(1);
+                                                        }
+                                                        Some(armor)
+                                                    });
+                                                })
+                                            }
+                                        >
+                                            +1
+                                        </button>
+                                    </Show>
+                                </div>
+                                <Show when=move || armor_memo.get().type_field.as_str() == "shield">
+                                    <ShieldView armor_index=indx/>
+                                </Show>
                             </div>
                         </div>
                     }
