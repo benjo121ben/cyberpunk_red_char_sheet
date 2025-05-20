@@ -11,7 +11,7 @@
 			"type": "shell",
 			"command": "cargo leptos build --release",
 			"group": {"isDefault": false, "kind": "build"},
-			"label": "Rust: Build webiste for Windows"
+			"label": "Rust: Build webiste for release"
 		}
 
 	]

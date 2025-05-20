@@ -192,6 +192,7 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
 #[component]
 pub fn WeaponAttachmentView(index:usize) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
+    let gear_data: GearData = use_context().expect("expecting gear to exist (attachment)");
     let weapon_memo = Memo::new(move|_| {
         char_signal.read().weapons.get(index).unwrap().clone()
     });
@@ -200,8 +201,14 @@ pub fn WeaponAttachmentView(index:usize) -> impl IntoView {
             <For each=move|| weapon_memo.get().weapon_data.attachments.clone()
                 key=move|attachment| attachment.clone()
                 children=move|attachment| {
+                    let description = gear_data
+                        .attachments.iter()
+                        .find(|att| att.shorthand == attachment.clone())
+                        .cloned()
+                        .expect("expecting data to exist")
+                        .description;
                     view! {
-                        <span>{move || attachment.clone()}</span>
+                        <span title=move||description.clone()>{move || attachment.clone()}</span>
                     }
                 }
             />
@@ -348,6 +355,7 @@ pub fn ArmorSelectionView() -> impl IntoView {
 #[component]
 pub fn AllItemsView() -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
+    let range_table_signal: RwSignal<RangeType> = use_context().expect("expect range table to be set");
     let gear_data: GearData = use_context().expect("Gear Data should exist");
     let reduce_or_remove = move |item_map: &mut IndexMap<String, i32>, key: &String| {
         match item_map.get_mut(key) {
@@ -367,6 +375,50 @@ pub fn AllItemsView() -> impl IntoView {
 
     view! {
         <div class="gear_list">
+            <For each=move|| {char_signal.read().ammo.clone().into_iter().map(|(key, _)| key).collect::<Vec<_>>()}
+                key=move|key| key.clone()
+                children=move|key| {
+                    let find_item = gear_data.ammunition.iter().find(|find_item| {
+                        let changed_name = get_map_key_from_name(find_item.get_name());
+                        changed_name == key
+                    }).cloned().expect("expecting item to exist");
+                    let key_clone = key.clone();
+                    let find_item_clone = find_item.clone();
+                    let find_item_clone2 = find_item.clone();
+                    view! {
+                        <div class="gear_view"
+                            on:click=move|_| simple_modal_signal.update(|data| {
+                                data.title = find_item_clone.get_name().clone();
+                                data.description = find_item_clone.get_description().clone();
+                                data.show();
+                            })
+                            on:mouseover=move |_| {
+                                if find_item_clone2.caliber.as_str() == "grenade" {
+                                    range_table_signal.set(RangeType::Grenade);
+                                }
+                            }
+                            on:mouseleave=move |_| {
+                                range_table_signal.set(RangeType::None)
+                            }
+                        >
+                            <span>
+                                {move || char_signal.read().ammo.get(&key).expect("expecting item amount to exist").to_string()}x
+                                {move || find_item.clone().get_name().to_string()}
+                            </span>
+                            <button on:click=move|ev|{ 
+                                ev.stop_propagation();
+                                let change_fn = reduce_or_remove.clone(); 
+                                char_signal.update(|c| {
+                                    change_fn(&mut c.ammo, &key_clone)
+                                })
+                            }>
+                                X
+                            </button>
+                        </div>
+                    }
+                }
+            />
+            <hr style="width:90%"/>
             <For each=move|| {0..char_signal.read().cyberware.len()}
                 key=move|indx| indx.to_string()
                 children=move|indx| {
@@ -501,42 +553,6 @@ pub fn AllItemsView() -> impl IntoView {
                                     <ShieldView armor_index=indx/>
                                 </Show>
                             </div>
-                        </div>
-                    }
-                }
-            />
-        
-            <hr style="width:90%"/>
-            <For each=move|| {char_signal.read().ammo.clone().into_iter().map(|(key, _)| key).collect::<Vec<_>>()}
-                key=move|key| key.clone()
-                children=move|key| {
-                    let find_item = gear_data.ammunition.iter().find(|find_item| {
-                        let changed_name = get_map_key_from_name(find_item.get_name());
-                        changed_name == key
-                    }).cloned().expect("expecting item to exist");
-                    let key_clone = key.clone();
-                    let find_item_clone = find_item.clone();
-                    view! {
-                        <div class="gear_view"
-                            on:click=move|_| simple_modal_signal.update(|data| {
-                                data.title = find_item_clone.get_name().clone();
-                                data.description = find_item_clone.get_description().clone();
-                                data.show();
-                            })
-                        >
-                            <span>
-                                {move || char_signal.read().ammo.get(&key).expect("expecting item amount to exist").to_string()}x
-                                {move || find_item.clone().get_name().to_string()}
-                            </span>
-                            <button on:click=move|ev|{ 
-                                ev.stop_propagation();
-                                let change_fn = reduce_or_remove.clone(); 
-                                char_signal.update(|c| {
-                                    change_fn(&mut c.ammo, &key_clone)
-                                })
-                            }>
-                                X
-                            </button>
                         </div>
                     }
                 }
