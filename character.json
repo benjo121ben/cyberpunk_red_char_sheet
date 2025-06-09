@@ -23,7 +23,7 @@
       "price": 100,
       "type": "armor",
       "sp": 11,
-      "sp_current": 11,
+      "sp_current": 9,
       "penalty": 0,
       "head": false,
       "bonus": null
@@ -83,8 +83,8 @@
       "weapon_data": {
         "ammo": {
           "max": 8,
-          "value": 8,
-          "current_ammo_type": "heavy_pistol_-_basic_ammunition",
+          "value": 6,
+          "current_ammo_type": "heavy_pistol_basic_ammunition",
           "compatible_calibers": [
             "heavy_pistol"
           ]
@@ -127,12 +127,30 @@
         "quality": "Average",
         "weapontype": "Shotgun"
       }
+    },
+    {
+      "name": "Light Melee Weapon",
+      "personalized_name": "",
+      "description": "A brief item description goes here...",
+      "file": "weapons",
+      "price": 50,
+      "type": "weapons",
+      "weapon_data": {
+        "ammo": null,
+        "burst": false,
+        "damage": "1d6",
+        "fullauto": false,
+        "rof": 2,
+        "skill": "melee_weapon",
+        "attachments": [],
+        "quality": "Average",
+        "weapontype": "Melee"
+      }
     }
   ],
   "ammo": {
-    "heavy_pistol_-_armor-piercing_ammunition": 20,
-    "heavy_pistol_-_basic_ammunition": 40,
-    "flashbang_grenade": 1
+    "heavy_pistol_armor-piercing_ammunition": 20,
+    "heavy_pistol_basic_ammunition": 36
   },
   "cyberware": [
     {
@@ -179,12 +197,21 @@
       "price": 500,
       "psychosis": 7,
       "type": "cyberware"
+    },
+    {
+      "description": "Assists the Neural Link in its processing duties, freeing it up to focus entirely on enhancing the user's reflexes. A user with a Reflex Co-Processor can dodge bullets regardless of their REF.",
+      "file": "external-body-cyberware",
+      "internal": false,
+      "name": "Reflex-Co-Processor",
+      "price": 500,
+      "psychosis": 14,
+      "type": "cyberware"
     }
   ],
-  "humanity": 44,
-  "hp_current": 45,
-  "ip": 50,
-  "money": 3482,
+  "humanity": 50,
+  "hp_current": 39,
+  "ip": 190,
+  "money": 430,
   "stats": {
     "intelligence": 6,
     "reflex": 6,
@@ -193,7 +220,7 @@
     "cool": 8,
     "willpower": 6,
     "luck": 6,
-    "luck_current": 6,
+    "luck_current": 0,
     "movement": 6,
     "body": 7,
     "empathy": 7
@@ -201,23 +228,19 @@
   "journals": [
     {
       "name": "class",
-      "text": "Fixer LvL 5 (Operator)\n# Contacts and Clients\nMajor City player, City politico, neighborhood celebrity.\n\n# Haggle (Cool + Trading + Operator + 1d10)\n- If successful, you can negotiate the pay per person for a Job up 20%\n- When you buy 5 or more of the same item you can get one more of that item for free\n- You can get 10% more or less than market price when buying or selling\n\n# Grease\nI know how to get along well with at least 3 other culture in my area, getting 3 Language at Lvl 4\n\n#Reach\nOnce per month, working with other Fixers of your rank, you can set up a Night Market. While at a Night Market that you have helped organize, you can always find a place to source up to Super Luxury items.\n\nFixers know how to get things on the black market and are adept at navigating the complex social customs of the street, where hundreds of cultures and economic levels collide. \nFixers maintain vast webs of contacts and clients who they can reach out to source goods, favors, or information. \nFixers can also source desirable resources and make favorable deals."
+      "text": "Fixer LvL 5 (Operator)\n# Contacts and Clients\nMajor City player, City politico, neighborhood celebrity.\n\n# Haggle (Cool + Trading + Operator + 1d10)\n- If successful, you can negotiate the pay per person for a Job up 20%\n- When you buy 5 or more of the same item you can get one more of that item for free\n- You can get 10% more or less than market price when buying or selling\n\n# Grease\nI know how to get along well with at least 3 other culture in my area, getting 3 Language at Lvl 4\n\n#Reach\n- You can always find a place to source up to Expensive items for your clients on a piece by piece\nbasis, even if they are otherwise unavailable.\n- Once per month, working with other Fixers of your rank, you can set up a Night Market. While at a Night Market that you have helped organize, you can always find a place to source up to Super Luxury items.\n\nFixers know how to get things on the black market and are adept at navigating the complex social customs of the street, where hundreds of cultures and economic levels collide. \nFixers maintain vast webs of contacts and clients who they can reach out to source goods, favors, or information. \nFixers can also source desirable resources and make favorable deals."
     },
     {
       "name": "Story",
-      "text": "Spoof@bozo.circus - tag von dem hacker der in das hochhaus eingebrochen ist\n\nWir konfronzieren robbers vor einem von Jack's  Gebäuden und nehmen einen gefangen\nKASIM'S - türkisches cafe im Glenn (mall), NEt24 leute haben die situation beobachtet\n- barkeep -> Kasym Beck\n- destiny hondel \n\nFahren nach Woodland Park (up and coming, viel Bauprojekte)\n\nCircue de Bozo -> Spoof hat es auf Jack abgesehen"
+      "text": "Spoof@bozo.circus - tag von dem hacker der in das hochhaus eingebrochen ist\n\nWir konfronzieren robbers vor einem von Jack's  Gebäuden und nehmen einen gefangen\nKASIM'S - türkisches cafe im Glenn (mall), NEt24 leute haben die situation beobachtet\n- barkeep -> Kasym Beck\n- destiny hondel \n\nFahren nach Woodland Park (up and coming, viel Bauprojekte)\nCircue de Bozo -> Spoof hat es auf Jack abgesehen\nWir killen Spoof und ziehen nach Woodland Park\nThe Breeze -> ort für recreational drugs\nBurning Bright Bodega -> mini markt\nDockside billhooks wurden vom NCPD auseinander genommen weil sie schmiergeld nicht rechtzeitig gezahlt haben\nContinental Brands -> gehen gegen Guerilla Gardening vor. Alfie ein lokal informiert mich falls er jemand rumschnuppern sehen sollte\n\n600 pro kiste\naligator gang macht stress in der nachbarschaft, \ntyp beobachted die bodega und ruft einen typ namens Tarkin an. Wir rauben ihn aus und nehmen die Telefonnummer von Tarkin an uns\n"
     },
     {
       "name": "NPCs",
-      "text": "- Grace Steele -> Gitarristin"
-    },
-    {
-      "name": "items",
-      "text": "cyberdeck with deckkrash, flak, poison flatline, 2x sword\n"
+      "text": "- Grace Steele -> Gitarristin\n- Jack -> Immobilien\n- Billie Flight -> Fixer von Woodland Park\n- Dynalar -> Firma, owned campus Woodland Park\n"
     },
     {
       "name": "IMprovements",
-      "text": "- Humanity\n- cyberware max humanity\n- weapon attachments\n- cyberwear slots\n- armor improvements"
+      "text": "- Humanity\n- cyberware max humanity\n- weapon attachments\n- cyberwear slots\n- armor improvements\n"
     }
   ],
   "skills": {
@@ -449,21 +472,9 @@
       "difficult_train": false,
       "stat": "int"
     },
-    "language_(turkish)": {
-      "name": "Language (Turkish)",
-      "nr": 4,
-      "difficult_train": false,
-      "stat": "int"
-    },
-    "language_(chinese)": {
-      "name": "Language (Chinese)",
-      "nr": 4,
-      "difficult_train": false,
-      "stat": "int"
-    },
     "language_(mexican)": {
       "name": "Language (Mexican)",
-      "nr": 4,
+      "nr": 3,
       "difficult_train": false,
       "stat": "int"
     },
@@ -656,12 +667,18 @@
     "handcuffs": 1,
     "inflatable_bed_&_sleep-bag": 1,
     "lock_picking_set": 1,
-    "memory_chips": 2
+    "memory_chips": 2,
+    "cyberdeck_(standard_quality):": 1
   },
   "cyberdeck_hardware": {},
   "drugs": {},
   "fashion": {},
-  "programs": {},
+  "programs": {
+    "deckkrash": 1,
+    "flak": 1,
+    "poison_flatline": 1,
+    "sword": 2
+  },
   "flags": {
     "filter_zeros": true,
     "group_by_stat": false
