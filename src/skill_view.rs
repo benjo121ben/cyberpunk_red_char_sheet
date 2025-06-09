@@ -185,7 +185,12 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
     let skill_memo = Memo::new(move |_| char_signal.with(|c| c.skills.get(&key).expect("expect skill to exist in its own list").clone()));
     let get_skill_value = move || {
         let skill = skill_memo.get();
-        char_signal.with(|char| char.get_stat(&skill.stat.clone()).0) + skill.nr
+        if unlocked_signal.get() {
+            skill.nr
+        }
+        else {
+            char_signal.with(|char| char.get_stat(&skill.stat.clone()).0) + skill.nr
+        }
     };
 
     let update_skill = move|val: i32| {
@@ -210,16 +215,21 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
     let update_skill_clone = update_skill.clone();
 
     view! {
-        <div class="skill_entry_name" 
-            title={move || skill_memo.read().stat.to_uppercase().clone()}
-            class:has_penalty=move|| has_penalty()>
-                {move || skill_memo.read().name.clone()}
-        </div>
-        <div class="skill_entry_value" 
-            class:has_penalty=move|| has_penalty()
+        <div class="skill_entry"
+            class:unlocked=move||unlocked_signal.get()
             on:click=move|ev| {ev.stop_propagation(); ev.prevent_default(); update_skill(1); } 
-            on:contextmenu=move|ev| {ev.stop_propagation(); ev.prevent_default();  update_skill_clone(-1); }>
+            on:contextmenu=move|ev| {ev.stop_propagation(); ev.prevent_default();  update_skill_clone(-1); }
+        >
+            <div class="skill_entry_name" 
+                title={move || skill_memo.read().stat.to_uppercase().clone()}
+                class:has_penalty=move|| has_penalty()>
+                    {move || skill_memo.read().name.clone()}
+            </div>
+            <div class="skill_entry_value"
+                class:has_penalty=move|| has_penalty()
+            >
                 {get_skill_value}
+            </div>
         </div>
     }
 }

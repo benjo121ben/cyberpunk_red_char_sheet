@@ -319,6 +319,9 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                             </button>
                             <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("filter_zeros"))>FILTER</button>
                             <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("group_by_stat"))>GROUP</button>
+                            <Show when=move|| unlocked_signal.get()>
+                                <button on:click=move|_| {unlocked_signal.update(|s| *s = !*s) }>+</button>
+                            </Show>
                         </div>
                         <div class="skill_list">
                             <SkillList unlocked_signal=unlocked_signal/>

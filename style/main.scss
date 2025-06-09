@@ -319,7 +319,7 @@ table {
 
 .skill_list {
 	display: grid;
-	grid-template-columns: 3fr 0.5fr;
+	grid-template-columns: 1fr;
 	gap: 2px;
 }
 
@@ -330,29 +330,17 @@ table {
 	justify-self: center;
 }
 
-.skill_entry_name {
-	justify-self: flex-start
+.skill_entry {
+	display: grid;
+	grid-template-columns: 3fr 0.5fr;
+	gap: 2px;
+	grid-column-start: span 2;
+	padding: 0 2px 0 2px;
 }
 
-.skill_entry_name:hover {
-	color: var(--skill-highlight);
+.skill_entry:hover {
+	@extend .inverted_highlight_second;
 }
-
-.skill_entry_name:hover + .skill_entry_value {
-	color: var(--skill-highlight);
-}
-
-.skill_entry_name:has(+ .skill_entry_value:hover) {
-	color: var(--skill-highlight);
-}
-
-.skill_entry_value:hover {
-	color: var(--skill-highlight);
-}
-
-/* .skill_entry_stat {
-	justify-self: center;
-} */
 
 .skill_entry_value {
 	justify-self: flex-end;
@@ -945,3 +933,11 @@ div:has(> .weapon_view) {
 		text-align: right;
 	}
 }
+
+.inverted_highlight_second {
+	background-color: var(--highlight-color-second);
+	color: var(--dark-background-color);
+	border-radius: 5px;
+}
+
+
