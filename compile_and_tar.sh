@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 cargo leptos build --release &&
 t_dir=cyberpunk_app &&
 rm -r $t_dir
