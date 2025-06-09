@@ -1,8 +1,10 @@
 use leptos::prelude::*;
-use std::cmp::max;
+use std::cmp::{max, min};
 
 use cp_char_data::char::Skill;
 use super::help::get_char_signal_from_ctx;
+
+const IP_SPENDING_TABLE: &[i32] = &[20, 40, 60, 80, 100, 120, 140, 160, 180, 200];
 
 #[component]
 pub fn StatsView() -> impl IntoView {
@@ -199,7 +201,7 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
         }
         char_signal.update(|c| {
             c.skills.get_mut(&key_clone).and_then(|skill| {
-                skill.nr += val;
+                skill.nr = max(min(skill.nr + val, 10), 0);
                 Some(skill)
             });
         })
@@ -214,16 +216,39 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
 
     let update_skill_clone = update_skill.clone();
 
+    let get_tooltip = move || {
+        let value: usize = skill_memo.read().nr as usize;
+        if unlocked_signal.get() && value < 10 {
+            let diff = if skill_memo.read().difficult_train {2} else {1};
+                
+            let cost = *IP_SPENDING_TABLE.get(value).expect(&format!("expecting a value to exist for {value}")) * diff;
+            
+            cost.to_string()
+        }
+        else {
+            skill_memo.read().stat.to_uppercase()
+        }
+    };
+
     view! {
         <div class="skill_entry"
             class:unlocked=move||unlocked_signal.get()
             on:click=move|ev| {ev.stop_propagation(); ev.prevent_default(); update_skill(1); } 
             on:contextmenu=move|ev| {ev.stop_propagation(); ev.prevent_default();  update_skill_clone(-1); }
+            title=get_tooltip
         >
             <div class="skill_entry_name" 
-                title={move || skill_memo.read().stat.to_uppercase().clone()}
                 class:has_penalty=move|| has_penalty()>
-                    {move || skill_memo.read().name.clone()}
+                    {move || {
+                        skill_memo.read().name.clone() + 
+                        if unlocked_signal.get() {
+                            skill_memo.read().difficult_train.then(||" (x2)").or(Some("")).unwrap()
+                        }
+                        else {
+                            ""
+                        }
+
+                    }}
             </div>
             <div class="skill_entry_value"
                 class:has_penalty=move|| has_penalty()
