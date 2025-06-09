@@ -8,7 +8,7 @@ mkdir $t_dir/gear &&
 cp -r target/site/. $t_dir/site/ &&
 # this was at some point necessary, might become relevant again who knows
 # mv $t_dir/site/pkg/cp_red_char_sheet.wasm $t_dir/site/pkg/cp_red_char_sheet_bg.wasm &&
-cp -r gear/. $t_dir/gear/ &&
+cp gear/final_dict.json $t_dir/gear/final_dict.json &&
 cp character.json $t_dir/dev_saves/character.json &&
 cp target/release/cp_red_char_sheet $t_dir/cp_red_char_sheet &&
 cp Cargo_deploy.toml $t_dir/Cargo.toml && # cargo deploy sets site different
