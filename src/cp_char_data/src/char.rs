@@ -158,7 +158,10 @@ impl Character {
             (false, "Contortionist"),
             (false, "Dance"),
             (false, "Evasion"),
-            (true,  "Martial Arts"),
+            (true,  "Martial Arts (Akido)"),
+            (true,  "Martial Arts (Karate)"),
+            (true,  "Martial Arts (Judo)"),
+            (true,  "Martial Arts (Taekwondo)"),
             (false, "Melee Weapon"),
             (false, "Stealth"),
         ];

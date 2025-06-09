@@ -502,8 +502,26 @@
       "difficult_train": false,
       "stat": "int"
     },
-    "martial_arts": {
-      "name": "Martial Arts",
+    "martial_arts_(akido)": {
+      "name": "Martial Arts (Akido)",
+      "nr": 0,
+      "difficult_train": true,
+      "stat": "dex"
+    },
+    "martial_arts_(karate)": {
+      "name": "Martial Arts (Karate)",
+      "nr": 0,
+      "difficult_train": true,
+      "stat": "dex"
+    },
+    "martial_arts_(judo)": {
+      "name": "Martial Arts (Judo)",
+      "nr": 0,
+      "difficult_train": true,
+      "stat": "dex"
+    },
+    "martial_arts_(taekwondo)": {
+      "name": "Martial Arts (Taekwondo)",
       "nr": 0,
       "difficult_train": true,
       "stat": "dex"
@@ -680,7 +698,7 @@
     "sword": 2
   },
   "flags": {
-    "filter_zeros": true,
+    "filter_zeros": false,
     "group_by_stat": false
   }
 }
