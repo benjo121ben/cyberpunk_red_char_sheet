@@ -97,5 +97,14 @@
         "price": 500,
         "psychosis": 3,
         "type": "cyberware"
+    },
+    {
+        "description": "Assists the Neural Link in its processing duties, freeing it up to focus entirely on enhancing the user's reflexes. A user with a Reflex Co-Processor can dodge bullets regardless of their REF.",
+        "type": "cyberware",
+        "file": "neuralware",
+        "internal": false,
+        "name": "Reflex-Co-Processor",
+        "price": 500,
+        "psychosis": 14
     }
 ]

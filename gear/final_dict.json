@@ -1261,6 +1261,15 @@
             "type": "cyberware"
         },
         {
+            "description": "Assists the Neural Link in its processing duties, freeing it up to focus entirely on enhancing the user's reflexes. A user with a Reflex Co-Processor can dodge bullets regardless of their REF.",
+            "type": "cyberware",
+            "file": "neuralware",
+            "internal": false,
+            "name": "Reflex-Co-Processor",
+            "price": 500,
+            "psychosis": 14
+        },
+        {
             "description": "<p>User's body and head are armored at SP7. Your SP in any location is determined by your highest source of SP in that location. Additionally, whenever your armor is ablated in a location, all your sources of SP in that location are ablated at the same time. Whenever the user successfully completes a day of natural healing, nanomachines present in the Skin Weave repair both the body and head location of the Skin Weave for one point of its lost SP.&nbsp;</p>",
             "file": "external-body-cyberware",
             "internal": false,
