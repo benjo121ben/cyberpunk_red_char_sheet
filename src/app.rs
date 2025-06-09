@@ -18,7 +18,7 @@ use cp_char_data::char::Character;
 use cp_char_data::gear::{GearData, RangeType};
 use crate::gear_views::{ArmorSelectionView, GearView, RangeTable};
 use crate::resource_views::{CurrentArmorView, HealthAdjustPopup, HumanityView, IPView};
-use crate::shop_modal_view::{ShopModalData, ShopModalView};
+use crate::shop_modal_view::{AddSkillModalView, ShopModalData, ShopModalView};
 
 pub fn read_gear_data_from_file<P: AsRef<Path>>(path: P) -> Result<GearData, Box<dyn Error>> {
     // Open the file in read-only mode with buffer.
@@ -279,6 +279,7 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
 
     let shop_modal_signal = RwSignal::new(ShopModalData::default());
     let simple_modal_signal = RwSignal::new(SimpleModalData::default());
+    let show_add_skill_modal_signal = RwSignal::new(false);
     let damage_popup_signal = RwSignal::new(false);
 
     let danger_zone_memo = Memo::new(move|_| {
@@ -295,6 +296,7 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
             class:danger_zone=move ||danger_zone_memo.get()
         >
             <ShopModalView data=shop_modal_signal/>
+            <AddSkillModalView visible=show_add_skill_modal_signal/>
             <SimpleModalView data=simple_modal_signal/>
             <HealthView on:click=move|_| damage_popup_signal.update(|v| *v = !*v)/>
             <Show when=move||damage_popup_signal.get()>
@@ -320,7 +322,7 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                             <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("filter_zeros"))>FILTER</button>
                             <button on:click=move|_| char_rw_signal.update(|c| c.flip_flag("group_by_stat"))>GROUP</button>
                             <Show when=move|| unlocked_signal.get()>
-                                <button on:click=move|_| {unlocked_signal.update(|s| *s = !*s) }>+</button>
+                                <button on:click=move|_| {show_add_skill_modal_signal.set(true) }>+</button>
                             </Show>
                         </div>
                         <div class="skill_list">
