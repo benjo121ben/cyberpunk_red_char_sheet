@@ -307,6 +307,10 @@ impl WeaponAmmoData {
     pub fn shoot(&mut self) {
         self.value = std::cmp::max(0, self.value - 1);
     }
+
+    pub fn undo_shoot(&mut self) {
+        self.value = std::cmp::min(self.max, self.value + 1);
+    }
 }
 
 pub fn get_map_key(obj: &impl Shoppable) -> String {

@@ -120,6 +120,7 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
                 return;
             }        
             let current_ammo = ammo_data.current_ammo_type.clone().unwrap();
+            let current_ammo_count = ammo_data.value;
             
             //check if we still have ammo in the inventory
             let inventory_ammo = cyberpunk.ammo.get_mut(&current_ammo);
@@ -129,7 +130,7 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
             }
             let inventory_ammo = inventory_ammo.expect("inventory ammo cannot be none at this point");
             let clip_size = ammo_data.max;
-            let refill_amount = std::cmp::min(*inventory_ammo, clip_size);
+            let refill_amount = std::cmp::min(*inventory_ammo, clip_size - current_ammo_count);
             
             ammo_data.value += refill_amount;
             *inventory_ammo -= refill_amount;
@@ -187,22 +188,34 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
     
     view! {
         <Show when=move||{count.get() > 0}>
-            <div class="ammo_view_linear"
-                on:click=move|ev| {
-                    ev.stop_propagation();
-                    char_signal.update(|c|{
-                        c.weapons.get_mut(weapon_index).and_then(|weap: &mut Weapon|
-                            weap
-                                .weapon_data
-                                .ammo.as_mut()
-                                .and_then(|ammo_data: &mut WeaponAmmoData| {ammo_data.shoot(); Some(ammo_data)})
-                        );
-                    });
-                }
-            >
+            <div class="ammo_view_linear">
                 <div 
                     class="linear_ammo_grid"
                     style:grid-template-columns=move || {format!("repeat({}, 1fr)", max.get())}
+                    on:click=move|ev| {
+                        ev.stop_propagation();
+                        char_signal.update(|c|{
+                            c.weapons.get_mut(weapon_index).and_then(|weap: &mut Weapon|
+                                weap
+                                    .weapon_data
+                                    .ammo.as_mut()
+                                    .and_then(|ammo_data: &mut WeaponAmmoData| {ammo_data.shoot(); Some(ammo_data)})
+                            );
+                        });
+                    }
+
+                    on:contextmenu=move|ev| {
+                        ev.stop_propagation();
+                        ev.prevent_default();
+                        char_signal.update(|c|{
+                            c.weapons.get_mut(weapon_index).and_then(|weap: &mut Weapon|
+                                weap
+                                    .weapon_data
+                                    .ammo.as_mut()
+                                    .and_then(|ammo_data: &mut WeaponAmmoData| {ammo_data.undo_shoot(); Some(ammo_data)})
+                            );
+                        });
+                    }
                 >
                     <For each={move || 0..max.get()}
                         key=move|nr| nr.to_string()
@@ -215,6 +228,14 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
                 </div>
                 <span class="ammo_text">
                     {move || count.get()} / {move || max.get()}
+                </span>
+                <span class="ammo_text"
+                    on:click=move|ev| {
+                        ev.stop_propagation();
+                        let _ = reload();
+                    }
+                >
+                    R
                 </span>
             </div>
         </Show>
@@ -345,8 +366,8 @@ pub fn CurrentArmorView(head: bool) -> AnyView {
     view! {
         <div class="flex_col">
             <div class="armor_row"
-                on:click=move|ev| { ev.stop_propagation();  ev.prevent_default(); let change_armor = ablate_repair_armor; change_armor(1);}
-                on:contextmenu=move|ev| { ev.stop_propagation();  ev.prevent_default(); let change_armor = ablate_repair_armor; change_armor(-1);}
+                on:click=move|ev| { ev.stop_propagation(); ev.prevent_default(); let change_armor = ablate_repair_armor; change_armor(1);}
+                on:contextmenu=move|ev| { ev.stop_propagation(); ev.prevent_default(); let change_armor = ablate_repair_armor; change_armor(-1);}
                 style:grid-template-columns=move || {format!("repeat({}, 1fr)", get_max_sp())}
             >
                 <For each={move || 0..get_max_sp()}
