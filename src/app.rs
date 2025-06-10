@@ -3,6 +3,7 @@ use leptos::logging::log;
 use std::error::Error;
 use super::skill_view::{SkillList, StatsView};
 use super::resource_views::{HealthView, MoneyView};
+use crate::add_skill_modal_view::AddSkillModalView;
 use crate::app::server_fn::codec::Json;
 use crate::info_modal_view::{SimpleModalData, SimpleModalView};
 use crate::text_views::TextCenterSection;
@@ -18,7 +19,7 @@ use cp_char_data::char::Character;
 use cp_char_data::gear::{GearData, RangeType};
 use crate::gear_views::{ArmorSelectionView, GearView, RangeTable};
 use crate::resource_views::{CurrentArmorView, HealthAdjustPopup, HumanityView, IPView};
-use crate::shop_modal_view::{AddSkillModalView, ShopModalData, ShopModalView};
+use crate::shop_modal_view::{ShopModalData, ShopModalView};
 
 pub fn read_gear_data_from_file<P: AsRef<Path>>(path: P) -> Result<GearData, Box<dyn Error>> {
     // Open the file in read-only mode with buffer.
@@ -296,7 +297,9 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
             class:danger_zone=move ||danger_zone_memo.get()
         >
             <ShopModalView data=shop_modal_signal/>
-            <AddSkillModalView visible=show_add_skill_modal_signal/>
+            <Show when=move||show_add_skill_modal_signal.get()>
+                <AddSkillModalView visible=show_add_skill_modal_signal/>
+            </Show>
             <SimpleModalView data=simple_modal_signal/>
             <HealthView on:click=move|_| damage_popup_signal.update(|v| *v = !*v)/>
             <Show when=move||damage_popup_signal.get()>

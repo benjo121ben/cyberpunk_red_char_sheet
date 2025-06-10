@@ -82,14 +82,8 @@ pub fn SkillList(unlocked_signal: RwSignal<bool>) -> impl IntoView {
         if filter_flag_memo.get() {
             temp_list = temp_list.into_iter().filter(|(_, skill)| skill.nr != 0).collect::<Vec<(String, Skill)>>();
         }
-        
-        /*if group_flag_memo.get() {
-            temp_list.sort_by(|(_, first_skill), (_, second_skill)| first_skill.cmp_stat_and_name(second_skill));
-        }
-        else {
-            temp_list.sort_by(|(_, first_skill), (_, second_skill)| first_skill.cmp_name(second_skill));
-        }*/
-        return temp_list
+        temp_list.sort_by(|(_, first_skill), (_, second_skill)| first_skill.cmp_name(second_skill));
+        return temp_list;
     });
 
     view! {

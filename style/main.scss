@@ -58,6 +58,11 @@ button:hover {
 	color: var(--dark-background-color);
 }
 
+button:disabled, button:disabled:hover {
+	color: var(--text-color);
+	background-color: var(--dark-background-color);
+}
+
 select {
 	background-color: var(--highlight-color);
 	border: unset;
@@ -452,6 +457,19 @@ div:has(> .shield_row) {
 
 	> hr {
 		margin-bottom:5px;
+	}
+}
+
+.add_skill_content {
+	@extend .modal_content;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	width: fit-content;
+	height: fit-content;
+	
+	> button {
+		margin-top: 10px;
 	}
 }
 
