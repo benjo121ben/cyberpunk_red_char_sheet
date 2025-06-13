@@ -301,16 +301,18 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                 <AddSkillModalView visible=show_add_skill_modal_signal/>
             </Show>
             <SimpleModalView data=simple_modal_signal/>
-            <HealthView on:click=move|_| damage_popup_signal.update(|v| *v = !*v)/>
             <Show when=move||damage_popup_signal.get()>
                 <HealthAdjustPopup visible_signal=damage_popup_signal/>
             </Show>
             <div class="base_div">
                 <div class="first_row">
                     <h1 class="name">{move || char_rw_signal.read().name.clone()} / {move || char_rw_signal.read().alias.clone()}</h1>
-                    <div class="head_body_armor">
-                        <CurrentArmorView head=true/> 
-                        <CurrentArmorView head=false/> 
+                    <div class="health_and_armor_section">
+                            <HealthView reverse=true on:click=move|_| damage_popup_signal.update(|v| *v = !*v)/>
+                        <div class="head_body_armor">
+                            <CurrentArmorView head=true/> 
+                            <CurrentArmorView head=false/> 
+                        </div>
                     </div>
                 </div>
                 <div class="columns">

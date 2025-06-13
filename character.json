@@ -210,7 +210,7 @@
   ],
   "humanity": 50,
   "hp_current": 39,
-  "ip": 190,
+  "ip": 10,
   "money": 430,
   "stats": {
     "intelligence": 6,
@@ -241,6 +241,10 @@
     {
       "name": "IMprovements",
       "text": "- Humanity\n- cyberware max humanity\n- weapon attachments\n- cyberwear slots\n- armor improvements\n"
+    },
+    {
+      "name": "Netrunner",
+      "text": "Interface LVL 2"
     }
   ],
   "skills": {

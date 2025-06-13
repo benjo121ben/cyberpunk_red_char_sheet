@@ -193,6 +193,7 @@ table {
 }
 
 .name {
+	flex: 1 0 0;
 	margin-top: 5px;
 	margin-bottom: 10px;
 }
@@ -207,8 +208,15 @@ table {
 	background-color: var(--dark-background-color);
 }
 
+.health_and_armor_section {
+	@extend .flex_col;
+	flex: 1 0 1;
+	align-items: flex-end;
+}
+
 
 .health_commons {
+	align-self: stretch;
 	padding: 5px;
 	flex: 0 0 40px;
 }
@@ -227,6 +235,8 @@ table {
 	text-align: center;
 	margin-top: -40px;
 	font-size: large;
+	vertical-align: middle;
+	align-content: center;
 }
 
 .health_bar {
@@ -372,6 +382,7 @@ table {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .head_body_armor {
@@ -752,6 +763,7 @@ div:has(> .weapon_view) {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .armor_selection {

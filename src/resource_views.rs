@@ -36,7 +36,7 @@ pub fn AmmoViewRadial(count: Memo<i32>) -> AnyView {
 }
 
 #[component]
-pub fn HealthView() -> AnyView {
+pub fn HealthView(reverse: bool) -> AnyView {
     let char_signal = get_char_signal_from_ctx();
     let get_max_health = move || char_signal.read().calc_max_health();
     let get_current_health = move || char_signal.read().hp_current;
@@ -46,7 +46,14 @@ pub fn HealthView() -> AnyView {
             <Show when=move || {get_current_health() > 0}>
                 <div 
                     class="health_bar" 
-                    style:grid-column=move || {format!("span {}", get_current_health())}
+                    style:grid-column=move || {
+                        if reverse {
+                            format!("{} / span {}", get_max_health() - get_current_health() + 1, get_current_health())
+                        }
+                        else {
+                        format!("span {}", get_current_health())
+                        }
+                    }
                 />
             </Show>
             
