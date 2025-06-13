@@ -226,7 +226,11 @@ impl Shoppable for Armor {
 
 impl Shoppable for Weapon {
     fn get_name(&self) -> &String {
-        return &self.name;
+        if self.personalized_name.to_string() != "" {
+            &self.personalized_name
+        } else {
+            &self.name
+        }
     }
 
     fn get_description(&self) -> &String {
