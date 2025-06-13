@@ -341,6 +341,14 @@ table {
 	gap: 2px;
 	grid-column-start: span 2;
 	padding: 0 2px 0 2px;
+
+	button {
+		margin-right: 5px;
+		padding: 1px 3px 1px 3px;
+	}
+	button:hover {
+		background-color: var(--warning-color);
+	}
 }
 
 .skill_entry:hover {

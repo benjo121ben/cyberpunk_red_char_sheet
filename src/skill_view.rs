@@ -1,4 +1,4 @@
-use leptos::prelude::*;
+use leptos::{ev::MouseEvent, prelude::*};
 use std::cmp::{max, min};
 
 use cp_char_data::char::Skill;
@@ -77,7 +77,8 @@ pub fn SkillList(unlocked_signal: RwSignal<bool>) -> impl IntoView {
     let filter_flag_memo = Memo::new(move |_| rw_char_signal.read().has_active_flag("filter_zeros"));
     let group_flag_memo = Memo::new(move |_| rw_char_signal.read().has_active_flag("group_by_stat"));
     let skill_list_memo = Memo::new(move |_| {
-        let mut temp_list: Vec<(String, Skill)> = rw_char_signal.with(|c| c.skills.clone().into_iter().collect::<Vec<(String, Skill)>>());
+        let mut temp_list: Vec<(String, Skill)> = rw_char_signal
+            .with(|c| c.skills.clone().into_iter().collect::<Vec<(String, Skill)>>());
 
         if filter_flag_memo.get() {
             temp_list = temp_list.into_iter().filter(|(_, skill)| skill.nr != 0).collect::<Vec<(String, Skill)>>();
@@ -177,7 +178,7 @@ pub fn SkillList(unlocked_signal: RwSignal<bool>) -> impl IntoView {
 #[component]
 fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
-    let key_clone = key.clone(); 
+    let (key_read_signal, _) = signal(key.clone());
     let skill_memo = Memo::new(move |_| char_signal.with(|c| c.skills.get(&key).expect("expect skill to exist in its own list").clone()));
     let get_skill_value = move || {
         let skill = skill_memo.get();
@@ -189,12 +190,16 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
         }
     };
 
+    let is_language_or_local_expert = move || {
+        skill_memo.with(|skill| skill.name.contains("Language") || skill.name.contains("Local Expert"))
+    };
+
     let update_skill = move|val: i32| {
         if !unlocked_signal.get() {
             return;
         }
         char_signal.update(|c| {
-            c.skills.get_mut(&key_clone).and_then(|skill| {
+            c.skills.get_mut(&key_read_signal()).and_then(|skill| {
                 skill.nr = max(min(skill.nr + val, 10), 0);
                 Some(skill)
             });
@@ -233,6 +238,18 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
         >
             <div class="skill_entry_name" 
                 class:has_penalty=move|| has_penalty()>
+                    <Show when=move|| unlocked_signal.get() && is_language_or_local_expert()>
+                        <button 
+                            on:click=move|ev: MouseEvent| {
+                                ev.stop_propagation();
+                                char_signal.update(|punk| {
+                                    punk.skills.shift_remove(&key_read_signal());
+                                });
+                            }
+                        >
+                            X
+                        </button>
+                    </Show>
                     {move || {
                         skill_memo.read().name.clone() + 
                         if unlocked_signal.get() {
