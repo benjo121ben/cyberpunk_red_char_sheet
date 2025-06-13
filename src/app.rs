@@ -208,7 +208,7 @@ fn Login() -> AnyView {
     view! {
         <Show when=move|| !show_main_page.get()>
             <div class="login_div">
-                <input type="text"
+                <input type="password"
                     value=""
                     prop:value=move|| {let _ = show_main_page(); "".to_string()}
                     on:change=move|ev| {
