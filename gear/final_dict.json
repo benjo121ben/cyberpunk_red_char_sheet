@@ -2541,7 +2541,7 @@
         {
             "description": "<p>Modular platform that Programs and Hardware are installed on for the purpose of Netrunning. <strong>This cyberdeck has 7 slots to install Programs and Hardware. </strong>Requires Interface Plugs and Neural Link for a Netrunner to operate.</p>",
             "file": "items",
-            "name": "Cyberdeck (Standard Quality):",
+            "name": "Cyberdeck (Standard Quality)",
             "price": 500,
             "type": "gear"
         },

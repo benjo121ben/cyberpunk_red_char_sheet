@@ -211,7 +211,7 @@
   "humanity": 50,
   "hp_current": 39,
   "ip": 10,
-  "money": 430,
+  "money": 340,
   "stats": {
     "intelligence": 6,
     "reflex": 6,
@@ -690,7 +690,8 @@
     "inflatable_bed_&_sleep-bag": 1,
     "lock_picking_set": 1,
     "memory_chips": 2,
-    "cyberdeck_(standard_quality):": 1
+    "cyberdeck_(standard_quality)": 1,
+    "virtuality_goggles": 1
   },
   "cyberdeck_hardware": {},
   "drugs": {},
@@ -702,7 +703,7 @@
     "sword": 2
   },
   "flags": {
-    "filter_zeros": false,
+    "filter_zeros": true,
     "group_by_stat": false
   }
 }
