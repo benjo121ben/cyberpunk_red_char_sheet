@@ -7,7 +7,7 @@
 }
 
 :root {
-	--background-color: #303030;
+	/*--background-color: #303030;
 	--light-background-color:#424242;
 	--dark-background-color:#212121;
 	--highlight-color: #1da8df;
@@ -18,6 +18,20 @@
 
 
 	--skill-highlight: var(--highlight-color-second);
+	*/
+
+	--background-color: #483C46;
+	--light-background-color:#665169;
+	--dark-background-color:#322935;
+	--highlight-color: #D4223A;
+	--highlight-color-second:#f8c007;
+	--text-color: rgb(226, 224, 226);
+	--warning-color: #0ecff1;
+	--penalty: #ff5874;
+
+
+	--skill-highlight: var(--highlight-color-second);
+	
 }
 
 @font-face {
@@ -673,20 +687,16 @@ div:has(> .weapon_view) {
 .weapon_center_div {
 	display: grid;
 	grid-template-columns: 27px 50px 33px;
-	gap: 5px;
+	gap: 10px;
 }
 
 .weapon_bonus {
 	text-align: center;
+	color: var(--dark-background-color);
+	background-color: var(--warning-color);
+	border-radius: 4px;
 }
 
-.weapon_bonus::before {
-	content: "(";
-}
-
-.weapon_bonus::after {
-	content: ")";
-}
 
 .attachment_view{
 	grid-column-start: span 3;
