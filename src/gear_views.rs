@@ -72,7 +72,7 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
         item_memo.get()
             .weapon_data
             .ammo
-            .and_then(|ammo_data|Some(ammo_data.max))
+            .and_then(|ammo_data|Some(ammo_data.get_max_ammo()))
             .or(Some(0))
             .unwrap()
     });

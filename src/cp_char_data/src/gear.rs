@@ -23,6 +23,13 @@ pub enum RangeType {
     None
 }
 
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub enum AmmoMagType {
+    Standard,
+    Extended,
+    Drum
+}
+
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ShoppableVisualData {
     pub name: String,
@@ -143,7 +150,9 @@ pub struct WeaponData {
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct WeaponAmmoData {
-    pub max: i32,
+    pub max: Vec<i32>,
+    #[serde(default)]
+    pub mag_type: AmmoMagType,
     pub value: i32,
     pub current_ammo_type: Option<String>,
     pub compatible_calibers: Vec<String>
@@ -185,6 +194,12 @@ pub struct Selector {
 
 //needed to set default bools
 pub fn is_false() -> bool { false }
+
+impl Default for AmmoMagType {
+    fn default() -> Self {
+        Self::Standard
+    }
+}
 
 
 impl Shoppable for Armor {
@@ -303,13 +318,26 @@ impl Armor {
     }
 }
 
+impl AmmoMagType {
+
+}
+
 impl WeaponAmmoData {
     pub fn shoot(&mut self) {
         self.value = std::cmp::max(0, self.value - 1);
     }
 
+    pub fn get_max_ammo(&self) -> i32 {
+        let max_index = match self.mag_type {
+            AmmoMagType::Standard => 0,
+            AmmoMagType::Extended => 1,
+            AmmoMagType::Drum => 2,
+        };
+        *self.max.get(max_index).unwrap()
+    }
+
     pub fn undo_shoot(&mut self) {
-        self.value = std::cmp::min(self.max, self.value + 1);
+        self.value = std::cmp::min(self.get_max_ammo(), self.value + 1);
     }
 }
 

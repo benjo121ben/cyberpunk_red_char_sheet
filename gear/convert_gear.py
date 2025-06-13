@@ -108,7 +108,6 @@ def handle_complex_files(final_dict):
             continue
 
         fname = filename[3:].split('.')[0]
-        print("test", fname)
         data: list[dict] = load_file(pathlib.Path(filename))
         first_entry_data = data[0]
 

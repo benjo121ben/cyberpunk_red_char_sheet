@@ -136,7 +136,7 @@ pub fn AmmoViewLinear(count: Memo<i32>, max: Memo<i32>, weapon_index: usize, sho
                 return;
             }
             let inventory_ammo = inventory_ammo.expect("inventory ammo cannot be none at this point");
-            let clip_size = ammo_data.max;
+            let clip_size = ammo_data.get_max_ammo();
             let refill_amount = std::cmp::min(*inventory_ammo, clip_size - current_ammo_count);
             
             ammo_data.value += refill_amount;

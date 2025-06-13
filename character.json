@@ -82,7 +82,12 @@
       "type": "weapons",
       "weapon_data": {
         "ammo": {
-          "max": 8,
+          "max": [
+            8,
+            14,
+            28
+          ],
+          "mag_type": "Standard",
           "value": 6,
           "current_ammo_type": "heavy_pistol_basic_ammunition",
           "compatible_calibers": [
@@ -110,7 +115,12 @@
       "type": "weapons",
       "weapon_data": {
         "ammo": {
-          "max": 4,
+          "max": [
+            4,
+            8,
+            16
+          ],
+          "mag_type": "Standard",
           "value": 0,
           "current_ammo_type": null,
           "compatible_calibers": [
