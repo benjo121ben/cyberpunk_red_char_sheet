@@ -25,13 +25,34 @@
 	--dark-background-color:#322935;
 	--highlight-color: #D4223A;
 	--highlight-color-second:#f8c007;
-	--text-color: rgb(226, 224, 226);
+	--text-color: #E2E0E2;
 	--warning-color: #0ecff1;
 	--penalty: #ff5874;
 
 
 	--skill-highlight: var(--highlight-color-second);
 	
+}
+
+.danger_zone {
+
+	--background-color: #535369;
+	--light-background-color:#646e79;
+	--dark-background-color:#3e3e4c;
+	--highlight-color: #1b1616;
+	--highlight-color-second:#daba4f;
+	--text-color: #e5e1e1;
+	--warning-color: #d08451;
+	--penalty: #d1746e;
+
+	color: var(--text-color);
+
+
+	--skill-highlight: var(--highlight-color-second);
+
+	img {
+		opacity: 0.45;
+	}
 }
 
 @font-face {
@@ -111,6 +132,7 @@ textarea:focus {
 
 input {
 	font-family: inherit;
+	background-color: var(--);
 }
 
 input[type=number] {
@@ -176,33 +198,6 @@ table {
 	
 	> input {
 		text-align: center;
-	}
-}
-
-.danger_zone {
-	/* --background-color: #610530;
-	--light-background-color:#7c1866;
-	--dark-background-color:#212121;
-	--highlight-color: #df341d;
-	--highlight-color-second: #1ddf3d;
-	--text-color: rgb(242, 244, 245);
-	--warning-color: #0ecff1;
-	--penalty: rgb(126, 125, 192); */
-
-	--background-color: #483C46;
-	--light-background-color:#665169;
-	--dark-background-color:#322935;
-	--highlight-color: #D4223A;
-	--highlight-color-second:#f8c007;
-	--text-color: rgb(226, 224, 226);
-	--warning-color: #0ecff1;
-	--penalty: #ff5874;
-
-
-	--skill-highlight: var(--highlight-color-second);
-
-	img {
-		opacity: 0.85;
 	}
 }
 
