@@ -306,7 +306,10 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
             </Show>
             <div class="base_div">
                 <div class="first_row">
-                    <h1 class="name">{move || char_rw_signal.read().name.clone()} / {move || char_rw_signal.read().alias.clone()}</h1>
+                    <div class="name_div">
+                        <h1 class="name">{move || char_rw_signal.read().alias.clone()}</h1>
+                        <h3 class="name">{move || char_rw_signal.read().name.clone()}</h3>
+                    </div>
                     <div class="health_and_armor_section">
                             <HealthView reverse=true on:click=move|_| damage_popup_signal.update(|v| *v = !*v)/>
                         <div class="head_body_armor">
