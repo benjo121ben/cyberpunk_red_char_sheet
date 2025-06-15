@@ -6,7 +6,8 @@ pub mod gear_views;
 pub mod text_views;
 pub mod info_modal_view;
 pub mod shop_modal_view;
-pub mod add_skill_modal_view;
+pub mod injury_view;
+pub mod modals;
 pub mod app;
 
 #[cfg(feature = "hydrate")]

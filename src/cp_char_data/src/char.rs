@@ -66,7 +66,13 @@ pub struct Character {
     pub programs: IndexMap<String, i32>,
     
     #[serde(default)]
-    pub flags: IndexMap<String, bool>
+    pub flags: IndexMap<String, bool>,
+
+    #[serde(default)]
+    pub head_crit_injuries: Vec<i32>,
+
+    #[serde(default)]
+    pub body_crit_injuries: Vec<i32>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
@@ -140,6 +146,8 @@ impl Character {
             cyberdeck_hardware: IndexMap::new(),
             programs: IndexMap::new(),
             flags: IndexMap::new(),
+            head_crit_injuries: vec![],
+            body_crit_injuries: vec![],
         };
 
         let cool_skills: Vec<(bool, &str)> = vec![

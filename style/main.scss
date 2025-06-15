@@ -29,9 +29,7 @@
 	--warning-color: #0ecff1;
 	--penalty: #ff5874;
 
-
-	--skill-highlight: var(--highlight-color-second);
-	
+	--skill-highlight: var(--highlight-color-second);	
 }
 
 .danger_zone {
@@ -102,12 +100,13 @@ select {
 	background-color: var(--highlight-color);
 	border: unset;
 	border-radius: 5px;
-	color: var(--dark-background-color);
+	color: var(--text-color);
 	font-size: medium;
 	font-family: inherit;
 }
 
 select:hover {
+	color: var(--dark-background-color);
 	background-color: var(--highlight-color-second);
 }
 
@@ -156,6 +155,10 @@ table {
 	th {
 		border-bottom: 1px solid var(--highlight-color-second);
 	}
+}
+
+.nowrap {
+	white-space: nowrap;
 }
 
 .flex_row {
@@ -494,7 +497,7 @@ div:has(> .shield_row) {
 	}
 }
 
-.add_skill_content {
+.small_modal_content {
 	@extend .modal_content;
 	display: flex;
 	flex-direction: column;
@@ -784,6 +787,7 @@ div:has(> .weapon_view) {
 }
 
 .body_armor_select {
+	color: var(--dark-background-color);
 	background-color: var(--highlight-color-second);
 }
 
@@ -793,6 +797,7 @@ div:has(> .weapon_view) {
 }
 
 .head_armor_select{
+	color: var(--dark-background-color);
 	background-color: var(--warning-color);
 }
 
@@ -987,6 +992,13 @@ div:has(> .weapon_view) {
 	background-color: var(--highlight-color-second);
 	color: var(--dark-background-color);
 	border-radius: 5px;
+}
+
+.injury_div {
+	@extend .flex_row;
+	gap: 5px;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 

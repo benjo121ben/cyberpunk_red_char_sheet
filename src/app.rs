@@ -3,7 +3,8 @@ use leptos::logging::log;
 use std::error::Error;
 use super::skill_view::{SkillList, StatsView};
 use super::resource_views::{HealthView, MoneyView};
-use crate::add_skill_modal_view::AddSkillModalView;
+use crate::injury_view::InjuryView;
+use crate::modals::{AddInjuryModal, AddSkillModalView};
 use crate::app::server_fn::codec::Json;
 use crate::info_modal_view::{SimpleModalData, SimpleModalView};
 use crate::text_views::TextCenterSection;
@@ -209,6 +210,7 @@ fn Login() -> AnyView {
         <Show when=move|| !show_main_page.get()>
             <div class="login_div">
                 <input type="password"
+                    autofocus
                     value=""
                     prop:value=move|| {let _ = show_main_page(); "".to_string()}
                     on:change=move|ev| {
@@ -280,6 +282,7 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
 
     let shop_modal_signal = RwSignal::new(ShopModalData::default());
     let simple_modal_signal = RwSignal::new(SimpleModalData::default());
+    let injury_modal_signal = RwSignal::new(false);
     let show_add_skill_modal_signal = RwSignal::new(false);
     let damage_popup_signal = RwSignal::new(false);
 
@@ -303,6 +306,9 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
             <SimpleModalView data=simple_modal_signal/>
             <Show when=move||damage_popup_signal.get()>
                 <HealthAdjustPopup visible_signal=damage_popup_signal/>
+            </Show>
+            <Show when=move||injury_modal_signal.get()>
+                <AddInjuryModal visible=injury_modal_signal/>
             </Show>
             <div class="base_div">
                 <div class="first_row">
@@ -361,6 +367,8 @@ fn CharacterView(character_data: Character, gear_data: GearData) -> AnyView {
                             </div>
                             <IPView/>
                             <HumanityView/>
+                            <button on:click=move |_| injury_modal_signal.set(true)>critical injury</button>
+                            <InjuryView/>
                         </div>
                     </div>
                 </div>
