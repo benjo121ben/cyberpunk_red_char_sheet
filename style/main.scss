@@ -311,6 +311,9 @@ table {
 	flex-grow: 1;
 	flex-shrink: 3;
 	flex-basis: 10px;
+	span {
+		white-space: nowrap;
+	}
 }
 
 .edit_char_options {
@@ -699,6 +702,11 @@ div:has(> .weapon_view) {
 	color: var(--dark-background-color);
 	background-color: var(--warning-color);
 	border-radius: 4px;
+}
+
+.weapon_bonus.has_penalty {
+	background-color: var(--penalty);
+	color: var(--text-color);
 }
 
 

@@ -1,7 +1,7 @@
 use leptos::{ev::MouseEvent, prelude::*};
 use std::cmp::{max, min};
 
-use cp_char_data::{char::{AttackType, Skill}, gear::get_map_key_from_name};
+use cp_char_data::char::Skill;
 use super::help::get_char_signal_from_ctx;
 
 const IP_SPENDING_TABLE: &[i32] = &[20, 40, 60, 80, 100, 120, 140, 160, 180, 200];
@@ -179,45 +179,21 @@ pub fn SkillList(unlocked_signal: RwSignal<bool>) -> impl IntoView {
 fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
     let (key_read_signal, _) = signal(key.clone());
-    let skill_memo = Memo::new(move |_| char_signal.with(|c| c.skills.get(&key).expect("expect skill to exist in its own list").clone()));
-    let injury_penalty_memo = Memo::new(move |_| {
-        let mut final_penalty = 0;
+    let skill_data_memo = Memo::new(move |_| char_signal.with(|c| c.get_full_skill_data(&key)));
 
-        let skill_map_key = get_map_key_from_name(&skill_memo.read().name.clone());
-
-        let att_type = skill_memo.read().get_attack_type();
-
-        if att_type == AttackType::None && skill_map_key.as_str() != "perception" {
-            return 0;
-        }
-
-        let injuries = char_signal.read().get_all_injuries();
-
-        for penalty in injuries.iter().flat_map(|injury|injury.penalties) {
-            if 
-                penalty.selector == skill_map_key.as_str() || 
-                (penalty.selector == "melee" && att_type == AttackType::Melee) || 
-                (penalty.selector == "ranged" && att_type == AttackType::Ranged) 
-            {
-                final_penalty += penalty.value;
-            }
-        }
-
-        return final_penalty;
-    });
-
-    let get_skill_value = move || {
-        let skill = skill_memo.get();
+    let skill_value_visual = move || {
+        let (skill, bonus, _) = skill_data_memo.get();
         if unlocked_signal.get() {
-            skill.nr
+            skill.nr as i32
         }
         else {
-            char_signal.with(|char| char.get_stat(&skill.stat.clone()).0) + skill.nr - injury_penalty_memo.get()
+            bonus
         }
     };
 
     let is_language_or_local_expert = move || {
-        skill_memo.with(|skill| skill.name.contains("Language") || skill.name.contains("Local Expert"))
+        let (skill, _, _) = skill_data_memo.get();
+        skill.name.contains("Language") || skill.name.contains("Local Expert")
     };
 
     let update_skill = move|val: i32| {
@@ -226,32 +202,32 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
         }
         char_signal.update(|c| {
             c.skills.get_mut(&key_read_signal()).and_then(|skill| {
-                skill.nr = max(min(skill.nr + val, 10), 0);
+                skill.nr = max(min(skill.nr as i32 + val, 10), 0) as usize;
                 Some(skill)
             });
         })
     };
-    
 
     //todo benji add armor penalty visual, stat is already adjusted
-    let has_penalty = Memo::new(move |_| {
-        let stat = skill_memo.get().stat;
-        char_signal.read().get_stat(&stat).clone().1 || injury_penalty_memo.get() > 0
-    });
+    let has_penalty = move || {
+        let (_, _, penalty) = skill_data_memo.get();
+        penalty
+    };
 
     let update_skill_clone = update_skill.clone();
 
     let get_tooltip = move || {
-        let value: usize = skill_memo.read().nr as usize;
+        let (skill, _, _) = skill_data_memo.get();
+        let value: usize = skill.nr as usize;
         if unlocked_signal.get() && value < 10 {
-            let diff = if skill_memo.read().difficult_train {2} else {1};
+            let diff = if skill.difficult_train {2} else {1};
                 
             let cost = *IP_SPENDING_TABLE.get(value).expect(&format!("expecting a value to exist for {value}")) * diff;
             
             cost.to_string()
         }
         else {
-            skill_memo.read().stat.to_uppercase()
+            skill.stat.to_uppercase()
         }
     };
 
@@ -277,9 +253,9 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
                         </button>
                     </Show>
                     {move || {
-                        skill_memo.read().name.clone() + 
+                        skill_data_memo.read().0.name.clone() + 
                         if unlocked_signal.get() {
-                            skill_memo.read().difficult_train.then(||" (x2)").or(Some("")).unwrap()
+                            skill_data_memo.read().0.difficult_train.then(||" (x2)").or(Some("")).unwrap()
                         }
                         else {
                             ""
@@ -290,7 +266,7 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
             <div class="skill_entry_value"
                 class:has_penalty=move|| has_penalty()
             >
-                {get_skill_value}
+                {skill_value_visual}
             </div>
         </div>
     }

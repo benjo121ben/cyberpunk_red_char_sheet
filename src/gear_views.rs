@@ -47,16 +47,13 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
     let item_memo = Memo::new(move|_| {
         char_signal.read().weapons.get(index).unwrap().clone()
     });
-    let skill_memo = Memo::new(move |_| char_signal.with(|c| c.skills.get(&item_memo.read().weapon_data.skill.clone()).expect("expect skill to exist in its own list").clone()));
-    let get_skill_value = Memo::new(move |_| {
-        let skill = skill_memo.get();
-        let stat_nr = char_signal.with(|char| char.get_stat(&skill.stat.clone()).0);
-        stat_nr + skill.nr
+    let skill_data_memo = Memo::new(move |_| char_signal.with(|c| c.get_full_skill_data(&item_memo.read().weapon_data.skill.clone())));
+    let get_skill_value_memo = Memo::new(move |_| {
+        skill_data_memo.read().1
     });
 
-    let has_penalty = Memo::new(move |_| {
-        let stat = skill_memo.get().stat;
-        char_signal.read().get_stat(&stat).1
+    let has_penalty_memo = Memo::new(move |_| {
+        skill_data_memo.read().2
     });
 
     let weapon_bonus = move || {
@@ -126,9 +123,9 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
             <div class="weapon_center_div_wrapper">
                 <div class="weapon_center_div">
                     <span class="weapon_bonus" 
-                        class:has_penalty=move||has_penalty()
+                        class:has_penalty=move||has_penalty_memo()
                     >
-                        {move|| get_skill_value.get() + weapon_bonus()}
+                        {move|| get_skill_value_memo.get() + weapon_bonus()}
                     </span>
                     <span class="weapon_rof">rof {move|| item_memo.get().weapon_data.rof.clone()}</span>
                     <span class="weapon_damage">{move|| item_memo.get().weapon_data.damage.clone()}</span>

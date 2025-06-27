@@ -1,4 +1,4 @@
-use std::{cmp::{max, min, Ordering}, collections::HashMap};
+use std::cmp::{max, min, Ordering};
 
 use indexmap::IndexMap;
 use serde::{Deserialize, Serialize};
@@ -96,7 +96,7 @@ pub struct CharStats {
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Skill {
     pub name: String,
-    pub nr: i32,
+    pub nr: usize,
     pub difficult_train: bool,
     pub stat: String
 }
@@ -342,11 +342,43 @@ impl Character {
         return (stat_nr - final_penalty, final_penalty != 0);
     }
 
+    pub fn get_full_skill_data(&self, key: &String) -> (Skill, i32, bool) {
+        let skill = self.skills.get(key).expect("expect skill to exist in its own list").clone();
+        let (stat_nr, stat_has_penalty) = self.get_stat(&skill.stat); 
+
+        let mut final_penalty = 0;
+
+        let att_type = skill.get_attack_type();
+
+        if att_type == AttackType::None && key.as_str() != "perception" {
+            let bonus = stat_nr + skill.nr as i32;
+            return (skill, bonus, stat_has_penalty);
+        }
+
+        for penalty in self.get_all_penalties() {
+            if 
+                penalty.selector == key.as_str() || 
+                (penalty.selector == "melee" && att_type == AttackType::Melee) || 
+                (penalty.selector == "ranged" && att_type == AttackType::Ranged) 
+            {
+                final_penalty += penalty.value;
+            }
+        }
+
+        let bonus = stat_nr + skill.nr as i32 - final_penalty;
+
+        (skill, bonus, stat_has_penalty || final_penalty != 0)
+    }
+
     pub fn get_all_injuries(&self) -> Vec<CriticalInjury> {
         let mut all_injuries = self.body_crit_injuries.iter().map(|index| BODY_CRIT_INJURIES.get(*index).cloned().unwrap()).collect::<Vec<_>>();
         let mut head_injuries = self.head_crit_injuries.iter().map(|index| HEAD_CRIT_INJURIES.get(*index).cloned().unwrap()).collect::<Vec<_>>();
         all_injuries.append(&mut head_injuries);
         all_injuries
+    }
+
+    pub fn get_all_penalties(&self) -> Vec<critical_injury::Penalty> {
+        self.get_all_injuries().into_iter().flat_map(|injury| injury.penalties).cloned().collect::<Vec<_>>()
     }
 
     pub fn has_active_flag(self: &Self, key: &str) -> bool{
