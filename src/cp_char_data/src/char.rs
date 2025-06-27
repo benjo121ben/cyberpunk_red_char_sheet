@@ -1,7 +1,9 @@
-use std::cmp::{Ordering, min, max};
+use std::{cmp::{max, min, Ordering}, collections::HashMap};
 
 use indexmap::IndexMap;
 use serde::{Deserialize, Serialize};
+use crate::critical_injury::{self, CriticalInjury, BODY_CRIT_INJURIES, HEAD_CRIT_INJURIES};
+
 use super::{journal::Journal, gear::*};
 
 pub enum GearType {
@@ -106,6 +108,13 @@ pub struct Penalty {
     pub show_higlight_color: bool
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum AttackType {
+    Melee,
+    Ranged,
+    None
+}
+
 impl Skill {
     pub fn cmp_stat_and_name(&self, other: &Self) -> Ordering{
         self.stat
@@ -115,6 +124,18 @@ impl Skill {
 
     pub fn cmp_name(&self, other: &Self) -> Ordering{
         self.name.cmp(&other.name)
+    }
+
+    pub fn get_attack_type (&self) -> AttackType {
+        if self.name.contains("Martial Arts") {
+            return AttackType::Melee
+        }
+
+        match get_map_key_from_name(&self.name).as_str() {
+            "brawling" | "melee_weapon" | "martial_arts" => AttackType::Melee,
+            "handgun" | "shoulder_arms" | "heavy_weapons" | "autofire" | "archery" => AttackType::Ranged,
+            _ => AttackType::None
+        }
     }
 }
 
@@ -271,6 +292,8 @@ impl Character {
             _ => {panic!("This stat does not exist {stat_name_lower}");}
         };
 
+
+
         let armor_penalty = match stat_name_lower.as_str() {
             "ref" | "dex" | "move" => self.get_current_armor_penalty(),
             _ => 0
@@ -280,15 +303,50 @@ impl Character {
             "luck"  => 0,
             "move" => { 
                 if self.hp_current <= 0 { 
-                    if stat_nr <= 6 { stat_nr - 1 } else {6} 
+                    6 
                 }
                 else {0}
             }
             _ => self.get_wounded_action_penalty()
         };
 
-        let final_penatly = wounded_penalty + armor_penalty;
-        return (stat_nr - final_penatly, final_penatly != 0);
+        //stat ok - melee - ranged - perception - all ok
+
+
+        let mut critical_injury_penalty = 0;
+        let is_luck_or_move = stat_name_lower.as_str() == "luck" || stat_name_lower.as_str() == "move";
+        for injury in self.get_all_injuries() {
+            let relevant_stat_penalties = 
+                injury
+                .penalties
+                .iter()
+                .filter(|penalty| penalty.selector == stat_name_lower.as_str() || penalty.selector == "all")
+            ;
+
+            for penalty in relevant_stat_penalties {
+                if penalty.selector == "all" && is_luck_or_move {
+                    continue;
+                }
+                critical_injury_penalty += penalty.value;
+            }
+        }
+
+
+        let mut final_penalty = wounded_penalty + armor_penalty + critical_injury_penalty;
+        
+        // move cannot fall below 1
+        if stat_name_lower.as_str() == "move" && final_penalty >= stat_nr {
+            final_penalty = stat_nr - 1;
+        }
+
+        return (stat_nr - final_penalty, final_penalty != 0);
+    }
+
+    pub fn get_all_injuries(&self) -> Vec<CriticalInjury> {
+        let mut all_injuries = self.body_crit_injuries.iter().map(|index| BODY_CRIT_INJURIES.get(*index).cloned().unwrap()).collect::<Vec<_>>();
+        let mut head_injuries = self.head_crit_injuries.iter().map(|index| HEAD_CRIT_INJURIES.get(*index).cloned().unwrap()).collect::<Vec<_>>();
+        all_injuries.append(&mut head_injuries);
+        all_injuries
     }
 
     pub fn has_active_flag(self: &Self, key: &str) -> bool{

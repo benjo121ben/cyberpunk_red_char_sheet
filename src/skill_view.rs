@@ -1,7 +1,7 @@
 use leptos::{ev::MouseEvent, prelude::*};
 use std::cmp::{max, min};
 
-use cp_char_data::char::Skill;
+use cp_char_data::{char::{AttackType, Skill}, gear::get_map_key_from_name};
 use super::help::get_char_signal_from_ctx;
 
 const IP_SPENDING_TABLE: &[i32] = &[20, 40, 60, 80, 100, 120, 140, 160, 180, 200];
@@ -180,13 +180,39 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
     let (key_read_signal, _) = signal(key.clone());
     let skill_memo = Memo::new(move |_| char_signal.with(|c| c.skills.get(&key).expect("expect skill to exist in its own list").clone()));
+    let injury_penalty_memo = Memo::new(move |_| {
+        let mut final_penalty = 0;
+
+        let skill_map_key = get_map_key_from_name(&skill_memo.read().name.clone());
+
+        let att_type = skill_memo.read().get_attack_type();
+
+        if att_type == AttackType::None && skill_map_key.as_str() != "perception" {
+            return 0;
+        }
+
+        let injuries = char_signal.read().get_all_injuries();
+
+        for penalty in injuries.iter().flat_map(|injury|injury.penalties) {
+            if 
+                penalty.selector == skill_map_key.as_str() || 
+                (penalty.selector == "melee" && att_type == AttackType::Melee) || 
+                (penalty.selector == "ranged" && att_type == AttackType::Ranged) 
+            {
+                final_penalty += penalty.value;
+            }
+        }
+
+        return final_penalty;
+    });
+
     let get_skill_value = move || {
         let skill = skill_memo.get();
         if unlocked_signal.get() {
             skill.nr
         }
         else {
-            char_signal.with(|char| char.get_stat(&skill.stat.clone()).0) + skill.nr
+            char_signal.with(|char| char.get_stat(&skill.stat.clone()).0) + skill.nr - injury_penalty_memo.get()
         }
     };
 
@@ -210,7 +236,7 @@ fn SkillEntry(unlocked_signal: RwSignal<bool>, key: String) -> impl IntoView {
     //todo benji add armor penalty visual, stat is already adjusted
     let has_penalty = Memo::new(move |_| {
         let stat = skill_memo.get().stat;
-        char_signal.read().get_stat(&stat).clone().1
+        char_signal.read().get_stat(&stat).clone().1 || injury_penalty_memo.get() > 0
     });
 
     let update_skill_clone = update_skill.clone();

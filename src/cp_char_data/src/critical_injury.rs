@@ -66,7 +66,7 @@ pub const BODY_CRIT_INJURIES: &[CriticalInjury] = &[
         penalties: &[
             Penalty {
                 selector: "move",
-                value: -2
+                value: 2
             }
         ]
     },
@@ -154,7 +154,7 @@ pub const BODY_CRIT_INJURIES: &[CriticalInjury] = &[
         penalties: &[
             Penalty {
                 selector: "move",
-                value: -4
+                value: 4
             }
         ]
     },
@@ -176,7 +176,7 @@ pub const BODY_CRIT_INJURIES: &[CriticalInjury] = &[
         penalties: &[
             Penalty {
                 selector: "melee",
-                value: -2
+                value: 2
             }
         ]
     },
@@ -230,7 +230,7 @@ pub const BODY_CRIT_INJURIES: &[CriticalInjury] = &[
         penalties: &[
             Penalty {
                 selector: "move",
-                value: -6
+                value: 6
             }
         ]
     },
@@ -251,11 +251,11 @@ pub const HEAD_CRIT_INJURIES: &[CriticalInjury] = &[
         penalties: &[
             Penalty {
                 selector: "ranged",
-                value: -4
+                value: 4
             },
             Penalty {
                 selector: "perception",
-                value: -4
+                value: 4
             }
         ]
     },
@@ -273,7 +273,7 @@ pub const HEAD_CRIT_INJURIES: &[CriticalInjury] = &[
         penalties: &[
             Penalty {
                 selector: "all",
-                value: -2
+                value: 2
             }
         ]
     },
@@ -296,11 +296,11 @@ pub const HEAD_CRIT_INJURIES: &[CriticalInjury] = &[
         penalties: &[
             Penalty {
                 selector: "ranged",
-                value: -4
+                value: 4
             },
             Penalty {
                 selector: "perception",
-                value: -4
+                value: 4
             }
         ]
     },
@@ -322,7 +322,7 @@ pub const HEAD_CRIT_INJURIES: &[CriticalInjury] = &[
         penalties: &[
             Penalty {
                 selector: "all",
-                value: -2
+                value: 2
             }
         ]
     },
@@ -428,7 +428,7 @@ pub const HEAD_CRIT_INJURIES: &[CriticalInjury] = &[
         penalties: &[
             Penalty {
                 selector: "perception",
-                value: -2
+                value: 2
             }
         ]
     },
@@ -459,7 +459,7 @@ pub const HEAD_CRIT_INJURIES: &[CriticalInjury] = &[
         penalties: &[
             Penalty {
                 selector: "perception",
-                value: -4
+                value: 4
             }
         ]
     }

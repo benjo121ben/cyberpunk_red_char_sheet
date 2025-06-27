@@ -230,7 +230,7 @@
     "cool": 8,
     "willpower": 6,
     "luck": 6,
-    "luck_current": 0,
+    "luck_current": 6,
     "movement": 6,
     "body": 7,
     "empathy": 7
@@ -713,7 +713,7 @@
     "sword": 2
   },
   "flags": {
-    "filter_zeros": true,
+    "filter_zeros": false,
     "group_by_stat": false
   },
   "head_crit_injuries": [],
