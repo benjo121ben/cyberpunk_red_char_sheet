@@ -17,7 +17,12 @@ pub fn InjuryView() -> impl IntoView {
                         critical_injury::HEAD_CRIT_INJURIES.get(injury_index as usize).expect("head_crit injury should exist")
                     });
                     view!{
-                        <span>{move|| injury.get().name}</span>
+                        <span
+                            on:contextmenu=move|ev|{ev.prevent_default(); ev.stop_propagation(); char_signal.update(|punk| {punk.head_crit_injuries.remove(indx);});}
+                            class="nowrap"
+                        >
+                            {move|| injury.get().name}
+                        </span>
                     }
                 }
             />
@@ -32,7 +37,12 @@ pub fn InjuryView() -> impl IntoView {
                         critical_injury::BODY_CRIT_INJURIES.get(injury_index as usize).expect("body_crit injury should exist")
                     });
                     view!{
-                        <span class="nowrap">{move|| injury.get().name}</span>
+                        <span 
+                            on:contextmenu=move|ev|{ev.prevent_default(); ev.stop_propagation(); char_signal.update(|punk| {punk.body_crit_injuries.remove(indx);});}
+                            class="nowrap"
+                        >
+                            {move|| injury.get().name}
+                        </span>
                     }
                 }
             />

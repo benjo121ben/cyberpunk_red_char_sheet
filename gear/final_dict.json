@@ -559,8 +559,7 @@
             "name": "Bayonet",
             "price": 100,
             "selector": {
-                "range": "ranged",
-                "skill": "shoulder_arms"
+                "only_shoulder_arms": true
             },
             "shorthand": "Bayonet",
             "slot_size": 1,
@@ -572,8 +571,7 @@
             "name": "Drum Magazine",
             "price": 500,
             "selector": {
-                "exclude_type": "bow",
-                "range": "ranged"
+                "exclude_type": "Bow"
             },
             "shorthand": "Drum-mag",
             "slot_size": 1,
@@ -586,8 +584,7 @@
             "name": "Extended Magazine",
             "price": 100,
             "selector": {
-                "exclude_type": "bow",
-                "range": "ranged"
+                "exclude_type": "Bow"
             },
             "shorthand": "Ext-mag",
             "slot_size": 1,
@@ -600,8 +597,7 @@
             "name": "Grenade Launcher Underbarrel",
             "price": 500,
             "selector": {
-                "range": "ranged",
-                "skill": "shoulder_arms"
+                "only_shoulder_arms": true
             },
             "shorthand": "Grnd",
             "slot_size": 2,
@@ -612,9 +608,7 @@
             "file": "attachments",
             "name": "Infrared Nightvision Scope",
             "price": 500,
-            "selector": {
-                "range": "ranged"
-            },
+            "selector": {},
             "shorthand": "Heat-night-scope",
             "slot_size": 1,
             "type": "attachment"
@@ -625,8 +619,7 @@
             "name": "Shotgun Underbarrel",
             "price": 500,
             "selector": {
-                "range": "ranged",
-                "skill": "shoulder_arms"
+                "only_shoulder_arms": true
             },
             "shorthand": "Shotg",
             "slot_size": 2,
@@ -637,9 +630,7 @@
             "file": "attachments",
             "name": "Smargun Link",
             "price": 500,
-            "selector": {
-                "range": "ranged"
-            },
+            "selector": {},
             "shorthand": "Smart",
             "slot_size": 2,
             "type": "attachment"
@@ -649,9 +640,7 @@
             "file": "attachments",
             "name": "Sniping Scope",
             "price": 100,
-            "selector": {
-                "range": "ranged"
-            },
+            "selector": {},
             "shorthand": "Sniper",
             "slot_size": 1,
             "type": "attachment"
@@ -2805,7 +2794,11 @@
                     "compatible_calibers": [
                         "arrow"
                     ],
-                    "max": [1, 1, 1],
+                    "max": [
+                        1,
+                        1,
+                        1
+                    ],
                     "min": 0,
                     "value": 0
                 },

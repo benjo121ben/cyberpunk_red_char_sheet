@@ -5,8 +5,7 @@
         "name": "Bayonet",
         "price": 100,
         "selector": {
-            "range": "ranged",
-            "skill": "shoulder_arms"
+            "only_shoulder_arms": true
         },
         "shorthand": "Bayonet",
         "slot_size": 1,
@@ -18,8 +17,7 @@
         "name": "Drum Magazine",
         "price": 500,
         "selector": {
-            "exclude_type": "bow",
-            "range": "ranged"
+            "exclude_type": "Bow"
         },
         "shorthand": "Drum-mag",
         "slot_size": 1,
@@ -32,8 +30,7 @@
         "name": "Extended Magazine",
         "price": 100,
         "selector": {
-            "exclude_type": "bow",
-            "range": "ranged"
+            "exclude_type": "Bow"
         },
         "shorthand": "Ext-mag",
         "slot_size": 1,
@@ -46,8 +43,7 @@
         "name": "Grenade Launcher Underbarrel",
         "price": 500,
         "selector": {
-            "range": "ranged",
-            "skill": "shoulder_arms"
+            "only_shoulder_arms": true
         },
         "shorthand": "Grnd",
         "slot_size": 2,
@@ -59,7 +55,6 @@
         "name": "Infrared Nightvision Scope",
         "price": 500,
         "selector": {
-            "range": "ranged"
         },
         "shorthand": "Heat-night-scope",
         "slot_size": 1,
@@ -71,8 +66,7 @@
         "name": "Shotgun Underbarrel",
         "price": 500,
         "selector": {
-            "range": "ranged",
-            "skill": "shoulder_arms"
+            "only_shoulder_arms": true
         },
         "shorthand": "Shotg",
         "slot_size": 2,
@@ -84,7 +78,6 @@
         "name": "Smargun Link",
         "price": 500,
         "selector": {
-            "range": "ranged"
         },
         "shorthand": "Smart",
         "slot_size": 2,
@@ -96,7 +89,6 @@
         "name": "Sniping Scope",
         "price": 100,
         "selector": {
-            "range": "ranged"
         },
         "shorthand": "Sniper",
         "slot_size": 1,

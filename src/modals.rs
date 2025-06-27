@@ -72,12 +72,34 @@ pub fn AddInjuryModal(visible: RwSignal<bool>) -> AnyView {
         }
     });
 
+    let possible_head_injuries = Memo::new(move |_| {
+        let mut ret = vec![];
+        for (injur_indx, injury) in critical_injury::HEAD_CRIT_INJURIES.iter().enumerate() {
+            if char_signal.read().head_crit_injuries.iter().find(|active_injury_index|**active_injury_index == injur_indx).is_some() {
+                continue;
+            }
+            ret.push((injur_indx, injury));
+        }
+        ret
+    });
+
+    let possible_body_injuries = Memo::new(move |_| {
+        let mut ret = vec![];
+        for (injur_indx, injury) in critical_injury::BODY_CRIT_INJURIES.iter().enumerate() {
+            if char_signal.read().body_crit_injuries.iter().find(|active_injury_index|**active_injury_index == injur_indx).is_some() {
+                continue;
+            }
+            ret.push((injur_indx, injury));
+        }
+        ret
+    });
+
     let injury_options = Memo::new(move |_| {        
         if head_signal.get() {
-            critical_injury::HEAD_CRIT_INJURIES
+            possible_head_injuries()
         }
         else {
-            critical_injury::BODY_CRIT_INJURIES
+            possible_body_injuries()
         }
 
     });
@@ -106,13 +128,19 @@ pub fn AddInjuryModal(visible: RwSignal<bool>) -> AnyView {
                         "Select critical Injury"
                     </option>
                     <For
-                        each=move|| {injury_options.get().iter().enumerate().collect::<Vec<_>>()}
-                        key=move |(_, injury)| format!("{}-{}", injury.name, head_signal.get())
-                        children=move|(indx, injury)| {
+                        each=move|| {0..injury_options.get().len()}
+                        key=move |index| index.to_string() 
+                        children=move|index| {
+                            let injury_memo = Memo::new(move |_| {
+                                injury_options.read()
+                                    .get(index)
+                                    .cloned()
+                                    .unwrap()
+                            });
                             view! {
                                 <option 
-                                    value=move || indx>
-                                    {move || injury.name}
+                                    value=move || injury_memo.get().0>
+                                    {move || injury_memo.get().1.name}
                                 </option>
                             }
                         }
@@ -123,8 +151,11 @@ pub fn AddInjuryModal(visible: RwSignal<bool>) -> AnyView {
                     on:click=move |ev| {
                         ev.stop_propagation();
                         let index = selection_signal.get();
+                        if index == -1 {
+                            return;
+                        }
 
-                        let already_present = present_injuries.get().iter().find(|val| **val == index).is_some();
+                        let already_present = present_injuries.get().iter().find(|val| **val == index as usize).is_some();
                         if already_present {
                             error_signal.set("the character already has this critical injury.".to_string());
                             return;
@@ -132,10 +163,10 @@ pub fn AddInjuryModal(visible: RwSignal<bool>) -> AnyView {
 
                         char_signal.update(|punk|{
                             if head_signal.get() {
-                                punk.head_crit_injuries.push(index);
+                                punk.head_crit_injuries.push(index as usize);
                             }
                             else {
-                                punk.body_crit_injuries.push(index);
+                                punk.body_crit_injuries.push(index as usize);
                             }
                         });
                         

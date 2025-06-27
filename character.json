@@ -715,5 +715,7 @@
   "flags": {
     "filter_zeros": true,
     "group_by_stat": false
-  }
+  },
+  "head_crit_injuries": [],
+  "body_crit_injuries": []
 }

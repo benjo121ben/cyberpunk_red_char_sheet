@@ -186,9 +186,8 @@ pub struct Attachment {
 
 #[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Selector {
-    pub skill: Option<String>,
-    pub range: String,
-    pub exclude_type: Option<String>,
+    pub only_shoulder_arms: Option<bool>,
+    pub exclude_type: Option<RangeType>,
 }
 
 
@@ -322,8 +321,19 @@ impl Armor {
     }
 }
 
-impl AmmoMagType {
-
+impl Weapon {
+    pub fn get_free_attachment_slots(&self, gear_data: &GearData) -> i32 {
+        let mut count: i32 = 3;
+        for attachment in self.weapon_data.attachments.iter() {
+            count -= gear_data
+                .attachments
+                .iter()
+                .find(|gear_att| gear_att.shorthand == *attachment)
+                .expect("Expecting attachment to exist")
+                .slot_size
+        }
+        count
+    }
 }
 
 impl WeaponAmmoData {

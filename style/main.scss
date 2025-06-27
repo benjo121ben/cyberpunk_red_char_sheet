@@ -703,11 +703,19 @@ div:has(> .weapon_view) {
 
 
 .attachment_view{
+	display:flex;
+	flex-direction: row;
+	gap: 15px;
+	align-items: center;
 	grid-column-start: span 3;
 	font-size: medium;
 	font-family: Tahoma, Geneva, Verdana, sans-serif;
 	font-style: italic;
 	margin-top: -5px;
+
+	> button {
+		padding: 1px 3px 1px 3px;
+	}
 }
 
 .weapon_rof {
@@ -995,10 +1003,10 @@ div:has(> .weapon_view) {
 }
 
 .injury_div {
-	@extend .flex_row;
+	@extend .flex_col;
 	gap: 5px;
-	flex-wrap: wrap;
 	justify-content: center;
+	align-items: center;
 }
 
 

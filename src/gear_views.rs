@@ -193,25 +193,130 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
 pub fn WeaponAttachmentView(index:usize) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
     let gear_data: GearData = use_context().expect("expecting gear to exist (attachment)");
+    let gear_signal = RwSignal::new(gear_data);
+
+    let show_add_attachment_signal = RwSignal::new(false);
     let weapon_memo = Memo::new(move|_| {
         char_signal.read().weapons.get(index).unwrap().clone()
     });
+
+    let has_mag = move || {
+        weapon_memo.with(|weap| {
+            weap.weapon_data.attachments.iter().find(|att| att.contains("mag")).is_some()
+        })
+    };
+
+    let remove_attachment = move |shorthand: String | {
+        char_signal.update(|cyber| {
+            let weapon = cyber.weapons.get_mut(index).unwrap();
+            for (i, att) in weapon.weapon_data.attachments.iter().enumerate() {
+                if *att == shorthand {
+                    weapon.weapon_data.attachments.remove(i);
+                    break;
+                }
+            }
+        });
+    };
+
+    let get_possible_attachments = move || {
+        let weapon_data = weapon_memo.get().weapon_data;
+        let mut ret_vec: Vec<Attachment> = vec![];
+        if weapon_data.skill.as_str() == "melee_weapon" {
+            return vec![];
+        }
+        gear_signal.with(|gear| {
+            for attachment in gear.attachments.iter() {
+
+                // only one mag
+                if attachment.slot_type.is_some() && attachment.slot_type.clone().unwrap().as_str() == "mag" && has_mag() {
+                    continue;
+                }
+
+                // cannot fit on weapon anymore (attachment slots)
+                if attachment.slot_size > weapon_memo.get().get_free_attachment_slots(&gear) {
+                    continue;
+                }
+
+                // same attachment only once
+                if weapon_data.attachments.iter().find(|att| **att == attachment.shorthand).is_some() {
+                    continue;
+                }
+
+                // is only for shoulder arms weapons
+                if attachment.selector.only_shoulder_arms.is_some() && weapon_data.skill != "shoulder_arms" {
+                    continue;
+                }
+
+                // weapon type is invalid
+                let exclude_type = attachment.selector.exclude_type.clone();
+                if exclude_type.is_some() && exclude_type.unwrap() == weapon_data.weapontype {
+                    continue;
+                }
+
+                ret_vec.push(attachment.clone());
+            }
+        });
+        return ret_vec;
+    };
+
     view!{
-        <div class="attachment_view">
-            <For each=move|| weapon_memo.get().weapon_data.attachments.clone()
-                key=move|attachment| attachment.clone()
-                children=move|attachment| {
-                    let description = gear_data
+        <div class="attachment_view"
+            on:click=move |ev| {ev.stop_propagation();}
+        >
+            <For each=move|| 0..weapon_memo.get().weapon_data.attachments.len()
+                key=move|i| i.to_string()
+                children=move|i| {
+                    let attachment = Memo::new(move|_| weapon_memo.get().weapon_data.attachments.get(i).cloned().expect("expecting index to be valid"));
+                    let description = gear_signal.get()
                         .attachments.iter()
-                        .find(|att| att.shorthand == attachment.clone())
+                        .find(|att| att.shorthand == attachment.get())
                         .cloned()
                         .expect("expecting data to exist")
                         .description;
                     view! {
-                        <span title=move||description.clone()>{move || attachment.clone()}</span>
+                        <span title=move||description.clone()
+                            on:contextmenu=move|ev|{ev.stop_propagation(); ev.prevent_default(); remove_attachment(attachment.get())}
+                        >{move || attachment.clone()}</span>
                     }
                 }
             />
+            <Show 
+                when=move||{ gear_signal.with(|gear_ref|weapon_memo.get().get_free_attachment_slots(gear_ref) > 0)}
+            >
+                <button on:click=move|ev|{ev.stop_propagation(); show_add_attachment_signal.update(|s| *s = !*s)}>+</button>
+            </Show>
+            <Show 
+                when=move|| show_add_attachment_signal.get()
+            >
+                <select
+                    on:change:target=move |ev| {
+                        let val = ev.target().value();
+                        char_signal.update(|punk| {
+                            punk.weapons
+                                .get_mut(index)
+                                .expect("expecting weapon to exist | add attachment")
+                                .weapon_data
+                                .attachments
+                                .push(val)
+                            ;
+                        });
+                        show_add_attachment_signal.set(false);
+                    }
+                >
+                    <option val="none">choose attachment</option>
+                    <For
+                        each=move|| get_possible_attachments()
+                        key=move|attachment| attachment.name.clone()
+                        children=move|attachment| {
+                            view! {
+                                <option value=move || attachment.shorthand.clone()>
+                                    {move || attachment.name.clone()}
+                                </option>
+                            }
+                        }
+                    />
+                </select>
+            </Show>
         </div>
     }
 }

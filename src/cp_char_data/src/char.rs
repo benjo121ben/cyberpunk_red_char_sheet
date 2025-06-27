@@ -69,10 +69,10 @@ pub struct Character {
     pub flags: IndexMap<String, bool>,
 
     #[serde(default)]
-    pub head_crit_injuries: Vec<i32>,
+    pub head_crit_injuries: Vec<usize>,
 
     #[serde(default)]
-    pub body_crit_injuries: Vec<i32>,
+    pub body_crit_injuries: Vec<usize>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
