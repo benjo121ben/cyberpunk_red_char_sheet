@@ -4,14 +4,14 @@ use cp_char_data::journal::Journal;
 use crate::{help::get_char_signal_from_ctx, icon_views::{AddIcon, RemoveIcon}};
 
 #[component]
-pub fn TabView(selected_tab_index: RwSignal<usize>, tabs_list: Memo<Vec<String>>,editable_tabs: bool, #[prop(optional)] on_add_tab: Option<Callback<String>>, #[prop(optional)] on_remove_tab: Option<Callback<()>>) -> impl IntoView {
+pub fn TabView(selected_tab_index: RwSignal<usize>, tabs_list: Memo<Vec<String>>,editable_tabs: bool, #[prop(optional)] on_add_tab: Option<Callback<String>>, #[prop(optional)] on_remove_tab: Option<Callback<usize>>) -> impl IntoView {
     let show_new_tab_input_signal = RwSignal::new(false);
     view! {
         <div class="journal_tabs"> 
             <Show when=move || editable_tabs>
                 <RemoveIcon on:click=move|_| {
                     if on_remove_tab.is_some() {
-                        on_remove_tab.unwrap().run(());
+                        on_remove_tab.unwrap().run(selected_tab_index.get());
                     }
                 }/>
             </Show>
@@ -80,11 +80,11 @@ pub fn TextCenterSection() -> impl IntoView {
                             }
                         );
                     })
-                    on_remove_tab=Callback::new(move|_| {
-                        if journal_index.get() == 0 {
+                    on_remove_tab=Callback::new(move|index_to_remove| {
+                        if index_to_remove == 0 {
                             return;
                         }
-                        cyberpunk_signal.write().journals.remove(journal_index.get());
+                        cyberpunk_signal.write().journals.remove(index_to_remove);
                         journal_index.update(|val| *val -= 1);
                     })
                 />
