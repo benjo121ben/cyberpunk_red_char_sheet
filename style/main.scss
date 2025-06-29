@@ -1027,6 +1027,12 @@ button + .money {
 .netrun_view {
 	@extend .gear_list;
 	flex: 1 0 0;
+
+	> span {
+		@extend .light_bg_rounded_padded;
+		text-align: center;
+		font-size: 20;
+	}
 }
 
 
