@@ -713,7 +713,7 @@
     "sword": 2
   },
   "flags": {
-    "filter_zeros": false,
+    "filter_zeros": true,
     "group_by_stat": false
   },
   "head_crit_injuries": [],
