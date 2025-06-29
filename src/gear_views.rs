@@ -1,11 +1,11 @@
-use indexmap::IndexMap;
 use leptos::logging::log;
 use leptos::prelude::*;
 use std::cmp::{max, min};
 use cp_char_data::gear::*;
 use crate::icon_views::{AddIcon, RemoveIcon};
-use crate::help::get_char_signal_from_ctx;
+use crate::help::{get_char_signal_from_ctx, reduce_or_remove_items_in_map};
 use crate::info_modal_view::SimpleModalData;
+use crate::netrun_view::NetrunView;
 use crate::resource_views::{AmmoViewLinear, ShieldView};
 use crate::text_views::TabView;
 
@@ -27,13 +27,6 @@ pub fn GearView() -> impl IntoView {
                 <NetrunView/>
             </Show>
         </div>
-    }
-}
-
-#[component]
-pub fn NetrunView() -> impl IntoView {
-    view! {
-        <div class="netrun_view"></div>
     }
 }
 
@@ -479,19 +472,6 @@ pub fn AllItemsView() -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
     let range_table_signal: RwSignal<RangeType> = use_context().expect("expect range table to be set");
     let gear_data: GearData = use_context().expect("Gear Data should exist");
-    let reduce_or_remove = move |item_map: &mut IndexMap<String, i32>, key: &String| {
-        match item_map.get_mut(key) {
-            Some(value) => {
-                if *value <= 1 {
-                    item_map.shift_remove(key);
-                }
-                else {
-                    *value -= 1;
-                }
-            },
-            None => todo!(),
-        }
-    };
 
     let simple_modal_signal: RwSignal<SimpleModalData> = use_context().expect("allitemsview: simple modal should exist");
 
@@ -529,9 +509,8 @@ pub fn AllItemsView() -> impl IntoView {
                             </span>
                             <button on:click=move|ev|{ 
                                 ev.stop_propagation();
-                                let change_fn = reduce_or_remove.clone(); 
                                 char_signal.update(|c| {
-                                    change_fn(&mut c.ammo, &key_clone)
+                                    reduce_or_remove_items_in_map(&mut c.ammo, &key_clone)
                                 })
                             }>
                                 X
@@ -590,9 +569,8 @@ pub fn AllItemsView() -> impl IntoView {
                             </span>
                             <button on:click=move|ev|{ 
                                 ev.stop_propagation();
-                                let change_fn = reduce_or_remove.clone(); 
                                 char_signal.update(|c| {
-                                    change_fn(&mut c.gear, &key_clone)
+                                    reduce_or_remove_items_in_map(&mut c.gear, &key_clone)
                                 })
                             }>
                                 X

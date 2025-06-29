@@ -1015,6 +1015,7 @@ button + .money {
 }
 
 .netrun_view {
+	@extend .gear_list;
 	flex: 1 0 0;
 }
 
