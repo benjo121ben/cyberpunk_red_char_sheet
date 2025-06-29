@@ -528,6 +528,7 @@ div:has(> .shield_row) {
 
 .tab:hover {
 	background-color: var(--warning-color);
+	color: var(--background-color)
 }
 
 .selected_tab {
@@ -974,6 +975,15 @@ button + .money {
 	> button {
 		width: fit-content;
 		justify-self: end;
+	}
+}
+
+.program_view {
+	grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+	
+	> button {
+		grid-row: 1 / span 2;
+		grid-column: 5;
 	}
 }
 

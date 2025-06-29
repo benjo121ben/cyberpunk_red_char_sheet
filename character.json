@@ -717,5 +717,17 @@
     "group_by_stat": false
   },
   "head_crit_injuries": [],
-  "body_crit_injuries": []
+  "body_crit_injuries": [],
+  "role_abilities": {
+    "rockerboy": 0,
+    "solo": 0,
+    "netrunner": 2,
+    "tech": 0,
+    "medtech": 0,
+    "media": 0,
+    "exec": 0,
+    "lawman": 0,
+    "fixer": 5,
+    "nomad": 0
+  }
 }

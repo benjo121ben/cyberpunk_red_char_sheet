@@ -20,16 +20,29 @@ pub fn NetrunView() -> impl IntoView {
                     let key_clone = key.clone(); 
                     let item_amount_memo = Memo::new(move |_| {char_signal.read().programs.get(&key_clone).expect("expecting item amount to exist").to_string()});
                     view! {
-                        <div class="gear_view"
+                        <div class="gear_view program_view"
                             on:click=move|_| simple_modal_signal.update(|data| {
                                 data.title = find_item.get_value().name.clone();
                                 data.description = find_item.get_value().description.clone();
                                 data.show();
                             })
                         >
+                            <span>NAME</span>
+                            <span>ATK</span>
+                            <span>DEF</span>
+                            <span>REZ</span>
                             <span>
                                 {move || item_amount_memo()}x
                                 {move || find_item.get_value().name.to_string()}
+                            </span>
+                            <span>
+                                {move || find_item.get_value().atk}
+                            </span>
+                            <span>
+                                {move || find_item.get_value().def}
+                            </span>
+                            <span>
+                                {move || find_item.get_value().rez}
                             </span>
                             <button on:click=move|ev|{
                                 ev.stop_propagation();

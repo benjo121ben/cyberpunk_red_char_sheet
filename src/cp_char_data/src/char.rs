@@ -75,6 +75,9 @@ pub struct Character {
 
     #[serde(default)]
     pub body_crit_injuries: Vec<usize>,
+
+    #[serde(default)]
+    pub role_abilities: RoleAbilities
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
@@ -113,6 +116,20 @@ pub enum AttackType {
     Melee,
     Ranged,
     None
+}
+
+#[derive(Debug, Default, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct RoleAbilities {
+    pub rockerboy: usize,
+    pub solo: usize,
+    pub netrunner: usize,
+    pub tech: usize,
+    pub medtech: usize,
+    pub media: usize,
+    pub exec: usize,
+    pub lawman: usize,
+    pub fixer: usize,
+    pub nomad: usize
 }
 
 impl Skill {
@@ -169,6 +186,7 @@ impl Character {
             flags: IndexMap::new(),
             head_crit_injuries: vec![],
             body_crit_injuries: vec![],
+            role_abilities: RoleAbilities::default()
         };
 
         let cool_skills: Vec<(bool, &str)> = vec![

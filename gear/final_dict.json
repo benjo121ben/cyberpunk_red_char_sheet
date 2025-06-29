@@ -2593,108 +2593,153 @@
     ],
     "programs": [
         {
+            "atk": 1,
+            "def": 0,
             "description": "<p><em>Anti-Program Attacker</em><br /><br />ATK(1) - DEF(0) - REZ(0)<br /><br />Does 3d6 REZ to a Non-Black ICE Program, or 2d6 REZ to a Black ICE Program.<br /><br /><em>Icon: A giant glowing white sledgehammer wielded by the Netrunner.</em></p>",
             "file": "programs-attackers",
             "name": "Banhammer",
             "price": 50,
+            "rez": 0,
             "type": "gear"
         },
         {
+            "atk": 0,
+            "def": 0,
             "description": "<p><em>Anti-Personnel Attacker<br /><br /></em>ATK(0) - DEF(0) - REZ(0)<br /><br />Destroys a single Non-Black ICE Program installed on the Netrunner target's Cyberdeck at random.<br /><br /><em>Icon: Beam of neon green light shot from the Netrunner's finger.</em></p>",
             "file": "programs-attackers",
             "name": "Poison Flatline",
             "price": 100,
+            "rez": 0,
             "type": "gear"
         },
         {
+            "atk": 0,
+            "def": 0,
             "description": "<p><em>Anti-Personnel Attacker</em><br />ATK(0) - DEF(0) - REZ(0)<br /><br />Enemy Netrunner's INT, REF, and DEX are each lowered by 1d6 for the next hour (minimum 1). The effects are largely psychosomatic and leave no permanent effects.<br /><br /><em>Icon: Chrome ball thrown by the Netrunner that sparks with electricity.</em></p>",
             "file": "programs-attackers",
             "name": "Nervescrub",
             "price": 100,
+            "rez": 0,
             "type": "gear"
         },
         {
+            "atk": 1,
+            "def": 0,
             "description": "<p><em>Anti-Personnel Attacker<br /></em><br />ATK(1) - DEF(0) - REZ(0)<br /><br />Does 1d6 Damage direct to a Netrunner's brain and lowers the amount of total NET Actions the Netrunner can accomplish on their next Turn by 1 (minimum 2).<br /><br /><em>Icon: A double helix comprised of flickering neon light appearing from the Netrunner's finger.<br /></em></p>",
             "file": "programs-attackers",
             "name": "Vrizzbolt",
             "price": 50,
+            "rez": 0,
             "type": "gear"
         },
         {
+            "atk": 1,
+            "def": 0,
             "description": "<p><em>Anti-Program Attacker</em><br /><br />ATK(1) - DEF(0) - REZ(0)<br /><br />Does 3d6 REZ to a Black ICE Program, or 2d6 REZ to a Non-Black ICE Program.<br /><br /><em>Icon: Glowing energy katana appearing from the Netrunner's hand.</em></p>",
             "file": "programs-attackers",
             "name": "Sword",
             "price": 50,
+            "rez": 0,
             "type": "gear"
         },
         {
+            "atk": 2,
+            "def": 0,
             "description": "<p><em>Anti-Personnel Attacker<br /><br /></em>ATK(2) - DEF(0) - REZ(0)<br /><br />Enemy Netrunner cannot progress deeper into the Architecture or Jack Out safely for 1d6 Rounds (enemy Netrunner can still perform an unsafe Jack Out, though). Each copy of this Program can only be used once per Netrun.<br /><br /><em>Icon: A mass of sticky red goop fired from the Netrunner's hand.<br /></em></p>",
             "file": "programs-attackers",
             "name": "Superglue",
             "price": 100,
+            "rez": 0,
             "type": "gear"
         },
         {
+            "atk": 0,
+            "def": 0,
             "description": "<p><em>Anti-Personnel Attacker</em><br /><br />ATK(0) - DEF(0) - REZ(0)<br /><br />Enemy Netrunner is forcibly and unsafely Jacked Out of the Architecture, suffering the effect of all Rezzed enemy Black ICE they've encountered in the Architecture as they leave.<br /><br /><em>Icon: Cartoon stick of dynamite thrown by the Netrunner.</em></p>",
             "file": "programs-attackers",
             "name": "DeckKRASH",
             "price": 100,
+            "rez": 0,
             "type": "gear"
         },
         {
+            "atk": 2,
+            "def": 0,
             "description": "<p><em>Anti-Personnel Attacker</em><br /><br />ATK(2) - DEF(0) - REZ(0)<br /><br />Does 2d6 Damage direct to the enemy Netrunner's brain. Unless insulated, their Cyberdeck catches fire along with their clothing. Until they spend a Meat Action to put themselves out, they take 2 damage to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.<br /><br /><em>Icon: Bolt of crimson fire launched from the Netrunner's hand.</em></p>",
             "file": "programs-attackers",
             "name": "Hellbolt",
             "price": 100,
+            "rez": 0,
             "type": "gear"
         },
         {
+            "atk": 0,
+            "def": 0,
             "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases all Backdoor Checks you make by +2 as long as this Program remains Rezzed.<br /><br /><em>A golden mechanical worm with neon green eyes.</em></p>",
             "file": "programs-boosters",
             "name": "Worm",
             "price": 50,
+            "rez": 7,
             "type": "gear"
         },
         {
+            "atk": 0,
+            "def": 0,
             "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases all Cloak Checks you make by +2 as long as this Program remains Rezzed.<br /><br /><em>Icon: A pink glob exuding tiny soap bubbles.</em></p>",
             "file": "programs-boosters",
             "name": "Eraser",
             "price": 20,
+            "rez": 7,
             "type": "gear"
         },
         {
+            "atk": 0,
+            "def": 0,
             "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases all Pathfinder Checks you make by +2 as long as this Program remains Rezzed.<br /><br /><em>Icon: Shimmering silver magnifying glass spinning slowly in place.</em></p>",
             "file": "programs-boosters",
             "name": "See Ya",
             "price": 20,
+            "rez": 7,
             "type": "gear"
         },
         {
+            "atk": 0,
+            "def": 0,
             "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Increases your Speed by +2 as long as this Program remains Rezzed.<br /><br /><em>Icon: A trail of dust appearing behind the Netrunner as they move.</em></p>",
             "file": "programs-boosters",
             "name": "Speedy Gonzalvez",
             "price": 100,
+            "rez": 7,
             "type": "gear"
         },
         {
+            "atk": 0,
+            "def": 0,
             "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Stops the first successful Non-Black ICE Program Effect from dealing brain damage. After stopping this damage, the Shield Derezzes itself. Only 1 copy of this Program can be running at a time. Each copy of this Program can only be used once per Netrun.<br /><br /><em>Icon: Flickering silver energy barrier surrounding the Netrunner.</em></p>",
             "file": "programs-defender",
             "name": "Shield",
             "price": 20,
+            "rez": 7,
             "type": "gear"
         },
         {
+            "atk": 0,
+            "def": 0,
             "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Lowers all brain damage you would receive by 4, as long as this Program remains Rezzed. Only 1 copy of this Program can be running at a time. Each copy of this Program can only be used once per Netrun.<br /><br /><em>Icon: Transparent golden armor worn by the Netrunner</em></p>",
             "file": "programs-defender",
             "name": "Armor",
             "price": 50,
+            "rez": 7,
             "type": "gear"
         },
         {
+            "atk": 0,
+            "def": 0,
             "description": "<p>ATK(0) - DEF(0) - REZ(7)<br /><br />Reduces the ATK of all Non-Black ICE Attacker Programs run against you to 0 as long as this Program remains Rezzed. Only 1 copy of this Program can be running at a time. Each copy of this Program can only be used once per Netrun.<br /><br /><em>Icon: A cloud of blinding, glowing, multi-colored lights swirling around the Netrunner</em></p>",
             "file": "programs-defender",
             "name": "Flak",
             "price": 50,
+            "rez": 7,
             "type": "gear"
         }
     ],

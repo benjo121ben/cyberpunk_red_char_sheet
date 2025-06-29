@@ -74,7 +74,7 @@ pub struct GearData {
     pub drugs: Vec<ItemData>,
     pub fashion: Vec<ShoppableVisualData>,
     pub items: Vec<ItemData>,
-    pub programs: Vec<ItemData>,
+    pub programs: Vec<Program>,
     pub weapons: Vec<Weapon>
 }
 
@@ -190,6 +190,18 @@ pub struct Selector {
     pub exclude_type: Option<RangeType>,
 }
 
+#[derive(Default, Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct Program {
+    pub name: String,
+    pub price: i32,
+    pub description: String,
+    pub file: String,
+    #[serde(rename = "type")]
+    pub type_field: String,
+    pub atk: i32,
+    pub def: i32,
+    pub rez: i32
+}
 
 //needed to set default bools
 pub fn is_false() -> bool { false }
@@ -294,6 +306,28 @@ impl Shoppable for Cyberware {
 }
 
 impl Shoppable for ItemData {
+    fn get_name(&self) -> &String {
+        return &self.name;
+    }
+
+    fn get_description(&self) -> &String {
+        return &self.description;
+    }
+
+    fn get_price(&self) -> i32 {
+        return self.price;
+    }
+
+    fn get_type(&self) -> &String {
+        return &self.type_field;
+    }
+
+    fn get_file(&self) -> &String {
+        return &self.file;
+    }
+}
+
+impl Shoppable for Program {
     fn get_name(&self) -> &String {
         return &self.name;
     }
