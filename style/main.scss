@@ -667,10 +667,6 @@ button + .money {
 	width: 100%;
 }
 
-div:has(> .weapon_view) {
-	gap: 10px
-}
-
 .weapon_view {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -894,6 +890,7 @@ div:has(> .weapon_view) {
 
 .journal_section {
 	height: 100%;
+	flex: 1 0 1;
 }
 
 .journal_tabs {
@@ -925,7 +922,7 @@ div:has(> .weapon_view) {
 
 .center_split {
 	display: flex;
-	grid-template-columns: 1.2fr 1fr;	
+	flex: 1 0 0;
 	min-height: 0;
 	gap: 10;
 
@@ -1015,6 +1012,10 @@ div:has(> .weapon_view) {
 	gap: 5px;
 	justify-content: center;
 	align-items: center;
+}
+
+.netrun_view {
+	flex: 1 0 0;
 }
 
 

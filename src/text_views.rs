@@ -4,11 +4,11 @@ use cp_char_data::journal::Journal;
 use crate::{help::get_char_signal_from_ctx, icon_views::{AddIcon, RemoveIcon}};
 
 #[component]
-pub fn TabView(selected_tab_index: RwSignal<usize>, tabs_list: Memo<Vec<String>>,editable_tabs: bool, #[prop(optional)] on_add_tab: Option<Callback<String>>, #[prop(optional)] on_remove_tab: Option<Callback<usize>>) -> impl IntoView {
+pub fn TabView(selected_tab_index: RwSignal<usize>, tabs_list: Memo<Vec<String>>, #[prop(optional)] on_add_tab: Option<Callback<String>>, #[prop(optional)] on_remove_tab: Option<Callback<usize>>) -> impl IntoView {
     let show_new_tab_input_signal = RwSignal::new(false);
     view! {
         <div class="journal_tabs"> 
-            <Show when=move || editable_tabs>
+            <Show when=move || on_remove_tab.is_some()>
                 <RemoveIcon on:click=move|_| {
                     if on_remove_tab.is_some() {
                         on_remove_tab.unwrap().run(selected_tab_index.get());
@@ -16,12 +16,12 @@ pub fn TabView(selected_tab_index: RwSignal<usize>, tabs_list: Memo<Vec<String>>
                 }/>
             </Show>
             <Show
-                when=move|| {editable_tabs && !show_new_tab_input_signal.get()}
+                when=move|| {on_add_tab.is_some() && !show_new_tab_input_signal.get()}
             >
                 <AddIcon on:click=move|_| show_new_tab_input_signal.set(true) />
             </Show>
             <Show
-                when=move|| {editable_tabs && show_new_tab_input_signal.get()}
+                when=move|| {on_add_tab.is_some() && show_new_tab_input_signal.get()}
             >
                 <input class="new_journal_input" value="" on:change=move|ev| {
                     let value = event_target_value(&ev);
@@ -71,7 +71,6 @@ pub fn TextCenterSection() -> impl IntoView {
                 <TabView 
                     selected_tab_index=journal_index 
                     tabs_list=journal_tabs_memo
-                    editable_tabs=true 
                     on_add_tab=Callback::new(move|title: String| {
                         cyberpunk_signal.write().journals.push(
                             Journal{

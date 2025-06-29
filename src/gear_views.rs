@@ -7,17 +7,36 @@ use crate::icon_views::{AddIcon, RemoveIcon};
 use crate::help::get_char_signal_from_ctx;
 use crate::info_modal_view::SimpleModalData;
 use crate::resource_views::{AmmoViewLinear, ShieldView};
+use crate::text_views::TabView;
 
 #[component]
 pub fn GearView() -> impl IntoView {
+    let tab_index: RwSignal<usize> = RwSignal::new(0);
     view! {
         <div class="gear_list_wrapper">
-            <AllWeaponsView/>
-            <hr style="width:90%"/>
-            <AllItemsView/>
+            <TabView
+                tabs_list=Memo::new(move|_|vec!["Gear".to_string(), "Netrunner".to_string()])
+                selected_tab_index=tab_index
+            />
+            <Show when=move||tab_index() == 0>
+                <AllWeaponsView/>
+                <hr style="width:90%"/>
+                <AllItemsView/>
+            </Show>
+            <Show when=move||tab_index() == 1>
+                <NetrunView/>
+            </Show>
         </div>
     }
 }
+
+#[component]
+pub fn NetrunView() -> impl IntoView {
+    view! {
+        <div class="netrun_view"></div>
+    }
+}
+
 
 #[component]
 pub fn AllWeaponsView() -> impl IntoView {
@@ -257,9 +276,7 @@ pub fn WeaponAttachmentView(index:usize) -> impl IntoView {
     };
 
     view!{
-        <div class="attachment_view"
-            on:click=move |ev| {ev.stop_propagation();}
-        >
+        <div class="attachment_view">
             <For each=move|| 0..weapon_memo.get().weapon_data.attachments.len()
                 key=move|i| i.to_string()
                 children=move|i| {
@@ -271,9 +288,12 @@ pub fn WeaponAttachmentView(index:usize) -> impl IntoView {
                         .expect("expecting data to exist")
                         .description;
                     view! {
-                        <span title=move||description.clone()
+                        <span 
+                            title=move||description.clone()
                             on:contextmenu=move|ev|{ev.stop_propagation(); ev.prevent_default(); remove_attachment(attachment.get())}
-                        >{move || attachment.clone()}</span>
+                        >
+                            {move || attachment.clone()}
+                        </span>
                     }
                 }
             />
