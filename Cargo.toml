@@ -1,22 +1,22 @@
 [package]
 name = "cp_red_char_sheet"
-version = "0.1.0"
-edition = "2021"
+version = "0.1.1"
+edition = "2024"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-leptos = { version = "0.8.2", features = ["nightly"] }
-leptos_router = { version = "0.8.2", features = ["nightly"] }
+leptos = { version = "0.8.12", features = ["nightly"] }
+leptos_router = { version = "0.8.9", features = ["nightly"] }
 axum = { version = "0.8.4", optional = true }
 console_error_panic_hook = { version = "0.1", optional = true }
-leptos_axum = { version = "0.8.2", optional = true }
-leptos_meta = { version = "0.8.2" }
+leptos_axum = { version = "0.8.6", optional = true }
+leptos_meta = { version = "0.8.5" }
 serde = { version = "1.0.219", features = ["derive"]} 
 serde_json = { version = "1.0.140", features = ["preserve_order"] }
 tokio = { version = "1", features = ["rt-multi-thread"], optional = true }
-wasm-bindgen = { version = "=0.2.100", optional = true }
+wasm-bindgen = { version = "=0.2.105", optional = true }
 chrono = {version = "0.4.40"}
 indexmap = {version = "2.9.0", features = ["serde"]}
 cp_char_data= {path = "./src/cp_char_data"}

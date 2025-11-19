@@ -22,6 +22,52 @@ impl ShopModalData {
     }
 }
 
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum ShopTab {
+    Weapons,
+    Ammo,
+    Armor,
+    Cyberware,
+    Drugs,
+    Gear,
+    Fashion,
+    Hardware,
+    Programs
+}
+
+impl ToString for ShopTab {
+    fn to_string(&self) -> String {
+        match self {
+            ShopTab::Weapons => "Weapons".into(),
+            ShopTab::Ammo => "Ammo".into(),
+            ShopTab::Armor => "Armor".into(),
+            ShopTab::Cyberware => "Cyberware".into(),
+            ShopTab::Drugs => "Drugs".into(),
+            ShopTab::Gear => "Gear".into(),
+            ShopTab::Fashion => "Fashion".into(),
+            ShopTab::Hardware => "Hardware".into(),
+            ShopTab::Programs => "Programs".into(),
+        }
+    }
+}
+
+impl ShopTab {
+    pub fn get_list() -> Vec<ShopTab> {
+        vec![
+            ShopTab::Weapons,
+            ShopTab::Ammo,
+            ShopTab::Armor,
+            ShopTab::Cyberware,
+            ShopTab::Drugs,
+            ShopTab::Gear,
+            ShopTab::Fashion,
+            ShopTab::Hardware,
+            ShopTab::Programs
+        ]
+    }
+}
+
 #[component]
 pub fn ShopModalView(data: RwSignal<ShopModalData>) -> AnyView {
     view! {
@@ -37,12 +83,11 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
     let cyberpunk_signal = get_char_signal_from_ctx();
     let gear_data: GearData = use_context().expect("Expecting gear data existence");
     
-    let current_tab: RwSignal<(usize, String)> = RwSignal::new((0, "Weapons".to_string()));
+    let current_tab: RwSignal<(usize, ShopTab)> = RwSignal::new((0, ShopTab::Weapons));
     let currently_selected_index: RwSignal<usize> = RwSignal::new(0);
     let head_armor = RwSignal::new(false);
     let variant_options = Memo::new(move |_| {
-        
-        if current_tab.get().1.as_str() == "Ammo" {
+        if current_tab.read().1 == ShopTab::Ammo {
             vec!["rifle", "medium_pistol", "heavy_pistol", "v_heavy_pistol", "slug", "shell", "grenade", "rocket", "arrow", "paintball" ]
                 .into_iter()
                 .map(|val|val.to_string())
@@ -54,21 +99,20 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
     });
     let current_variant:RwSignal<String> = RwSignal::new("rifle".to_string());
     
-    let tabs = vec!["Weapons", "Ammo", "Armor", "Cyberware", "Drugs", "Gear", "Fashion", "Hardware", "Programs"];
+    let tabs = ShopTab::get_list();
 
     let current_items_memo: Memo<Vec<ShoppableVisualData>> = Memo::new(move |_| {
         let gear_data: GearData = use_context().expect("Expecting gear data existence");
-        let mut list = match current_tab.get().1.as_str() {
-            "Weapons" => gear_data.weapons.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
-            "Ammo" => gear_data.ammunition.iter().filter(|ammo| ammo.caliber == current_variant.get()).map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
-            "Armor" => gear_data.armor.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
-            "Cyberware" => gear_data.cyberware.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
-            "Drugs" => gear_data.drugs.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
-            "Gear" => gear_data.items.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
-            "Fashion" => gear_data.fashion.clone(),
-            "Hardware" => gear_data.cyberdeck_hardware.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
-            "Programs" => gear_data.programs.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
-            _ => panic!("this shop tab does not have any data")
+        let mut list = match current_tab.get().1 {
+            ShopTab::Weapons => gear_data.weapons.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            ShopTab::Ammo => gear_data.ammunition.iter().filter(|ammo| ammo.caliber == current_variant.get()).map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            ShopTab::Armor => gear_data.armor.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            ShopTab::Cyberware => gear_data.cyberware.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            ShopTab::Drugs => gear_data.drugs.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            ShopTab::Gear => gear_data.items.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            ShopTab::Fashion => gear_data.fashion.clone(),
+            ShopTab::Hardware => gear_data.cyberdeck_hardware.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>(),
+            ShopTab::Programs => gear_data.programs.iter().map(|val| ShoppableVisualData::from(val)).collect::<Vec<_>>()
         };
         list.sort_by(|val,val2| val.name.cmp(&val2.name));
         list
@@ -86,10 +130,17 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
         ret
     };
 
+    let add_gear_to_character = move |must_pay: bool, name: String, price: i32, gear_type: GearType| {
+        if must_pay && !check_money_and_reduce(price) {
+            return;
+        }
+        cyberpunk_signal.update(|c|c.add_gear(gear_type, name));
+    };
+
     let give_item = move |must_pay: bool| {
         let current_item = currenty_selected_item.get();
-        match current_tab.get().1.as_str() {
-            "Weapons" => {
+        match current_tab.read().1 {
+            ShopTab::Weapons => {
                 let bought_item = gear_data.weapons.iter()
                     .find(|item| item.get_name() == &current_item.name)
                     .cloned()
@@ -100,7 +151,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 cyberpunk_signal.update(|c|c.weapons.push(bought_item));
             },
             
-            "Ammo" => {
+            ShopTab::Ammo => {
                 let bought_item = gear_data.ammunition.iter()
                     .find(|item| item.get_name() == &current_item.name)
                     .cloned()
@@ -118,7 +169,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 });
             },
             
-            "Armor" => {
+            ShopTab::Armor => {
                 let mut bought_item = gear_data.armor.iter()
                     .find(|item| item.get_name() == &current_item.name)
                     .cloned()
@@ -135,7 +186,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 cyberpunk_signal.update(|c|c.armors.push(bought_item));
             },
             
-            "Cyberware" =>{
+            ShopTab::Cyberware =>{
                 let bought_item = gear_data.cyberware.iter()
                     .find(|item| item.get_name() == &current_item.name)
                     .cloned()
@@ -147,56 +198,53 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 cyberpunk_signal.update(|c|c.cyberware.push(bought_item));
             },
             
-            "Drugs" => {
+            ShopTab::Drugs => {
                 let bought_item = gear_data.drugs.iter()
                     .find(|item| item.name == current_item.name)
                     .cloned()
                     .expect("expect item to exist");
                 
-                if must_pay && !check_money_and_reduce(bought_item.price) {
-                    return;
-                }
-                cyberpunk_signal.update(|c|c.add_gear(GearType::Drugs, bought_item.name));
+                add_gear_to_character(must_pay, bought_item.name, bought_item.price, GearType::Drugs);
             },
 
-            "Gear" => {
+            ShopTab::Gear => {
                 let bought_item = gear_data.items.iter()
                     .find(|item| item.name == current_item.name)
                     .cloned()
                     .expect("expect item to exist");
                 
-                if must_pay && !check_money_and_reduce(bought_item.price) {
-                    return;
-                }
-                cyberpunk_signal.update(|c|c.add_gear(GearType::Gear, bought_item.name));
+                add_gear_to_character(must_pay, bought_item.name, bought_item.price, GearType::Gear);
             },
             
-            "Hardware" => {
+            ShopTab::Hardware => {
                 let bought_item = gear_data.cyberdeck_hardware.iter()
                     .find(|item| item.name == current_item.name)
                     .cloned()
                     .expect("expect item to exist");
                 
-                if must_pay && !check_money_and_reduce(bought_item.price) {
-                    return;
-                }
-                cyberpunk_signal.update(|c|c.add_gear(GearType::Hardware, bought_item.name));
+                add_gear_to_character(must_pay, bought_item.name, bought_item.price, GearType::Hardware);
 
             },
             
-            "Programs" => {
+            ShopTab::Programs => {
                 let bought_item = gear_data.programs.iter()
                     .find(|item| item.name == current_item.name)
                     .cloned()
                     .expect("expect item to exist");
                 
-                if must_pay && !check_money_and_reduce(bought_item.price) {
-                    return;
-                }
-                cyberpunk_signal.update(|c|c.add_gear(GearType::Programs, bought_item.name));
+                add_gear_to_character(must_pay, bought_item.name, bought_item.price, GearType::Programs);
+
             },
+
+            ShopTab::Fashion => {
+                let bought_item = gear_data.fashion.iter()
+                    .find(|item| item.name == current_item.name)
+                    .cloned()
+                    .expect("expect item to exist");
+                
+                add_gear_to_character(must_pay, bought_item.name, bought_item.price, GearType::Fashion);
+            }
             
-            _ => panic!("this shop tab does not have any data")
         };
     };
 
@@ -205,15 +253,15 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
         <div class="modal" on:click=move |_| data.update(|data| data.hide())>
             <div class="modal_content" on:click=move |ev| { ev.stop_propagation();}>
                 <div class="tabs_list">
-                    {tabs.into_iter().enumerate().map(|(i, tab_name)| {
+                    {tabs.into_iter().enumerate().map(|(i, tab_enum)| {
                         view! {
                             <div class="tab" 
                                 on:click=move|_| {
                                     currently_selected_index.set(0);
-                                    current_tab.set((i, tab_name.to_string()));
+                                    current_tab.set((i, tab_enum));
                                 }
                                 class:selected_tab=move|| current_tab.get().0 == i> 
-                                    {tab_name}
+                                    {tab_enum.to_string()}
                             </div>
                         }
                     }).collect::<Vec<_>>()}
@@ -224,7 +272,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
                 <div class="shop_bottom_row">
                     <div class="money_wrapper"><span class="money">{move || cyberpunk_signal.read().money}</span></div>
                     <div class="shop_buttons_row">
-                        <Show when=move|| {current_tab.get().1.as_str() == "Armor"}> 
+                        <Show when=move|| {current_tab.get().1 == ShopTab::Armor}> 
                             Head armor: 
                             <input type="checkbox" prop:checked=move||head_armor.get() on:change=move|_| head_armor.update(|a| *a= !*a)/>
                         </Show>
@@ -238,7 +286,7 @@ pub fn ShopContent(data: RwSignal<ShopModalData>) -> AnyView {
 }
 
 #[component]
-pub fn ShopList(current_tab: RwSignal<(usize, String)>, variant_options: Memo<Vec<String>>, current_variant:RwSignal<String>, currently_selected_index: RwSignal<usize>, current_items_memo: Memo<Vec<ShoppableVisualData>>) -> AnyView {
+pub fn ShopList(current_tab: RwSignal<(usize, ShopTab)>, variant_options: Memo<Vec<String>>, current_variant:RwSignal<String>, currently_selected_index: RwSignal<usize>, current_items_memo: Memo<Vec<ShoppableVisualData>>) -> AnyView {
     let currenty_selected_item = Memo::new(move |_| {
         current_items_memo.read().get(currently_selected_index.get()).expect("item to exist").clone()
     });
@@ -266,7 +314,7 @@ pub fn ShopList(current_tab: RwSignal<(usize, String)>, variant_options: Memo<Ve
                 </Show>
                 <div class="name_list">
                     <For each=move||{current_items_memo.get().into_iter().enumerate().collect::<Vec<_>>()}
-                        key=move|(_, shop_item)| current_tab.get().1 + shop_item.name.clone().as_str() //category needs to be added to key, since some gear is also cyberware with the same name
+                        key=move|(_, shop_item)| current_tab.get().1.to_string() + shop_item.name.clone().as_str() //category needs to be added to key, since some gear is also cyberware with the same name
                         children=move|(index, shop_item)| {
                             let name = shop_item.name.clone();
                             view!{
