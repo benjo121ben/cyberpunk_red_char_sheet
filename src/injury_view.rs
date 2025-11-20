@@ -40,6 +40,7 @@ pub fn InjuryView() -> impl IntoView {
                         <span 
                             on:contextmenu=move|ev|{ev.prevent_default(); ev.stop_propagation(); char_signal.update(|punk| {punk.body_crit_injuries.remove(indx);});}
                             class="nowrap"
+                            title=move||injury().description
                         >
                             {move|| injury.get().name}
                         </span>
