@@ -503,7 +503,7 @@ pub fn AllItemsView() -> impl IntoView {
                     let key_clone = key.clone();
                     let find_item_clone = find_item.clone();
                     let find_item_clone2 = find_item.clone();
-                    let display_text = Memo::new(move |_| format!("{}x{}", char_signal.read().ammo.get(&key).expect("expecting ammo item amount to exist"), find_item.clone().get_name()));
+                    let display_text = Memo::new(move |_| format!("{}x {}", char_signal.read().ammo.get(&key).expect("expecting ammo item amount to exist"), find_item.clone().get_name()));
                     view! {
                         <SimpleItemView
                             display_text
