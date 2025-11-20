@@ -1,3 +1,4 @@
+use leptos::ev::MouseEvent;
 use leptos::logging::log;
 use leptos::prelude::*;
 use std::cmp::{max, min};
@@ -487,8 +488,10 @@ pub fn AllItemsView() -> impl IntoView {
                     let key_clone = key.clone();
                     let find_item_clone = find_item.clone();
                     let find_item_clone2 = find_item.clone();
+                    let display_text = Memo::new(move |_| format!("{}x{}", char_signal.read().ammo.get(&key).expect("expecting item amount to exist"), find_item.clone().get_name()));
                     view! {
-                        <div class="gear_view"
+                        <SimpleItemView
+                            display_text
                             on:click=move|_| simple_modal_signal.update(|data| {
                                 data.title = find_item_clone.get_name().clone();
                                 data.description = find_item_clone.get_description().clone();
@@ -502,20 +505,12 @@ pub fn AllItemsView() -> impl IntoView {
                             on:mouseleave=move |_| {
                                 range_table_signal.set(RangeType::None)
                             }
-                        >
-                            <span>
-                                {move || char_signal.read().ammo.get(&key).expect("expecting item amount to exist").to_string()}x
-                                {move || find_item.clone().get_name().to_string()}
-                            </span>
-                            <button on:click=move|ev|{ 
-                                ev.stop_propagation();
+                            on_x_click=move|_|{ 
                                 char_signal.update(|c| {
                                     reduce_or_remove_items_in_map(&mut c.ammo, &key_clone)
                                 })
-                            }>
-                                X
-                            </button>
-                        </div>
+                            }
+                        />
                     }
                 }
             />
@@ -525,23 +520,16 @@ pub fn AllItemsView() -> impl IntoView {
                 children=move|indx| {
                     let cyber_memo = Memo::new(move|_| char_signal.read().cyberware.get(indx).expect("expect cyberware to exist in list").clone());
                     view! {
-                        <div class="gear_view"
+                        <SimpleItemView
+                            display_text=move || cyber_memo.get().get_name().to_string()
                             on:click=move|_| simple_modal_signal.update(|data| {
                                 let cyber = cyber_memo.get();
                                 data.title = cyber.get_name().clone();
                                 data.description = cyber.get_description().clone();
                                 data.show();
                             })
-                        >
-                            <span>{move || cyber_memo.get().get_name().to_string()}</span>
-                            <button on:click=move|ev|{
-                                ev.stop_propagation();
-                                log!("rem index {}", indx);
-                                char_signal.write().cyberware.remove(indx);
-                            }>
-                                X
-                            </button>
-                        </div>
+                            on_x_click=move|_| {char_signal.write().cyberware.remove(indx);}
+                        />
                     }
                 }
             />
@@ -556,26 +544,15 @@ pub fn AllItemsView() -> impl IntoView {
                     let key_clone = key.clone();
                     let find_item_clone = find_item.clone();
                     view! {
-                        <div class="gear_view"
+                        <SimpleItemView
+                            display_text= move || format!("{}x{}", char_signal.read().gear.get(&key).expect("expecting item amount to exist"), find_item.clone().name.to_string())
                             on:click=move|_| simple_modal_signal.update(|data| {
                                 data.title = find_item_clone.name.clone();
                                 data.description = find_item_clone.description.clone();
                                 data.show();
                             })
-                        >
-                            <span>
-                                {move || char_signal.read().gear.get(&key).expect("expecting item amount to exist").to_string()}x
-                                {move || find_item.clone().name.to_string()}
-                            </span>
-                            <button on:click=move|ev|{ 
-                                ev.stop_propagation();
-                                char_signal.update(|c| {
-                                    reduce_or_remove_items_in_map(&mut c.gear, &key_clone)
-                                })
-                            }>
-                                X
-                            </button>
-                        </div>
+                            on_x_click=move|_| char_signal.update(|c| reduce_or_remove_items_in_map(&mut c.gear, &key_clone))
+                        />
                     }
                 }
             />
@@ -657,6 +634,24 @@ pub fn AllItemsView() -> impl IntoView {
                     }
                 }
             />
+        </div>
+    }
+}
+
+#[component]
+pub fn SimpleItemView(
+    display_text: impl Fn() -> String + Send + 'static,
+    mut on_x_click: impl FnMut(MouseEvent) + 'static
+) -> impl IntoView {
+    view! {
+        <div class="gear_view">
+            <span>{display_text}</span>
+            <button on:click=move|ev|{ 
+                ev.stop_propagation();
+                on_x_click(ev);
+            }>
+                X
+            </button>
         </div>
     }
 }
