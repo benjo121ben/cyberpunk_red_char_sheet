@@ -16,7 +16,7 @@ pub fn GearView() -> impl IntoView {
     view! {
         <div class="gear_list_wrapper">
             <TabView
-                tabs_list=Memo::new(move|_|vec!["Gear".to_string(), "Netrunner".to_string()])
+                tabs_list=Memo::new(move|_|vec!["Gear".to_string(), "Netrunner".to_string(), "Fashion".to_string()])
                 selected_tab_index=tab_index
             />
             <Show when=move||tab_index() == 0>
@@ -26,6 +26,9 @@ pub fn GearView() -> impl IntoView {
             </Show>
             <Show when=move||tab_index() == 1>
                 <NetrunView/>
+            </Show>
+            <Show when=move||tab_index() == 2>
+                <FashionView/>
             </Show>
         </div>
     }
@@ -488,7 +491,7 @@ pub fn AllItemsView() -> impl IntoView {
                     let key_clone = key.clone();
                     let find_item_clone = find_item.clone();
                     let find_item_clone2 = find_item.clone();
-                    let display_text = Memo::new(move |_| format!("{}x{}", char_signal.read().ammo.get(&key).expect("expecting item amount to exist"), find_item.clone().get_name()));
+                    let display_text = Memo::new(move |_| format!("{}x{}", char_signal.read().ammo.get(&key).expect("expecting ammo item amount to exist"), find_item.clone().get_name()));
                     view! {
                         <SimpleItemView
                             display_text
@@ -545,7 +548,7 @@ pub fn AllItemsView() -> impl IntoView {
                     let find_item_clone = find_item.clone();
                     view! {
                         <SimpleItemView
-                            display_text= move || format!("{}x{}", char_signal.read().gear.get(&key).expect("expecting item amount to exist"), find_item.clone().name.to_string())
+                            display_text= move || format!("{}x{}", char_signal.read().gear.get(&key).expect("expecting gear item amount to exist"), find_item.clone().name.to_string())
                             on:click=move|_| simple_modal_signal.update(|data| {
                                 data.title = find_item_clone.name.clone();
                                 data.description = find_item_clone.description.clone();
@@ -631,6 +634,40 @@ pub fn AllItemsView() -> impl IntoView {
                                 </Show>
                             </div>
                         </div>
+                    }
+                }
+            />
+        </div>
+    }
+}
+
+#[component]
+pub fn FashionView() -> impl IntoView {
+    let char_signal = get_char_signal_from_ctx();
+    let simple_modal_signal: RwSignal<SimpleModalData> = use_context().expect("FashionView: simple modal should exist");
+    let gear_data: GearData = use_context().expect("expecting gear to exist (FashionView)");
+    view! {
+        <div class="gear_list">
+            <For each=move|| {char_signal.read().fashion.keys().cloned().collect::<Vec<_>>()}
+                key=move|key| key.to_string()
+                children=move|key| {
+                    let key_clone: String = key.clone();
+                    let find_item = gear_data.fashion.iter().find(|item| {
+                        let changed_name = get_map_key_from_name(&item.name);
+                        changed_name == *key
+                    }).cloned().expect(&format!("expect fashion item to exist {}", key));
+                    let title = find_item.name.clone();
+                    let description = find_item.description.clone();
+                    view! {
+                        <SimpleItemView
+                            display_text= move || format!("{}x {}", char_signal.read().fashion.get(&*key).expect("expecting fashion item amount to exist"), find_item.clone().name.to_string())
+                            on:click=move|_| simple_modal_signal.update(|data| {
+                                data.title = title.clone();
+                                data.description = description.clone();
+                                data.show();
+                            })
+                            on_x_click=move|_| char_signal.update(|c| reduce_or_remove_items_in_map(&mut c.gear, &key_clone))
+                        />
                     }
                 }
             />

@@ -457,8 +457,8 @@ impl Character {
         std::cmp::max(head_armor_penalty, body_armor_penalty)
     }
 
-    pub fn add_gear(&mut self, gear_type: GearType,name: String) {
-        let changed_name = name.to_lowercase().replace(" ", "_");
+    pub fn add_gear(&mut self, gear_type: GearType, name: String) {
+        let changed_name = get_map_key_from_name(&name);
         let relevant_map = match gear_type {
             GearType::Drugs => &mut self.drugs,
             GearType::Gear => &mut self.gear,
