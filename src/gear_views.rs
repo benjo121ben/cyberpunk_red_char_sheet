@@ -205,6 +205,7 @@ pub fn SingleWeaponView(index:usize) -> impl IntoView {
 #[component]
 pub fn WeaponAttachmentView(index:usize) -> impl IntoView {
     let char_signal = get_char_signal_from_ctx();
+    let simple_modal_signal: RwSignal<SimpleModalData> = use_context().expect("WeaponAttachmentView: simple modal should exist");
     let gear_data: GearData = use_context().expect("expecting gear to exist (attachment)");
     let gear_signal = RwSignal::new(gear_data);
 
@@ -277,16 +278,26 @@ pub fn WeaponAttachmentView(index:usize) -> impl IntoView {
             <For each=move|| 0..weapon_memo.get().weapon_data.attachments.len()
                 key=move|i| i.to_string()
                 children=move|i| {
-                    let attachment = Memo::new(move|_| weapon_memo.get().weapon_data.attachments.get(i).cloned().expect("expecting index to be valid"));
-                    let description = gear_signal.get()
+                    let attachment = Memo::new(move|_| weapon_memo().weapon_data.attachments.get(i).cloned().expect("expecting index to be valid"));
+                    let description = gear_signal()
                         .attachments.iter()
-                        .find(|att| att.shorthand == attachment.get())
+                        .find(|att| att.shorthand == attachment())
                         .cloned()
                         .expect("expecting data to exist")
                         .description;
+                    let description_clone = description.clone();
+
                     view! {
                         <span 
-                            title=move||description.clone()
+                            title=move||{description.clone()}
+                            on:click=move |ev| {
+                                ev.stop_propagation(); 
+                                simple_modal_signal.update(|data| {
+                                    data.title = attachment().clone();
+                                    data.description = description_clone.clone();
+                                    data.show();
+                                });
+                            }
                             on:contextmenu=move|ev|{ev.stop_propagation(); ev.prevent_default(); remove_attachment(attachment.get())}
                         >
                             {move || attachment.clone()}
