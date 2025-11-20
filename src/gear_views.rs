@@ -303,6 +303,7 @@ pub fn WeaponAttachmentView(index:usize) -> impl IntoView {
                 when=move|| show_add_attachment_signal.get()
             >
                 <select
+                    on:click=move|ev| ev.stop_propagation()
                     on:change:target=move |ev| {
                         let val = ev.target().value();
                         char_signal.update(|punk| {
