@@ -16,7 +16,7 @@ leptos_meta = { version = "0.8.5" }
 serde = { version = "1.0.219", features = ["derive"]} 
 serde_json = { version = "1.0.140", features = ["preserve_order"] }
 tokio = { version = "1", features = ["rt-multi-thread"], optional = true }
-wasm-bindgen = { version = "=0.2.105", optional = true }
+wasm-bindgen = { version = "=0.2.104", optional = true }
 chrono = {version = "0.4.40"}
 indexmap = {version = "2.9.0", features = ["serde"]}
 cp_char_data= {path = "./src/cp_char_data"}
@@ -45,8 +45,6 @@ codegen-units = 1
 panic = "abort"
 
 [package.metadata.leptos]
-# The name used by wasm-bindgen/cargo-leptos for the JS/WASM bundle. Defaults to the crate name
-output-name = "cp_red_char_sheet"
 
 # The site root folder is where cargo-leptos generate all output. WARNING: all content of this folder will be erased on a rebuild. Use it in your server setup.
 site-root = "target/site"
